@@ -12,14 +12,26 @@
       <li><a href="#">Features</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
+    <LanguageSelector />
   </nav>
 </template>
+
+<script>
+import LanguageSelector from './LanguageSelector.vue'
+
+export default {
+  components: {
+    LanguageSelector
+  }
+}
+</script>
 
 <style scoped>
 /* Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 40px;
   background-color: #1f449b;
 }
