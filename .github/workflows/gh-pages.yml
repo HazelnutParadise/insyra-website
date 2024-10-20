@@ -28,6 +28,7 @@ jobs:
       # 把vue內容build起來
       - name: Install & Build # 執行
         run: |
+          cd frontend
           npm install
           npm run build 
           
