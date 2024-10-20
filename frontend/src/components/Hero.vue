@@ -2,9 +2,20 @@
     <header class="hero">
       <h1>Welcome to Insyra</h1>
       <p>Powerful data analysis tools built for the future.</p>
-      <button>Get Started</button>
+      <!-- <button>Get Started</button> -->
+      <HeroButton />
     </header>
 </template>
+
+<script >
+import HeroButton from './HeroButton.vue'
+
+export default {
+  components: {
+    HeroButton
+  }
+}
+</script>
 
 <style scoped>
 /* Hero Section */
@@ -28,7 +39,7 @@
 
 .hero button {
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #d73e3e;
   color: #fff;
   border: none;
   cursor: pointer;
