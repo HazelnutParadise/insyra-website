@@ -1,6 +1,6 @@
 <template>
 
-<nav class="navbar">
+<nav class="insyra-navbar">
     <div class="logo">
         <a href="/">
             <img id="logo-img" src="../assets/logo.png" alt="Insyra Logo" />
@@ -41,7 +41,7 @@ export default {
 
 <style scoped>
 /* Navigation */
-.navbar {
+.insyra-navbar {
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -69,6 +69,8 @@ export default {
   list-style: none;
   display: flex;
   gap: 15px;
+  margin-left: 0px;
+  margin-right: 15px;
 }
 
 .nav-menu li a {
@@ -81,7 +83,7 @@ export default {
 }
 
 @media (max-width: 1024px) {
-  .navbar .nav-menu {
+  .insyra-navbar .nav-menu {
     display: none;
   }
 }

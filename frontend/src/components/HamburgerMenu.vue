@@ -66,7 +66,7 @@ export default {
 .menu {
   position: absolute;
   top: 40px; /* 根據需要調整 */
-  left: 0;
+  right: 0;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
