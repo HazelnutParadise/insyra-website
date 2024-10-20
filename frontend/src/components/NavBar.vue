@@ -7,10 +7,10 @@
         </a>
     </div>
     <ul class="nav-menu">
-      <li><a href="#">Why Insyra</a></li>
-      <li><a href="#">Usage</a></li>
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#">{{ currentMessages.navbar.whyInsyra }}</a></li>
+      <li><a href="#">{{ currentMessages.navbar.howToUse }}</a></li>
+      <li><a href="#">{{ currentMessages.navbar.features }}</a></li>
+      <li><a href="#">{{ currentMessages.navbar.contact }}</a></li>
     </ul>
     <LanguageSelector @language-changed="updateLanguage" />
   </nav>
@@ -20,6 +20,12 @@
 import LanguageSelector from './LanguageSelector.vue'
 
 export default {
+  props: {
+    currentMessages: {
+      type: Object,
+      required: true,
+    },
+  },
   components: {
     LanguageSelector
   },
@@ -63,5 +69,9 @@ export default {
 .nav-menu li a {
   color: #fff;
   text-decoration: none;
+}
+
+.nav-menu li a:hover {
+  text-decoration: underline;
 }
 </style>

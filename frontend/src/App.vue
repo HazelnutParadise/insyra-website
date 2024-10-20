@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- Navigation -->
-    <Navbar @language-changed="updateLanguage" />
+    <Navbar @language-changed="updateLanguage" :currentMessages="currentMessages" />
 
     <!-- Hero Section -->
     <Hero :currentMessages="currentMessages" />
