@@ -12,7 +12,7 @@
       <li><a href="#">Features</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
-    <LanguageSelector />
+    <LanguageSelector @language-changed="updateLanguage" />
   </nav>
 </template>
 
@@ -22,6 +22,11 @@ import LanguageSelector from './LanguageSelector.vue'
 export default {
   components: {
     LanguageSelector
+  },
+  methods: {
+    updateLanguage(lang) {
+      this.$emit('language-changed', lang);
+    }
   }
 }
 </script>

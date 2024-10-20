@@ -1,25 +1,14 @@
 <template>
   <div id="app">
     <!-- Navigation -->
-    <Navbar />
+    <Navbar @language-changed="updateLanguage" />
 
     <!-- Hero Section -->
     <Hero :currentMessages="currentMessages" />
 
     <!-- Features Section -->
     <section class="features">
-      <div class="feature">
-        <h3>Feature 1</h3>
-        <p>Description of feature 1.</p>
-      </div>
-      <div class="feature">
-        <h3>Feature 2</h3>
-        <p>Description of feature 2.</p>
-      </div>
-      <div class="feature">
-        <h3>Feature 3</h3>
-        <p>Description of feature 3.</p>
-      </div>
+      <FeatureItem v-if="currentMessages.features" v-for="(feature, index) in currentMessages.features" :key="index" :feature="feature" />
     </section>
 
     <!-- Footer -->
@@ -36,6 +25,8 @@
 <script>
 import Navbar from './components/navbar.vue'
 import Hero from './components/Hero.vue'
+import LanguageSelector from './components/LanguageSelector.vue'
+import FeatureItem from './components/FeatureItem.vue' // 引入 FeatureItem
 import { ref } from 'vue'
 import { messages } from './locales/lang' // 引入語言資源
 
@@ -43,7 +34,9 @@ export default {
   name: 'App',
   components: {
     Navbar,
-    Hero
+    Hero,
+    LanguageSelector,
+    FeatureItem, // 註冊 FeatureItem
   },
   setup() {
     const initials = ['繁體中文', 'English']
@@ -51,8 +44,12 @@ export default {
     const currentMessages = ref(messages[value.value]); // 當前語言的文本
 
     const updateLanguage = (lang) => {
-      value.value = lang;
-      currentMessages.value = messages[lang]; // 更新當前語言的文本
+      if (messages[lang]) {
+        value.value = lang;
+        currentMessages.value = messages[lang]; // 更新當前語言的文本
+      } else {
+        console.error(`Language ${lang} not found in messages.`);
+      }
     };
 
     return {
@@ -64,21 +61,11 @@ export default {
 </script>
 
 <style scoped>
-
 /* Features Section */
 .features {
   display: flex;
   justify-content: space-around;
   padding: 50px 20px;
-}
-
-.feature {
-  text-align: center;
-  max-width: 300px;
-}
-
-.feature h3 {
-  margin-bottom: 10px;
 }
 
 /* Footer */

@@ -5,16 +5,16 @@
         placeholder="Please select"
         size="large"
         style="width: 240px"
-        @change="updateLanguage"
+        @change="emitLanguageChange"
     />
 </template>
 
 <script>
 import { ref } from 'vue'
-import { messages } from '../locales/lang' // 引入語言資源
+
 
 export default {
-  setup() {
+  setup(props, { emit }) {
     const initials = ['繁體中文', 'English']
     const value = ref(initials[0]) // 預設選擇繁體中文
     const options = initials.map((lang) => ({
@@ -22,18 +22,14 @@ export default {
       label: lang,
     }));
 
-    const currentMessages = ref(messages[value.value]); // 當前語言的文本
-
-    const updateLanguage = (lang) => {
-      value.value = lang;
-      currentMessages.value = messages[lang]; // 更新當前語言的文本
+    const emitLanguageChange = (lang) => {
+      emit('language-changed', lang); // 發射事件
     };
 
     return {
       value,
       options,
-      currentMessages,
-      updateLanguage,
+      emitLanguageChange,
     }
   }
 }
