@@ -1,20 +1,25 @@
 <template>
-    <header class="hero">
-      <h1>Welcome to Insyra</h1>
-      <p>Powerful data analysis tools built for the future.</p>
-      <!-- <button>Get Started</button> -->
-      <HeroButton />
-    </header>
+  <section class="hero">
+    <h1>{{ currentMessages.hero.title }}</h1>
+    <p>{{ currentMessages.hero.description }}</p>
+    <HeroButton />
+  </section>
 </template>
 
-<script >
-import HeroButton from './HeroButton.vue'
+<script>
+import HeroButton from './HeroButton.vue';
 
 export default {
+  props: {
+    currentMessages: {
+      type: Object,
+      required: true,
+    },
+  },
   components: {
-    HeroButton
-  }
-}
+    HeroButton,
+  },
+};
 </script>
 
 <style scoped>
