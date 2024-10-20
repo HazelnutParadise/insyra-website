@@ -16,16 +16,29 @@ import { ref } from 'vue'
 
 
 export default {
+  props: {
+    currentLanguage: {
+      type: String,
+      required: true,
+    },
+  },
   setup(props, { emit }) {
     const initials = ['繁體中文', 'English']
-    const value = ref(initials[0]) // 預設選擇繁體中文
+    let currentLanguage = localStorage.getItem('language')
+    if (!currentLanguage) {
+      currentLanguage = initials[0]
+    }
+       
+    const value = ref(currentLanguage) // 預設選擇繁體中文
     const options = initials.map((lang) => ({
       value: lang,
       label: lang,
     }));
 
     const emitLanguageChange = (lang) => {
+      localStorage.setItem('language', lang);
       emit('language-changed', lang); // 發射事件
+     
     };
 
     return {
@@ -46,9 +59,4 @@ export default {
     z-index: 2;
 }
 
-@media (max-width: 1024px) {
-    .language-selector {
-        display: none;
-    }
-}
 </style>

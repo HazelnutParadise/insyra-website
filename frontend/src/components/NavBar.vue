@@ -12,8 +12,8 @@
       <li><a href="#">{{ currentMessages.navbar.features }}</a></li>
       <li><a href="#">{{ currentMessages.navbar.contact }}</a></li>
     </ul>
-    <LanguageSelector @language-changed="updateLanguage" />
-    <HamburgerMenu @language-changed="updateLanguage" />
+    <LanguageSelector @language-changed="updateLanguage" :current-language="currentLanguage" />
+    <HamburgerMenu @language-changed="updateLanguage" :currentMessages="currentMessages" :current-language="currentLanguage" />
   </nav>
 </template>
 
@@ -21,6 +21,12 @@
 import LanguageSelector from './LanguageSelector.vue'
 import HamburgerMenu from './HamburgerMenu.vue'
 export default {
+  setup() {
+    let currentLanguage = '繁體中文'
+    return {
+      currentLanguage
+    }
+  },
   props: {
     currentMessages: {
       type: Object,
@@ -34,6 +40,7 @@ export default {
   methods: {
     updateLanguage(lang) {
       this.$emit('language-changed', lang);
+      localStorage.setItem('language', lang);
     }
   }
 }
@@ -84,6 +91,9 @@ export default {
 
 @media (max-width: 1024px) {
   .insyra-navbar .nav-menu {
+    display: none;
+  }
+  .language-selector {
     display: none;
   }
 }

@@ -6,28 +6,48 @@
       <div :class="['bar', { 'active': isOpen }]"></div>
     </div>
     <div v-if="isOpen" class="menu">
+      <LanguageSelector 
+        @language-changed="selectLanguage" 
+        :current-language="currentLanguage"
+      />
       <ul>
-        <li @click="selectLanguage('繁體中文')">繁體中文</li>
-        <li @click="selectLanguage('English')">English</li>
-        <!-- 添加其他導航項目 -->
+        <li><a href="#">{{ currentMessages.navbar.whyInsyra }}</a></li>
+        <li><a href="#">{{ currentMessages.navbar.howToUse }}</a></li>
+        <li><a href="#">{{ currentMessages.navbar.features }}</a></li>
+        <li><a href="#">{{ currentMessages.navbar.contact }}</a></li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+import LanguageSelector from './LanguageSelector.vue'
 export default {
+  components: {
+    LanguageSelector
+  },
+  props: {
+    currentMessages: {
+      type: Object,
+      required: true,
+    },
+    currentLanguage: { // 新增 props 以傳遞當前語言
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
-      isOpen: false,
+      isOpen: false, // 確保初始狀態為 false
     };
   },
   methods: {
     toggleMenu() {
-      this.isOpen = !this.isOpen;
+      this.isOpen = !this.isOpen; // 切換狀態
     },
     selectLanguage(lang) {
       this.$emit('language-changed', lang);
+      localStorage.setItem('language', lang);
       this.toggleMenu(); // 點擊後關閉菜單
     },
   },
@@ -47,7 +67,7 @@ export default {
 .bar {
   height: 4px;
   width: 100%;
-  background-color: #333;
+  background-color: #d2d2d2;
   transition: all 0.3s ease;
 }
 
@@ -65,11 +85,11 @@ export default {
 
 .menu {
   position: absolute;
-  top: 40px; /* 根據需要調整 */
+  top: 70px; /* 根據需要調整 */
   right: 0;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  display: block; /* 確保菜單顯示 */
 }
 
 .menu ul {
@@ -81,6 +101,8 @@ export default {
 .menu li {
   padding: 10px 20px;
   cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 1024px) {

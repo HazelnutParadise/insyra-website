@@ -20,5 +20,6 @@ onMounted(() => {
     background-color: #000;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    z-index: 1;
 }
 </style>

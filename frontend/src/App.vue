@@ -44,7 +44,11 @@ export default {
   },
   setup() {
     const initials = ['繁體中文', 'English']
-    const value = ref(initials[0]) // 預設選擇繁體中文
+    let currentLanguage = localStorage.getItem('language')
+    if (!currentLanguage) {
+      currentLanguage = initials[0]
+    }
+    const value = ref(currentLanguage) // 預設選擇繁體中文
     const currentMessages = ref(messages[value.value]); // 當前語言的文本
 
     const updateLanguage = (lang) => {
