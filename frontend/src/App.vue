@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <HazelnutParadiseNav />
     <!-- Navigation -->
     <Navbar @language-changed="updateLanguage" :currentMessages="currentMessages" />
 
@@ -25,6 +26,7 @@
 <script>
 import Navbar from './components/navbar.vue'
 import Hero from './components/Hero.vue'
+import HazelnutParadiseNav from './components/HazelnutParadiseNav.vue'
 import LanguageSelector from './components/LanguageSelector.vue'
 import FeatureItem from './components/FeatureItem.vue' // 引入 FeatureItem
 import { ref } from 'vue'
@@ -33,6 +35,7 @@ import { messages } from './locales/lang' // 引入語言資源
 export default {
   name: 'App',
   components: {
+    HazelnutParadiseNav,
     Navbar,
     Hero,
     LanguageSelector,
