@@ -6,14 +6,19 @@
 import { onMounted } from 'vue';
 
 onMounted(() => {
-    const script = document.createElement('script');
-    // 忽略cors
-    fetch('https://cors-anywhere.herokuapp.com/hazelnut-paradise.com/utils.js')
-        .then(response => response.text())
-        .then(data => {
-            script.textContent = data;
-            document.head.appendChild(script);
-            getNavbar();
-        });
+    fetch('/navbar')
+    .then(response => response.text())
+    .then(data => {
+        console.log(data);
+        document.getElementById('navbar-placeholder').innerHTML = data;
+    });
 });
 </script>
+<style scoped>
+#navbar-placeholder {
+    padding: 10px 40px;
+    background-color: #000;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+</style>

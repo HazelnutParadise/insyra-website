@@ -45,6 +45,7 @@ export default {
   align-items: center;
   padding: 20px 40px;
   background-color: #1f449b;
+  z-index: 1;
 }
 
 .logo {

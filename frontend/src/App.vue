@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <HazelnutParadiseNav />
     <!-- Navigation -->
     <Navbar @language-changed="updateLanguage" :currentMessages="currentMessages" />
 
@@ -12,12 +11,12 @@
       <FeatureItem v-if="currentMessages.features" v-for="(feature, index) in currentMessages.features" :key="index" :feature="feature" />
     </section>
 
+    <HazelnutParadiseNav />
     <!-- Footer -->
     <footer class="footer">
       <p>© 2024 HazelnutParadise. All Rights Reserved.</p>
       <ul class="social-links">
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">LinkedIn</a></li>
+        <li><a href="https://github.com/HazelnutParadise" style="display: flex; align-items: baseline;gap: 5px"><i class="fa fa-github" style="font-size:16px;color:#fff"></i><span>GitHub</span></a></li>
       </ul>
     </footer>
   </div>
@@ -73,9 +72,12 @@ export default {
 
 /* Footer */
 .footer {
+  display: flex;
+  justify-content: space-between;
   text-align: center;
-  padding: 20px;
-  background-color: #333;
+  padding: 0px 60px;
+  margin-top: 0px;
+  background-color: #000;
   color: #fff;
 }
 

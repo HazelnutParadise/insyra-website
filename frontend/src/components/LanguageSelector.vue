@@ -38,5 +38,9 @@ export default {
 <style scoped>
 .example-showcase .el-select-v2 {
   margin-right: 20px;
+  
+}
+.el-select {
+    z-index: 2;
 }
 </style>
