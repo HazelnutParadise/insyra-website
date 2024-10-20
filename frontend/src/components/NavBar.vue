@@ -1,7 +1,7 @@
 <template>
 
 <nav class="insyra-navbar">
-    <div class="logo">
+    <div class="insyra-logo">
         <a href="/">
             <img id="logo-img" src="../assets/logo.png" alt="Insyra Logo" />
         </a>
@@ -11,6 +11,7 @@
       <li><a href="#">{{ currentMessages.navbar.howToUse }}</a></li>
       <li><a href="#">{{ currentMessages.navbar.features }}</a></li>
       <li><a href="#">{{ currentMessages.navbar.contact }}</a></li>
+      <li><a href="#">{{ currentMessages.navbar.contribute }}</a></li>
     </ul>
     <LanguageSelector @language-changed="updateLanguage" :current-language="currentLanguage" />
     <HamburgerMenu @language-changed="updateLanguage" :currentMessages="currentMessages" :current-language="currentLanguage" />
@@ -58,12 +59,12 @@ export default {
   z-index: 1;
 }
 
-.logo {
+.insyra-logo {
   color: #fff;
   font-size: 24px;
 }
 
-.logo img {
+.insyra-logo img {
   width: auto;
   height: 50px;
   background-color: #fff;

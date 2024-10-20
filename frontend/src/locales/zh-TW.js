@@ -4,6 +4,7 @@ export const zhTW = {
         howToUse: '如何使用',
         features: '功能',
         contact: '聯絡我們',
+        contribute: '貢獻',
     },
     hero: {
         title: '邂逅 Insyra',

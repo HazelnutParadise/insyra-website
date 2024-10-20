@@ -4,6 +4,7 @@ export const eng = {
         howToUse: 'How to Use',
         features: 'Features',
         contact: 'Contact',
+        contribute: 'Contribute',
     },
     hero: {
         title: 'Welcome to Insyra',
