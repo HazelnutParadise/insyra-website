@@ -105,7 +105,7 @@ export default {
   font-size: 1.2rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .hamburger {
     display: flex;
   }

@@ -7,11 +7,11 @@
         </a>
     </div>
     <ul class="nav-menu">
+      <li><a href="#">{{ currentMessages.navbar.whatIsInsyra }}</a></li>
       <li><a href="#">{{ currentMessages.navbar.whyInsyra }}</a></li>
       <li><a href="#">{{ currentMessages.navbar.howToUse }}</a></li>
       <li><a href="#">{{ currentMessages.navbar.features }}</a></li>
       <li><a href="#">{{ currentMessages.navbar.contact }}</a></li>
-      <li><a href="#">{{ currentMessages.navbar.contribute }}</a></li>
     </ul>
     <LanguageSelector @language-changed="updateLanguage" :current-language="currentLanguage" />
     <HamburgerMenu @language-changed="updateLanguage" :currentMessages="currentMessages" :current-language="currentLanguage" />
@@ -77,8 +77,8 @@ export default {
   list-style: none;
   display: flex;
   gap: 15px;
-  margin-left: 0px;
-  margin-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nav-menu li a {
@@ -90,7 +90,7 @@ export default {
   text-decoration: underline;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .insyra-navbar .nav-menu {
     display: none;
   }
