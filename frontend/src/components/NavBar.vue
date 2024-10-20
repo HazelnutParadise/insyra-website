@@ -3,7 +3,7 @@
 <nav class="navbar">
     <div class="logo">
         <a href="/">
-            <img id="logo-img" src="../assets/logo.webp" alt="Insyra Logo" />
+            <img id="logo-img" src="../assets/logo.png" alt="Insyra Logo" />
         </a>
     </div>
     <ul class="nav-menu">
