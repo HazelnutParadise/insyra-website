@@ -2,7 +2,7 @@
   <div id="app">
     <!-- Navigation -->
     <Navbar @language-changed="updateLanguage" :currentMessages="currentMessages" />
-
+    
     <!-- Hero Section -->
     <Hero :currentMessages="currentMessages" />
 
@@ -28,6 +28,7 @@ import Hero from './components/Hero.vue'
 import HazelnutParadiseNav from './components/HazelnutParadiseNav.vue'
 import LanguageSelector from './components/LanguageSelector.vue'
 import FeatureItem from './components/FeatureItem.vue' // 引入 FeatureItem
+import HamburgerMenu from './components/HamburgerMenu.vue' // 引入漢堡選單
 import { ref } from 'vue'
 import { messages } from './locales/lang' // 引入語言資源
 
@@ -39,6 +40,7 @@ export default {
     Hero,
     LanguageSelector,
     FeatureItem, // 註冊 FeatureItem
+    HamburgerMenu, // 註冊漢堡選單
   },
   setup() {
     const initials = ['繁體中文', 'English']

@@ -13,12 +13,13 @@
       <li><a href="#">{{ currentMessages.navbar.contact }}</a></li>
     </ul>
     <LanguageSelector @language-changed="updateLanguage" />
+    <HamburgerMenu @language-changed="updateLanguage" />
   </nav>
 </template>
 
 <script>
 import LanguageSelector from './LanguageSelector.vue'
-
+import HamburgerMenu from './HamburgerMenu.vue'
 export default {
   props: {
     currentMessages: {
@@ -27,7 +28,8 @@ export default {
     },
   },
   components: {
-    LanguageSelector
+    LanguageSelector,
+    HamburgerMenu
   },
   methods: {
     updateLanguage(lang) {
@@ -40,6 +42,7 @@ export default {
 <style scoped>
 /* Navigation */
 .navbar {
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,6 +62,7 @@ export default {
   background-color: #fff;
   padding: 0px 15px;
   border-radius: 5px;
+  margin: 0;
 }
 
 .nav-menu {
@@ -74,5 +78,11 @@ export default {
 
 .nav-menu li a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .navbar .nav-menu {
+    display: none;
+  }
 }
 </style>

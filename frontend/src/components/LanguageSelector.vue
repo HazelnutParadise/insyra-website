@@ -1,4 +1,5 @@
 <template>
+    <div class="language-selector">
       <el-select-v2
         v-model="value"
         :options="options"
@@ -7,6 +8,7 @@
         style="width: 240px"
         @change="emitLanguageChange"
     />
+    </div>
 </template>
 
 <script>
@@ -42,5 +44,11 @@ export default {
 }
 .el-select {
     z-index: 2;
+}
+
+@media (max-width: 1024px) {
+    .language-selector {
+        display: none;
+    }
 }
 </style>
