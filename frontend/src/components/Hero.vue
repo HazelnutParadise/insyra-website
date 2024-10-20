@@ -2,7 +2,7 @@
   <section class="hero">
     <h1>{{ currentMessages.hero.title }}</h1>
     <p>{{ currentMessages.hero.description }}</p>
-    <HeroButton />
+    <HeroButton :currentMessages="currentMessages" />
   </section>
 </template>
 
