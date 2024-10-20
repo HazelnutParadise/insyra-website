@@ -28,6 +28,8 @@ export default {
   text-align: center;
   padding: 100px 20px;
   background-color: #f4f4f4;
+  /* 斜條色塊 */
+  background-image: linear-gradient(45deg, #f9ac41 25%, transparent 25%, transparent 75%, #f4f4f4 75%, #1f449b);
 }
 
 .hero h1 {
