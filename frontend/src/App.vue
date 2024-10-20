@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Navbar from './components/navbar.vue'
+import Navbar from './components/NavBar.vue'
 import Hero from './components/Hero.vue'
 import HazelnutParadiseNav from './components/HazelnutParadiseNav.vue'
 import LanguageSelector from './components/LanguageSelector.vue'
