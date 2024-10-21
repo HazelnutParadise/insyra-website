@@ -5,13 +5,14 @@
 <script setup>
 import { onMounted } from 'vue';
 
-onMounted(() => {
-    fetch('/navbar')
-    .then(response => response.text())
-    .then(data => {
-        console.log(data);
-        document.getElementById('navbar-placeholder').innerHTML = data;
-    });
+onMounted(async () => {
+    let response = await fetch('/navbar')
+    if (!response.ok) {
+        response = await fetch('https://hazelnut-paradise.com/navbar.html')
+    }
+    const data = await response.text()
+    console.log(data);
+    document.getElementById('navbar-placeholder').innerHTML = data;
 });
 </script>
 <style scoped>
