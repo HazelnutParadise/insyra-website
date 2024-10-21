@@ -8,7 +8,7 @@ import { onMounted } from 'vue';
 onMounted(async () => {
     let response = await fetch('/navbar')
     if (response.status !== 200) {
-        response = await fetch('https://hazelnut-paradise.com/navbar.html')
+        response = await fetch('https://hazelnut-paradise.com/navbar.html',{mode: 'no-cors'})
     }
     const data = await response.text()
     console.log(data);
