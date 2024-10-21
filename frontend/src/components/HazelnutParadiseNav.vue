@@ -7,7 +7,7 @@ import { onMounted } from 'vue';
 
 onMounted(async () => {
     let response = await fetch('/navbar')
-    if (!response.ok) {
+    if (response.status !== 200) {
         response = await fetch('https://hazelnut-paradise.com/navbar.html',
         {
             headers: {
