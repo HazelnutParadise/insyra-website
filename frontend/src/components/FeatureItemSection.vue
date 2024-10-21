@@ -1,7 +1,8 @@
 <template>
     <div class="feature-item-section-container">
+        <h2 class="feature-item-section-title">{{ featureItemSection.title }}</h2>
         <div class="feature-item-section">
-            <FeatureItem v-for="feature in features" :key="feature.id" :feature="feature" />
+            <FeatureItem v-for="feature in featureItemSection.features" :key="feature.id" :feature="feature" />
         </div>
     </div>
 </template>
@@ -13,8 +14,8 @@ export default {
         FeatureItem,
     },
     props: {
-        features: {
-            type: Array,
+        featureItemSection: {
+            type: Object,
             required: true,
         },
     },
@@ -33,8 +34,9 @@ export default {
     background-color: #f4f4f4;
     /* 紅色斜線 */
     background-image: linear-gradient(3.1deg, #d73e3e 12%, transparent 12%, transparent 88%, #d73e3e 88%, #d73e3e);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+h2 {
+    color: #d73e3e;
+    text-align: left;
 }
 </style>

@@ -7,7 +7,7 @@
     <Hero :currentMessages="currentMessages" />
 
     <!-- Features Section -->
-    <FeatureItemSection :features="currentMessages.features" />
+    <FeatureItemSection :featureItemSection="currentMessages.featureItemSection" />
 
     <HazelnutParadiseNav />
     <!-- Footer -->
