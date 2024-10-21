@@ -13,6 +13,7 @@ onMounted(async () => {
             headers: {
                 'Content-Type': 'text/html',
                 'Authorization': "",
+                'X-Requested-With': "XMLHttpRequest"
             }
         }
         )
