@@ -50,7 +50,7 @@ export default {
 <style scoped>
 /* Navigation */
 .insyra-navbar {
-  height: 50px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,11 +62,13 @@ export default {
 .insyra-logo {
   color: #fff;
   font-size: 24px;
+  display: flex;
+  align-items: center;
 }
 
 .insyra-logo img {
   width: auto;
-  height: 50px;
+  height: 40px;
   background-color: #fff;
   padding: 0px 15px;
   border-radius: 5px;

@@ -7,9 +7,7 @@
     <Hero :currentMessages="currentMessages" />
 
     <!-- Features Section -->
-    <section class="features">
-      <FeatureItem v-if="currentMessages.features" v-for="(feature, index) in currentMessages.features" :key="index" :feature="feature" />
-    </section>
+    <FeatureItemSection :features="currentMessages.features" />
 
     <HazelnutParadiseNav />
     <!-- Footer -->
@@ -28,6 +26,7 @@ import Hero from './components/Hero.vue'
 import HazelnutParadiseNav from './components/HazelnutParadiseNav.vue'
 import LanguageSelector from './components/LanguageSelector.vue'
 import FeatureItem from './components/FeatureItem.vue' // 引入 FeatureItem
+import FeatureItemSection from './components/FeatureItemSection.vue'
 import HamburgerMenu from './components/HamburgerMenu.vue' // 引入漢堡選單
 import { ref } from 'vue'
 import { messages } from './locales/lang' // 引入語言資源
@@ -41,6 +40,7 @@ export default {
     LanguageSelector,
     FeatureItem, // 註冊 FeatureItem
     HamburgerMenu, // 註冊漢堡選單
+    FeatureItemSection,
   },
   setup() {
     const initials = ['繁體中文', 'English']
@@ -69,12 +69,6 @@ export default {
 </script>
 
 <style scoped>
-/* Features Section */
-.features {
-  display: flex;
-  justify-content: space-around;
-  padding: 50px 20px;
-}
 
 /* Footer */
 .footer {
