@@ -1,9 +1,57 @@
 <template>
-  <div class="feature">
-    <h3>{{ feature.title }}</h3>
-    <p>{{ feature.description }}</p>
-  </div>
+    <div class="feature-item">
+        <v-card
+          class="mx-auto border border-teal-accent-4 rounded-lg px-4 pb-3"
+          max-width="500"
+          elevation="0"
+        >
+          <v-card-text>
+            <p class="text-h5 font-weight-black">{{ feature.title }}</p>
+            <br>
+            <div class="text-medium-emphasis">
+              {{ feature.description }}
+            </div>
+          </v-card-text>
+  
+          <v-card-actions>
+            <v-btn
+              color="teal-accent-4"
+              text="Learn More"
+              variant="outlined"
+              @click="reveal = true"
+            ></v-btn>
+          </v-card-actions>
+  
+          <v-expand-transition>
+            <v-card
+              v-if="reveal"
+              class="position-absolute w-100 border border-teal-accent-4 rounded-lg px-4"  <!-- 增加左右 padding -->
+              height="100%"
+              style="bottom: 0;"
+              elevation="0"
+            >
+              <v-card-text class="pb-0">
+                <p class="text-h4">Origin</p>
+  
+                <p class="text-medium-emphasis">
+                  {{ feature.description }}
+                </p>
+              </v-card-text>
+  
+              <v-card-actions class="pt-0">
+                <v-btn
+                  color="teal-accent-4"
+                  text="Close"
+                  variant="outlined"
+                  @click="reveal = false"
+                ></v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-expand-transition>
+        </v-card>
+    </div>
 </template>
+
 
 <script>
 export default {
@@ -16,20 +64,13 @@ export default {
 };
 </script>
 
-<style scoped>
-.feature {
-  text-align: center;
-  border: 1px solid #e0e0e0; /* 增加邊框 */
-  border-radius: 10px; /* 增加圓角 */
-  padding: 20px; /* 增加內邊距 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加陰影 */
-  transition: transform 0.2s; /* 增加過渡效果 */
-  background-color: #f9f9f9; /* 增加背景顏色 */
-  color: #333; /* 設定文字顏色 */
-}
 
-.feature:hover {
-  transform: scale(1.05); /* 滑鼠懸停時放大 */
-  background-color: #e0f7fa; /* 滑鼠懸停時改變背景顏色 */
+<style scoped>
+.feature-item {
+    display: flex; /*新增這一行以使用 flexbox */
+    flex-direction: column; /* 如果需要垂直排列內容 */
+    justify-content: center; /* 垂直置中 */
+    align-items: center; /* 水平置中 */
+    /* 其他樣式 */
 }
 </style>

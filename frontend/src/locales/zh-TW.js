@@ -22,5 +22,10 @@ export const zhTW = {
             title: '功能二',
             description: 'Insyra 提供多種強大的功能，讓您輕鬆進行數據分析。',
         },
+        feature3: {
+            id: 3,
+            title: '功能三',
+            description: 'Insyra 提供多種強大的功能，讓您輕鬆進行數據分析。',
+        },
     },
 };

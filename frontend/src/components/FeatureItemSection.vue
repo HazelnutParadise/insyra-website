@@ -1,6 +1,8 @@
 <template>
-    <div class="feature-item-section">
-        <FeatureItem v-for="feature in features" :key="feature.id" :feature="feature" />
+    <div class="feature-item-section-container">
+        <div class="feature-item-section">
+            <FeatureItem v-for="feature in features" :key="feature.id" :feature="feature" />
+        </div>
     </div>
 </template>
 <script>
@@ -20,12 +22,19 @@ export default {
 </script>
 <style scoped>
 .feature-item-section {
-    height: 400px;
+    width: 100%;
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 50px 20px;
+    align-items: center; /* 新增這一行以垂直置中 */
+}
+.feature-item-section-container {
+    min-height: 400px;
     background-color: #f4f4f4;
     /* 紅色斜線 */
     background-image: linear-gradient(3.1deg, #d73e3e 12%, transparent 12%, transparent 88%, #d73e3e 88%, #d73e3e);
     display: flex;
-    justify-content: space-around;
-    padding: 50px 20px;
+    justify-content: center;
+    align-items: center;
 }
 </style>
