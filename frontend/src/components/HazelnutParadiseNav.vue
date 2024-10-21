@@ -12,7 +12,7 @@ onMounted(async () => {
         {
             headers: {
                 'Content-Type': 'text/html',
-                'Authorization': "",
+                'Authorization': "insyra_website",
                 'X-Requested-With': "XMLHttpRequest"
             }
         }
