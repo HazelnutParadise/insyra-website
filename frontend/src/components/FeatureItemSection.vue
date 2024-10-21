@@ -1,6 +1,6 @@
 <template>
+    <h2 class="feature-item-section-title">{{ featureItemSection.title }}</h2>
     <div class="feature-item-section-container">
-        <h2 class="feature-item-section-title">{{ featureItemSection.title }}</h2>
         <div class="feature-item-section">
             <FeatureItem v-for="feature in featureItemSection.features" :key="feature.id" :feature="feature" />
         </div>
@@ -33,10 +33,15 @@ export default {
     min-height: 400px;
     background-color: #f4f4f4;
     /* 紅色斜線 */
-    background-image: linear-gradient(3.1deg, #d73e3e 12%, transparent 12%, transparent 88%, #d73e3e 88%, #d73e3e);
+    background-image: linear-gradient(3.1deg, #d73e3e 12%, transparent 12%, transparent 88%, transparent 88%, transparent);
 }
 h2 {
+    background-color: #f4f4f4;
+    border-color: #d73e3e;
+    border-style: solid;
+    border-width: 2px;
     color: #d73e3e;
-    text-align: left;
+    text-align: center;
+    padding: 20px 0;
 }
 </style>

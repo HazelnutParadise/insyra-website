@@ -28,10 +28,22 @@ export default {
   text-align: center;
   padding: 100px 20px;
   background-color: #f4f4f4;
-  /* 斜條色塊 */
-  background-image: linear-gradient(45deg, #f9ac41 25%, transparent 25%, transparent 75%, #f4f4f4 75%, #1f449b);
+  /* 添加紅色斜線 */
+  background-image: 
+  linear-gradient(-4deg, #d73e3e 12%, transparent 12%, transparent 88%, transparent 88%, transparent),
+    linear-gradient(45deg, #f9ac41 25%, transparent 25%, transparent 75%, #f4f4f4 75%, transparent),
+    linear-gradient(45deg, transparent 25%, transparent 25%, transparent 75%, #f4f4f4 75%, #1f449b);
+    
+
+
 }
 
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* 其他樣式保持不變 */
 .hero h1 {
   font-size: 48px;
   margin-bottom: 20px;
