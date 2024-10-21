@@ -2,13 +2,13 @@
   <div id="app">
     <!-- Navigation -->
     <Navbar @language-changed="updateLanguage" :currentMessages="currentMessages" />
-    
-    <!-- Hero Section -->
-    <Hero :currentMessages="currentMessages" />
+    <div class="main-content">
+      <!-- Hero Section -->
+      <Hero :currentMessages="currentMessages" />
 
     <!-- Features Section -->
     <FeatureItemSection :featureItemSection="currentMessages.featureItemSection" />
-
+    </div>
     <HazelnutParadiseNav />
     <!-- Footer -->
     <footer class="footer">
@@ -69,13 +69,17 @@ export default {
 </script>
 
 <style scoped>
-
+.main-content {
+  background-color: #f4f4f4;
+  /* padding-bottom: 200px; */
+}
 /* Footer */
 .footer {
   display: flex;
   justify-content: space-between;
   text-align: center;
   padding: 0px 60px;
+  padding-bottom: 30px;
   margin-top: 0px;
   background-color: #000;
   color: #fff;

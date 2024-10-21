@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button color="#d73e3e" size="large">{{ currentMessages.hero.getStarted }}</el-button>
+    <el-button color="#d73e3e" size="large" round>{{ currentMessages.hero.getStarted }}</el-button>
   </div>
 </template>
 

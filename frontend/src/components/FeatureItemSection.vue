@@ -32,8 +32,6 @@ export default {
 .feature-item-section-container {
     min-height: 400px;
     background-color: #f4f4f4;
-    /* 紅色斜線 */
-    background-image: linear-gradient(3.1deg, #d73e3e 12%, transparent 12%, transparent 88%, transparent 88%, transparent);
 }
 h2 {
     background-color: #f4f4f4;
