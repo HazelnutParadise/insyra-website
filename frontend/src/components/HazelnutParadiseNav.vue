@@ -11,7 +11,8 @@ onMounted(async () => {
         response = await fetch('https://hazelnut-paradise.com/navbar.html',
         {
             headers: {
-                'Content-Type': 'text/html'
+                'Content-Type': 'text/html',
+                'Authorization': "",
             }
         }
         )
