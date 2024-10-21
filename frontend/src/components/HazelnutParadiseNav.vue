@@ -9,9 +9,11 @@ onMounted(async () => {
     let response = await fetch('/navbar')
     if (!response.ok) {
         response = await fetch('https://hazelnut-paradise.com/navbar.html',
-            {
-                mode: 'no-cors'
+        {
+            headers: {
+                'Content-Type': 'text/html'
             }
+        }
         )
     }
     const data = await response.text()
