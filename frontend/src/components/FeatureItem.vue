@@ -4,13 +4,11 @@
             <div class="card-content">
                 <p class="title">{{ feature.title }}</p>
                 <br>
-                <div class="description">
-                    {{ feature.description }}
-                </div>
+                <div class="description" id="feature-item-description" v-html="feature.description"></div>
             </div>
 
             <div class="card-actions">
-                <button class="learn-more" @click="reveal = true">Learn More</button>
+                <button class="learn-more" @click="reveal = true" v-html="feature.learnMore"></button>
             </div>
 
             <transition name="fade">
@@ -52,8 +50,9 @@ export default {
 
 .card {
     width: 100%;
-    max-width: 400px;
-    border: none; /* 移除邊框 */
+    max-width: 420px;
+    height: 100%;
+    border: 5px solid transparent;
     box-sizing: border-box;
     border-radius: 20px; /* 更大的圓角 */
     background-color: #ffffff; /* 背景顏色 */
@@ -65,7 +64,7 @@ export default {
 }
 
 .card-content {
-    padding: 20px; /* 增加內邊距 */
+    padding: 10px; /* 增加內邊距 */
 }
 
 .title {
@@ -77,12 +76,16 @@ export default {
 
 .description {
     color: #333; /* 深色文字 */
-    font-style: italic; /* 斜體 */
+    font-size: 1.2em;
 }
 
 .card-actions {
     padding: 8px;
     text-align: right;
+}
+
+.learn-more {
+    width: 100%;
 }
 
 .learn-more, .close {
@@ -122,7 +125,7 @@ export default {
     opacity: 0;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 768px) {
     .card {
         max-width: 100%;
         width: 100%;

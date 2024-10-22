@@ -41,4 +41,6 @@ export default {
 h2 {
     display: none; /* 隱藏標題 */
 }
+
+
 </style>
