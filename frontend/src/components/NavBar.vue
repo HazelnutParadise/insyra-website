@@ -55,18 +55,19 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+  padding-bottom: 10px;
   background-color: #1f449b;
   z-index: 1;
 }
 
 .insyra-logo {
-  color: #fff;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
+
 .insyra-logo img {
+  margin: 0;
   width: auto;
   height: 40px;
   background-color: #fff;
@@ -76,6 +77,7 @@ export default {
 }
 
 .nav-menu {
+  margin: 0;
   list-style: none;
   display: flex;
   gap: 15px;
@@ -100,4 +102,5 @@ export default {
     display: none;
   }
 }
+
 </style>

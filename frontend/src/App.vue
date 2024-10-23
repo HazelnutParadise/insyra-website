@@ -96,4 +96,13 @@ export default {
   color: #fff;
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+    padding-bottom: 30px;
+  }
+}
 </style>
