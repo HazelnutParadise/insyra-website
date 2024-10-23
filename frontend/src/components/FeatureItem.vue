@@ -77,6 +77,8 @@ export default {
 .description {
     color: #333; /* 深色文字 */
     font-size: 1.2em;
+    line-height: 1.5;
+    text-align: left;
 }
 
 .card-actions {

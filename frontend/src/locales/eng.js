@@ -29,19 +29,19 @@ export const eng = {
             feature3: {
                 id: 3,
                 title: 'Beautiful Data Visualization',
-                description: 'Insyra integrates the go-echarts visualization library, offering various types of charts to easily create beautiful visualizations for your analysis.',
-                learnMore: 'Learn More',
+                description: 'Insyra integrates the <a href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, offering various types of charts to easily create beautiful visualizations for your analysis.',
+                learnMore: 'Learn More about <strong>plot</strong> and <strong>gplot</strong> packages',
             },
             feature4: {
                 id: 4,
                 title: 'Integration with Python',
                 description: 'With Insyra’s py package, you can execute Python code within Go programs, leveraging Python’s powerful capabilities for data analysis.',
-                learnMore: 'Learn More',
+                learnMore: 'Learn More about <strong>py</strong> package',
             },
             feature5: {
                 id: 5,
                 title: 'Dedicated IDE',
-                description: 'We provide a dedicated and easy-to-use IDE for Insyra, allowing you to start your data analysis work quickly without worrying about environment setup.',
+                description: 'We provide a <strong>dedicated</strong> and <strong>easy-to-use IDE</strong> for Insyra, allowing you to start your data analysis work quickly without worrying about environment setup.',
                 learnMore: 'Learn More about <strong>Idensyra</strong>',
             },
         },
