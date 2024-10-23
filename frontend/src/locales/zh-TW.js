@@ -9,7 +9,11 @@ export const zhTW = {
     hero: {
         title: '邂逅 Insyra',
         description: '強大的數據分析工具，為未來而生。',
-        getStarted: '開始使用',
+        button: {
+            main: '開始使用',
+            secondary1: 'GoDoc',
+            secondary2: 'GitHub',
+        },
     },
     featureItemSection: {
         title: '功能',

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <el-button :color="settings.color" :size="settings.size" :round="settings.round">{{ currentMessages.hero.getStarted }}</el-button>
+    <v-btn :variant="settings.variant" :color="settings.color" :size="settings.size">
+      {{ currentMessages}}
+    </v-btn>
+    <!-- <el-button :color="settings.color" :size="settings.size" :round="settings.round">{{ currentMessages.hero.getStarted }}</el-button> -->
   </div>
 </template>
 

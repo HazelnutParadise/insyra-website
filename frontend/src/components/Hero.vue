@@ -2,22 +2,19 @@
   <section class="hero">
     <h1>{{ currentMessages.hero.title }}</h1>
     <p>{{ currentMessages.hero.description }}</p>
-    <HeroButton :currentMessages="currentMessages" :settings="{
+    <HeroButton :currentMessages="currentMessages.hero.button.main" :settings="{
       color: '#d73e3e',
       size: 'large',
-      round: true,
     }" />
     <br />
     <div class="hero-button-container">
-      <HeroButton :currentMessages="currentMessages" :settings="{
-        color: '#d73e3e',
-        size: 'large',
-        round: false,
+      <HeroButton :currentMessages="currentMessages.hero.button.secondary1" :settings="{
+        variant: 'tonal',
+        color: '#1f449b',
       }" />
-      <HeroButton :currentMessages="currentMessages" :settings="{
-        color: '#d73e3e',
-        size: 'large',
-        round: false,
+      <HeroButton :currentMessages="currentMessages.hero.button.secondary2" :settings="{
+        variant: 'outlined',
+        color: '#1f449b',
       }" />
     </div>
   </section>
