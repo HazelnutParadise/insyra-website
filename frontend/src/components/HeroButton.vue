@@ -20,3 +20,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.v-btn {
+  z-index: 1;
+}
+</style>
