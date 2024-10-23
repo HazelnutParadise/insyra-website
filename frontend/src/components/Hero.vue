@@ -11,10 +11,12 @@
       <HeroButton :currentMessages="currentMessages.hero.button.secondary1" :settings="{
         variant: 'tonal',
         color: '#1f449b',
+        href: 'https://pkg.go.dev/github.com/HazelnutParadise/insyra',
       }" />
       <HeroButton :currentMessages="currentMessages.hero.button.secondary2" :settings="{
         variant: 'outlined',
         color: '#1f449b',
+        href: 'https://github.com/HazelnutParadise/insyra',
       }" />
     </div>
   </section>

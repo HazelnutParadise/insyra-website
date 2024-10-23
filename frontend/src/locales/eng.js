@@ -9,7 +9,11 @@ export const eng = {
     hero: {
         title: 'Meet Insyra',
         description: 'Powerful data analysis tools, built for the future.',
-        getStarted: 'Get Started',
+        button: {
+            main: 'Get Started',
+            secondary1: 'GoDoc',
+            secondary2: 'GitHub',
+        },
     },  
     featureItemSection: {
         title: 'Features',
@@ -35,7 +39,7 @@ export const eng = {
             feature4: {
                 id: 4,
                 title: 'Integration with Python',
-                description: 'With Insyra’s py package, you can execute Python code within Go programs, leveraging Python’s powerful capabilities for data analysis.',
+                description: 'With Insyra’s py package, you can <strong>execute Python code within Go programs</strong>, leveraging Python’s powerful capabilities for data analysis.',
                 learnMore: 'Learn More about <strong>py</strong> package',
             },
             feature5: {

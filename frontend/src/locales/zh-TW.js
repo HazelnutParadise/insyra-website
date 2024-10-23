@@ -39,7 +39,7 @@ export const zhTW = {
             feature4: {
                 id: 4,
                 title: '與 Python 整合',
-                description: '使用 Insyra 的 py 包，您可以在 Go 程式中執行 Python 程式碼，利用 Python 的強大功能進行資料分析。',
+                description: '使用 Insyra 的 py 包，您可以 <strong>在 Go 程式中執行 Python 程式碼</strong>，利用 Python 的強大功能進行資料分析。',
                 learnMore: '了解 <strong>py</strong> 套件',
             },
             feature5: {
