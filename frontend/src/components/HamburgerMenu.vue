@@ -38,10 +38,6 @@ export default {
       type: String,
       required: true,
     },
-    selectPage: {
-      type: Function,
-      required: true,
-    }
   },
   data() {
     return {
@@ -58,7 +54,11 @@ export default {
       this.toggleMenu();
     },
     selectPage(page) {
-      this.$emit('select-page', page);
+      if (page === 'Main') {
+        window.location.href = '/';
+      } else {
+        window.location.href = `#${page}`;
+      }
       this.toggleMenu();
     }
   },

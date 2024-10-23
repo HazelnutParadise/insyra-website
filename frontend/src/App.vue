@@ -19,7 +19,7 @@ import Navbar from './components/NavBar.vue'
 import HazelnutParadiseNav from './components/HazelnutParadiseNav.vue'
 import LanguageSelector from './components/LanguageSelector.vue'
 import HamburgerMenu from './components/HamburgerMenu.vue' // 引入漢堡選單
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { messages } from './locales/lang' // 引入語言資源
 import Main from './views/Main.vue'
 import WhatIsInsyra from './views/WhatIsInsyra.vue'
@@ -56,7 +56,6 @@ export default {
     };
 
     const selectPage = (page) => {
-      // 根據傳入的頁面名稱更新 currentPage
       switch (page) {
         case 'Main':
           currentPage.value = Main;
@@ -79,7 +78,17 @@ export default {
         default:
           currentPage.value = Main; // 預設為主頁
       }
-    }
+    };
+
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      selectPage(hash || 'Main'); // 根據 hash 切換組件
+    };
+
+    onMounted(() => {
+      handleHashChange(); // 初始化時根據 hash 切換組件
+      window.addEventListener('hashchange', handleHashChange); // 監聽 hash 變化
+    });
 
     return {
       currentMessages,

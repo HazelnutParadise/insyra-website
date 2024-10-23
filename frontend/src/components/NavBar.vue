@@ -6,15 +6,15 @@
       </a>
     </div>
     <ul class="nav-menu">
-      <li><a @click="selectPage('Main')">{{ currentMessages.navbar.main }}</a></li>
-      <li><a @click="selectPage('WhatIsInsyra')">{{ currentMessages.navbar.whatIsInsyra }}</a></li>
-      <li><a @click="selectPage('Features')">{{ currentMessages.navbar.features }}</a></li>
-      <li><a @click="selectPage('HowToUse')">{{ currentMessages.navbar.howToUse }}</a></li>
-      <li><a @click="selectPage('WhyInsyra')">{{ currentMessages.navbar.whyInsyra }}</a></li>
-      <li><a @click="selectPage('Contact')">{{ currentMessages.navbar.contact }}</a></li>
+      <li><a href="/">{{ currentMessages.navbar.main }}</a></li>
+      <li><a href="#WhatIsInsyra">{{ currentMessages.navbar.whatIsInsyra }}</a></li>
+      <li><a href="#Features">{{ currentMessages.navbar.features }}</a></li>
+      <li><a href="#HowToUse">{{ currentMessages.navbar.howToUse }}</a></li>
+      <li><a href="#WhyInsyra">{{ currentMessages.navbar.whyInsyra }}</a></li>
+      <li><a href="#Contact">{{ currentMessages.navbar.contact }}</a></li>
     </ul>
     <LanguageSelector @language-changed="updateLanguage" :current-language="currentLanguage" />
-    <HamburgerMenu @language-changed="updateLanguage" :currentMessages="currentMessages" :current-language="currentLanguage" @selectPage="selectPage" />
+    <HamburgerMenu @language-changed="updateLanguage" :currentMessages="currentMessages" :current-language="currentLanguage" />
   </nav>
 </template>
 
@@ -28,10 +28,6 @@ export default {
       type: Object,
       required: true,
     },
-    selectPage: {
-      type: Function,
-      required: true,
-    }
   },
   components: {
     LanguageSelector,
@@ -42,9 +38,6 @@ export default {
       this.$emit('language-changed', lang);
       localStorage.setItem('language', lang);
     },
-    selectPage(page) {
-      this.$emit('page-selected', page); // 發射 page-selected 事件
-    }
   }
 }
 </script>
@@ -108,5 +101,4 @@ a {
     display: none;
   }
 }
-
 </style>
