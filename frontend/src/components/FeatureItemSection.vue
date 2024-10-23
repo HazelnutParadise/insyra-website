@@ -34,7 +34,6 @@ export default {
 }
 
 .feature-item-section-container {
-    height: 100%;
     background-color: #d73e3e;
 }
 
