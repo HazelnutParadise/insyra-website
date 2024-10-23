@@ -66,6 +66,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+  cursor: pointer;
+}
+
 .hamburger {
   cursor: pointer;
   display: none;

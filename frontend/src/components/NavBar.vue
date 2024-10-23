@@ -50,6 +50,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+  cursor: pointer;
+}
+
 /* Navigation */
 .insyra-navbar {
   height: 80px;
