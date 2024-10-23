@@ -2,7 +2,24 @@
   <section class="hero">
     <h1>{{ currentMessages.hero.title }}</h1>
     <p>{{ currentMessages.hero.description }}</p>
-    <HeroButton :currentMessages="currentMessages" />
+    <HeroButton :currentMessages="currentMessages" :settings="{
+      color: '#d73e3e',
+      size: 'large',
+      round: true,
+    }" />
+    <br />
+    <div class="hero-button-container">
+      <HeroButton :currentMessages="currentMessages" :settings="{
+        color: '#d73e3e',
+        size: 'large',
+        round: false,
+      }" />
+      <HeroButton :currentMessages="currentMessages" :settings="{
+        color: '#d73e3e',
+        size: 'large',
+        round: false,
+      }" />
+    </div>
   </section>
 </template>
 
@@ -55,5 +72,11 @@ export default {
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+.hero-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 </style>

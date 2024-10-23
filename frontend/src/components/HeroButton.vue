@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button color="#d73e3e" size="large" round>{{ currentMessages.hero.getStarted }}</el-button>
+    <el-button :color="settings.color" :size="settings.size" :round="settings.round">{{ currentMessages.hero.getStarted }}</el-button>
   </div>
 </template>
 
@@ -8,6 +8,10 @@
 export default {
   props: {
     currentMessages: {
+      type: Object,
+      required: true,
+    },
+    settings: {
       type: Object,
       required: true,
     },
