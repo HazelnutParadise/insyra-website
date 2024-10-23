@@ -11,10 +11,12 @@
         :current-language="currentLanguage"
       />
       <ul>
-        <li><a href="#">{{ currentMessages.navbar.whyInsyra }}</a></li>
-        <li><a href="#">{{ currentMessages.navbar.howToUse }}</a></li>
-        <li><a href="#">{{ currentMessages.navbar.features }}</a></li>
-        <li><a href="#">{{ currentMessages.navbar.contact }}</a></li>
+        <li><a @click="selectPage('Main')">{{ currentMessages.navbar.main }}</a></li>
+        <li><a @click="selectPage('WhatIsInsyra')">{{ currentMessages.navbar.whatIsInsyra }}</a></li>
+        <li><a @click="selectPage('WhyInsyra')">{{ currentMessages.navbar.whyInsyra }}</a></li>
+        <li><a @click="selectPage('HowToUse')">{{ currentMessages.navbar.howToUse }}</a></li>
+        <li><a @click="selectPage('Features')">{{ currentMessages.navbar.features }}</a></li>
+        <li><a @click="selectPage('Contact')">{{ currentMessages.navbar.contact }}</a></li>
       </ul>
     </div>
   </div>
@@ -31,25 +33,34 @@ export default {
       type: Object,
       required: true,
     },
-    currentLanguage: { // 新增 props 以傳遞當前語言
+  
+    currentLanguage: {
       type: String,
       required: true,
     },
+    selectPage: {
+      type: Function,
+      required: true,
+    }
   },
   data() {
     return {
-      isOpen: false, // 確保初始狀態為 false
+      isOpen: false,
     };
   },
   methods: {
     toggleMenu() {
-      this.isOpen = !this.isOpen; // 切換狀態
+      this.isOpen = !this.isOpen;
     },
     selectLanguage(lang) {
       this.$emit('language-changed', lang);
       localStorage.setItem('language', lang);
-      this.toggleMenu(); // 點擊後關閉菜單
+      this.toggleMenu();
     },
+    selectPage(page) {
+      this.$emit('select-page', page);
+      this.toggleMenu();
+    }
   },
 };
 </script>
@@ -90,7 +101,7 @@ export default {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   display: block; /* 確保菜單顯示 */
-  z-index: 2;
+  z-index: 99999;
 }
 
 .menu ul {

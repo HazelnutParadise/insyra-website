@@ -1,5 +1,6 @@
 export const eng = {
     navbar: {
+        main: 'Meet Insyra',
         whatIsInsyra: 'What is Insyra',
         whyInsyra: 'Why Insyra',
         howToUse: 'How to Use',

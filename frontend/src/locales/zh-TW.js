@@ -1,5 +1,6 @@
 export const zhTW = {
     navbar: {
+        main: '邂逅 Insyra',
         whatIsInsyra: '什麼是 Insyra',
         whyInsyra: '為什麼選擇 Insyra',
         howToUse: '如何使用',

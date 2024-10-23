@@ -1,38 +1,37 @@
 <template>
-
-<nav class="insyra-navbar">
+  <nav class="insyra-navbar">
     <div class="insyra-logo">
-        <a href="/">
-          <img id="logo-img" src="../assets/logo.png" alt="Insyra Logo" />
-        </a>
+      <a href="/">
+        <img id="logo-img" src="../assets/logo.png" alt="Insyra Logo" />
+      </a>
     </div>
     <ul class="nav-menu">
-      <li><a href="#">{{ currentMessages.navbar.whatIsInsyra }}</a></li>
-      <li><a href="#">{{ currentMessages.navbar.whyInsyra }}</a></li>
-      <li><a href="#">{{ currentMessages.navbar.howToUse }}</a></li>
-      <li><a href="#">{{ currentMessages.navbar.features }}</a></li>
-      <li><a href="#">{{ currentMessages.navbar.contact }}</a></li>
+      <li><a @click="selectPage('Main')">{{ currentMessages.navbar.main }}</a></li>
+      <li><a @click="selectPage('WhatIsInsyra')">{{ currentMessages.navbar.whatIsInsyra }}</a></li>
+      <li><a @click="selectPage('Features')">{{ currentMessages.navbar.features }}</a></li>
+      <li><a @click="selectPage('HowToUse')">{{ currentMessages.navbar.howToUse }}</a></li>
+      <li><a @click="selectPage('WhyInsyra')">{{ currentMessages.navbar.whyInsyra }}</a></li>
+      <li><a @click="selectPage('Contact')">{{ currentMessages.navbar.contact }}</a></li>
     </ul>
     <LanguageSelector @language-changed="updateLanguage" :current-language="currentLanguage" />
-    <HamburgerMenu @language-changed="updateLanguage" :currentMessages="currentMessages" :current-language="currentLanguage" />
+    <HamburgerMenu @language-changed="updateLanguage" :currentMessages="currentMessages" :current-language="currentLanguage" @selectPage="selectPage" />
   </nav>
 </template>
 
 <script>
 import LanguageSelector from './LanguageSelector.vue'
 import HamburgerMenu from './HamburgerMenu.vue'
+
 export default {
-  setup() {
-    let currentLanguage = '繁體中文'
-    return {
-      currentLanguage
-    }
-  },
   props: {
     currentMessages: {
       type: Object,
       required: true,
     },
+    selectPage: {
+      type: Function,
+      required: true,
+    }
   },
   components: {
     LanguageSelector,
@@ -42,6 +41,9 @@ export default {
     updateLanguage(lang) {
       this.$emit('language-changed', lang);
       localStorage.setItem('language', lang);
+    },
+    selectPage(page) {
+      this.$emit('page-selected', page); // 發射 page-selected 事件
     }
   }
 }

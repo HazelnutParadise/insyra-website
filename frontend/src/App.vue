@@ -1,14 +1,8 @@
 <template>
   <div id="app">
     <!-- Navigation -->
-    <Navbar @language-changed="updateLanguage" :currentMessages="currentMessages" />
-    <div class="main-content">
-      <!-- Hero Section -->
-      <Hero :currentMessages="currentMessages" />
-
-    <!-- Features Section -->
-    <FeatureItemSection :featureItemSection="currentMessages.featureItemSection" />
-    </div>
+    <Navbar @language-changed="updateLanguage" :currentMessages="currentMessages" @page-selected="selectPage" />
+    <component :is="currentPage" :currentMessages="currentMessages" />
     <HazelnutParadiseNav />
     <!-- Footer -->
     <footer class="footer">
@@ -22,25 +16,25 @@
 
 <script>
 import Navbar from './components/NavBar.vue'
-import Hero from './components/Hero.vue'
 import HazelnutParadiseNav from './components/HazelnutParadiseNav.vue'
 import LanguageSelector from './components/LanguageSelector.vue'
-import FeatureItem from './components/FeatureItem.vue' // 引入 FeatureItem
-import FeatureItemSection from './components/FeatureItemSection.vue'
 import HamburgerMenu from './components/HamburgerMenu.vue' // 引入漢堡選單
 import { ref } from 'vue'
 import { messages } from './locales/lang' // 引入語言資源
+import Main from './views/Main.vue'
+import WhatIsInsyra from './views/WhatIsInsyra.vue'
+import Features from './views/Features.vue'
+import HowToUse from './views/HowToUse.vue'
+import WhyInsyra from './views/WhyInsyra.vue'
+import Contact from './views/Contact.vue'
 
 export default {
   name: 'App',
   components: {
     HazelnutParadiseNav,
     Navbar,
-    Hero,
     LanguageSelector,
-    FeatureItem, // 註冊 FeatureItem
     HamburgerMenu, // 註冊漢堡選單
-    FeatureItemSection,
   },
   setup() {
     const initials = ['繁體中文', 'English']
@@ -50,6 +44,7 @@ export default {
     }
     const value = ref(currentLanguage) // 預設選擇繁體中文
     const currentMessages = ref(messages[value.value]); // 當前語言的文本
+    const currentPage = ref(Main); // 當前顯示的組件
 
     const updateLanguage = (lang) => {
       if (messages[lang]) {
@@ -60,9 +55,37 @@ export default {
       }
     };
 
+    const selectPage = (page) => {
+      // 根據傳入的頁面名稱更新 currentPage
+      switch (page) {
+        case 'Main':
+          currentPage.value = Main;
+          break;
+        case 'WhatIsInsyra':
+          currentPage.value = WhatIsInsyra;
+          break;
+        case 'Features':
+          currentPage.value = Features;
+          break;
+        case 'HowToUse':
+          currentPage.value = HowToUse;
+          break;
+        case 'WhyInsyra':
+          currentPage.value = WhyInsyra;
+          break;
+        case 'Contact':
+          currentPage.value = Contact;
+          break;
+        default:
+          currentPage.value = Main; // 預設為主頁
+      }
+    }
+
     return {
       currentMessages,
       updateLanguage,
+      currentPage,
+      selectPage,
     }
   }
 };
