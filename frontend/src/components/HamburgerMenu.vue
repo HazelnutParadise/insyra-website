@@ -90,6 +90,7 @@ export default {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   display: block; /* 確保菜單顯示 */
+  z-index: 2;
 }
 
 .menu ul {
