@@ -36,6 +36,5 @@ export default {
   max-width: 900px;
   margin: 0 auto;
   line-height: 1.8;
-  font-weight: 300;
 }
 </style>
