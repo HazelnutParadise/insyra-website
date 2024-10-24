@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hamburger-menu">
     <div class="hamburger" @click="toggleMenu">
       <div :class="['bar', { 'active': isOpen }]"></div>
       <div :class="['bar', { 'active': isOpen }]"></div>
@@ -66,6 +66,10 @@ a {
   cursor: pointer;
 }
 
+.hamburger-menu {
+  display: none;
+}
+
 .hamburger {
   cursor: pointer;
   display: none;
@@ -118,6 +122,9 @@ a {
 }
 
 @media (max-width: 1100px) {
+  .hamburger-menu {
+    display: block;
+  }
   .hamburger {
     display: flex;
   }
