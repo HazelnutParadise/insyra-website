@@ -59,24 +59,31 @@ export default {
       switch (page) {
         case 'Main':
           currentPage.value = Main;
+          window.history.replaceState(null, '', window.location.pathname); // 去掉 #
           break;
         case 'WhatIsInsyra':
           currentPage.value = WhatIsInsyra;
+          window.history.replaceState(null, '', `#${page}`); // 更新 URL
           break;
         case 'Features':
           currentPage.value = Features;
+          window.history.replaceState(null, '', `#${page}`); // 更新 URL
           break;
         case 'HowToUse':
           currentPage.value = HowToUse;
+          window.history.replaceState(null, '', `#${page}`); // 更新 URL
           break;
         case 'WhyInsyra':
           currentPage.value = WhyInsyra;
+          window.history.replaceState(null, '', `#${page}`); // 更新 URL
           break;
         case 'Contact':
           currentPage.value = Contact;
+          window.history.replaceState(null, '', `#${page}`); // 更新 URL
           break;
         default:
           currentPage.value = Main; // 預設為主頁
+          window.history.replaceState(null, '', window.location.pathname); // 去掉 #
       }
     };
 

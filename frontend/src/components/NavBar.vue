@@ -6,7 +6,7 @@
       </a>
     </div>
     <ul class="nav-menu">
-      <li><a href="/">{{ currentMessages.navbar.main }}</a></li>
+      <li><a href="#Main">{{ currentMessages.navbar.main }}</a></li>
       <li><a href="#WhatIsInsyra">{{ currentMessages.navbar.whatIsInsyra }}</a></li>
       <li><a href="#Features">{{ currentMessages.navbar.features }}</a></li>
       <li><a href="#HowToUse">{{ currentMessages.navbar.howToUse }}</a></li>
