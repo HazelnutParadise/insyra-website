@@ -86,4 +86,12 @@ export default {
   justify-content: center;
   gap: 20px;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: 
+    linear-gradient(45deg, #f9ac41 20%, transparent 20%, transparent 80%, #f4f4f4 80%, transparent),
+    linear-gradient(45deg, transparent 20%, transparent 20%, transparent 80%, #1f449b 80%, #1f449b);
+  }
+}
 </style>
