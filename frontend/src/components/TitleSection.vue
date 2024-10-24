@@ -33,8 +33,23 @@ export default {
 .title-section p {
   font-size: 20px;
   color: #4a4a4a;
-  max-width: 900px;
+  max-width: 500px;
   margin: 0 auto;
   line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .title-section {
+    background-image: 
+    linear-gradient(45deg, #fcc366 10%, transparent 10%, transparent 90%, transparent 90%, transparent),
+    linear-gradient(45deg, transparent 10%, transparent 10%, transparent 90%, #a3c4f3 90%, #a3c4f3);
+  }
+  .title-section h1 {
+    margin-bottom: 15px;
+  }
+  .title-section p {
+    max-width: 300px;
+    text-align: justify;
+  }
 }
 </style>
