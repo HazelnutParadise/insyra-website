@@ -69,7 +69,7 @@ a {
   margin: 0;
   width: auto;
   height: 40px;
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 0px 15px;
   border-radius: 5px;
   margin: 0;
@@ -85,7 +85,7 @@ a {
 }
 
 .nav-menu li a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 }
 

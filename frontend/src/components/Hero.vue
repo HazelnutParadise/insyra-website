@@ -43,7 +43,7 @@ export default {
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background-color: #f4f4f4;
+  background-color: #f5f5f5;
   /* 添加斜線 */
   background-image: 
   /* linear-gradient(-12deg, #adc3e6 20%, transparent 20%, transparent 80%, transparent 80%, transparent), */
@@ -68,7 +68,7 @@ export default {
 .hero button {
   padding: 10px 20px;
   background-color: #d73e3e;
-  color: #fff;
+  color: #ffffff;
   border: none;
   cursor: pointer;
 }
