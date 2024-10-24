@@ -1,7 +1,7 @@
 <template>
   <div class="about-insyra">
     <!-- Title Section -->
-    <TitleSection />
+    <TitleSection :title="currentMessages.AboutInsyra.title" :description="currentMessages.AboutInsyra.description" />
     <div class="container">
       <!-- Why We Created Insyra Section -->
       <section class="why-section card">
@@ -54,6 +54,12 @@ export default {
   name: 'AboutInsyra',
   components: {
     TitleSection,
+  },
+  props: {
+    currentMessages: {
+      type: Object,
+      required: true,
+    },
   },
 };
 </script>

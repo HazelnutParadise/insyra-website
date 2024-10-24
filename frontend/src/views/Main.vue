@@ -4,7 +4,7 @@
       <Hero :currentMessages="currentMessages" />
 
     <!-- Features Section -->
-    <FeatureItemSection :featureItemSection="currentMessages.featureItemSection" />
+    <FeatureItemSection :featureItemSection="currentMessages.Main.featureItemSection" />
     </div>
 </template>
 

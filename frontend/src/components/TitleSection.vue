@@ -1,10 +1,18 @@
 <template>
     <section class="title-section">
-        <h1>What is Insyra?</h1>
-        <p>Insyra is a cutting-edge data analysis tool designed for performance and flexibility. It seamlessly integrates with Python, enabling powerful data processing and analysis with ease.</p>
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
     </section>
 </template>
 
+<script>
+export default {
+    props: {
+        title: String,
+        description: String,
+    },
+};
+</script>
 <style scoped>
 .title-section {
   text-align: center;

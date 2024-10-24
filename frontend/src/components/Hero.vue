@@ -1,19 +1,19 @@
 <template>
   <section class="hero">
-    <h1>{{ currentMessages.hero.title }}</h1>
-    <p>{{ currentMessages.hero.description }}</p>
-    <HeroButton :currentMessages="currentMessages.hero.button.main" :settings="{
+    <h1>{{ currentMessages.Main.hero.title }}</h1>
+    <p>{{ currentMessages.Main.hero.description }}</p>
+    <HeroButton :currentMessages="currentMessages.Main.hero.button.main" :settings="{
       color: '#d73e3e',
       size: 'large',
     }" />
     <br />
     <div class="hero-button-container">
-      <HeroButton :currentMessages="currentMessages.hero.button.secondary1" :settings="{
+      <HeroButton :currentMessages="currentMessages.Main.hero.button.secondary1" :settings="{
         variant: 'tonal',
         color: '#1f449b',
         href: 'https://pkg.go.dev/github.com/HazelnutParadise/insyra',
       }" />
-      <HeroButton :currentMessages="currentMessages.hero.button.secondary2" :settings="{
+      <HeroButton :currentMessages="currentMessages.Main.hero.button.secondary2" :settings="{
         variant: 'outlined',
         color: '#1f449b',
         href: 'https://github.com/HazelnutParadise/insyra',
