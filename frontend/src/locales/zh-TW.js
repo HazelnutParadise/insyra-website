@@ -55,7 +55,7 @@ export const zhTW = {
         },
     },
     AboutInsyra: {
-        title: '什麼是 Insyra',
+        title: 'Insyra 是什麼',
         description: 'Insyra 是 Go 語言的綜合型資料分析工具，無論是日常數據處理還是大規模數據分析，Insyra 都能讓你以更快的速度、更少的程式碼完成任務。',
         whyCreate: {
             title: '為什麼創建 Insyra',
