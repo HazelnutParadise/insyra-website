@@ -126,6 +126,7 @@ h2 {
   width: 33%;
   background-color: #fff4e6;
   border: 1px solid #ffd99e;
+  margin-bottom: 10px;
 }
 
 /* Future Vision Section */
@@ -137,6 +138,14 @@ h2 {
 
 /* Responsive Design */
 @media (max-width: 850px) {
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .philosophy-grid .card {
+    margin: 0;
+  }
+
   .philosophy-grid {
     flex-direction: column;
   }
