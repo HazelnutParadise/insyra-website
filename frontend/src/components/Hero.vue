@@ -1,5 +1,6 @@
 <template>
   <section class="hero">
+    <h2>{{ currentMessages.Main.hero.slogan }}</h2>
     <h1>{{ currentMessages.Main.hero.title }}</h1>
     <p>{{ currentMessages.Main.hero.description }}</p>
     <HeroButton :currentMessages="currentMessages.Main.hero.button.main" :settings="{
@@ -56,6 +57,13 @@ export default {
 .hero h1 {
   font-size: 48px;
   margin-bottom: 20px;
+  color: #1f449b;
+}
+
+.hero h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 5px;
   color: #1f449b;
 }
 

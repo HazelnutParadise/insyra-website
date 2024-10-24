@@ -54,11 +54,7 @@ export default {
       this.toggleMenu();
     },
     selectPage(page) {
-      if (page === 'Main') {
-        window.location.href = '/';
-      } else {
-        window.location.href = `#${page}`;
-      }
+      window.location.href = `#${page}`;
       this.toggleMenu();
     }
   },
@@ -105,7 +101,7 @@ a {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   display: block; /* 確保菜單顯示 */
-  z-index: 99999;
+  z-index: 2;
 }
 
 .menu ul {

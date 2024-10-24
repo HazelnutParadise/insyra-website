@@ -55,8 +55,5 @@ export default {
   margin-right: 20px;
   
 }
-.el-select {
-    z-index: 2;
-}
 
 </style>

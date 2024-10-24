@@ -9,6 +9,7 @@ export const eng = {
     },
     Main: {
         hero: {
+            slogan: 'Fast, Lovely, Easy to Use',
             title: 'Meet Insyra',
             description: 'Powerful data analysis tools, built for the future.',
             button: {

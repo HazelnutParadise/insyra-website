@@ -9,6 +9,7 @@ export const zhTW = {
     },
     Main:{
         hero: {
+            slogan: '太快、太美、太簡單',
             title: '邂逅 Insyra',
             description: '強大的數據分析工具，為未來而生。',
             button: {
