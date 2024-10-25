@@ -19,7 +19,6 @@ export const zhTW = {
             },
         },
         featureItemSection: {
-            title: '功能',
             features: {
                 feature1: {
                     id: 1,
@@ -81,6 +80,14 @@ export const zhTW = {
         futureVision: {
             title: '未來展望',
             description: '我們期望 Insyra 成為資料分析的標配。隨著 Insyra 的成長，我們的目標是讓使用者能在同一個生態系中一條龍完成所有的數據分析工作，無需在多個語言或是工具間來回切換。',
+        },
+    },
+    Features: {
+        title: '功能',
+        description: 'Insyra 提供多樣化的功能，滿足各種資料分析需求。',
+        coreStructures: {
+            title: '核心資料結構',
+            description: 'Insyra 提供兩大核心資料結構，分別是 DataList 和 DataTable。',
         },
     },
 };

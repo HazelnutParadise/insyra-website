@@ -1,10 +1,12 @@
 <template>
   <div class="features-page">
-    <TitleSection title="核心資料結構" description="Insyra 提供兩大核心數據結構，分別是 DataList 和 DataTable。"/>
+    <TitleSection :title="currentMessages.Features.title" :description="currentMessages.Features.description"/>
 
     <!-- 核心資料結構 Section -->
     <section class="core-structures-section">
-      <h2>核心資料結構</h2>
+      <br>
+      <h2>{{ currentMessages.Features.coreStructures.title }}</h2>
+      <p style="text-align: center;">{{ currentMessages.Features.coreStructures.description }}</p>
       <div class="feature-section">
         <div class="feature-box">
           <h3>DataList</h3>
@@ -104,6 +106,12 @@ export default {
       this.$set(this.isOpen, index, !this.isOpen[index]);
     },
   },
+  props: {
+    currentMessages: {
+      type: Object,
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -123,9 +131,8 @@ h1 {
 
 p {
   text-align: center;
-  max-width: 800px;
   margin: 0 auto 30px;
-  color: #555;
+  color: #4a4a4a;
   font-size: 18px;
 }
 
@@ -144,7 +151,7 @@ p {
 
 h2 {
   text-align: center;
-  font-size: 28px;
+  font-size: 32px;
   color: #2e3b55;
   margin-bottom: 20px;
 }

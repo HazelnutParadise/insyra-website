@@ -19,7 +19,6 @@ export const eng = {
             },
         },  
         featureItemSection: {
-            title: 'Features',
             features: {
                 feature1: {
                     id: 1,
