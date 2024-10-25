@@ -11,7 +11,7 @@
       @leave="leave"
     >
       <div v-show="isOpen" class="collapse-content" :style="{ backgroundColor: contentColor }">
-        <div class="content-inner" :style="{ textAlign: alignment }">{{ content }}</div>
+        <div class="content-inner" :style="{ textAlign: alignment }" v-html="content"></div>
       </div>
     </transition>
   </div>
