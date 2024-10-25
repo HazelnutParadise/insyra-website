@@ -1,80 +1,144 @@
 <template>
-  <div class="collapse" :style="{ borderColor: borderColor }">
+  <div class="collapse-container" :style="{ borderColor: borderColor }">
     <div class="collapse-header" @click="toggle" :style="{ backgroundColor: headerColor }">
-      <h3>{{ title }}</h3>
+      {{ title }}
       <span class="toggle-icon" :class="{ 'is-open': isOpen }">▼</span>
     </div>
     <transition
-      name="collapse-transition"
+      name="collapse"
       @enter="enter"
-      @after-enter="afterEnter"
       @leave="leave"
+      @after-enter="afterEnter"
+      @after-leave="afterLeave"
     >
       <div v-show="isOpen" class="collapse-content" :style="{ backgroundColor: contentColor }">
-        <div class="content-inner" :style="{ textAlign: alignment }" v-html="content"></div>
+        <div class="collapse-inner">
+          <div v-if="codeBlock" class="code-block-wrapper">
+            <pre><code ref="codeBlock" :class="codeLanguage">{{ content }}</code></pre>
+            <button @click="copyCode" class="copy-button">複製</button>
+          </div>
+          <div v-else v-html="content"></div>
+        </div>
       </div>
     </transition>
   </div>
 </template>
 
-<script lang="ts" setup>
-import { ref, defineProps } from 'vue'
+<script>
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css'; // 或者選擇其他樣式
 
-// 定義 props
-const props = defineProps<{
-  title: string;
-  content?: string;
-  headerColor?: string;
-  contentColor?: string;
-  borderColor?: string;
-  alignment?: 'left' | 'center' | 'right'; // 新增對齊方式選項
-}>()
-
-const isOpen = ref(false)
-
-const toggle = () => {
-  isOpen.value = !isOpen.value
-}
-
-const enter = (el: HTMLElement) => {
-  el.style.height = 'auto'
-  const height = el.scrollHeight
-  el.style.height = '0px'
-  el.offsetHeight // 觸發重繪
-  el.style.transition = 'height 0.3s ease-out, opacity 0.3s ease-out'
-  el.style.height = height + 'px'
-  el.style.opacity = '1'
-}
-
-const afterEnter = (el: HTMLElement) => {
-  el.style.height = 'auto'
-  el.style.overflow = 'visible'
-}
-
-const leave = (el: HTMLElement) => {
-  el.style.height = el.scrollHeight + 'px'
-  el.offsetHeight // 觸發重繪
-  el.style.transition = 'height 0.3s ease-out, opacity 0.3s ease-out'
-  el.style.height = '0px'
-  el.style.opacity = '0'
+export default {
+  props: {
+    title: String,
+    content: String,
+    headerColor: String,
+    contentColor: String,
+    borderColor: String,
+    alignment: String,
+    codeBlock: Boolean,
+    language: {
+      type: String,
+      default: 'plaintext'
+    }
+  },
+  data() {
+    return {
+      isOpen: false
+    }
+  },
+  computed: {
+    codeLanguage() {
+      return `language-${this.language}`;
+    }
+  },
+  methods: {
+    toggle() {
+      this.isOpen = !this.isOpen
+    },
+    enter(element) {
+      const height = element.scrollHeight;
+      element.style.height = '0px';
+      setTimeout(() => {
+        element.style.height = height + 'px';
+      }, 0);
+    },
+    afterEnter(element) {
+      element.style.height = 'auto';
+      if (this.codeBlock) {
+        this.$nextTick(() => {
+          hljs.highlightElement(this.$refs.codeBlock);
+        });
+      }
+    },
+    leave(element) {
+      const height = element.scrollHeight;
+      element.style.height = height + 'px';
+      setTimeout(() => {
+        element.style.height = '0px';
+      }, 0);
+    },
+    afterLeave(element) {
+      element.style.height = null;
+    },
+    copyCode() {
+      const codeElement = this.$refs.codeBlock;
+      const range = document.createRange();
+      range.selectNode(codeElement);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      alert('代碼已複製到剪貼板');
+    }
+  }
 }
 </script>
 
 <style scoped>
-.collapse {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin: 10px 0;
-  overflow: hidden;
+.collapse-container {
+  border: 1px solid;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 .collapse-header {
+  padding: 10px;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
+}
+
+.collapse-content {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.collapse-inner {
   padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+}
+
+.collapse-inner pre {
+  white-space: pre;
+  overflow-x: auto;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.collapse-content pre {
+  white-space: pre;
+  overflow-x: auto;
+  text-align: left;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.collapse-content code {
+  font-family: monospace;
+  font-size: 14px;
+  color: black;
 }
 
 .toggle-icon {
@@ -86,27 +150,36 @@ const leave = (el: HTMLElement) => {
   transform: rotate(180deg);
 }
 
-.collapse-content {
+/* 動畫相關樣式 */
+.collapse-enter-active,
+.collapse-leave-active {
+  transition: height 0.3s ease-out;
   overflow: hidden;
-  transition: height 0.3s ease-out, opacity 0.3s ease-out;
-  opacity: 0;
+}
+
+.collapse-enter-from,
+.collapse-leave-to {
   height: 0;
 }
 
-.content-inner {
-  padding: 10px;
-  color: #333;
+.code-block-wrapper {
+  position: relative;
 }
 
-.collapse-transition-enter-active,
-.collapse-transition-leave-active {
-  transition: height 0.3s ease-out, opacity 0.3s ease-out;
-  overflow: hidden;
+.copy-button {
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
-.collapse-transition-enter-from,
-.collapse-transition-leave-to {
-  height: 0 !important;
-  opacity: 0;
+.copy-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* 確保代碼塊內的文字顏色正確 */
+:deep(pre code) {
+  color: inherit;
 }
 </style>

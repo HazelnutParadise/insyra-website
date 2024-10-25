@@ -10,19 +10,22 @@
       <div class="feature-section">
         <div class="feature-box">
           <h3>DataList</h3>
-          <p>DataList 是 Insyra 中的基本結構，用於處理單一維度的數據，具備快速檢索、篩選、分組和運算的能力。</p>
+          <p>{{ currentMessages.Features.coreStructures.dataList.description }}</p>
           <Collapse 
-            title="DataList" 
-            content="DataList 是 Insyra 中的基本結構，用於處理單一維度的數據，具備快速檢索、篩選、分組和運算的能力." 
+            :title="currentMessages.Features.coreStructures.dataList.collapse.title" 
+            :content="currentMessages.Features.coreStructures.dataList.collapse.content"
             headerColor="#1f449b" 
             contentColor="#e6f0ff"  
             borderColor="#1f449b"
-            alignment="left" />
+            alignment="left"
+            :codeBlock="true" 
+            language="go"
+            />
           <a href="/docs/core-structures/datalist">了解更多</a>
         </div>
         <div class="feature-box">
           <h3>DataTable</h3>
-          <p>DataTable 提供類似表格的結構設計，適合進行多維數據的處理，具備強大的資料篩選、整合與計算功能。</p>
+          <p>{{ currentMessages.Features.coreStructures.dataTable.description }}</p>
           <Collapse 
             title="DataTable" 
             content="DataTable 提供類似表格的結構設計，適合進行多維數據處理，具備強大的資料篩選、整合與計算功能." 
@@ -170,9 +173,8 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 25px;
+  overflow: hidden; /* 防止內容溢出 */
 }
-
-
 
 .feature-box h3 {
   color: #2e3b55;
@@ -180,7 +182,14 @@ h2 {
   margin-bottom: 10px;
 }
 
+/* 新增以下樣式 */
+:deep(.collapse-content) {
+  color: black; /* 確保摺疊內容的文字為黑色 */
+}
 
+:deep(.collapse-content pre) {
+  margin-bottom: 20px; /* 為滾動條提供額外空間 */
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {

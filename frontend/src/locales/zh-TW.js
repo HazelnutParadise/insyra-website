@@ -88,6 +88,16 @@ export const zhTW = {
         coreStructures: {
             title: '核心資料結構',
             description: 'Insyra 提供兩大核心資料結構，分別是 DataList 和 DataTable。',
+            dataList: {
+                description: 'DataList 是 Insyra 中的基礎結構，用於處理單一維度資料，具備快速檢索、資料清理和簡單統計值計算的能力。',
+                collapse: {
+                    title: '程式碼範例',
+                    content: `import pandas as pd\n\n# 讀取 CSV 檔案\ndata = pd.read_csv('data.csv')`,
+                },
+            },
+            dataTable: {
+                description: 'DataTable 提供類似表格的結構設計，適合進行多維數據處理，具備強大的資料篩選、整合與計算功能。',
+            },
         },
     },
 };
