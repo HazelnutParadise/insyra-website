@@ -12,9 +12,9 @@
           <Collapse 
             title="DataList" 
             content="DataList 是 Insyra 中的基本結構，用於處理單一維度的數據，具備快速檢索、篩選、分組和運算的能力." 
-            headerColor="#007bff" 
-            contentColor="rgba(0, 123, 255, 0.1)"  
-            borderColor="#007bff"
+            headerColor="#1f449b" 
+            contentColor="#e6f0ff"  
+            borderColor="#1f449b"
             alignment="left" />
           <a href="/docs/core-structures/datalist">了解更多</a>
         </div>
@@ -24,9 +24,9 @@
           <Collapse 
             title="DataTable" 
             content="DataTable 提供類似表格的結構設計，適合進行多維數據處理，具備強大的資料篩選、整合與計算功能." 
-            headerColor="#007bff" 
-            contentColor="rgba(0, 123, 255, 0.1)" 
-            borderColor="#007bff"
+            headerColor="#1f449b" 
+            contentColor="#e6f0ff" 
+            borderColor="#1f449b"
             alignment="left" />
           <a href="/docs/core-structures/datatable">了解更多</a>
         </div>
@@ -215,7 +215,6 @@ p {
   margin: 0 auto;
   border-radius: 10px;
   background-color: #f7f7f7;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .tabs {
@@ -242,13 +241,13 @@ p {
 }
 
 .tabs button.active {
-  background-color: #2e3b55;
+  background-color: #1f449b;
   color: white;
 }
 
 .tabs button:hover {
   border-radius: 0px;
-  background-color: #a2d5ab;
+  background-color: #a3c4f3;
   color: #2e3b55;
 }
 
@@ -274,7 +273,7 @@ p {
 .panel button {
   padding: 8px 15px;
   border: none;
-  background: #2e3b55;
+  background: #1f449b;
   color: white;
   cursor: pointer;
   font-size: 14px;
