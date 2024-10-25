@@ -32,87 +32,64 @@
         </div>
       </div>
     </section>
-
+    <br>
     <!-- 套件包 Section -->
     <section class="tabs-section">
       <h2>套件包功能展示</h2>
-      <div class="tabs-container">
-        <!-- Left-Side Tabs -->
-        <div class="tabs">
-          <button 
-            v-for="(tab, index) in tabs" 
-            :key="index" 
-            @click="activeTab = index" 
-            :class="{ active: activeTab === index }">
-            {{ tab.name }}
-          </button>
-        </div>
-
-        <!-- Tab Content on the Right -->
-        <div class="tab-content">
-          <div v-for="(tab, index) in tabs" :key="index" v-show="activeTab === index">
-            <h3>{{ tab.name }} 功能</h3>
-            <p>{{ tab.description }}</p>
-
-            <!-- Expandable Panel for Code Examples -->
-            <div class="panel">
-              <button @click="togglePanel(index)">
-                {{ isOpen[index] ? '收合範例代碼' : '顯示範例代碼' }}
-              </button>
-              <div v-show="isOpen[index]" class="code-example">
-                <pre>{{ tab.codeExample }}</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Tabs :tabs="tabs" />
     </section>
+    <br>
   </div>
 </template>
 
 <script>
 import TitleSection from '../components/TitleSection.vue';
 import Collapse from '../components/Collapse.vue';
+import Tabs from '../components/Tabs.vue';
 
 export default {
   name: 'Features',
   data() {
     return {
-      activeTab: 0,
       isOpen: {},
       tabs: [
         {
           name: 'sliceutil 套件包',
-          description: '提供數組操作工具，包括分割、排序、唯一值篩選等。',
-          codeExample: `
-          // SliceUtil - 獲取唯一值範例代碼
-          import { unique } from 'insyra/sliceutil';
-
-          const data = [1, 2, 2, 3, 4];
-          const uniqueData = unique(data); // 結果：[1, 2, 3, 4]
-          `,
+          descriptions: {
+            first: '提供數組操作工具，包括分割、排序、唯一值篩選等。',
+          }
         },
         {
           name: 'maputil 套件包',
-          description: '提供字典操作工具，例如鍵值對篩選、合併和查找。',
-          codeExample: `
-          // MapUtil - 範例代碼
-          import { filterKeys } from 'insyra/maputil';
-
-          const data = { a: 1, b: 2, c: 3 };
-          const filteredData = filterKeys(data, (key) => key !== 'b'); // 結果：{ a: 1, c: 3 }
-          `,
+          descriptions: {
+            first4: '提供字典操作工具1，例如鍵值對篩選、合併和查找。',
+            second: '提供字典操作工具，例如鍵值對篩選、合併和查找。',
+          },
+          collapses: {
+            second: {
+              title: 'MapUtil',
+              content: '提供字典操作工具1，例如鍵值對篩選、合併和查找。',
+              headerColor: '#1f449b',
+              contentColor: '#e6f0ff',
+              borderColor: '#1f449b',
+              alignment: 'left',
+            },
+            second3: {
+              title: 'MapUtil2',
+              content: '提供字典操作工具，例如鍵值對篩選、合併和查找。',
+              headerColor: '#1f449b',
+              contentColor: '#e6f0ff',
+              borderColor: '#1f449b',
+              alignment: 'left',
+            },
+          },
         },
         {
           name: 'conv 套件包',
-          description: '提供數據格式轉換工具，用於轉換類型和格式。',
-          codeExample: `
-          // ConvUtil - 範例代碼
-          import { toString } from 'insyra/conv';
+          descriptions: {
+            first: '提供數據格式轉換工具，用於轉換類型和格式。',
+          },
 
-          const data = 123;
-          const stringData = toString(data); // 結果："123"
-          `,
         },
       ],
     };
@@ -120,6 +97,7 @@ export default {
   components: {
     TitleSection,
     Collapse,
+    Tabs,
   },
   methods: {
     togglePanel(index) {
@@ -164,10 +142,10 @@ p {
   text-decoration: underline;
 }
 
-.core-structures-section h2 {
+h2 {
   text-align: center;
   font-size: 28px;
-  color: #333;
+  color: #2e3b55;
   margin-bottom: 20px;
 }
 
@@ -195,132 +173,12 @@ p {
   margin-bottom: 10px;
 }
 
-/* 左側 Tabs 樣式 */
-.tabs-section {
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 40px;
-}
 
-.tabs-section h2 {
-  text-align: center;
-  font-size: 28px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.tabs-container {
-  display: flex;
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 10px;
-  background-color: #f7f7f7;
-}
-
-.tabs {
-  display: flex;
-  flex-direction: column;
-  padding: 15px 0;
-  background: #e6e6e6;
-  border-radius: 10px 0 0 10px;
-  min-width: 180px;
-}
-
-.tabs button {
-  padding: 12px 12px;
-  border: none;
-  border-radius: 0px;
-  background: none;
-  color: #2e3b55;
-  text-align: left;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  transition: background-color 0.3s, color 0.3s;
-  width: 100%;
-}
-
-.tabs button.active {
-  background-color: #1f449b;
-  color: white;
-}
-
-.tabs button:hover {
-  border-radius: 0px;
-  background-color: #a3c4f3;
-  color: #2e3b55;
-}
-
-/* Tab Content 樣式 */
-.tab-content {
-  flex: 1;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 0 10px 10px 0;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.tab-content h3 {
-  color: #2e3b55;
-  font-size: 22px;
-  margin-top: 10px;
-}
-
-.panel {
-  margin-top: 15px;
-}
-
-.panel button {
-  padding: 8px 15px;
-  border: none;
-  background: #1f449b;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.code-example {
-  background: #f8f8f8;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 8px;
-  font-family: monospace;
-  white-space: pre-wrap;
-  font-size: 14px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .feature-section {
     flex-direction: column;
-  }
-
-  .tabs-container {
-    flex-direction: column;
-  }
-
-  .tabs {
-    flex-direction: row;
-    border-radius: 0;
-    padding: 10px;
-    padding-bottom: 0;
-    justify-content: space-around;
-  }
-
-  .tabs button {
-    border-radius: 10px 10px 0 0;
-    text-align: center;
-  }
-
-  .tabs button:hover {
-    border-radius: 10px 10px 0 0;
-  }
-
-  .tab-content {
-    border-radius: 0;
   }
 }
 </style>
