@@ -15,6 +15,11 @@ export default {
 </script>
 <style scoped>
 .title-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
   text-align: center;
   padding: 60px 20px;
   background-color: #f5f5f5;
