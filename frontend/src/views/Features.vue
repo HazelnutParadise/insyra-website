@@ -148,7 +148,7 @@ p {
   max-width: 800px;
   margin: 0 auto 30px;
   color: #555;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* 核心資料結構區段樣式 */
