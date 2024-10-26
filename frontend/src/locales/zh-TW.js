@@ -89,14 +89,62 @@ export const zhTW = {
             title: '核心資料結構',
             description: 'Insyra 提供兩大核心資料結構，分別是 DataList 和 DataTable。',
             dataList: {
-                description: 'DataList 是 Insyra 中的基礎結構，用於處理單一維度資料，具備快速檢索、資料清理和簡單統計值計算的能力。',
+                description: 'DataList 是 Insyra 中的基礎結構，用於處理單一維度資料，具備快速檢索、資料清理、資料型態轉換和簡單統計值計算的能力。',
                 collapse: {
-                    title: '程式碼範例',
-                    content: `import pandas as pd\n\n# 讀取 CSV 檔案\ndata = pd.read_csv('data.csv')`,
+                    title: '使用範例',
+                    content: 
+`package main
+
+// 引入 Insyra 主套件
+import (
+    "fmt"
+    "github.com/HazelnutParadise/insyra"
+)
+
+func main() {
+    // 建立 DataList 實例
+    dl := insyra.NewDataList(1, 2, 3, 4, 5)
+
+    // 計算並印出平均值
+    fmt.Println("平均值:", dl.Mean())
+}`,
+                    copyButtonText: '複製',
+                },
+                doc: {
+                    title: 'DataList 說明文件',
+                    link: 'https://github.com/HazelnutParadise/insyra/blob/main/Docs/DataList.md',
                 },
             },
             dataTable: {
-                description: 'DataTable 提供類似表格的結構設計，適合進行多維數據處理，具備強大的資料篩選、整合與計算功能。',
+                description: 'DataTable 是一個類似表格的二維結構，具備多種數據操作、篩選、查詢和顯示方法。DataTable 基於 DataList 打造，提供一致的使用體驗。',
+                collapse: {
+                    title: '使用範例',
+                    content: 
+`package main
+
+// 引入 Insyra 主套件
+import (
+    "github.com/HazelnutParadise/insyra"
+)
+
+func main() {
+    // 建立 DataList 實例
+    students := insyra.NewDataList("Jane", "Jim", "John")
+    ages := insyra.NewDataList(22, 21, 23)
+    scores := insyra.NewDataList(90, 88, 95)
+
+    // 建立 DataTable 實例
+    dt := insyra.NewDataTable(students, ages, scores)
+
+    // 印出 DataTable
+    dt.Show()
+}`,
+                    copyButtonText: '複製',
+                },
+                doc: {
+                    title: 'DataTable 說明文件',
+                    link: 'https://github.com/HazelnutParadise/insyra/blob/main/Docs/DataTable.md',
+                },
             },
         },
     },

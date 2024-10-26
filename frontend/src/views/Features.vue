@@ -19,21 +19,26 @@
             borderColor="#1f449b"
             alignment="left"
             :codeBlock="true" 
+            :copyButtonText="currentMessages.Features.coreStructures.dataList.collapse.copyButtonText"
             language="go"
             />
-          <a href="/docs/core-structures/datalist">了解更多</a>
+          <a :href="currentMessages.Features.coreStructures.dataList.doc.link">{{ currentMessages.Features.coreStructures.dataList.doc.title }}</a>
         </div>
         <div class="feature-box">
           <h3>DataTable</h3>
           <p>{{ currentMessages.Features.coreStructures.dataTable.description }}</p>
           <Collapse 
-            title="DataTable" 
-            content="DataTable 提供類似表格的結構設計，適合進行多維數據處理，具備強大的資料篩選、整合與計算功能." 
+            :title="currentMessages.Features.coreStructures.dataTable.collapse.title" 
+            :content="currentMessages.Features.coreStructures.dataTable.collapse.content"
             headerColor="#1f449b" 
             contentColor="#e6f0ff" 
             borderColor="#1f449b"
-            alignment="left" />
-          <a href="/docs/core-structures/datatable">了解更多</a>
+            alignment="left"
+            :codeBlock="true"
+            :copyButtonText="currentMessages.Features.coreStructures.dataTable.collapse.copyButtonText"
+            language="go"
+            />
+          <a :href="currentMessages.Features.coreStructures.dataTable.doc.link">{{ currentMessages.Features.coreStructures.dataTable.doc.title }}</a>
         </div>
       </div>
     </section>

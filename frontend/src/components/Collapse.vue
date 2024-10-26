@@ -15,7 +15,10 @@
         <div class="collapse-inner">
           <div v-if="codeBlock" class="code-block-wrapper">
             <pre><code ref="codeBlock" :class="codeLanguage">{{ content }}</code></pre>
-            <button @click="copyCode" class="copy-button">複製</button>
+            <button @click="copyCode" class="copy-button">
+              <span v-if="copied" class="checkmark">✓</span>
+              {{ copyButtonText }}
+            </button>
           </div>
           <div v-else v-html="content"></div>
         </div>
@@ -26,7 +29,7 @@
 
 <script>
 import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css'; // 或者選擇其他樣式
+import 'highlight.js/styles/github.css';
 
 export default {
   props: {
@@ -37,6 +40,7 @@ export default {
     borderColor: String,
     alignment: String,
     codeBlock: Boolean,
+    copyButtonText: String,
     language: {
       type: String,
       default: 'plaintext'
@@ -44,7 +48,8 @@ export default {
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      copied: false
     }
   },
   computed: {
@@ -81,15 +86,19 @@ export default {
     afterLeave(element) {
       element.style.height = null;
     },
-    copyCode() {
-      const codeElement = this.$refs.codeBlock;
-      const range = document.createRange();
-      range.selectNode(codeElement);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
-      document.execCommand('copy');
-      window.getSelection().removeAllRanges();
-      alert('代碼已複製到剪貼板');
+    async copyCode() {
+      try {
+        const codeElement = this.$refs.codeBlock;
+        await navigator.clipboard.writeText(codeElement.textContent);
+        
+        // 顯示勾勾並在1秒後恢復
+        this.copied = true;
+        setTimeout(() => {
+          this.copied = false;
+        }, 1000);
+      } catch (err) {
+        console.error('無法複製文字: ', err);
+      }
     }
   }
 }
@@ -132,7 +141,7 @@ export default {
   overflow-x: auto;
   text-align: left;
   margin: 0;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
 }
 
 .collapse-content code {
@@ -172,10 +181,18 @@ export default {
   border: 1px solid #ddd;
   border-radius: 3px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .copy-button:hover {
   background-color: #e0e0e0;
+}
+
+.checkmark {
+  margin-right: 5px;
+  color: #1f449b;
+  font-weight: bolder;
 }
 
 /* 確保代碼塊內的文字顏色正確 */

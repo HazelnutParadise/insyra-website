@@ -81,5 +81,71 @@ export const eng = {
             title: 'Our Future Vision',
             description: 'We envision Insyra becoming a go-to tool for data analysts, expanding its capabilities to support more advanced data manipulation, visualization, and machine learning. As Insyra grows, our goal is to enable users to complete all data analysis tasks within the same ecosystem, without switching between multiple languages or tools.',
         },
-    }
+    },
+    Features: {
+        title: 'Features',
+        description: 'Insyra provides a variety of powerful features to meet your data analysis needs.',
+        coreStructures: {
+            title: 'Core Structures',
+            description: 'DataList and DataTable are the core structures of Insyra, used to process single-dimensional and multi-dimensional data respectively.',
+            dataList: {
+                description: 'DataList is the foundation of Insyra, used to process single-dimensional data. It has the ability to quickly retrieve data, clean data, convert data types, and calculate simple statistical values.',
+                collapse: {
+                    title: 'DataList',
+                    content:
+`package main
+
+// import Insyra main package
+import (
+    "fmt"
+    "github.com/HazelnutParadise/insyra"
+)
+
+func main() {
+    // Create DataList instance
+    dl := insyra.NewDataList(1, 2, 3, 4, 5)
+
+    // Calculate and print the mean value
+    fmt.Println("Mean value:", dl.Mean())
+}`,
+                    copyButtonText: 'Copy',
+                },
+                doc: {
+                    title: 'DataList Documentation',
+                    link: 'https://github.com/HazelnutParadise/insyra/blob/main/Docs/DataList.md',
+                },
+            },
+            dataTable: {
+                description: 'DataTable is used to process multi-dimensional data. It can handle data from different sources and perform various operations, such as filtering, sorting, and calculating statistical values.',
+                collapse: {
+                    title: 'DataTable',
+                    content:
+`package main
+
+// import Insyra main package
+import (
+    "github.com/HazelnutParadise/insyra"
+)
+
+func main() {
+    // Create DataList instance
+    students := insyra.NewDataList("Jane", "Jim", "John")
+    ages := insyra.NewDataList(22, 21, 23)
+    scores := insyra.NewDataList(90, 88, 95)
+
+    // Create DataTable instance
+    dt := insyra.NewDataTable(students, ages, scores)
+
+    // Print DataTable
+    dt.Show()
+}`,
+                    copyButtonText: 'Copy',
+                },
+                doc: {
+                    title: 'DataTable Documentation',
+                    link: 'https://github.com/HazelnutParadise/insyra/blob/main/Docs/DataTable.md',
+                },
+            },
+        },
+    },
 };
