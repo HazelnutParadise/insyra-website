@@ -85,9 +85,22 @@ export const eng = {
     Features: {
         title: 'Features',
         description: 'Insyra provides a variety of powerful features to meet your data analysis needs.',
+        readDocs: {
+            title: 'Welcome to Visit Our Documentation',
+            description: 'Insyra is designed to be easy to use without needing to read the documentation. You can fully rely on the auto-completion feature of your editor to operate. However, if you want to learn more details, our documentation on GitHub provides detailed information and examples.<br/><br/>GoDoc is also available for those who prefer a more concise and Go-like documentation style.',
+            docsButton: {
+                docs: {
+                    title: 'Documentation on GitHub',
+                    link: 'https://github.com/HazelnutParadise/insyra/blob/main/README.md',
+                },
+                goDoc: {
+                    title: 'GoDoc',
+                    link: 'https://pkg.go.dev/github.com/HazelnutParadise/insyra',
+                },
+            },
+        },
         coreStructures: {
             title: 'Core Structures',
-            description: 'DataList and DataTable are the core structures of Insyra, used to process single-dimensional and multi-dimensional data respectively.',
             dataList: {
                 description: 'DataList is the foundation of Insyra, used to process single-dimensional data. It has the ability to quickly retrieve data, clean data, convert data types, and calculate simple statistical values.',
                 collapse: {

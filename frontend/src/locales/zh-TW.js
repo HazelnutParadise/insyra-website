@@ -87,10 +87,10 @@ export const zhTW = {
         description: 'Insyra 提供多樣化的功能，滿足各種資料分析需求。',
         readDocs: {
             title: '邀請您閱讀我們的說明文件',
-            description: 'Insyra 設計為無需查看說明也能輕鬆學會如何使用，您可以完全依賴編輯器的自動完成功能來操作。但如果您想知道更多細節，我們位於 GitHub 的說明文件詳細記載了所有功能與使用方式。若您更喜歡註解即文檔的 Go 語言風格，也可以查看 GoDoc。',
+            description: 'Insyra 設計為無需查看說明也能輕鬆學會如何使用，您可以完全依賴編輯器的自動完成功能來操作。但如果您想知道更多細節，我們位於 GitHub 的說明文件詳細記載了所有功能與使用方式。<br/><br/>若您更喜歡註解即文檔的 Go 語言風格，也可以查看 GoDoc。',
             docsButton: {
                 docs: {
-                    title: 'GitHub',
+                    title: 'GitHub 上的說明文件',
                     link: 'https://github.com/HazelnutParadise/insyra/blob/main/README_TW.md',
                 },
                 goDoc: {
@@ -160,6 +160,17 @@ func main() {
                     link: 'https://github.com/HazelnutParadise/insyra/blob/main/Docs/DataTable.md',
                 },
             },
+        },
+        packagesSection: {
+            title: '子套件包',
+            packages: [
+                {
+                  name: 'sliceutil 套件包',
+                  descriptions: {
+                    first: '提供數組操作工具，包括分割、排序、唯一值篩選等。',
+                  }
+                },
+            ],
         },
     },
 };

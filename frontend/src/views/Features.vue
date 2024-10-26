@@ -1,10 +1,9 @@
 <template>
   <div class="features-page">
     <TitleSection :title="currentMessages.Features.title" :description="currentMessages.Features.description"/>
-
     <div class="read-docs-section">
       <h2>{{ currentMessages.Features.readDocs.title }}</h2>
-      <p>{{ currentMessages.Features.readDocs.description }}</p>
+      <p v-html="currentMessages.Features.readDocs.description"></p>
       <div class="docs-buttons">
         <a :href="currentMessages.Features.readDocs.docsButton.docs.link" target="_blank" rel="noopener noreferrer" class="docs-button">
           <i class="fa fa-github" style="color:#fff"></i>
@@ -18,7 +17,6 @@
     </div>
     <!-- 核心資料結構 Section -->
     <section class="core-structures-section">
-      <br>
       <h2>{{ currentMessages.Features.coreStructures.title }}</h2>
       <p style="text-align: center;">{{ currentMessages.Features.coreStructures.description }}</p>
       <div class="feature-section">
@@ -59,7 +57,7 @@
     <br>
     <!-- 套件包 Section -->
     <section class="tabs-section">
-      <h2>套件包功能展示</h2>
+      <h2>{{ currentMessages.Features.packagesSection.title }}</h2>
       <Tabs :tabs="tabs" />
     </section>
     <br>
@@ -76,46 +74,7 @@ export default {
   data() {
     return {
       isOpen: {},
-      tabs: [
-        {
-          name: 'sliceutil 套件包',
-          descriptions: {
-            first: '提供數組操作工具，包括分割、排序、唯一值篩選等。',
-          }
-        },
-        {
-          name: 'maputil 套件包',
-          descriptions: {
-            first4: '提供字典操作工具1，例如鍵值對篩選、合併和查找。',
-            second: '提供字典操作工具，例如鍵值對篩選、合併和查找。',
-          },
-          collapses: {
-            second: {
-              title: 'MapUtil',
-              content: '提供字典操作工具1，例如鍵值對篩選、合併和查找。',
-              headerColor: '#1f449b',
-              contentColor: '#e6f0ff',
-              borderColor: '#1f449b',
-              alignment: 'left',
-            },
-            second3: {
-              title: 'MapUtil2',
-              content: '提供字典操作工具，例如鍵值對篩選、合併和查找。',
-              headerColor: '#1f449b',
-              contentColor: '#e6f0ff',
-              borderColor: '#1f449b',
-              alignment: 'left',
-            },
-          },
-        },
-        {
-          name: 'conv 套件包',
-          descriptions: {
-            first: '提供數據格式轉換工具，用於轉換類型和格式。',
-          },
-
-        },
-      ],
+      tabs: this.currentMessages.Features.packagesSection.packages,
     };
   },
   components: {
@@ -152,7 +111,7 @@ h1 {
 }
 
 p {
-  text-align: center;
+  text-align: start;
   margin: 0 auto 30px;
   color: #4a4a4a;
   font-size: 18px;
@@ -163,9 +122,6 @@ p {
   padding: 20px;
 }
 
-.core-structures-section p {
-  text-align: justify;
-}
 
 .core-structures-section a:hover {
   text-decoration: underline;
@@ -234,7 +190,6 @@ h2 {
 }
 
 .read-docs-section p {
-  text-align: justify;
   padding: 0 10px;
 }
 
