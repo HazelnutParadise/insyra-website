@@ -2,6 +2,20 @@
   <div class="features-page">
     <TitleSection :title="currentMessages.Features.title" :description="currentMessages.Features.description"/>
 
+    <div class="read-docs-section">
+      <h2>{{ currentMessages.Features.readDocs.title }}</h2>
+      <p>{{ currentMessages.Features.readDocs.description }}</p>
+      <div class="docs-buttons">
+        <a :href="currentMessages.Features.readDocs.docsButton.docs.link" target="_blank" rel="noopener noreferrer" class="docs-button">
+          <i class="fa fa-github" style="color:#fff"></i>
+          {{ currentMessages.Features.readDocs.docsButton.docs.title }}
+        </a>
+        <a :href="currentMessages.Features.readDocs.docsButton.goDoc.link" target="_blank" rel="noopener noreferrer" class="docs-button">
+          <i class="fa fa-code" style="color:#fff"></i>
+          {{ currentMessages.Features.readDocs.docsButton.goDoc.title }}
+        </a>
+      </div>
+    </div>
     <!-- 核心資料結構 Section -->
     <section class="core-structures-section">
       <br>
@@ -200,6 +214,72 @@ h2 {
 @media (max-width: 768px) {
   .feature-section {
     flex-direction: column;
+  }
+}
+
+.read-docs-section {
+  background-color: #fff4e6;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 800px;
+  border: 1px solid #fcc366;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.read-docs-section h2 {
+  color: #2e3b55;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.read-docs-section p {
+  text-align: justify;
+  padding: 0 10px;
+}
+
+.docs-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.docs-button {
+  display: inline-flex;
+  align-items: baseline;
+  padding: 10px 20px;
+  background-color: #f9ac41;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.docs-button:hover {
+  background-color: #fcc366;
+}
+
+.docs-button i {
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .read-docs-section {
+    padding: 30px;
+    margin: 20px 10px;
+  }
+
+  .docs-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .docs-button {
+    width: 100%;
+    justify-content: center;
   }
 }
 </style>

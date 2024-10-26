@@ -85,6 +85,20 @@ export const zhTW = {
     Features: {
         title: '功能',
         description: 'Insyra 提供多樣化的功能，滿足各種資料分析需求。',
+        readDocs: {
+            title: '邀請您閱讀我們的說明文件',
+            description: 'Insyra 設計為無需查看說明也能輕鬆學會如何使用，您可以完全依賴編輯器的自動完成功能來操作。但如果您想知道更多細節，我們位於 GitHub 的說明文件詳細記載了所有功能與使用方式。若您更喜歡註解即文檔的 Go 語言風格，也可以查看 GoDoc。',
+            docsButton: {
+                docs: {
+                    title: 'GitHub',
+                    link: 'https://github.com/HazelnutParadise/insyra/blob/main/README_TW.md',
+                },
+                goDoc: {
+                    title: 'GoDoc',
+                    link: 'https://pkg.go.dev/github.com/HazelnutParadise/insyra',
+                },
+            },
+        },
         coreStructures: {
             title: '核心資料結構',
             description: 'Insyra 提供兩大核心資料結構，分別是 DataList 和 DataTable。',
