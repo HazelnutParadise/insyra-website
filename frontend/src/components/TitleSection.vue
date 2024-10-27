@@ -45,6 +45,7 @@ export default {
 
 @media (max-width: 768px) {
   .title-section {
+    height: 350px;
     background-image: 
     linear-gradient(45deg, #fcc366 10%, transparent 10%, transparent 90%, transparent 90%, transparent),
     linear-gradient(45deg, transparent 10%, transparent 10%, transparent 90%, #a3c4f3 90%, #a3c4f3);
@@ -54,7 +55,7 @@ export default {
   }
   .title-section p {
     max-width: 300px;
-    text-align: justify;
+    text-align: start;
   }
 }
 </style>
