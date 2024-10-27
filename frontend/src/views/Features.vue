@@ -34,7 +34,7 @@
             :copyButtonText="currentMessages.Features.coreStructures.dataList.collapse.copyButtonText"
             codeLanguage="go"
             />
-          <a :href="currentMessages.Features.coreStructures.dataList.doc.link">{{ currentMessages.Features.coreStructures.dataList.doc.title }}</a>
+          <a :href="currentMessages.Features.coreStructures.dataList.doc.link" class="a-link">{{ currentMessages.Features.coreStructures.dataList.doc.title }}</a>
         </div>
         <div class="feature-box">
           <h3>DataTable</h3>
@@ -50,7 +50,7 @@
             :copyButtonText="currentMessages.Features.coreStructures.dataTable.collapse.copyButtonText"
             codeLanguage="go"
             />
-          <a :href="currentMessages.Features.coreStructures.dataTable.doc.link">{{ currentMessages.Features.coreStructures.dataTable.doc.title }}</a>
+          <a :href="currentMessages.Features.coreStructures.dataTable.doc.link" class="a-link">{{ currentMessages.Features.coreStructures.dataTable.doc.title }}</a>
         </div>
       </div>
     </section>
@@ -134,11 +134,6 @@ p {
 /* 核心資料結構區段樣式 */
 .core-structures-section {
   padding: 20px;
-}
-
-
-.core-structures-section a:hover {
-  text-decoration: underline;
 }
 
 h2 {
@@ -252,7 +247,6 @@ h2 {
   }
 }
 </style>
-
 
 
 
