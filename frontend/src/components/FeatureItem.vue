@@ -8,20 +8,8 @@
             </div>
 
             <div class="card-actions">
-                <button class="learn-more" @click="reveal = true" v-html="feature.learnMore"></button>
+                <a class="learn-more" :href="feature.learnMore.href" v-html="feature.learnMore.text"></a>
             </div>
-
-            <transition name="fade">
-                <div v-if="reveal" class="card-expanded">
-                    <div class="expanded-content">
-                        <p class="origin-title">Origin</p>
-                        <p class="description">{{ feature.description }}</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="close" @click="reveal = false">Close</button>
-                    </div>
-                </div>
-            </transition>
         </div>
     </div>
 </template>
@@ -57,6 +45,10 @@ export default {
     border-radius: 20px; /* 更大的圓角 */
     background-color: #ffffff; /* 背景顏色 */
     overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .card:hover {
@@ -84,25 +76,28 @@ export default {
 .card-actions {
     padding: 8px;
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .learn-more {
-    width: 100%;
-}
-
-.learn-more, .close {
-    background-color: #ff4081; /* 按鈕顏色 */
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ff4081;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px; /* 增加按鈕內邊距 */
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* 增加變形效果 */
+    transition: background-color 0.3s, transform 0.3s;
+    word-break: break-word;
+    text-align: center;
+    min-width: 120px;
 }
 
-.learn-more:hover, .close:hover {
-    background-color: #e91e63; /* 懸停時的顏色 */
-    transform: scale(1.05); /* 懸停時放大 */
+.learn-more:hover {
+    background-color: #e91e63;
+    transform: scale(1.05);
 }
 
 .card-expanded {
