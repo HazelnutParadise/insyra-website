@@ -339,7 +339,53 @@ func main() {
                             copyButtonText: '複製',
                         },
                     },
-                }
+                },
+                {
+                    name: 'lpgen (線性規劃模型生成)',
+                    descriptions: {
+                        first:
+`提供線性規劃模型的生成功能，能夠輕鬆建立線性規劃模型，並且可以儲存成 <strong>.lp</strong> 檔案供求解軟體使用。`,
+                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lpgen.md">lpgen 套件包說明文件</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: '使用範例',
+                            content:
+`package main
+
+import (
+	"github.com/HazelnutParadise/insyra/lpgen"
+)
+
+func main() {
+	// 建立線性規劃模型
+	lpModel := lpgen.NewLPModel()
+
+	// 設定目標函數為最大化
+	lpModel.SetObjective("Maximize", "3 x1 + 4 x2")
+
+	// 新增約束條件
+	lpModel.AddConstraint("2 x1 + 3 x2 <= 20")
+	lpModel.AddConstraint("4 x1 + 2 x2 <= 30")
+
+	// 新增變數的界限
+	lpModel.AddBound("0 <= x1 <= 10")
+	lpModel.AddBound("0 <= x2 <= 10")
+
+	// 新增整數和二元變數
+	lpModel.AddIntegerVar("x1")
+	lpModel.AddBinaryVar("x2")
+
+	// 生成 LP 檔案
+	lpModel.GenerateLPFile("my_model.lp")
+}`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: '複製',
+                        },
+                    },
+                },
+                
             ],
         },
     },

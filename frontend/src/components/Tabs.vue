@@ -96,8 +96,10 @@ export default {
 }
 
 .tabs {
+  max-width: 180px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   padding: 15px 0;
   background: #e6e6e6;
   border-radius: 10px 0 0 10px;
@@ -105,7 +107,7 @@ export default {
 }
 
 .tabs button {
-  padding: 12px 12px;
+  padding: 12px;
   border: none;
   border-radius: 0px;
   background: none;
@@ -116,6 +118,10 @@ export default {
   font-weight: 600;
   transition: background-color 0.3s, color 0.3s;
   width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 50px; /* 設置最小高度 */
+  height: auto; /* 允許自動增加高度 */
 }
 
 .tabs button.active {
@@ -167,16 +173,24 @@ export default {
   }
 
   .tabs {
+    max-width: 100%;
     flex-direction: row;
+    flex-wrap: wrap;
     border-radius: 0;
     padding: 10px;
     padding-bottom: 0;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .tabs button {
+    flex: 1 1 calc(33.33% - 10px);
     border-radius: 10px 10px 0 0;
+    margin-top: 5px;
     text-align: center;
+    font-size: 14px;
+    padding: 12px 8px;
+    justify-content: center;
+    min-height: 60px;
   }
 
   .tabs button:hover {
@@ -185,6 +199,13 @@ export default {
 
   .tab-content {
     border-radius: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs button {
+    flex: 1 1 calc(50% - 10px);
+    min-height: 70px; /* 在更小的螢幕上進一步增加最小高度 */
   }
 }
 </style>

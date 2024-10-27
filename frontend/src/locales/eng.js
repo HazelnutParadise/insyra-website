@@ -336,6 +336,51 @@ func main() {
                             copyButtonText: 'Copy',
                         },
                     },
+                },
+                {
+                    name: 'lpgen (Linear Programming Model Generation)',
+                    descriptions: {
+                        first:
+`Provide a function to generate linear programming models, allowing you to easily create linear programming models and save them as <strong>.lp</strong> files for use with solving software.`,
+                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lpgen.md">lpgen package documentation</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: 'Example',
+                            content:
+`package main
+
+import (
+	"github.com/HazelnutParadise/insyra/lpgen"
+)
+
+func main() {
+	// Create a new linear programming model
+	lpModel := lpgen.NewLPModel()
+
+	// Set objective function to maximize
+	lpModel.SetObjective("Maximize", "3 x1 + 4 x2")
+
+	// Add constraints
+	lpModel.AddConstraint("2 x1 + 3 x2 <= 20")
+	lpModel.AddConstraint("4 x1 + 2 x2 <= 30")
+
+	// Add bounds for variables
+	lpModel.AddBound("0 <= x1 <= 10")
+	lpModel.AddBound("0 <= x2 <= 10")
+
+	// Add integer and binary variables
+	lpModel.AddIntegerVar("x1")
+	lpModel.AddBinaryVar("x2")
+
+	// Generate LP file
+	lpModel.GenerateLPFile("my_model.lp")
+}`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: 'Copy',
+                        },
+                    }
                 }
             ],
         },
