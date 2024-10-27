@@ -96,9 +96,8 @@ import (
 )
 
 func main() {
-	// Create DataList objects for different products
+	// 建立不同產品的 DataList 實例
 	dataListA := insyra.NewDataList(120, 200, 150).SetName("Product A")
-
 	dataListB := insyra.NewDataList(80, 160, 90).SetName("Product B")
 
 	config := plot.BarChartConfig{
@@ -110,13 +109,13 @@ func main() {
 		Colors:     []string{"#5470C6", "#91CC75"},
 	}
 
-	// Create a bar chart
+	// 建立長條圖
 	barChart := plot.CreateBarChart(config)
 
-	// Save the chart as an HTML file
+	// 將圖表儲存為 HTML 檔案
 	plot.SaveHTML(barChart, "sales_data_datalist.html")
 
-	// Save the chart as a PNG file
+	// 將圖表儲存為 PNG 檔案
 	plot.SavePNG(barChart, "sales_data_datalist.png")
 }`,codeBlock:!0,codeLanguage:"go",copyButtonText:"複製"}}}]}}},DG={navbar:{main:"Meet Insyra",whatIsInsyra:"What is Insyra",whyInsyra:"Why Insyra",howToUse:"How to Use",features:"Features",contact:"Contact"},Main:{hero:{slogan:"Fast, Lovely, Easy to Use",title:"Meet Insyra",description:"Powerful data analysis tools, built for the future.",button:{main:"Get Started",secondary1:"GoDoc",secondary2:"GitHub"}},featureItemSection:{features:{feature1:{id:1,title:"High-Performance Data Processing",description:"Thanks to the excellent performance of Golang, Insyra can quickly process large datasets, suitable for scenarios requiring extensive or parallel data calculations, such as <strong>big data analysis</strong>.",learnMore:"Learn More"},feature2:{id:2,title:"Intuitive and Simple API",description:"Insyra provides an <strong>intuitive</strong> and <strong>simple</strong> API interface, allowing you to easily use its powerful features. You can quickly get started and perform complex data operations without needing to understand the internal implementation.",learnMore:"Learn More"},feature3:{id:3,title:"Beautiful Data Visualization",description:'Insyra integrates the <a href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, offering various types of charts to easily create beautiful visualizations for your analysis.',learnMore:"Learn More about <strong>plot</strong> and <strong>gplot</strong> packages"},feature4:{id:4,title:"Integration with Python",description:"With Insyra’s py package, you can <strong>execute Python code within Go programs</strong>, leveraging Python’s powerful capabilities for data analysis.",learnMore:"Learn More about <strong>py</strong> package"},feature5:{id:5,title:"Dedicated IDE",description:"We provide a <strong>dedicated</strong> and <strong>easy-to-use IDE</strong> for Insyra, allowing you to start your data analysis work quickly without worrying about environment setup.",learnMore:"Learn More about <strong>Idensyra</strong>"}}}},AboutInsyra:{title:"What is Insyra",description:"Insyra is a comprehensive data analysis tool for Go, capable of handling both routine data processing and large-scale data analysis tasks with greater speed and fewer lines of code.",whyCreate:{title:"Why We Created Insyra",description:"Golang has excellent performance and parallel processing capabilities, but its ecosystem in the field of data analysis has always lacked a complete and mature analysis library like Pandas. Insyra was born to fill this gap, providing a powerful data analysis solution for Go that rivals Pandas, meeting the diverse needs from simple data processing to large-scale data sets. Insyra was born out of the need for high performance, ease of use, and seamless integration with existing tools. Many existing solutions either perform poorly or are too complex to learn, making them difficult to use in diverse and complex data environments."},corePhilosophy:{title:"Core Philosophy",items:{first:{title:"High-Performance",description:"Insyra leverages the high-performance and concurrent processing capabilities of Golang to ensure optimal data processing speed and resource utilization."},second:{title:"Flexible and Scalable",description:"Insyra provides multiple sub-packages, allowing you to flexibly handle both simple data processing and complex large-scale data analysis tasks, and easily expand them."},third:{title:"Intuitive and Easy to Use",description:"We believe that good tools should be easy to use with an intuitive interface, allowing users to quickly get started and easily apply them to various data analysis scenarios."}}},futureVision:{title:"Our Future Vision",description:"We envision Insyra becoming a go-to tool for data analysts, expanding its capabilities to support more advanced data manipulation, visualization, and machine learning. As Insyra grows, our goal is to enable users to complete all data analysis tasks within the same ecosystem, without switching between multiple languages or tools."}},Features:{title:"Features",description:"Insyra provides a variety of powerful features to meet your data analysis needs.",readDocs:{title:"Welcome to Visit Our Documentation",description:"Insyra is designed to be easy to use without needing to read the documentation. You can fully rely on the auto-completion feature of your editor to operate. However, if you want to learn more details, our documentation on GitHub provides detailed information and examples.<br/><br/>GoDoc is also available for those who prefer a more concise and Go-like documentation style.",docsButton:{docs:{title:"Documentation on GitHub",link:"https://github.com/HazelnutParadise/insyra/blob/main/README.md"},goDoc:{title:"GoDoc",link:"https://pkg.go.dev/github.com/HazelnutParadise/insyra"}}},coreStructures:{title:"Core Structures",dataList:{description:"DataList is the foundation of Insyra, used to process single-dimensional data. It has the ability to quickly retrieve data, clean data, convert data types, and calculate simple statistical values.",collapse:{title:"DataList",content:`package main
 
@@ -200,7 +199,6 @@ import (
 func main() {
 	// Create DataList objects for different products
 	dataListA := insyra.NewDataList(120, 200, 150).SetName("Product A")
-
 	dataListB := insyra.NewDataList(80, 160, 90).SetName("Product B")
 
 	config := plot.BarChartConfig{
