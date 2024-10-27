@@ -56,6 +56,8 @@ export default {
   methods: {
     selectTab(index) {
       this.selectedTab = index
+      // scroll to the top of the element
+      this.$el.scrollIntoView({ behavior: 'smooth' });
     }
   },
   components: {
@@ -80,7 +82,7 @@ export default {
 }
 
 .tab-content-description {
-  text-align: justify;
+  text-align: start;
   margin: 0 auto 30px;
   color: #4a4a4a;
   font-size: 18px;
