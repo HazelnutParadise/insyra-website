@@ -165,10 +165,35 @@ func main() {
             title: '子套件包',
             packages: [
                 {
-                  name: 'sliceutil 套件包',
+                  name: 'stats',
                   descriptions: {
-                    first: '提供數組操作工具，包括分割、排序、唯一值篩選等。',
-                  }
+                    first:
+`提供各種統計函數，包括偏度、峰度和矩計算、主成份分析等。是 Go 語言統計函式庫的包裝，提供易用的 API。<br/>
+<br/>
+我們致力將它設計成和 R 語言的計算結果一致。`,
+                    end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/stats.md">stats 套件包說明文件</a>',
+                  },
+                  collapses: {
+                    first: {
+                      title: '使用範例',
+                      content: 
+`package main
+
+import (
+    "fmt"
+    "github.com/HazelnutParadise/insyra"
+    "github.com/HazelnutParadise/insyra/stats"
+)
+
+func main() {
+    dl := insyra.NewDataList(1, 2, 3, 9, 5)
+    fmt.Println("偏度:", stats.Skewness(dl))
+}`,
+                      codeBlock: true,
+                      codeLanguage: 'go',
+                      copyButtonText: '複製',
+                    },
+                  },
                 },
             ],
         },

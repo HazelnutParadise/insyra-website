@@ -160,5 +160,39 @@ func main() {
                 },
             },
         },
+        packagesSection: {
+            title: 'Sub Packages',
+            packages: [
+                {
+                    name: 'stats',
+                    descriptions: {
+                        first:
+`Provide various statistical functions, including skewness, kurtosis, and principal component analysis, etc.<br/>
+<br/>
+We strive to design it to be consistent with the calculation results of R language.`,
+                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/stats.md">stats package documentation</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: 'Example',
+                            content:
+`package main
+
+import (
+    "fmt"
+    "github.com/HazelnutParadise/insyra/stats"
+)
+
+func main() {
+    fmt.Println(stats.Skewness(insyra.NewDataList(1, 2, 3, 9, 5)))
+}`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: 'Copy',
+                        },
+                    },
+                },
+            ],
+        },
     },
 };

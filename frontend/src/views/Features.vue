@@ -32,7 +32,7 @@
             alignment="left"
             :codeBlock="true" 
             :copyButtonText="currentMessages.Features.coreStructures.dataList.collapse.copyButtonText"
-            language="go"
+            codeLanguage="go"
             />
           <a :href="currentMessages.Features.coreStructures.dataList.doc.link">{{ currentMessages.Features.coreStructures.dataList.doc.title }}</a>
         </div>
@@ -48,7 +48,7 @@
             alignment="left"
             :codeBlock="true"
             :copyButtonText="currentMessages.Features.coreStructures.dataTable.collapse.copyButtonText"
-            language="go"
+            codeLanguage="go"
             />
           <a :href="currentMessages.Features.coreStructures.dataTable.doc.link">{{ currentMessages.Features.coreStructures.dataTable.doc.title }}</a>
         </div>
@@ -72,9 +72,23 @@ import Tabs from '../components/Tabs.vue';
 export default {
   name: 'Features',
   data() {
+    const tabs = this.currentMessages.Features.packagesSection.packages;
+    tabs.forEach(tab => {
+      if (tab.collapses && typeof tab.collapses === 'object') {
+        Object.keys(tab.collapses).forEach(key => {
+          tab.collapses[key] = {
+            ...tab.collapses[key],
+            headerColor: '#1f449b',
+            contentColor: '#e6f0ff',
+            borderColor: '#1f449b',
+            alignment: 'left',
+          };
+        });
+      }
+    });
     return {
       isOpen: {},
-      tabs: this.currentMessages.Features.packagesSection.packages,
+      tabs: tabs,
     };
   },
   components: {

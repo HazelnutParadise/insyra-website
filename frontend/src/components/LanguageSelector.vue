@@ -37,8 +37,8 @@ export default {
 
     const emitLanguageChange = (lang) => {
       localStorage.setItem('language', lang);
-      emit('language-changed', lang); // 發射事件
-     
+      // emit('language-changed', lang); // 發射事件
+      location.reload();
     };
 
     return {

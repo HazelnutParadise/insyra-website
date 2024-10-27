@@ -41,7 +41,7 @@ export default {
     alignment: String,
     codeBlock: Boolean,
     copyButtonText: String,
-    language: {
+    codeLanguage: {
       type: String,
       default: 'plaintext'
     }
@@ -54,7 +54,7 @@ export default {
   },
   computed: {
     codeLanguage() {
-      return `language-${this.language}`;
+      return `language-${this.codeLanguage}`;
     }
   },
   methods: {

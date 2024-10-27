@@ -26,6 +26,9 @@
                 :contentColor="tab.collapses[descriptionIndex].contentColor" 
                 :borderColor="tab.collapses[descriptionIndex].borderColor"
                 :alignment="tab.collapses[descriptionIndex].alignment"
+                :codeBlock="tab.collapses[descriptionIndex].codeBlock"
+                :codeLanguage="tab.collapses[descriptionIndex].codeLanguage"
+                :copyButtonText="tab.collapses[descriptionIndex].copyButtonText"
               />
             </div>
           </div>
