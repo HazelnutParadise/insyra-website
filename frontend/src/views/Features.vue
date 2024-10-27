@@ -157,7 +157,10 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 25px;
-  overflow: hidden; /* 防止內容溢出 */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* 確保 feature-box 佔滿容器寬度 */
 }
 
 .feature-box h3 {
@@ -246,7 +249,9 @@ h2 {
     justify-content: center;
   }
 }
+
+/* 確保 Collapse 元件在 feature-box 中佔滿寬度 */
+.feature-box :deep(.collapse-container) {
+  width: 100%;
+}
 </style>
-
-
-

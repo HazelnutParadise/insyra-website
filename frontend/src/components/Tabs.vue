@@ -132,6 +132,9 @@ export default {
 /* Tab Content 樣式 */
 .tab-content {
   flex: 1;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 0 10px 10px 0;

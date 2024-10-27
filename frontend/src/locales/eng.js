@@ -236,6 +236,56 @@ func main() {
                         copyButtonText: 'Copy',
                         },
                     }
+                },
+                {
+                    name: 'plot (Data Visualization)',
+                    descriptions: {
+                        first:
+`Integrate the <a href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, providing various charts to easily create beautiful visualizations for your analysis.<br/>
+<br/>
+Just write simple settings and you can create beautiful charts for your analysis.`,
+                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/plot.md">plot package documentation</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: 'Example',
+                            content:
+`package main
+
+import (
+	"github.com/HazelnutParadise/insyra"
+	"github.com/HazelnutParadise/insyra/plot"
+)
+
+func main() {
+	// Create DataList objects for different products
+	dataListA := insyra.NewDataList(120, 200, 150).SetName("Product A")
+
+	dataListB := insyra.NewDataList(80, 160, 90).SetName("Product B")
+
+	config := plot.BarChartConfig{
+		Title:      "Sales Data",
+		Subtitle:   "Monthly Sales",
+		XAxis:      []string{"January", "February", "March"},
+		Data: []*insyra.DataList{dataListA, dataListB},
+		ShowLabels: true,
+		Colors:     []string{"#5470C6", "#91CC75"},
+	}
+
+	// Create a bar chart
+	barChart := plot.CreateBarChart(config)
+
+	// Save the chart as an HTML file
+	plot.SaveHTML(barChart, "sales_data_datalist.html")
+
+	// Save the chart as a PNG file
+	plot.SavePNG(barChart, "sales_data_datalist.png")
+}`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: 'Copy',
+                        },
+                    }
                 }
             ],
         },

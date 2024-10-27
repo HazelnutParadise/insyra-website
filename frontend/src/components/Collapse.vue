@@ -106,12 +106,15 @@ export default {
 
 <style scoped>
 .collapse-container {
+  width: 100%; /* 確保容器佔滿父元素寬度 */
+  max-width: 100%; /* 限制最大寬度 */
   border: 1px solid;
   border-radius: 4px;
   margin-bottom: 10px;
 }
 
 .collapse-header {
+  width: 100%;
   padding: 10px;
   cursor: pointer;
   display: flex;
@@ -121,8 +124,10 @@ export default {
 }
 
 .collapse-content {
+  width: 100%;
   overflow: hidden;
   transition: height 0.3s ease-out;
+  overflow-x: auto; /* 添加水平滾動條，以防內容過寬 */
 }
 
 .collapse-inner {
@@ -137,7 +142,7 @@ export default {
 }
 
 .collapse-content pre {
-  white-space: pre;
+  max-width: 100%;
   overflow-x: auto;
   text-align: left;
   margin: 0;
