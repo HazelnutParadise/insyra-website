@@ -59,7 +59,23 @@ export default {
   },
   methods: {
     toggle() {
-      this.isOpen = !this.isOpen
+        this.isOpen = !this.isOpen
+        if (this.isOpen) {
+            //   將組件滑動至畫面中央
+            // 精確計算畫面中央
+            let center = this.$el.offsetTop - (this.$el.offsetHeight / 2) - 200;
+            window.scrollTo({
+                top: center,
+                behavior: 'smooth'
+            });
+        } else {
+            // 精確計算組件位置
+            let center = this.$el.parentElement.offsetTop - (this.$el.parentElement.offsetHeight - this.$el.offsetHeight);
+            window.scrollTo({
+                top: center,
+                behavior: 'smooth'
+            });
+        }
     },
     enter(element) {
       const height = element.scrollHeight;
