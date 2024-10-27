@@ -73,7 +73,7 @@ export const eng = {
         description: 'Insyra is a comprehensive data analysis tool for Go, capable of handling both routine data processing and large-scale data analysis tasks with greater speed and fewer lines of code.',
         whyCreate: {
             title: 'Why We Created Insyra',
-            description: 'Golang has excellent performance and parallel processing capabilities, but its ecosystem in the field of data analysis has always lacked a complete and mature analysis library like Pandas. Insyra was born to fill this gap, providing a powerful data analysis solution for Go that rivals Pandas, meeting the diverse needs from simple data processing to large-scale data sets. Insyra was born out of the need for high performance, ease of use, and seamless integration with existing tools. Many existing solutions either perform poorly or are too complex to learn, making them difficult to use in diverse and complex data environments.',
+            description: 'Golang has excellent performance and parallel processing capabilities, but its ecosystem in the field of data analysis has always lacked a complete and mature analysis library like Pandas. Insyra was born in the summer of 2024 to fill this gap, providing a powerful data analysis solution for Go that rivals Pandas, meeting the diverse needs from simple data processing to large-scale data sets. Insyra was born out of the need for high performance, ease of use, and seamless integration with existing tools. Many existing solutions either perform poorly or are too complex to learn, making them difficult to use in diverse and complex data environments.',
         },
         corePhilosophy: {
             title: 'Core Philosophy',
@@ -185,7 +185,7 @@ func main() {
 `Provide various statistical functions, including skewness, kurtosis, and principal component analysis, etc.<br/>
 <br/>
 We strive to design it to be consistent with the calculation results of <strong>R language</strong>.`,
-                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/stats.md">stats package documentation</a>',
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/stats.md">stats package documentation</a>',
                     },
                     collapses: {
                         first: {
@@ -214,7 +214,7 @@ func main() {
 `Provide functions for parallel processing, allowing you to group multiple tasks and execute them simultaneously on multiple CPU cores, easily improving data processing efficiency.<br/>
 <br/>
 The parallel package will automatically handle the waiting between parallel coroutines and return the results in the order of the tasks, so you don't need to write additional complex code.`,
-                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/parallel.md">parallel package documentation</a>',
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/parallel.md">parallel package documentation</a>',
                     },
                     collapses: {
                         first: {
@@ -256,10 +256,10 @@ func main() {
                     name: 'plot (Data Visualization)',
                     descriptions: {
                         first:
-`Integrate the <a href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, providing various charts to easily create beautiful visualizations for your analysis.<br/>
+`Integrate the <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, providing various charts to easily create beautiful visualizations for your analysis.<br/>
 <br/>
 Just write simple settings and you can create beautiful charts for your analysis.`,
-                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/plot.md">plot package documentation</a>',
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/plot.md">plot package documentation</a>',
                     },
                     collapses: {
                         first: {
@@ -305,10 +305,10 @@ func main() {
                     name: 'gplot (Data Visualization)',
                     descriptions: {
                         first:
-`Use the <a href="https://github.com/gonum/plot">gonum/plot</a> data visualization package, providing various charts. It is faster, but the chart style is more simple. <strong>Does not support non-ASCII characters</strong>.<br/>
+`Use the <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> data visualization package, providing various charts. It is faster, but the chart style is more simple. <strong>Does not support non-ASCII characters</strong>.<br/>
 <br/>
 <img src="https://github.com/HazelnutParadise/insyra/blob/main/Docs/img/gplot_bar_example.png?raw=true" style="width: 100%;" alt="gplot package example chart" />`,
-                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/gplot.md">gplot package documentation</a>',
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/gplot.md">gplot package documentation</a>',
                     },
                     collapses: {
                         first: {
@@ -342,7 +342,7 @@ func main() {
                     descriptions: {
                         first:
 `Provide a function to generate linear programming models, allowing you to easily create linear programming models and save them as <strong>.lp</strong> files for use with solving software.`,
-                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lpgen.md">lpgen package documentation</a>',
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lpgen.md">lpgen package documentation</a>',
                     },
                     collapses: {
                         first: {
@@ -380,8 +380,21 @@ func main() {
                             codeLanguage: 'go',
                             copyButtonText: 'Copy',
                         },
-                    }
-                }
+                    },
+                },
+                {
+                    name: 'lp (Linear Programming Model Solving)',
+                    descriptions: {
+                        first:
+`Provide functions to solve linear programming models, allowing you to easily solve linear programming models and obtain the optimal solution. Powered by <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a>. <strong>This package will automatically download and install GLPK when it is used.</strong>`,
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lp.md">lp package documentation</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: 'Example',
+                        },
+                    },
+                },
             ],
         },
     },

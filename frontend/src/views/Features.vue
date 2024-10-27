@@ -34,7 +34,7 @@
             :copyButtonText="currentMessages.Features.coreStructures.dataList.collapse.copyButtonText"
             codeLanguage="go"
             />
-          <a :href="currentMessages.Features.coreStructures.dataList.doc.link" class="a-link">{{ currentMessages.Features.coreStructures.dataList.doc.title }}</a>
+          <a target="_blank" :href="currentMessages.Features.coreStructures.dataList.doc.link" class="a-link">{{ currentMessages.Features.coreStructures.dataList.doc.title }}</a>
         </div>
         <div class="feature-box">
           <h3>DataTable</h3>
@@ -50,7 +50,7 @@
             :copyButtonText="currentMessages.Features.coreStructures.dataTable.collapse.copyButtonText"
             codeLanguage="go"
             />
-          <a :href="currentMessages.Features.coreStructures.dataTable.doc.link" class="a-link">{{ currentMessages.Features.coreStructures.dataTable.doc.title }}</a>
+          <a target="_blank" :href="currentMessages.Features.coreStructures.dataTable.doc.link" class="a-link">{{ currentMessages.Features.coreStructures.dataTable.doc.title }}</a>
         </div>
       </div>
     </section>

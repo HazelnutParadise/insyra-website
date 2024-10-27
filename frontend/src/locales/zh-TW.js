@@ -73,7 +73,7 @@ export const zhTW = {
         description: 'Insyra 是 Go 語言的綜合型資料分析工具，無論是日常數據處理還是大規模數據分析，Insyra 都能讓你以更快的速度、更少的程式碼完成任務。',
         whyCreate: {
             title: '為什麼創建 Insyra',
-            description: 'Go 語言擁有高效能與極佳的平行處理能力，但其生態在資料分析領域，始終缺乏像 Pandas 這樣完整且成熟的分析庫。Insyra 的誕生，正是為了填補這個空缺，為 Go 提供一個能夠媲美 Pandas 的強大資料分析解決方案，滿足從簡單資料處理到大型數據集的多樣需求。Insyra 誕生於對高性能、易用性和與現有工具無縫整合的需求。許多現有解決方案要嘛性能表現不佳，要嘛太複雜不易學習，使其在多樣化和複雜的數據環境中難以發揮現代硬體的優勢。',
+            description: 'Go 語言擁有高效能與極佳的平行處理能力，但其生態在資料分析領域，始終缺乏像 Pandas 這樣完整且成熟的分析庫。為了填補這個空缺，Insyra 於 2024 年的夏天誕生，為 Go 提供一個能夠媲美 Pandas 的強大資料分析解決方案，滿足從簡單資料處理到大型數據集的多樣需求。Insyra 誕生於對高性能、易用性和與現有工具無縫整合的需求。許多現有解決方案要嘛性能表現不佳，要嘛太複雜不易學習，使其在多樣化和複雜的數據環境中難以發揮現代硬體的優勢。',
         },
         corePhilosophy: {
             title: '核心理念',
@@ -186,7 +186,7 @@ func main() {
 `提供各種統計函數，包括偏度、峰度和矩計算、主成份分析等。是 Go 語言統計函式庫的包裝，提供易用的 API。<br/>
 <br/>
 我們致力將它設計成和 <strong>R 語言</strong> 的計算結果一致。`,
-                    end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/stats.md">stats 套件包說明文件</a>',
+                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/stats.md">stats 套件包說明文件</a>',
                   },
                   collapses: {
                     first: {
@@ -217,7 +217,7 @@ func main() {
 `提供平行處理的函數，能夠將多個任務組成群組，在多個 CPU 核心上同時執行，輕鬆提升資料處理效率。<br/>
 <br/>
 parallel 套件包會自動處理平行協程之間的等待，並且回傳的結果會保持任務順序，您無需額外撰寫複雜程式碼。`,
-                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/parallel.md">parallel 套件包說明文件</a>',
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/parallel.md">parallel 套件包說明文件</a>',
                     },
                     collapses: {
                         first: {
@@ -259,10 +259,10 @@ func main() {
                     name: 'plot (資料視覺化)',
                     descriptions: {
                         first:
-`整合 <a href="https://github.com/go-echarts/go-echarts">go-echarts</a> 的資料視覺化套件包，提供多種圖表。撰寫簡單的設定就能為您的分析創建精美圖表。<br/>
+`整合 <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> 的資料視覺化套件包，提供多種圖表。撰寫簡單的設定就能為您的分析創建精美圖表。<br/>
 <br/>
 <img src="https://github.com/HazelnutParadise/insyra/blob/main/Docs/img/plot_bar_example.png?raw=true" style="width: 100%;" alt="plot 套件包範例圖表" />`,
-                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/plot.md">plot 套件包說明文件</a>',
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/plot.md">plot 套件包說明文件</a>',
                     },
                     collapses: {
                         first: {
@@ -308,10 +308,10 @@ func main() {
                     name: 'gplot (資料視覺化)',
                     descriptions: {
                         first:
-`使用 <a href="https://github.com/gonum/plot">gonum/plot</a> 的資料視覺化套件包，提供多種圖表。較為快速，但圖表樣式比較陽春。<strong>不支援非 ASCII 字元</strong>。<br/>
+`使用 <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> 的資料視覺化套件包，提供多種圖表。較為快速，但圖表樣式比較陽春。<strong>不支援非 ASCII 字元</strong>。<br/>
 <br/>
 <img src="https://github.com/HazelnutParadise/insyra/blob/main/Docs/img/gplot_bar_example.png?raw=true" style="width: 100%;" alt="gplot 套件包範例圖表" />`,
-                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/gplot.md">gplot 套件包說明文件</a>',
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/gplot.md">gplot 套件包說明文件</a>',
                     },
                     collapses: {
                         first: {
@@ -345,7 +345,7 @@ func main() {
                     descriptions: {
                         first:
 `提供線性規劃模型的生成功能，能夠輕鬆建立線性規劃模型，並且可以儲存成 <strong>.lp</strong> 檔案供求解軟體使用。`,
-                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lpgen.md">lpgen 套件包說明文件</a>',
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lpgen.md">lpgen 套件包說明文件</a>',
                     },
                     collapses: {
                         first: {
@@ -385,7 +385,19 @@ func main() {
                         },
                     },
                 },
-                
+                {
+                    name: 'lp (線性規劃求解)',
+                    descriptions: {
+                        first:
+`使用 <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a> 提供的線性規劃求解功能，能夠輕鬆求解線性規劃模型。<strong>此套件包會自動幫您安裝 GLPK</strong>，無需額外設定。`,
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lp.md">lp 套件包說明文件</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: '使用範例',
+                        }
+                    }
+                }
             ],
         },
     },
