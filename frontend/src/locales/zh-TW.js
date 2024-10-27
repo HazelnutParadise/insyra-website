@@ -289,7 +289,42 @@ func main() {
                         },
                     }
                 },
-                
+                {
+                    name: 'gplot (資料視覺化)',
+                    descriptions: {
+                        first:
+`使用 <a href="https://github.com/gonum/plot">gonum/plot</a> 的資料視覺化套件包，提供多種圖表。較為快速，但圖表樣式比較陽春。<strong>不支援非 ASCII 字元</strong>。<br/>
+<br/>
+<img src="https://github.com/HazelnutParadise/insyra/blob/main/Docs/img/gplot_bar_example.png?raw=true" style="width: 100%;" alt="gplot 套件包範例圖表" />`,
+                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/gplot.md">gplot 套件包說明文件</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: '使用範例',
+                            content:
+`import (
+	"github.com/HazelnutParadise/insyra"
+	"github.com/HazelnutParadise/insyra/gplot"
+)
+
+func main() {
+	dl := insyra.NewDataList(1 ,2 ,3 ,4)
+	config := gplot.BarChartConfig{
+		Title: "The title of the chart.",
+		XAxis: []string{"一", "二", "三", "四"},
+		Data: dl,
+		XAxisName: "categories",
+		YAxisName: "values",
+	}
+	chart := gplot.CreateBarChart(config)
+	gplot.SaveChart(chart, "example.png")
+}`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: '複製',
+                        },
+                    },
+                }
             ],
         },
     },

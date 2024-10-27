@@ -199,7 +199,7 @@ func main() {
 `Provide functions for parallel processing, allowing you to group multiple tasks and execute them simultaneously on multiple CPU cores, easily improving data processing efficiency.<br/>
 <br/>
 The parallel package will automatically handle the waiting between parallel coroutines and return the results in the order of the tasks, so you don't need to write additional complex code.`,
-                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/parallel.md">parallel 套件包說明文件</a>',
+                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/parallel.md">parallel package documentation</a>',
                     },
                     collapses: {
                         first: {
@@ -285,6 +285,42 @@ func main() {
                             copyButtonText: 'Copy',
                         },
                     }
+                },
+                {
+                    name: 'gplot (Data Visualization)',
+                    descriptions: {
+                        first:
+`Use the <a href="https://github.com/gonum/plot">gonum/plot</a> data visualization package, providing various charts. It is faster, but the chart style is more simple. <strong>Does not support non-ASCII characters</strong>.<br/>
+<br/>
+<img src="https://github.com/HazelnutParadise/insyra/blob/main/Docs/img/gplot_bar_example.png?raw=true" style="width: 100%;" alt="gplot package example chart" />`,
+                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/gplot.md">gplot package documentation</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: 'Example',
+                            content:
+`import (
+	"github.com/HazelnutParadise/insyra"
+	"github.com/HazelnutParadise/insyra/gplot"
+)
+
+func main() {
+	dl := insyra.NewDataList(1 ,2 ,3 ,4)
+	config := gplot.BarChartConfig{
+		Title: "The title of the chart.",
+		XAxis: []string{"A", "B", "C", "D"},
+		Data: dl,
+		XAxisName: "categories",
+		YAxisName: "values",
+	}
+	chart := gplot.CreateBarChart(config)
+	gplot.SaveChart(chart, "example.png")
+}`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: 'Copy',
+                        },
+                    },
                 }
             ],
         },
