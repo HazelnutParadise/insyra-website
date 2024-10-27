@@ -179,7 +179,8 @@ func main() {
             title: 'Sub Packages',
             packages: [
                 {
-                    name: 'stats (Statistics)',
+                    title: 'stats',
+                    subTitle: 'Statistics',
                     descriptions: {
                         first:
 `Provide various statistical functions, including skewness, kurtosis, and principal component analysis, etc.<br/>
@@ -208,7 +209,8 @@ func main() {
                     },
                 },
                 {
-                    name: 'parallel (Parallel Processing)',
+                    title: 'parallel',
+                    subTitle: 'Parallel Processing',
                     descriptions: {
                         first:
 `Provide functions for parallel processing, allowing you to group multiple tasks and execute them simultaneously on multiple CPU cores, easily improving data processing efficiency.<br/>
@@ -253,7 +255,8 @@ func main() {
                     }
                 },
                 {
-                    name: 'plot (Data Visualization)',
+                    title: 'plot',
+                    subTitle: 'Data Visualization',
                     descriptions: {
                         first:
 `Integrate the <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, providing various charts to easily create beautiful visualizations for your analysis.<br/>
@@ -302,7 +305,8 @@ func main() {
                     }
                 },
                 {
-                    name: 'gplot (Data Visualization)',
+                    title: 'gplot',
+                    subTitle: 'Data Visualization',
                     descriptions: {
                         first:
 `Use the <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> data visualization package, providing various charts. It is faster, but the chart style is more simple. <strong>Does not support non-ASCII characters</strong>.<br/>
@@ -338,7 +342,8 @@ func main() {
                     },
                 },
                 {
-                    name: 'lpgen (Linear Programming Model Generation)',
+                    title: 'lpgen',
+                    subTitle: 'Linear Programming Model Generation',
                     descriptions: {
                         first:
 `Provide a function to generate linear programming models, allowing you to easily create linear programming models and save them as <strong>.lp</strong> files for use with solving software.`,
@@ -383,7 +388,8 @@ func main() {
                     },
                 },
                 {
-                    name: 'lp (Linear Programming Model Solving)',
+                    title: 'lp',
+                    subTitle: 'Linear Programming Model Solving',
                     descriptions: {
                         first:
 `Provide functions to solve linear programming models, allowing you to easily solve linear programming models and obtain the optimal solution. Powered by <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a>. <strong>This package will automatically download and install GLPK when it is used.</strong>`,
@@ -392,9 +398,134 @@ func main() {
                     collapses: {
                         first: {
                             title: 'Example',
+                            content:
+`package main
+
+import (
+	"github.com/HazelnutParadise/insyra/lp"
+	"github.com/HazelnutParadise/insyra/lpgen"
+)
+
+func main() {
+	// Create a new linear programming model using the lpgen package
+	model := lpgen.NewLPModel()
+    model.SetObjective("Maximize", "3 x1 + 5 x2 + x3")
+    model.AddConstraint("x1 + 2 x2 + 3 x3 <= 12")
+    model.AddConstraint("x2 + x3 + x4 <= 3")
+    model.AddConstraint("x1 + x2 + x3 + x4 <= 100")
+    model.AddBound("0 <= x1 <= 4")
+    model.AddBound("1 <= x2 <= 6")
+    model.AddBound("0 <= x3 <= 10")
+    model.AddIntegerVar("x1")
+    model.AddIntegerVar("x2")
+    model.AddIntegerVar("x3")
+    model.AddIntegerVar("x4")
+    model.AddBinaryVar("x1")
+    model.AddBinaryVar("x2")
+
+    // Solve the model
+    result, info := lp.SolveModel(model, 10)
+
+    // Save the result and information to CSV files
+    result.ToCSV("solution.csv", false, false)
+    info.ToCSV("info.csv", true, true)
+}`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: 'Copy',
                         },
                     },
                 },
+                {
+                    title: 'csvxl',
+                    subTitle: 'CSV and Excel Processing',
+                    descriptions: {
+                        first:
+`Provide functions to convert between CSV and Excel files.`,
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/csvxl.md">csvxl package documentation</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: 'Example',
+                            content:
+`package main
+
+import (
+    "github.com/HazelnutParadise/csvxl"
+)
+
+func main() {
+    csvFiles := []string{"file1.csv", "file2.csv", "file3.csv"}
+    sheetNames := []string{"Sheet1", "Sheet2", "Sheet3"} // Optional: If not provided, CSV filenames will be used as sheet names
+    output := "output.xlsx"
+    existingExcel := "existing.xlsx"
+
+    // Convert CSV files to an Excel file
+    csvxl.CsvToExcel(csvFiles, sheetNames, output, csvxl.UTF8)
+
+    // Append CSV files to an existing Excel file
+    csvxl.AppendCsvToExcel(csvFiles, sheetNames, existingExcel)
+
+    excelFile := "input.xlsx"
+    outputDir := "csv_output"
+    csvNames := []string{"custom1.csv", "custom2.csv"} // Optional: Specify names for the output CSV files
+
+    // Split the Excel file into multiple CSV files
+    csvxl.ExcelToCsv(excelFile, outputDir, csvNames)
+}
+`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: 'Copy',
+                        }
+                    }
+                },
+                {
+                    title: 'py',
+                    subTitle: 'Python Integration',
+                    descriptions: {
+                        first:
+`Without manually installing the Python environment and dependencies, you can <strong>execute Python code within Go</strong>, allowing variables to be passed between Go and Python.`,
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/py.md">py package documentation</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: 'Example',
+                            content:
+`package main
+
+import (
+	"github.com/HazelnutParadise/insyra"
+	"github.com/HazelnutParadise/insyra/py"
+)
+
+func main() {
+	// Create DataList
+	xData := insyra.NewDataList(45, 50, 55, 60, 65, 70, 75, 80, 85, 90)
+	yData := insyra.NewDataList(110, 120, 135, 145, 150, 160, 170, 180, 190, 200)
+
+	// Submit Code to Python
+	py.RunCodef(\`
+x = np.array($v1)
+y = np.array($v2)
+
+sns.set(style="whitegrid")
+
+sns.scatterplot(x=x, y=y)
+
+plt.title("Scatter Plot from Go DataList")
+plt.xlabel("X Values")
+plt.ylabel("Y Values")
+
+plt.show()
+\`, xData.Data(), yData.Data())
+}`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: 'Copy',
+                        },
+                    }
+                }
             ],
         },
     },

@@ -3,18 +3,19 @@
       <!-- Left-Side Tabs -->
       <div class="tabs">
         <button 
+          class="tab-button"
           v-for="(tab, index) in tabs" 
           :key="index"
           @click="selectTab(index)"
           :class="{ active: selectedTab === index }">
-          {{ tab.name }}
+          <span class="btn-title">{{ tab.title }}</span><span class="btn-sub-title">{{ tab.subTitle }}</span>
         </button>
       </div>
 
       <!-- Tab Content on the Right -->
       <div class="tab-content">
         <div v-for="(tab, index) in tabs" :key="index" v-show="selectedTab === index">
-          <h3>{{ tab.name }}</h3>
+          <h3>{{ tab.title }} ({{ tab.subTitle }})</h3>
           <br>
           <div v-for="(description, descriptionIndex) in tab.descriptions" :key="descriptionIndex"> 
             <div class="tab-content-description" v-html="description"></div>
@@ -64,6 +65,20 @@ export default {
 </script>
 
 <style scoped>
+.btn-title {
+  font-size: 20px;
+}
+
+.btn-sub-title {
+  font-size: 16px;
+  text-align: center;
+}
+
+.tab-button {
+  display: inline-flex;
+  flex-direction: column;
+}
+
 .tab-content-description {
   text-align: justify;
   margin: 0 auto 30px;
@@ -148,7 +163,7 @@ export default {
 
 .tab-content h3 {
   color: #2e3b55;
-  font-size: 22px;
+  font-size: 26px;
   margin-top: 10px;
 }
 
@@ -168,6 +183,14 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .btn-title {
+    font-size: 18px;
+  }
+
+  .btn-sub-title {
+    font-size: 14px;
+  }
+
   .tabs-container {
     flex-direction: column;
   }
