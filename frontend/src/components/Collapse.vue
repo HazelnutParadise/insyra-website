@@ -152,7 +152,7 @@ export default {
 
 .toggle-icon {
   font-size: 12px;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .toggle-icon.is-open {
@@ -162,7 +162,7 @@ export default {
 /* 動畫相關樣式 */
 .collapse-enter-active,
 .collapse-leave-active {
-  transition: height 0.3s ease-out;
+  transition: height 0.4s ease;
   overflow: hidden;
 }
 
