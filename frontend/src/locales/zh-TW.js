@@ -261,9 +261,8 @@ import (
 )
 
 func main() {
-	// Create DataList objects for different products
+	// 建立不同產品的 DataList 實例
 	dataListA := insyra.NewDataList(120, 200, 150).SetName("Product A")
-
 	dataListB := insyra.NewDataList(80, 160, 90).SetName("Product B")
 
 	config := plot.BarChartConfig{
@@ -275,13 +274,13 @@ func main() {
 		Colors:     []string{"#5470C6", "#91CC75"},
 	}
 
-	// Create a bar chart
+	// 建立長條圖
 	barChart := plot.CreateBarChart(config)
 
-	// Save the chart as an HTML file
+	// 將圖表儲存為 HTML 檔案
 	plot.SaveHTML(barChart, "sales_data_datalist.html")
 
-	// Save the chart as a PNG file
+	// 將圖表儲存為 PNG 檔案
 	plot.SavePNG(barChart, "sales_data_datalist.png")
 }`,
                             codeBlock: true,
@@ -289,7 +288,8 @@ func main() {
                             copyButtonText: '複製',
                         },
                     }
-                }
+                },
+                
             ],
         },
     },

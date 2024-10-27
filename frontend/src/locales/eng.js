@@ -260,7 +260,6 @@ import (
 func main() {
 	// Create DataList objects for different products
 	dataListA := insyra.NewDataList(120, 200, 150).SetName("Product A")
-
 	dataListB := insyra.NewDataList(80, 160, 90).SetName("Product B")
 
 	config := plot.BarChartConfig{
