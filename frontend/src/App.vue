@@ -90,6 +90,7 @@ export default {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
       selectPage(hash || 'Main'); // 根據 hash 切換組件
+      window.scrollTo(0, 0);
     };
 
     onMounted(() => {
