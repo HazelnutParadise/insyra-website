@@ -13,9 +13,9 @@
       <ul>
         <li><a @click="selectPage('Main')">{{ currentMessages.navbar.main }}</a></li>
         <li><a @click="selectPage('WhatIsInsyra')">{{ currentMessages.navbar.whatIsInsyra }}</a></li>
-        <li><a @click="selectPage('WhyInsyra')">{{ currentMessages.navbar.whyInsyra }}</a></li>
-        <li><a @click="selectPage('HowToUse')">{{ currentMessages.navbar.howToUse }}</a></li>
         <li><a @click="selectPage('Features')">{{ currentMessages.navbar.features }}</a></li>
+        <li><a @click="selectPage('HowToUse')">{{ currentMessages.navbar.howToUse }}</a></li>
+        <li><a @click="selectPage('WhyInsyra')">{{ currentMessages.navbar.whyInsyra }}</a></li>
         <li><a @click="selectPage('Contact')">{{ currentMessages.navbar.contact }}</a></li>
       </ul>
     </div>
