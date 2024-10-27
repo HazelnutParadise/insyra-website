@@ -239,6 +239,56 @@ func main() {
                         copyButtonText: '複製',
                         },
                     }
+                },
+                {
+                    name: 'plot (資料視覺化)',
+                    descriptions: {
+                        first:
+`整合 <a href="https://github.com/go-echarts/go-echarts">go-echarts</a> 的資料視覺化套件包，提供多種圖表。撰寫簡單的設定就能為您的分析創建精美圖表。<br/>
+<br/>
+<img src="https://github.com/HazelnutParadise/insyra/blob/main/Docs/img/plot_bar_example.png?raw=true" style="width: 100%;" alt="plot 套件包範例圖表" />`,
+                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/plot.md">plot 套件包說明文件</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: '使用範例',
+                            content:
+`package main
+
+import (
+	"github.com/HazelnutParadise/insyra"
+	"github.com/HazelnutParadise/insyra/plot"
+)
+
+func main() {
+	// Create DataList objects for different products
+	dataListA := insyra.NewDataList(120, 200, 150).SetName("Product A")
+
+	dataListB := insyra.NewDataList(80, 160, 90).SetName("Product B")
+
+	config := plot.BarChartConfig{
+		Title:      "Sales Data",
+		Subtitle:   "Monthly Sales",
+		XAxis:      []string{"January", "February", "March"},
+		Data: []*insyra.DataList{dataListA, dataListB},
+		ShowLabels: true,
+		Colors:     []string{"#5470C6", "#91CC75"},
+	}
+
+	// Create a bar chart
+	barChart := plot.CreateBarChart(config)
+
+	// Save the chart as an HTML file
+	plot.SaveHTML(barChart, "sales_data_datalist.html")
+
+	// Save the chart as a PNG file
+	plot.SavePNG(barChart, "sales_data_datalist.png")
+}`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: '複製',
+                        },
+                    }
                 }
             ],
         },
