@@ -10,7 +10,7 @@
           {{ currentMessages.Features.readDocs.docsButton.docs.title }}
         </a>
         <a :href="currentMessages.Features.readDocs.docsButton.goDoc.link" target="_blank" rel="noopener noreferrer" class="docs-button">
-          <i class="fa fa-code" style="color:#fff"></i>
+          <i class="fa fa-file-text-o" style="color:#fff"></i>
           {{ currentMessages.Features.readDocs.docsButton.goDoc.title }}
         </a>
       </div>

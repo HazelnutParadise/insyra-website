@@ -165,12 +165,12 @@ func main() {
             title: '子套件包',
             packages: [
                 {
-                  name: 'stats',
+                  name: 'stats (統計)',
                   descriptions: {
                     first:
 `提供各種統計函數，包括偏度、峰度和矩計算、主成份分析等。是 Go 語言統計函式庫的包裝，提供易用的 API。<br/>
 <br/>
-我們致力將它設計成和 R 語言的計算結果一致。`,
+我們致力將它設計成和 <strong>R 語言</strong> 的計算結果一致。`,
                     end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/stats.md">stats 套件包說明文件</a>',
                   },
                   collapses: {
@@ -195,6 +195,51 @@ func main() {
                     },
                   },
                 },
+                {
+                    name: 'parallel (平行處理)',
+                    descriptions: {
+                        first:
+`提供平行處理的函數，能夠將多個任務組成群組，在多個 CPU 核心上同時執行，輕鬆提升資料處理效率。<br/>
+<br/>
+parallel 套件包會自動處理平行協程之間的等待，並且回傳的結果會保持任務順序，您無需額外撰寫複雜程式碼。`,
+                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/parallel.md">parallel 套件包說明文件</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: '使用範例',
+                            content:
+`package main
+
+import (
+	"fmt"
+	"github.com/HazelnutParadise/insyra/parallel"
+)
+
+func main() {
+	// 定義函數並存儲在變數中
+	f1 := func() (int, string) { return 42, "Answer to Everything" }
+	f2 := func() (string, int) { return "Hello, World!", 2024 }
+	f3 := func() ([]int, float64) { return []int{1, 2, 3}, 3.14 }
+
+	// 將函數組成群組並在平行協程中執行
+	pg := parallel.GroupUp(f1, f2, f3).Run()
+
+	// 等待結果
+	results := pg.AwaitResult()
+
+	// 印出結果
+	fmt.Printf("已完成所有任務。結果: %v\\n", results)
+	for i, result := range results {
+		fmt.Printf("任務 %d: %v\\n", i, result)
+	}
+}
+`,
+                        codeBlock: true,
+                        codeLanguage: 'go',
+                        copyButtonText: '複製',
+                        },
+                    }
+                }
             ],
         },
     },

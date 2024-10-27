@@ -164,12 +164,12 @@ func main() {
             title: 'Sub Packages',
             packages: [
                 {
-                    name: 'stats',
+                    name: 'stats (Statistics)',
                     descriptions: {
                         first:
 `Provide various statistical functions, including skewness, kurtosis, and principal component analysis, etc.<br/>
 <br/>
-We strive to design it to be consistent with the calculation results of R language.`,
+We strive to design it to be consistent with the calculation results of <strong>R language</strong>.`,
                         end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/stats.md">stats package documentation</a>',
                     },
                     collapses: {
@@ -192,6 +192,51 @@ func main() {
                         },
                     },
                 },
+                {
+                    name: 'parallel (Parallel Processing)',
+                    descriptions: {
+                        first:
+`Provide functions for parallel processing, allowing you to group multiple tasks and execute them simultaneously on multiple CPU cores, easily improving data processing efficiency.<br/>
+<br/>
+The parallel package will automatically handle the waiting between parallel coroutines and return the results in the order of the tasks, so you don't need to write additional complex code.`,
+                        end: '<a href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/parallel.md">parallel 套件包說明文件</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: 'Example',
+                            content:
+`package main
+
+import (
+	"fmt"
+	"github.com/HazelnutParadise/insyra/parallel"
+)
+
+func main() {
+	// Define functions and store them in variables
+	f1 := func() (int, string) { return 42, "Answer to Everything" }
+	f2 := func() (string, int) { return "Hello, World!", 2024 }
+	f3 := func() ([]int, float64) { return []int{1, 2, 3}, 3.14 }
+
+	// Group the functions and run them in parallel
+	pg := parallel.GroupUp(f1, f2, f3).Run()
+
+	// Await results
+	results := pg.AwaitResult()
+
+	// Print the results
+	fmt.Printf("All tasks completed. Results: %v\\n", results)
+	for i, result := range results {
+		fmt.Printf("Task %d: %v\\n", i, result)
+	}
+}
+`,
+                        codeBlock: true,
+                        codeLanguage: 'go',
+                        copyButtonText: 'Copy',
+                        },
+                    }
+                }
             ],
         },
     },
