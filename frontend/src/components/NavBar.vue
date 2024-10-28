@@ -1,4 +1,5 @@
 <template>
+  <div class="place-holder"></div>
   <nav class="insyra-navbar">
     <div class="insyra-logo">
       <a href="/">
@@ -45,6 +46,11 @@ export default {
 <style scoped>
 a {
   cursor: pointer;
+}
+
+.place-holder {
+  height: 80px;
+  display: none;
 }
 
 /* Navigation */
@@ -94,6 +100,15 @@ a {
 }
 
 @media (max-width: 1100px) {
+  .place-holder {
+    display: block;
+  }
+  .insyra-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
   .insyra-navbar .nav-menu {
     display: none;
   }
