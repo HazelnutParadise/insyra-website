@@ -61,7 +61,7 @@ export const eng = {
                     title: 'Dedicated IDE',
                     description: 'We provide a <strong>dedicated</strong> and <strong>easy-to-use IDE</strong> for Insyra, allowing you to start your data analysis work quickly without worrying about environment setup.',
                     learnMore: {
-                        href: '#',
+                        href: '#HowToUse',
                         text: 'Learn More about <strong>Idensyra</strong>',
                     },
                 },

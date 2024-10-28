@@ -6,6 +6,7 @@
     <HeroButton :currentMessages="currentMessages.Main.hero.button.main" :settings="{
       color: '#d73e3e',
       size: 'large',
+      href: '#HowToUse',
     }" />
     <br />
     <div class="hero-button-container">

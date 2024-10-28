@@ -61,7 +61,7 @@ export const zhTW = {
                     title: '專用 IDE',
                     description: '我們為 Insyra 提供 <strong>專屬</strong> 的 <strong>簡易 IDE</strong>，讓您不用煩惱環境設定，迅速開始您的資料分析工作。',
                     learnMore: {
-                        href: '#',
+                        href: '#HowToUse',
                         text: '發掘 <strong>Idensyra</strong>',
                     },
                 },
