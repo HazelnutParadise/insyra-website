@@ -530,7 +530,7 @@ plt.show()
         },
     },
     HowToUse: {
-        title: 'How to Use Insyra',
+        title: 'Get Started with Insyra',
         subtitle: 'Explore the Next-Generation Data Analysis Experience',
         installationSection: {
             title: 'Installation',

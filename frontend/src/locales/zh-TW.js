@@ -533,7 +533,7 @@ plt.show()
         },
     },
     HowToUse: {
-        title: '如何使用 Insyra',
+        title: '開始使用 Insyra',
         subtitle: '探索次世代資料分析體驗',
         installationSection: {
             title: '安裝 Insyra',
