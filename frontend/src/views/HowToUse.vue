@@ -4,20 +4,20 @@
     </div>
     <div class="content-wrapper">
       <h1 class="cyber-title" :class="{ 'title-visible': isVisible }">
-        如何使用 Insyra
+        {{ currentMessages.HowToUse.title }}
       </h1>
       <p class="cyber-subtitle" :class="{ 'subtitle-visible': isVisible }">
-        探索下一代程式開發體驗
+        {{ currentMessages.HowToUse.subtitle }}
       </p>
 
       <!-- Installation Section -->
       <section class="neo-section installation-section" :class="{ 'section-visible': isVisible }">
         <div class="section-header">
           <div class="header-line"></div>
-          <h2>安裝 Insyra</h2>
+          <h2>{{ currentMessages.HowToUse.installationSection.title }}</h2>
           <div class="header-line"></div>
         </div>
-        <p>在終端機中執行以下指令來安裝 Insyra：</p>
+        <p>{{ currentMessages.HowToUse.installationSection.description }}</p>
         <div class="terminal-window">
           <div class="terminal-header">
             <span class="terminal-button"></span>
@@ -25,11 +25,11 @@
             <span class="terminal-button"></span>
           </div>
           <div class="terminal-content">
-            <pre><code>go get -u github.com/HazelnutParadise/Insyra</code></pre>
+            <pre><code>go get -u github.com/HazelnutParadise/insyra</code></pre>
           </div>
         </div>
-        <a href="https://github.com/HazelnutParadise/Insyra" class="cyber-link">
-            Go 初學者？
+        <a target="_blank" :href="currentMessages.HowToUse.installationSection.goBeginner.link" class="cyber-link">
+            {{ currentMessages.HowToUse.installationSection.goBeginner.text }}
         </a>
       </section>
 
@@ -37,69 +37,55 @@
       <section class="neo-section ide-section" :class="{ 'section-visible': isVisible }">
         <div class="section-header">
           <div class="header-line"></div>
-          <h2>專屬 IDE：Idensyra</h2>
+          <h2>{{ currentMessages.HowToUse.ideSection.title }}</h2>
           <div class="header-line"></div>
         </div>
         
         <div class="ide-intro">
-          <p class="ide-description">
-            Idensyra 是一個輕量級的 Go IDE，內建 Insyra。無需安裝 Go 環境即可執行 Go 代碼！
-          </p>
+          <p class="ide-description" v-html="currentMessages.HowToUse.ideSection.description"></p>
           <div class="download-button">
             <a href="#" class="cyber-button">
-              下載 Idensyra
+              {{ currentMessages.HowToUse.ideSection.downloadButton.text }}
               <span class="button-glow"></span>
+            </a>
+            <br>
+            <a target="_blank" :href="currentMessages.HowToUse.ideSection.repo.link" class="cyber-link">
+              {{ currentMessages.HowToUse.ideSection.repo.text }}
             </a>
           </div>
         </div>
 
         <div class="mode-cards">
           <div class="mode-card">
-            <h3>GUI 模式</h3>
-            <img src="https://placehold.co/500x300" alt="GUI Mode" class="mode-icon">
-            
-            <div class="mode-icon">🖥️</div>
-            <p>使用 Fyne 構建的圖形界面</p>
-            <ul>
-              <li>即時運行功能</li>
-              <li>視覺化界面</li>
-              <li>快捷鍵支持</li>
-            </ul>
+            <h3>{{ currentMessages.HowToUse.ideSection.guiMode.title }}</h3>
+            <img src="https://github.com/HazelnutParadise/idensyra/blob/main/gui_example.png?raw=true" alt="GUI Mode" class="mode-icon">
+            <div class="mode-content">
+              <div class="mode-icon">🖥️</div>
+              <p>{{ currentMessages.HowToUse.ideSection.guiMode.description }}</p>
+              <ul>
+                <li v-for="feature in currentMessages.HowToUse.ideSection.guiMode.features" :key="feature">{{ feature }}</li>
+              </ul>
+            </div>
           </div>
 
           <div class="mode-card">
-            <h3>WebUI 模式</h3>
-            <img src="https://placehold.co/500x300" alt="WebUI Mode" class="mode-icon">
-            <div class="mode-icon">🌐</div>
-            <p>基於 monaco-editor 的網頁界面</p>
-            <ul>
-              <li>代碼高亮</li>
-              <li>智能補全</li>
-              <li>在線編輯</li>
-            </ul>
+            <h3>{{ currentMessages.HowToUse.ideSection.webMode.title }}</h3>
+            <img src="https://github.com/HazelnutParadise/idensyra/blob/main/webui_example.png?raw=true" alt="WebUI Mode" class="mode-icon">
+            <div class="mode-content">
+              <div class="mode-icon">🌐</div>
+              <p>{{ currentMessages.HowToUse.ideSection.webMode.description }}</p>
+              <ul>
+                <li v-for="feature in currentMessages.HowToUse.ideSection.webMode.features" :key="feature">{{ feature }}</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h4>無需環境</h4>
-            <p>內建 Go 運行環境</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h4>即寫即用</h4>
-            <p>Insyra 功能隨寫隨用</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔄</div>
-            <h4>實時運行</h4>
-            <p>支持代碼實時執行</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎨</div>
-            <h4>雙模式</h4>
-            <p>GUI/Web 隨心切換</p>
+          <div class="feature-card" v-for="(feature, key) in currentMessages.HowToUse.ideSection.features" :key="key">
+            <div class="feature-icon">{{ feature.icon }}</div>
+            <h4>{{ feature.title }}</h4>
+            <p>{{ feature.description }}</p>
           </div>
         </div>
       </section>
@@ -110,6 +96,12 @@
 <script>
 export default {
   name: 'HowToUse',
+  props: {
+    currentMessages: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       isVisible: false
@@ -302,6 +294,7 @@ h2 {
 .mode-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background: rgba(25, 25, 45, 0.8);
   border: 1px solid rgba(255, 227, 176, 0.2);
   border-radius: 15px;
@@ -332,7 +325,13 @@ h2 {
   margin-bottom: 15px;
 }
 
-.mode-card ul {
+.mode-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mode-card div ul {
   margin-left: auto;
   margin-right: auto;
   list-style: none;
@@ -340,13 +339,13 @@ h2 {
   text-align: left;
 }
 
-.mode-card ul li {
+.mode-card div ul li {
   margin: 10px 0;
   padding-left: 20px;
   position: relative;
 }
 
-.mode-card ul li:before {
+.mode-card div ul li:before {
   content: "→ ";
   color: #fbe3b0;
 }
@@ -411,6 +410,16 @@ h2 {
 .feature-card h4 {
   color: #fbe3b0;
   margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+}
+
+.ide-description {
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 @media (max-width: 768px) {
@@ -476,4 +485,5 @@ h2 {
   }
 }
 </style>
+
 
