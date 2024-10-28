@@ -28,6 +28,9 @@
             <pre><code>go get -u github.com/HazelnutParadise/Insyra</code></pre>
           </div>
         </div>
+        <a href="https://github.com/HazelnutParadise/Insyra" class="cyber-link">
+            Go 初學者？
+        </a>
       </section>
 
       <!-- Idensyra IDE Section -->
@@ -124,6 +127,10 @@ p {
   font-size: 1.2rem;
 }
 
+pre {
+  font-size: 1.2rem;
+}
+
 /* 更新背景色和基礎文字顏色 */
 .how-to-use-page {
   min-height: 100vh;
@@ -181,7 +188,7 @@ p {
   text-align: center;
   color: #ff69b4;  /* 粉紅色副標題 */
   text-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
-  margin-bottom: 4rem;
+  margin-bottom: 30px;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.8s ease-out 0.4s;
@@ -197,7 +204,7 @@ p {
   border: 1px solid rgba(255, 227, 176, 0.2);
   border-radius: 15px;
   padding: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(255, 227, 176, 0.1);
   opacity: 0;
@@ -293,6 +300,8 @@ h2 {
 }
 
 .mode-card {
+  display: flex;
+  flex-direction: column;
   background: rgba(25, 25, 45, 0.8);
   border: 1px solid rgba(255, 227, 176, 0.2);
   border-radius: 15px;
@@ -324,8 +333,11 @@ h2 {
 }
 
 .mode-card ul {
+  margin-left: auto;
+  margin-right: auto;
   list-style: none;
   padding: 0;
+  text-align: left;
 }
 
 .mode-card ul li {
@@ -336,8 +348,6 @@ h2 {
 
 .mode-card ul li:before {
   content: "→ ";
-  /* position: absolute; */
-  left: 0;
   color: #fbe3b0;
 }
 
@@ -359,6 +369,15 @@ h2 {
   transform: translateY(-2px);
   box-shadow: 0 0 20px rgba(255, 227, 176, 0.5);
   background: linear-gradient(45deg, #ff69b4, #a2d5ab);
+}
+
+.cyber-link {
+  color: #fbe3b0;
+  text-decoration: underline;
+}
+
+.cyber-link:hover {
+  color: #ff69b4;
 }
 
 .features-grid {
