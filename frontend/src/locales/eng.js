@@ -541,7 +541,7 @@ plt.show()
             },
         },
         ideSection: {
-            title: 'Exclusive IDE: Idensyra',
+            title: 'Dedicated IDE: Idensyra',
             description: 'Idensyra is a simple IDE built with Insyra and Go interpreter. You can use Insyra for data analysis without installing the Go environment!',
             downloadButton: {
                 text: 'Download Idensyra',
