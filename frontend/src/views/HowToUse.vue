@@ -44,7 +44,7 @@
         <div class="ide-intro">
           <p class="ide-description" v-html="currentMessages.HowToUse.ideSection.description"></p>
           <div class="download-button">
-            <a href="#" class="cyber-button">
+            <a href="/download/idensyra" class="cyber-button">
               {{ currentMessages.HowToUse.ideSection.downloadButton.text }}
               <span class="button-glow"></span>
             </a>
