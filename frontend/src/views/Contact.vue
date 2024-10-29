@@ -40,14 +40,8 @@ export default {
   text-align: center;
 }
 
-h1 {
-  font-size: 32px;
-  color: #2e3b55;
-  margin-bottom: 20px;
-}
-
 p {
-  color: #666;
+  color: #4a4a4a;
   font-size: 18px;
   margin-bottom: 15px;
 }
@@ -62,17 +56,12 @@ p {
 
 h2 {
   font-size: 24px;
-  color: #4a4a4a;
+  color: #2e3b55;
   margin-bottom: 10px;
 }
 
 a {
   color: #2e3b55;
-  text-decoration: none;
   font-weight: 600;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 </style>
