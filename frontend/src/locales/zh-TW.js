@@ -599,5 +599,16 @@ plt.show()
     Contact: {
         title: '聯絡我們',
         description: '我們歡迎任何形式的貢獻！<br/>如果您有興趣加入 Insyra 的開發，或有任何問題、建議，請隨時透過以下方式聯絡我們。',
+        contribution: {
+            title: '加入貢獻',
+            description: 'Insyra 是一個開源項目，我們熱切期待您的貢獻！不論是程式碼、文件改進或是問題反饋，任何幫助都會讓 Insyra 變得更好。',
+            repositoryText: 'GitHub 儲存庫',
+            supportText: '支援文件',
+        },
+        mail: {
+            title: '聯絡信箱',
+            description: '若您有任何疑問或建議，歡迎使用榛果繽紛樂網站信箱聯繫我們：',
+            text: '榛果繽紛樂網站信箱',
+        },
     },
 };

@@ -19,7 +19,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 280px;
+  height: 320px;
   text-align: center;
   padding: 60px 20px;
   background-color: #f5f5f5;
@@ -30,7 +30,7 @@ export default {
 
 .title-section h1 {
   font-size: 48px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #1f449b;
   font-weight: 700;
 }
@@ -45,13 +45,13 @@ export default {
 
 @media (max-width: 768px) {
   .title-section {
-    height: 350px;
+    height: 400px;
     background-image: 
     linear-gradient(45deg, #fcc366 10%, transparent 10%, transparent 90%, transparent 90%, transparent),
     linear-gradient(45deg, transparent 10%, transparent 10%, transparent 90%, #a3c4f3 90%, #a3c4f3);
   }
   .title-section h1 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   .title-section p {
     max-width: 300px;

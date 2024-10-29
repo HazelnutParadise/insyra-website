@@ -593,4 +593,19 @@ plt.show()
             ],
         },
     },
+    Contact: {
+        title: 'Contact Us',
+        description: 'We welcome any form of contribution!<br/>If you are interested in joining the development of Insyra or have any questions or suggestions, please contact us at any time through the following methods.',
+        contribution: {
+            title: 'Join Contribution',
+            description: 'Insyra is an open source project, and we look forward to your contributions! No matter whether it is code, document improvement, or problem feedback, any help will make Insyra better.',
+            repositoryText: 'GitHub Repository',
+            supportText: 'Support Document',
+        },
+        mail: {
+            title: 'Contact Email',
+            description: 'If you have any questions or suggestions, please contact us using Hazelnut Paradise Website Email:',
+            text: 'Hazelnut Paradise Website Email',
+        },
+    },
 };

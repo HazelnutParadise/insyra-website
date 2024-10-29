@@ -4,16 +4,17 @@
 
     <!-- Contribution Invitation -->
     <section class="contribution-section">
-      <h2>加入貢獻</h2>
-      <p>Insyra 是一個開源項目，我們熱切期待您的貢獻！不論是程式碼、文件改進或是問題反饋，任何幫助都會讓 Insyra 變得更好。</p>
-      <p>前往我們的 <a href="https://github.com/HazelnutParadise/insyra" target="_blank">GitHub 儲存庫</a> 開始貢獻吧！</p>
+      <h2>{{ currentMessages.Contact.contribution.title }}</h2>
+      <p>{{ currentMessages.Contact.contribution.description }}</p>
+      <a href="https://github.com/HazelnutParadise/insyra" target="_blank" style="margin-right: 10px;">{{ currentMessages.Contact.contribution.repositoryText }}</a>
+      <a href="https://support.hazelnut-paradise.com/index.php?category_id=5&category_name=%E9%96%8B%E6%BA%90%E8%B2%A2%E7%8D%BB" target="_blank">{{ currentMessages.Contact.contribution.supportText }}</a>
     </section>
 
     <!-- Contact Information -->
     <section class="contact-info-section">
-      <h2>聯絡信箱</h2>
-      <p>若您有任何疑問或建議，歡迎透過電子郵件聯繫我們：</p>
-      <p><a href="https://apps.hazelnut-paradise.com/mail" target="_blank">榛果繽紛樂網站信箱</a></p>
+      <h2>{{ currentMessages.Contact.mail.title }}</h2>
+      <p>{{ currentMessages.Contact.mail.description }}</p>
+      <p><a href="https://apps.hazelnut-paradise.com/mail" target="_blank">{{ currentMessages.Contact.mail.text }}</a></p>
     </section>
   </div>
 </template>
@@ -41,6 +42,8 @@ export default {
 }
 
 p {
+  max-width: 800px;
+  margin: 0 auto;
   color: #4a4a4a;
   font-size: 18px;
   margin-bottom: 15px;
