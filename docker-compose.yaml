@@ -3,30 +3,9 @@ version: "3.8"
 services:
   insyra-website:
     build:
-      context: .
+      context: https://github.com/HazelnutParadise/insyra-website.git
       dockerfile: Dockerfile
     container_name: insyra-website
     ports:
       - "1234:8080"
     restart: always
-
-  updater:
-    image: alpine/git
-    container_name: insyra-website-updater
-    environment:
-      - REPO_URL=https://github.com/HazelnutParadise/insyra-website.git
-    volumes:
-      - ./app:/app  # 可選：如需同步代碼到本地再重啟應用
-    entrypoint: >
-      /bin/sh -c "
-      sleep 60;  # 延遲以確保 insyra-website 已啟動
-      while true; do
-        if [ ! -d '/app/.git' ]; then
-          git clone $REPO_URL /app;
-        else
-          git -C /app pull;
-          docker restart insyra-website;  # 重啟應用容器應用最新更新
-        fi
-        sleep 3600;
-      done
-      "
