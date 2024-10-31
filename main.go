@@ -3,6 +3,8 @@ package main
 import (
 	"net/http"
 
+	"backend/downloadAPI"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -25,6 +27,14 @@ func main() {
 		}
 		defer resp.Body.Close()
 		c.DataFromReader(resp.StatusCode, resp.ContentLength, resp.Header.Get("Content-Type"), resp.Body, nil)
+	})
+
+	router.GET("/download/:file", func(c *gin.Context) {
+		file := c.Param("file")
+		switch file {
+		case "idensyra":
+			downloadAPI.DownloadIdensyra(c)
+		}
 	})
 
 	router.Run(":8080")
