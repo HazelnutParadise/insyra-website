@@ -9,4 +9,3 @@ services:
     ports:
       - "1234:8080"
     restart: always
-
