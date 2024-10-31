@@ -14,7 +14,7 @@ services:
 
   updater:
     image: alpine/git
-    container_name: insyra-updater
+    container_name: insyra-website-updater
     environment:
       - REPO_URL=https://github.com/HazelnutParadise/insyra-website.git
     volumes:
