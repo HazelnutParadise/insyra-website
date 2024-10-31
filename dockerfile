@@ -15,7 +15,7 @@ WORKDIR /app
 
 # 複製源代碼並構建後端
 COPY . .
-COPY --from=frontend-builder /app/frontend/build /app/frontend/build
+COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
 RUN go build -o main main.go
 
 
