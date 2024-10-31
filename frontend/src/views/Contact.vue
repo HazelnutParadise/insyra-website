@@ -37,6 +37,7 @@ export default {
 .contact-page {
   margin: 0 auto;
   min-height: 100vh;
+  padding-bottom: 20px;
   background: #d73e3e;
   text-align: center;
 }
