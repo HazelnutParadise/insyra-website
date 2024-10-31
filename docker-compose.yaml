@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  insyra-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: insyra-website
+    container_name: insyra-website
+    ports:
+      - "1234:8080"
+    restart: always
+
