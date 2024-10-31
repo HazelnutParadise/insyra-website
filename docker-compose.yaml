@@ -1,11 +1,32 @@
 version: "3.8"
 
 services:
+  repo-updater:
+    image: alpine/git
+    container_name: repo-updater
+    volumes:
+      - insyra-code:/app  # 將 GitHub 儲存庫克隆至共享卷
+    environment:
+      - REPO_URL=https://github.com/HazelnutParadise/insyra-website.git
+    entrypoint: >
+      /bin/sh -c "
+      if [ ! -d '/app/.git' ]; then
+        git clone $REPO_URL /app;
+      else
+        cd /app && git pull;
+      fi
+      "
+
   insyra-website:
     build:
-      context: https://github.com/HazelnutParadise/insyra-website.git#v1.0.0
-      dockerfile: Dockerfile
+      context: /app  # 使用共享卷中的代碼作為構建上下文
+      dockerfile: /app/Dockerfile  # 假設 Dockerfile 也在儲存庫中
     container_name: insyra-website
     ports:
       - "1234:8080"
     restart: always
+    depends_on:
+      - repo-updater
+
+volumes:
+  insyra-code:
