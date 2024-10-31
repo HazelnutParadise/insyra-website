@@ -62,7 +62,7 @@ a {
   padding: 20px 40px;
   padding-bottom: 10px;
   background-color: #1f449b;
-  z-index: 999;
+  z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999;
 }
 
 .insyra-logo {
