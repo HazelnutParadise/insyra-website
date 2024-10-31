@@ -12,6 +12,7 @@ func main() {
 	router := gin.Default()
 
 	// 設置靜態文件服務
+	router.Static("/icon.png", "./frontend/dist/icon.png")
 	router.Static("/assets", "./frontend/dist/assets")
 
 	// 處理所有其他路由，返回 index.html（用於處理前端路由）
