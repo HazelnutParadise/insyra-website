@@ -25,7 +25,7 @@ export const eng = {
                     title: 'High-Performance Data Processing',
                     description: 'Thanks to the excellent performance of Golang, Insyra can quickly process large datasets, suitable for scenarios requiring extensive or parallel data calculations, such as <strong>big data analysis</strong>.',
                     learnMore: {
-                        href: '#',
+                        href: '#WhyInsyra',
                         text: 'Learn More',
                     },
                 },
@@ -606,6 +606,23 @@ plt.show()
             title: 'Contact Email',
             description: 'If you have any questions or suggestions, please contact us using Hazelnut Paradise Website Email:',
             text: 'Hazelnut Paradise Website Email',
+        },
+    },
+    WhyInsyra: {
+        title: 'Why Insyra?',
+        description: 'Insyra not only provides a simple syntax, but also has energy-saving advantages due to Golang. Below is a comparison of the code between Insyra and Pandas for the same operation, allowing you to more intuitively understand its advantages.',
+        codeComparison: {
+            title: 'Insyra vs Pandas Syntax Comparison',
+            calculateAverage: {
+                title: 'Calculate Average',
+            },
+            removeStrings: {
+                title: 'Remove Strings from Data',
+            },
+        },
+        goEfficiency: {
+            title: 'Go Language Energy-Saving Advantages',
+            description: 'Insyra is developed based on the Go language, known for its efficient memory management and parallel processing capabilities. <a href="https://greenlab.di.uminho.pt/wp-content/uploads/2017/09/paperSLE.pdf" target="_blank">Research</a> shows that compared to Python, Go can use system resources more efficiently and significantly reduce energy consumption during runtime. Using Insyra makes your data analysis more environmentally friendly.',
         },
     },
 };

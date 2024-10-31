@@ -25,7 +25,7 @@ export const zhTW = {
                     title: '高效能資料處理',
                     description: '得益於 Go 語言的優異性能，Insyra 能夠快速處理龐大的數據集，適合需要大量或平行資料計算的情境，如 <strong>大數據分析</strong> 等。',
                     learnMore: {
-                        href: '#',
+                        href: '#WhyInsyra',
                         text: '了解更多',
                     },
                 },
@@ -609,6 +609,23 @@ plt.show()
             title: '聯絡信箱',
             description: '若您有任何疑問或建議，歡迎使用榛果繽紛樂網站信箱聯繫我們：',
             text: '榛果繽紛樂網站信箱',
+        },
+    },
+    WhyInsyra: {
+        title: '為什麼選擇 Insyra？',
+        description: 'Insyra 不僅提供簡單易用的語法，更因為基於 Go 語言而具備節能效益。以下為 Insyra 和 Pandas 在相同操作上的代碼對比，讓您更直觀地了解它的優勢。',
+        codeComparison: {
+            title: 'Insyra vs Pandas 語法對比',
+            calculateAverage: {
+                title: '計算平均值',
+            },
+            removeStrings: {
+                title: '移除資料中的字串',
+            },
+        },
+        goEfficiency: {
+            title: 'Go 語言的節能優勢',
+            description: 'Insyra 基於 Go 語言開發，Go 以高效的記憶體管理與並行處理能力聞名。<a href="https://greenlab.di.uminho.pt/wp-content/uploads/2017/09/paperSLE.pdf" target="_blank">研究指出</a>，與 Python 相比，Go 能更高效地使用系統資源，顯著降低運行時的能耗。使用 Insyra 讓您的資料分析更環保。',
         },
     },
 };
