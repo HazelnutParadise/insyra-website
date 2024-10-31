@@ -15,7 +15,7 @@ services:
       else
         cd /app && git pull;
       fi
-      sleep 3600;  # 每小時檢查一次
+      sleep 3600;
       "
 
   insyra-website:
