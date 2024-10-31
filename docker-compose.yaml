@@ -3,7 +3,7 @@ version: "3.8"
 services:
   insyra-website:
     build:
-      context: https://github.com/HazelnutParadise/insyra-website.git
+      context: https://github.com/HazelnutParadise/insyra-website.git#v1.0.0
       dockerfile: Dockerfile
     container_name: insyra-website
     ports:
