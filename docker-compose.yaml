@@ -1,6 +1,5 @@
 version: "3.8"
 
-# 2024/10/31 15:32 更新
 services:
   insyra-website:
     build:
@@ -10,3 +9,25 @@ services:
     ports:
       - "1234:8080"
     restart: always
+    volumes:
+      - .:/app  # 將應用程式的代碼掛載到容器內，讓更新可以即時生效
+
+  updater:
+    image: alpine/git  # 使用 Alpine Git 來拉取 GitHub 儲存庫中的更新
+    container_name: insyra-updater
+    environment:
+      - REPO_URL=https://github.com/HazelnutParadise/insyra-website.git
+    volumes:
+      - .:/app
+    entrypoint: >
+      /bin/sh -c "
+      while true; do
+        # 如果 .git 資料夾不存在，克隆儲存庫；否則，只進行更新拉取
+        if [ ! -d '/app/.git' ]; then
+          git clone $REPO_URL /app;
+        else
+          git -C /app pull;
+        fi
+        sleep 3600;
+      done
+      "
