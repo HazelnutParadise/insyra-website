@@ -5,7 +5,7 @@ services:
     image: alpine/git
     container_name: repo-updater
     volumes:
-      - insyra-code:/app  # 將 GitHub 儲存庫克隆至共享卷
+      - insyra-code:/app  # 使用卷來儲存 GitHub 儲存庫的內容
     environment:
       - REPO_URL=https://github.com/HazelnutParadise/insyra-website.git
     entrypoint: >
@@ -15,12 +15,13 @@ services:
       else
         cd /app && git pull;
       fi
+      sleep 3600;  # 每小時檢查一次
       "
 
   insyra-website:
     build:
-      context: /app  # 使用共享卷中的代碼作為構建上下文
-      dockerfile: /app/Dockerfile  # 假設 Dockerfile 也在儲存庫中
+      context: /app  # 使用 repo-updater 服務克隆的代碼作為構建上下文
+      dockerfile: /app/Dockerfile
     container_name: insyra-website
     ports:
       - "1234:8080"
