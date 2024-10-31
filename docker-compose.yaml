@@ -6,6 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: insyra-website
+    volumes:
+      - .:/app
     ports:
       - "1234:8080"
     restart: always
