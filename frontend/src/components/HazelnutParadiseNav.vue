@@ -8,7 +8,6 @@ import { onMounted } from 'vue';
 onMounted(async () => {
     let response = await fetch('/navbar')
     const data = await response.text()
-    console.log(data);
     document.getElementById('navbar-placeholder').innerHTML = data;
 });
 </script>

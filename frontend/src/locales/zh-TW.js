@@ -1,4 +1,5 @@
 export const zhTW = {
+    siteTitle: 'Insyra: 次世代 Go 語言資料分析解決方案 | 太快、太美、太簡單',
     navbar: {
         main: '邂逅 Insyra',
         whatIsInsyra: 'Insyra 是什麼',

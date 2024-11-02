@@ -39,12 +39,16 @@ export default {
   setup() {
     const initials = ['繁體中文', 'English']
     let currentLanguage = localStorage.getItem('language')
+    
     if (!currentLanguage) {
-      currentLanguage = initials[0]
+      const browserLang = navigator.language || navigator.userLanguage;
+      currentLanguage = browserLang.toLowerCase().includes('zh') ? '繁體中文' : 'English';
+      localStorage.setItem('language', currentLanguage);
     }
     const value = ref(currentLanguage) // 預設選擇繁體中文
     const currentMessages = ref(messages[value.value]); // 當前語言的文本
     const currentPage = ref(Main); // 當前顯示的組件
+    document.title = currentMessages.siteTitle;
 
     const updateLanguage = (lang) => {
       if (messages[lang]) {
@@ -94,6 +98,9 @@ export default {
     };
 
     onMounted(() => {
+      // 設置初始標題
+      document.title = messages[currentLanguage].siteTitle;
+      
       handleHashChange(); // 初始化時根據 hash 切換組件
       window.addEventListener('hashchange', handleHashChange); // 監聽 hash 變化
     });
