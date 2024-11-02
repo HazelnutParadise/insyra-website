@@ -12,11 +12,16 @@ export const zhTW = {
             slogan: '太快、太美、太簡單',
             title: '邂逅 Insyra',
             description: '強大的數據分析工具，為未來而生。',
+            audio: {
+                error: '您的瀏覽器不支援音訊播放器。',
+                description: '聆聽 Insyra 介紹（英語）',
+            },
             button: {
                 main: '開始使用',
                 secondary1: 'GoDoc',
                 secondary2: 'GitHub',
             },
+            audioDescription: '聆聽 Insyra 產品介紹',
         },
         featureItemSection: {
             features: {

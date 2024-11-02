@@ -3,6 +3,16 @@
     <h2>{{ currentMessages.Main.hero.slogan }}</h2>
     <h1>{{ currentMessages.Main.hero.title }}</h1>
     <p>{{ currentMessages.Main.hero.description }}</p>
+    
+    <!-- 添加音訊播放器組件 -->
+    <div class="audio-section">
+      <audio controls controlslist="nodownload" class="audio-player">
+        <source src="../assets/insyra_introduce.wav" type="audio/wav">
+        {{ currentMessages.Main.hero.audio.error }}
+      </audio>
+      <p class="audio-description">{{ currentMessages.Main.hero.audio.description }}</p>
+    </div>
+
     <HeroButton :currentMessages="currentMessages.Main.hero.button.main" :settings="{
       color: '#d73e3e',
       size: 'large',
@@ -44,7 +54,7 @@ export default {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 75px 20px;
   background-color: #f5f5f5;
   /* 添加斜線 */
   background-image: 
@@ -93,6 +103,40 @@ export default {
     background-image: 
     linear-gradient(45deg, #f9ac41 20%, transparent 20%, transparent 80%, #f4f4f4 80%, transparent),
     linear-gradient(45deg, transparent 20%, transparent 20%, transparent 80%, #1f449b 80%, #1f449b);
+  }
+}
+
+/* 添加音訊播放器樣式 */
+.audio-section {
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 10px !important;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.audio-player {
+  width: 100%;
+}
+
+.audio-player::-webkit-media-controls-panel {
+  background-color: #ffffff;
+}
+
+.audio-description {
+  font-size: 14px;
+  color: #4a4a4a;
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+@media (max-width: 768px) {
+  .audio-section {
+    width: 100%;
+    border-radius: 0;
+    margin: 15px auto;
   }
 }
 </style>

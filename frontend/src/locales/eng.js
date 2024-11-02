@@ -12,6 +12,10 @@ export const eng = {
             slogan: 'Fast, Lovely, Easy to Use',
             title: 'Meet Insyra',
             description: 'Powerful data analysis tools, built for the future.',
+            audio: {
+                error: 'Your browser does not support the audio player.',
+                description: 'Listen to Insyra introduction',
+            },
             button: {
                 main: 'Get Started',
                 secondary1: 'GoDoc',
