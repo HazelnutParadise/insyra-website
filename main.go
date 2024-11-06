@@ -31,6 +31,11 @@ func main() {
 	})
 
 	router.GET("/download/:file", func(c *gin.Context) {
+		// 設置 HTTP 標頭以禁止快取
+		c.Header("Cache-Control", "no-store, no-cache, must-revalidate")
+		c.Header("Pragma", "no-cache")
+		c.Header("Expires", "0")
+
 		file := c.Param("file")
 		switch file {
 		case "idensyra":

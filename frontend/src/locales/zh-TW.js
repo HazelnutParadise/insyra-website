@@ -12,7 +12,7 @@ export const zhTW = {
         hero: {
             slogan: '太快、太美、太簡單',
             title: '邂逅 Insyra',
-            description: '強大的數據分析工具，為未來而生。',
+            description: '強大的資料分析工具，為未來而生。',
             audio: {
                 error: '您的瀏覽器不支援音訊播放器。',
                 description: '聆聽 Insyra 介紹（英語）',
@@ -29,7 +29,7 @@ export const zhTW = {
                 feature1: {
                     id: 1,
                     title: '高效能資料處理',
-                    description: '得益於 Go 語言的優異性能，Insyra 能夠快速處理龐大的數據集，適合需要大量或平行資料計算的情境，如 <strong>大數據分析</strong> 等。',
+                    description: '得益於 Go 語言的優異性能，Insyra 能夠快速處理龐大的資料集，適合需要大量或平行資料計算的情境，如 <strong>大數據分析</strong> 等。',
                     learnMore: {
                         href: '#WhyInsyra',
                         text: '了解更多',
@@ -76,10 +76,10 @@ export const zhTW = {
     },
     AboutInsyra: {
         title: 'Insyra 是什麼',
-        description: 'Insyra 是 Go 語言的綜合型資料分析工具，無論是日常數據處理還是大規模數據分析，Insyra 都能讓你以更快的速度、更少的程式碼完成任務。',
+        description: 'Insyra 是 Go 語言的綜合型資料分析工具，無論是日常資料處理還是大規模資料分析，Insyra 都能讓你以更快的速度、更少的程式碼完成任務。',
         whyCreate: {
             title: '為什麼創建 Insyra',
-            description: 'Go 語言擁有高效能與極佳的平行處理能力，但其生態在資料分析領域，始終缺乏像 Pandas 這樣完整且成熟的分析庫。為了填補這個空缺，Insyra 於 2024 年的夏天誕生，為 Go 提供一個能夠媲美 Pandas 的強大資料分析解決方案，滿足從簡單資料處理到大型數據集的多樣需求。Insyra 誕生於對高性能、易用性和與現有工具無縫整合的需求。許多現有解決方案要嘛性能表現不佳，要嘛太複雜不易學習，使其在多樣化和複雜的數據環境中難以發揮現代硬體的優勢。',
+            description: 'Go 語言擁有高效能與極佳的平行處理能力，但其生態在資料分析領域，始終缺乏像 Pandas 這樣完整且成熟的分析庫。為了填補這個空缺，Insyra 於 2024 年的夏天誕生，為 Go 提供一個能夠媲美 Pandas 的強大資料分析解決方案，滿足從簡單資料處理到大型資料集的多樣需求。許多現有解決方案要嘛性能表現不佳，要嘛太複雜不易學習，使其在多樣化和複雜的資料環境中難以發揮現代硬體的優勢。Insyra 則誕生於對高性能、易用性和與現有工具無縫整合的需求。',
         },
         corePhilosophy: {
             title: '核心理念',
@@ -90,7 +90,7 @@ export const zhTW = {
                 },
                 second: {
                     title: '靈活與擴展性',
-                    description: 'Insyra 提供多個子套件包，無論是簡單的數據處理，還是複雜的大數據分析，都能夠靈活應對，並且輕鬆擴展。未來也將加入更多功能，滿足各方面的資料分析需求。',
+                    description: 'Insyra 提供多個子套件包，無論是簡單的資料處理，還是複雜的大數據分析，都能夠靈活應對，並且輕鬆擴展。未來也將加入更多功能，滿足各方面的資料分析需求。',
                 },
                 third: {
                     title: '簡單易懂',
@@ -100,7 +100,7 @@ export const zhTW = {
         },
         futureVision: {
             title: '未來展望',
-            description: '我們期望 Insyra 成為資料分析的標配。隨著 Insyra 的成長，我們的目標是讓使用者能在同一個生態系中一條龍完成所有的數據分析工作，無需在多個語言或是工具間來回切換。',
+            description: '我們期望 Insyra 成為資料分析的標配。隨著 Insyra 的成長，我們的目標是讓使用者能在同一個生態系中一條龍完成所有的資料分析工作，無需在多個語言或是工具間來回切換。',
         },
     },
     Features: {
@@ -151,7 +151,7 @@ func main() {
                 },
             },
             dataTable: {
-                description: 'DataTable 是一個類似表格的二維結構，具備多種數據操作、篩選、查詢和顯示方法。DataTable 基於 DataList 打造，提供一致的使用體驗。',
+                description: 'DataTable 是一個類似表格的二維結構，具備多種資料操作、篩選、查詢和顯示方法。DataTable 基於 DataList 打造，提供一致的使用體驗。',
                 collapse: {
                     title: '使用範例',
                     content: 
@@ -607,7 +607,7 @@ plt.show()
         description: '我們歡迎任何形式的貢獻！<br/>如果您有興趣加入 Insyra 的開發，或有任何問題、建議，請隨時透過以下方式聯絡我們。',
         contribution: {
             title: '加入貢獻',
-            description: 'Insyra 是一個開源項目，我們熱切期待您的貢獻！不論是程式碼、文件改進或是問題反饋，任何幫助都會讓 Insyra 變得更好。',
+            description: 'Insyra 是一個開源項目，我們熱切期待您的貢獻！不論是程式碼、文件改進或是問題回饋，任何幫助都會讓 Insyra 變得更好。',
             repositoryText: 'GitHub 儲存庫',
             supportText: '支援文件',
         },
