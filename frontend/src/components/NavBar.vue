@@ -1,5 +1,6 @@
 <template>
   <div class="place-holder"></div>
+  <div id="Pistachio-Announcement"></div>
   <nav class="insyra-navbar">
     <div class="insyra-logo">
       <a href="/">
