@@ -21,7 +21,7 @@ func main() {
 	})
 
 	router.GET("/navbar", func(c *gin.Context) {
-		resp, err := http.Get("https://hazelnut-paradise.com/navbar")
+		resp, err := http.Get("https://src.hazelnut-paradise.com/navbar.html?content-type=text/html")
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
