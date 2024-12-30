@@ -20,7 +20,7 @@ RUN go build -o main main.go
 
 
 # 最終運行階段
-FROM alpine:latest
+FROM scratch
 
 WORKDIR /app
 
