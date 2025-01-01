@@ -22,11 +22,9 @@ RUN go build -o main main.go
 # 最終運行階段
 FROM scratch
 
-WORKDIR /app
-
 # 從後端構建階段複製編譯好的可執行文件
-COPY --from=backend-builder /app/main /app/main
-COPY --from=backend-builder /app/frontend/dist /app/frontend/dist
+COPY --from=backend-builder /app/main /main
+COPY --from=backend-builder /app/frontend/dist /frontend/dist
 
 # 設定默認啟動命令
 CMD ["/app/main"]
