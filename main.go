@@ -16,6 +16,7 @@ var httpClient = &http.Client{
 }
 
 func main() {
+	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
 
 	// 設置靜態文件服務
