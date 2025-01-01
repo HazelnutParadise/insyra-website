@@ -27,4 +27,4 @@ COPY --from=backend-builder /app/main /main
 COPY --from=backend-builder /app/frontend/dist /frontend/dist
 
 # 設定默認啟動命令
-CMD ["/app/main"]
+CMD ["/main"]
