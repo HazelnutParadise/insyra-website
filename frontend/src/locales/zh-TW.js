@@ -217,7 +217,7 @@ import (
 
 func main() {
 	crawler := datafetch.GoogleMapsStores()
-	dt := crawler.GetComments(crawler.Search("Din Tai Fung")[0].ID, 5).ToDataTable()
+	dt := crawler.GetReviews(crawler.Search("Din Tai Fung")[0].ID, 5).ToDataTable()
 	if dt == nil {
 		log.Fatalf("Error")
 	}

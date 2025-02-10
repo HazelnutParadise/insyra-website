@@ -199,7 +199,7 @@ func main() {
                     subTitle: 'Data Fetching',
                     descriptions: {
                         first:
-                            `Provides data retrieval function, currently Google Maps Store comments can be obtained.`,
+                            `Provides data retrieval function, currently Google Maps Store reviews can be obtained.`,
                         end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/datafetch.md">datafetch package documentation</a>',
                     },
                     collapses: {
@@ -215,7 +215,7 @@ import (
 
 func main() {
 	crawler := datafetch.GoogleMapsStores()
-	dt := crawler.GetComments(crawler.Search("Din Tai Fung")[0].ID, 5).ToDataTable()
+	dt := crawler.GetReviews(crawler.Search("Din Tai Fung")[0].ID, 5).ToDataTable()
 	if dt == nil {
 		log.Fatalf("Error")
 	}
