@@ -1,11 +1,11 @@
-# 前端構建階段（Node.js）
-FROM node:23-alpine AS frontend-builder
+# 前端構建階段（Bun）
+FROM oven/bun:latest AS frontend-builder
 
 WORKDIR /app
 
 # 複製源代碼並安裝前端依賴項目
 COPY frontend/ /app/frontend
-RUN cd frontend && npm install && npm run build
+RUN cd frontend && bun install && bun run build
 
 
 # 後端構建階段（Go）
@@ -14,7 +14,7 @@ FROM golang:1.23-alpine AS backend-builder
 WORKDIR /app
 
 # 複製源代碼並構建後端
-COPY . .
+COPY . . 
 COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
 RUN go build -o main main.go
 
