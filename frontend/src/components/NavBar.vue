@@ -80,6 +80,7 @@ a {
   padding: 0px 15px;
   border-radius: 5px;
   margin: 0;
+  z-index: 10;
 }
 
 .nav-menu {

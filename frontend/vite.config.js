@@ -1,8 +1,7 @@
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default {
   base: './',
   plugins: [vue()],
   server: {
@@ -14,4 +13,4 @@ export default defineConfig({
       }
     }
   }
-})
+}

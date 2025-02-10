@@ -128,18 +128,18 @@ export const eng = {
                     content:
 `package main
 
-// import Insyra main package
+// import Insyra
 import (
     "fmt"
-    "github.com/HazelnutParadise/insyra"
+    "github.com/HazelnutParadise/insyra/isr" // Use isr sytax sugar package
 )
 
 func main() {
-    // Create DataList instance
-    dl := insyra.NewDataList(1, 2, 3, 4, 5)
+    // Create a DataList instance
+    dl := isr.DL{}.From(1, 2, 3, 4, 5)
 
-    // Calculate and print the mean value
-    fmt.Println("Mean value:", dl.Mean())
+    // Calculate the average value and print it out
+    fmt.Println("Average:", dl.Mean())
 }`,
                     copyButtonText: 'Copy',
                 },
@@ -155,22 +155,22 @@ func main() {
                     content:
 `package main
 
-// import Insyra main package
+// import Insyra
 import (
-    "github.com/HazelnutParadise/insyra"
+	"github.com/HazelnutParadise/insyra/isr" // Use isr sytax sugar package
 )
 
 func main() {
-    // Create DataList instance
-    students := insyra.NewDataList("Jane", "Jim", "John")
-    ages := insyra.NewDataList(22, 21, 23)
-    scores := insyra.NewDataList(90, 88, 95)
+	// Create DataList instances for students, ages, and scores
+	students := isr.DL{}.From("Jane", "Jim", "John")
+	ages := isr.DL{}.From(22, 21, 23)
+	scores := isr.DL{}.From(90, 88, 95)
 
-    // Create DataTable instance
-    dt := insyra.NewDataTable(students, ages, scores)
+	// Create a DataTable instance from the DataList instances
+	dt := isr.DT{}.From(isr.DLs{students, ages, scores})
 
-    // Print DataTable
-    dt.Show()
+	// Display the DataTable
+	dt.Show()
 }`,
                     copyButtonText: 'Copy',
                 },
@@ -183,6 +183,52 @@ func main() {
         packagesSection: {
             title: 'Sub Packages',
             packages: [
+                {
+                    title: 'isr',
+                    subTitle: 'Syntax Sugar',
+                    descriptions: {
+                        first:
+                            `The <strong>isr</strong> package provides syntax sugar for Insyra, allowing you to write code more concisely and intuitively. It simplifies the process of creating and manipulating DataList and DataTable objects, making your code cleaner and easier to read.
+                            <br/>
+                            <strong>isr</strong> is the abbreviation for <strong>Insyra</strong>.`,
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/isr.md">isr package documentation</a>',
+                    },
+                },
+                {
+                    title: 'datafetch',
+                    subTitle: 'Data Fetching',
+                    descriptions: {
+                        first:
+                            `Provides data retrieval function, currently Google Maps Store comments can be obtained.`,
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/datafetch.md">datafetch package documentation</a>',
+                    },
+                    collapses: {
+                        first: {
+                            title: 'Example',
+                            content:`package main
+
+import (
+	"log"
+
+	"github.com/HazelnutParadise/insyra/datafetch"
+)
+
+func main() {
+	crawler := datafetch.GoogleMapsStores()
+	dt := crawler.GetComments(crawler.Search("Din Tai Fung")[0].ID, 5).ToDataTable()
+	if dt == nil {
+		log.Fatalf("Error")
+	}
+
+	dt.Show()
+}
+`,
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: 'Copy',
+                        },
+                    },
+                },
                 {
                     title: 'stats',
                     subTitle: 'Statistics',
