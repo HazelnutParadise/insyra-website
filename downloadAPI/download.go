@@ -1,6 +1,7 @@
 package downloadAPI
 
 import (
+	"crypto/tls"
 	"encoding/json"
 	"io"
 	"net/http"
@@ -11,8 +12,14 @@ import (
 func DownloadIdensyra(c *gin.Context) {
 	var url string
 
+	// 創建忽略SSL驗證的client
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+	client := &http.Client{Transport: tr}
+
 	// 查詢repo最新release
-	resp, err := http.Get("https://api.github.com/repos/HazelnutParadise/idensyra/releases/latest")
+	resp, err := client.Get("https://api.github.com/repos/HazelnutParadise/idensyra/releases/latest")
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
