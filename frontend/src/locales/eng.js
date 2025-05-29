@@ -22,7 +22,7 @@ export const eng = {
                 secondary1: 'GoDoc',
                 secondary2: 'GitHub',
             },
-        },  
+        },
         featureItemSection: {
             features: {
                 feature1: {
@@ -71,9 +71,9 @@ export const eng = {
                     },
                 },
             },
-        },  
+        },
     },
-    AboutInsyra:{
+    AboutInsyra: {
         title: 'What is Insyra',
         description: 'Insyra is a comprehensive data analysis tool for Go, capable of handling both routine data processing and large-scale data analysis tasks with greater speed and fewer lines of code.',
         whyCreate: {
@@ -126,7 +126,7 @@ export const eng = {
                 collapse: {
                     title: 'DataList',
                     content:
-`package main
+                        `package main
 
 // import Insyra
 import (
@@ -136,7 +136,7 @@ import (
 
 func main() {
     // Create a DataList instance
-    dl := isr.DL{}.From(1, 2, 3, 4, 5)
+    dl := isr.DL.From(1, 2, 3, 4, 5)
 
     // Calculate the average value and print it out
     fmt.Println("Average:", dl.Mean())
@@ -153,7 +153,7 @@ func main() {
                 collapse: {
                     title: 'DataTable',
                     content:
-`package main
+                        `package main
 
 // import Insyra
 import (
@@ -162,12 +162,12 @@ import (
 
 func main() {
 	// Create DataList instances for students, ages, and scores
-	students := isr.DL{}.From("Jane", "Jim", "John")
-	ages := isr.DL{}.From(22, 21, 23)
-	scores := isr.DL{}.From(90, 88, 95)
+	students := isr.DL.From("Jane", "Jim", "John")
+	ages := isr.DL.From(22, 21, 23)
+	scores := isr.DL.From(90, 88, 95)
 
 	// Create a DataTable instance from the DataList instances
-	dt := isr.DT{}.From(isr.DLs{students, ages, scores})
+	dt := isr.DT.From(isr.DLs{students, ages, scores})
 
 	// Display the DataTable
 	dt.Show()
@@ -205,7 +205,7 @@ func main() {
                     collapses: {
                         first: {
                             title: 'Example',
-                            content:`package main
+                            content: `package main
 
 import (
 	"log"
@@ -234,7 +234,7 @@ func main() {
                     subTitle: 'Statistics',
                     descriptions: {
                         first:
-`Provide various statistical functions, including skewness, kurtosis, and principal component analysis, etc.<br/>
+                            `Provide various statistical functions, including skewness, kurtosis, and principal component analysis, etc.<br/>
 <br/>
 We strive to design it to be consistent with the calculation results of <strong>R language</strong>.`,
                         end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/stats.md">stats package documentation</a>',
@@ -243,7 +243,7 @@ We strive to design it to be consistent with the calculation results of <strong>
                         first: {
                             title: 'Example',
                             content:
-`package main
+                                `package main
 
 import (
     "fmt"
@@ -264,7 +264,7 @@ func main() {
                     subTitle: 'Parallel Processing',
                     descriptions: {
                         first:
-`Provide functions for parallel processing, allowing you to group multiple tasks and execute them simultaneously on multiple CPU cores, easily improving data processing efficiency.<br/>
+                            `Provide functions for parallel processing, allowing you to group multiple tasks and execute them simultaneously on multiple CPU cores, easily improving data processing efficiency.<br/>
 <br/>
 The parallel package will automatically handle the waiting between parallel coroutines and return the results in the order of the tasks, so you don't need to write additional complex code.`,
                         end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/parallel.md">parallel package documentation</a>',
@@ -273,7 +273,7 @@ The parallel package will automatically handle the waiting between parallel coro
                         first: {
                             title: 'Example',
                             content:
-`package main
+                                `package main
 
 import (
 	"fmt"
@@ -299,9 +299,9 @@ func main() {
 	}
 }
 `,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
+                            codeBlock: true,
+                            codeLanguage: 'go',
+                            copyButtonText: 'Copy',
                         },
                     }
                 },
@@ -310,7 +310,7 @@ func main() {
                     subTitle: 'Data Visualization',
                     descriptions: {
                         first:
-`Integrate the <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, providing various charts to easily create beautiful visualizations for your analysis.<br/>
+                            `Integrate the <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, providing various charts to easily create beautiful visualizations for your analysis.<br/>
 <br/>
 Just write simple settings and you can create beautiful charts for your analysis.`,
                         end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/plot.md">plot package documentation</a>',
@@ -319,7 +319,7 @@ Just write simple settings and you can create beautiful charts for your analysis
                         first: {
                             title: 'Example',
                             content:
-`package main
+                                `package main
 
 import (
 	"github.com/HazelnutParadise/insyra"
@@ -360,7 +360,7 @@ func main() {
                     subTitle: 'Data Visualization',
                     descriptions: {
                         first:
-`Use the <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> data visualization package, providing various charts. It is faster, but the chart style is more simple. <strong>Does not support non-ASCII characters</strong>.<br/>
+                            `Use the <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> data visualization package, providing various charts. It is faster, but the chart style is more simple. <strong>Does not support non-ASCII characters</strong>.<br/>
 <br/>
 <img src="https://github.com/HazelnutParadise/insyra/blob/main/Docs/img/gplot_bar_example.png?raw=true" style="width: 100%;" alt="gplot package example chart" />`,
                         end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/gplot.md">gplot package documentation</a>',
@@ -369,7 +369,7 @@ func main() {
                         first: {
                             title: 'Example',
                             content:
-`import (
+                                `import (
 	"github.com/HazelnutParadise/insyra"
 	"github.com/HazelnutParadise/insyra/gplot"
 )
@@ -397,14 +397,14 @@ func main() {
                     subTitle: 'Linear Programming Model Generation',
                     descriptions: {
                         first:
-`Provide a function to generate linear programming models, allowing you to easily create linear programming models and save them as <strong>.lp</strong> files for use with solving software.`,
+                            `Provide a function to generate linear programming models, allowing you to easily create linear programming models and save them as <strong>.lp</strong> files for use with solving software.`,
                         end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lpgen.md">lpgen package documentation</a>',
                     },
                     collapses: {
                         first: {
                             title: 'Example',
                             content:
-`package main
+                                `package main
 
 import (
 	"github.com/HazelnutParadise/insyra/lpgen"
@@ -443,14 +443,14 @@ func main() {
                     subTitle: 'Linear Programming Model Solving',
                     descriptions: {
                         first:
-`Provide functions to solve linear programming models, allowing you to easily solve linear programming models and obtain the optimal solution. Powered by <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a>. <strong>This package will automatically download and install GLPK when it is used.</strong>`,
+                            `Provide functions to solve linear programming models, allowing you to easily solve linear programming models and obtain the optimal solution. Powered by <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a>. <strong>This package will automatically download and install GLPK when it is used.</strong>`,
                         end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lp.md">lp package documentation</a>',
                     },
                     collapses: {
                         first: {
                             title: 'Example',
                             content:
-`package main
+                                `package main
 
 import (
 	"github.com/HazelnutParadise/insyra/lp"
@@ -492,14 +492,14 @@ func main() {
                     subTitle: 'CSV and Excel Processing',
                     descriptions: {
                         first:
-`Provide functions to convert between CSV and Excel files.`,
+                            `Provide functions to convert between CSV and Excel files.`,
                         end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/csvxl.md">csvxl package documentation</a>',
                     },
                     collapses: {
                         first: {
                             title: 'Example',
                             content:
-`package main
+                                `package main
 
 import (
     "github.com/HazelnutParadise/csvxl"
@@ -536,14 +536,14 @@ func main() {
                     subTitle: 'Python Integration',
                     descriptions: {
                         first:
-`Without manually installing the Python environment and dependencies, you can <strong>execute Python code within Go</strong>, allowing variables to be passed between Go and Python.`,
+                            `Without manually installing the Python environment and dependencies, you can <strong>execute Python code within Go</strong>, allowing variables to be passed between Go and Python.`,
                         end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/py.md">py package documentation</a>',
                     },
                     collapses: {
                         first: {
                             title: 'Example',
                             content:
-`package main
+                                `package main
 
 import (
 	"github.com/HazelnutParadise/insyra"

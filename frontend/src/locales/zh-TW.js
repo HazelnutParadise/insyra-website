@@ -138,7 +138,7 @@ import (
 
 func main() {
     // 建立 DataList 實例
-    dl := isr.DL{}.From(1, 2, 3, 4, 5)
+    dl := isr.DL.From(1, 2, 3, 4, 5)
 
     // 計算並印出平均值
     fmt.Println("平均值:", dl.Mean())
@@ -164,12 +164,12 @@ import (
 
 func main() {
 	// 建立 DataList 實例
-	students := isr.DL{}.From("Jane", "Jim", "John")
-	ages := isr.DL{}.From(22, 21, 23)
-	scores := isr.DL{}.From(90, 88, 95)
+	students := isr.DL.From("Jane", "Jim", "John")
+	ages := isr.DL.From(22, 21, 23)
+	scores := isr.DL.From(90, 88, 95)
 
 	// 建立 DataTable 實例
-	dt := isr.DT{}.From(isr.DLs{students, ages, scores})
+	dt := isr.DT.From(isr.DLs{students, ages, scores})
 
 	// 印出 DataTable
 	dt.Show()
@@ -207,7 +207,7 @@ func main() {
                     collapses: {
                         first: {
                             title: '使用範例',
-                            content:`package main
+                            content: `package main
 
 import (
 	"log"
