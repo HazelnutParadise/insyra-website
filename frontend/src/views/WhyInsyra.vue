@@ -1,7 +1,7 @@
 <template>
   <TitleSection :title="currentMessages.WhyInsyra.title" :description="currentMessages.WhyInsyra.description" />
   <div class="why-insyra-page">
-    
+
     <!-- Code Comparison Section -->
     <section class="code-comparison-section">
       <h2>{{ currentMessages.WhyInsyra.codeComparison.title }}</h2>
@@ -51,7 +51,7 @@ print(cleaned_data)
 data := insyra.NewDataList(1, "a", 3, "b", 5)
 
 cleanedData := data.ClearStrings()
-fmt.Println(cleanedData.Data())
+cleanedData.Show()
             </code></pre>
           </div>
         </div>
@@ -139,7 +139,8 @@ h2 {
   margin-bottom: 10px;
 }
 
-h3, h4 {
+h3,
+h4 {
   color: #2e3b55;
 }
 
@@ -185,7 +186,7 @@ code {
   .code-block {
     flex-direction: column;
   }
-  
+
   .code-box {
     width: 100%;
     margin: 10px 0;
@@ -196,10 +197,10 @@ code {
   .why-insyra-page {
     padding: 15px;
   }
-  
+
   h1 {
     font-size: 24px;
   }
-  
+
 }
 </style>
