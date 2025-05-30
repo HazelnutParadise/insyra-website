@@ -25,11 +25,11 @@
             <span class="terminal-button"></span>
           </div>
           <div class="terminal-content">
-            <pre><code>go get -u github.com/HazelnutParadise/insyra</code></pre>
+            <pre><code>go get -u github.com/HazelnutParadise/insyra/allpkgs</code></pre>
           </div>
         </div>
         <a target="_blank" :href="currentMessages.HowToUse.installationSection.goBeginner.link" class="cyber-link">
-            {{ currentMessages.HowToUse.installationSection.goBeginner.text }}
+          {{ currentMessages.HowToUse.installationSection.goBeginner.text }}
         </a>
       </section>
 
@@ -40,7 +40,7 @@
           <h2>{{ currentMessages.HowToUse.ideSection.title }}</h2>
           <div class="header-line"></div>
         </div>
-        
+
         <div class="ide-intro">
           <p class="ide-description" v-html="currentMessages.HowToUse.ideSection.description"></p>
           <div class="download-button">
@@ -58,24 +58,28 @@
         <div class="mode-cards">
           <div class="mode-card">
             <h3>{{ currentMessages.HowToUse.ideSection.guiMode.title }}</h3>
-            <img src="https://github.com/HazelnutParadise/idensyra/blob/main/gui_example.png?raw=true" alt="GUI Mode" class="mode-icon">
+            <img src="https://github.com/HazelnutParadise/idensyra/blob/main/gui_example.png?raw=true" alt="GUI Mode"
+              class="mode-icon">
             <div class="mode-content">
               <div class="mode-icon">🖥️</div>
               <p>{{ currentMessages.HowToUse.ideSection.guiMode.description }}</p>
               <ul>
-                <li v-for="feature in currentMessages.HowToUse.ideSection.guiMode.features" :key="feature">{{ feature }}</li>
+                <li v-for="feature in currentMessages.HowToUse.ideSection.guiMode.features" :key="feature">{{ feature }}
+                </li>
               </ul>
             </div>
           </div>
 
           <div class="mode-card">
             <h3>{{ currentMessages.HowToUse.ideSection.webMode.title }}</h3>
-            <img src="https://github.com/HazelnutParadise/idensyra/blob/main/webui_example.png?raw=true" alt="WebUI Mode" class="mode-icon">
+            <img src="https://github.com/HazelnutParadise/idensyra/blob/main/webui_example.png?raw=true"
+              alt="WebUI Mode" class="mode-icon">
             <div class="mode-content">
               <div class="mode-icon">🌐</div>
               <p>{{ currentMessages.HowToUse.ideSection.webMode.description }}</p>
               <ul>
-                <li v-for="feature in currentMessages.HowToUse.ideSection.webMode.features" :key="feature">{{ feature }}</li>
+                <li v-for="feature in currentMessages.HowToUse.ideSection.webMode.features" :key="feature">{{ feature }}
+                </li>
               </ul>
             </div>
           </div>
@@ -126,8 +130,10 @@ pre {
 /* 更新背景色和基礎文字顏色 */
 .how-to-use-page {
   min-height: 100vh;
-  background: #1a1a2e;  /* 更新背景色 */
-  color: #ffffff;  /* 更新基礎文字顏色 */
+  background: #1a1a2e;
+  /* 更新背景色 */
+  color: #ffffff;
+  /* 更新基礎文字顏色 */
   font-family: 'Space Grotesk', sans-serif;
   position: relative;
   overflow: hidden;
@@ -147,7 +153,8 @@ pre {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(26,26,46,.97) 0%, rgba(40,40,80,.95) 100%);  /* 調整漸層色 */
+  background: linear-gradient(45deg, rgba(26, 26, 46, .97) 0%, rgba(40, 40, 80, .95) 100%);
+  /* 調整漸層色 */
   z-index: 0;
   overflow: hidden;
 }
@@ -178,7 +185,8 @@ pre {
 .cyber-subtitle {
   font-size: 1.2rem;
   text-align: center;
-  color: #ff69b4;  /* 粉紅色副標題 */
+  color: #ff69b4;
+  /* 粉紅色副標題 */
   text-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
   margin-bottom: 30px;
   opacity: 0;
@@ -252,9 +260,11 @@ h2 {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -280,9 +290,17 @@ h2 {
   border-radius: 50%;
 }
 
-.terminal-button:nth-child(1) { background: #ff5f56; }
-.terminal-button:nth-child(2) { background: #ffbd2e; }
-.terminal-button:nth-child(3) { background: #27c93f; }
+.terminal-button:nth-child(1) {
+  background: #ff5f56;
+}
+
+.terminal-button:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.terminal-button:nth-child(3) {
+  background: #27c93f;
+}
 
 .mode-cards {
   display: grid;
@@ -426,11 +444,11 @@ h2 {
   .cyber-title {
     font-size: 2.5rem;
   }
-  
+
   .mode-cards {
     grid-template-columns: 1fr;
   }
-  
+
   .features-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
@@ -463,21 +481,25 @@ h2 {
     left: 0%;
     top: 0%;
   }
+
   25% {
     transform: rotate(90deg) translate(-50%, -50%) scale(2);
     left: 100%;
     top: 0%;
   }
+
   50% {
     transform: rotate(180deg) translate(-50%, -50%) scale(2);
     left: 100%;
     top: 100%;
   }
+
   75% {
     transform: rotate(270deg) translate(-50%, -50%) scale(2);
     left: 0%;
     top: 100%;
   }
+
   100% {
     transform: rotate(360deg) translate(-50%, -50%) scale(2);
     left: 0%;
@@ -485,5 +507,3 @@ h2 {
   }
 }
 </style>
-
-
