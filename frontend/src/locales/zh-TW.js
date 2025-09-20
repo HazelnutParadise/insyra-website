@@ -73,6 +73,17 @@ export const zhTW = {
                 },
             },
         },
+        versionIntro: {
+            title: '版本 0.2.x - Pier-2',
+            versionName: '版本名稱：',
+            versionNameValue: 'Pier-2，取自台灣高雄的駁二藝術特區',
+            versionFeatures: '版本特點：',
+            versionFeaturesValue: '此中型版本主要補足缺乏的函數或方法，讓 Insyra 更完善並能在生產環境中使用。',
+            pierIntro: '駁二藝術特區：',
+            pierIntroValue: '「駁二藝術特區（The Pier-2 Art Center）」是一個橫跨台灣高雄市鹽埕區和鼓山區的藝術園區，以「前衛、實驗、創新」為理念打造國際藝術平台。原為高雄港的舊倉庫群，經過重新規劃成為文化創意園區，包含多個藝術展館、劇場和創意空間，是高雄市重要的藝文地標。',
+            imageAlt: '駁二藝術特區',
+            imageSource: '圖片來源：東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E9%A7%81%E4%BA%8C%E8%97%9D%E8%A1%93%E7%89%B9%E5%8D%80/attractions_POI0000369625.html',
+        },
     },
     AboutInsyra: {
         title: 'Insyra 是什麼',

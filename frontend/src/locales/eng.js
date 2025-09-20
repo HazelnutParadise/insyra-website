@@ -72,6 +72,17 @@ export const eng = {
                 },
             },
         },
+        versionIntro: {
+            title: 'Version 0.2.x - Pier-2',
+            versionName: 'Version Name: ',
+            versionNameValue: 'Pier-2, inspired by "Pier-2 Art Center" in Kaohsiung, Taiwan',
+            versionFeatures: 'Version Features: ',
+            versionFeaturesValue: 'This medium release mainly supplements missing functions and methods, making Insyra more complete and production-ready.',
+            pierIntro: 'About Pier-2 Art Center: ',
+            pierIntroValue: 'Pier-2 Art Center (The Pier-2 Art Center) is an art district spanning Yancheng and Gushan districts in Kaohsiung City, Taiwan. With the philosophy of "avant-garde, experimental, innovative," it creates an international art platform. Originally an old warehouse complex of Kaohsiung Port, it has been redeveloped into a cultural and creative park, featuring multiple art galleries, theaters, and creative spaces, making it an important cultural landmark in Kaohsiung City.',
+            imageAlt: 'Pier-2 Art Center',
+            imageSource: 'Image Source: 東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E9%A7%81%E4%BA%8C%E8%97%9D%E8%A1%93%E7%89%B9%E5%8D%80/attractions_POI0000369625.html',
+        },
     },
     AboutInsyra: {
         title: 'What is Insyra',
