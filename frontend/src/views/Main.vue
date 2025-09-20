@@ -103,7 +103,7 @@ export default {
 }
 
 .version-text p {
-  margin-bottom: 25px;
+  margin-bottom: 1rem;
   line-height: 1.7;
   color: #2c3e50;
   font-size: 1.2rem;
