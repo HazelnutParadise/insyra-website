@@ -144,12 +144,12 @@ export default {
 
 @media (max-width: 768px) {
   .version-intro {
-    padding: 60px 0;
+    padding: 10px 0;
+    padding-bottom: 70px;
   }
 
   .version-intro h2 {
     font-size: 2.2rem;
-    margin-bottom: 30px;
   }
 
   .version-content {
