@@ -404,6 +404,15 @@ func main() {
                     },
                 },
                 {
+                    title: 'mkt',
+                    subTitle: 'Marketing Analysis',
+                    descriptions: {
+                        first:
+                            `Provide marketing analysis functions, including RFM analysis, to help you gain insights into customer behavior and develop effective marketing strategies.`,
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/mkt.md">mkt package documentation</a>',
+                    },
+                },
+                {
                     title: 'lpgen',
                     subTitle: 'Linear Programming Model Generation',
                     descriptions: {

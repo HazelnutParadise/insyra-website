@@ -408,6 +408,15 @@ func main() {
                     },
                 },
                 {
+                    title: 'mkt',
+                    subTitle: '行銷分析',
+                    descriptions: {
+                        first:
+                            `提供行銷分析的功能，包括 RFM 分析等。幫助您深入了解顧客行為，制定有效的行銷策略。`,
+                        end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/mkt.md">mkt 套件包說明文件</a>',
+                    },
+                },
+                {
                     title: 'lpgen',
                     subTitle: '線性規劃模型生成',
                     descriptions: {
