@@ -52,7 +52,7 @@ export default {
 .version-intro {
   padding: 80px 0;
   padding-top: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #764ba2 0%, #1f449b 100%);
   position: relative;
   overflow: hidden;
 }
@@ -79,10 +79,9 @@ export default {
 .version-intro h2 {
   text-align: center;
   color: #ffffff;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   font-size: 2.8rem;
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 300;
   letter-spacing: -0.5px;
 }
 
@@ -92,10 +91,10 @@ export default {
   align-items: center;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-radius: 20px;
+  /* border-radius: 20px; */
   padding: 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 5px dashed #f9ac41;
+  position: relative;
 }
 
 .version-text {
