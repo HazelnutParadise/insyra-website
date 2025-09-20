@@ -128,11 +128,6 @@ export default {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.version-image img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-}
-
 .image-source {
   margin-top: 10px;
   font-size: 0.85rem;
