@@ -74,6 +74,7 @@ export const eng = {
         },
         versionIntro: {
             title: 'Version 0.2.x - Pier-2',
+            slogan: 'Crafting Your Art of Data',
             versionName: 'Version Name: ',
             versionNameValue: 'Pier-2, inspired by "Pier-2 Art Center" in Kaohsiung, Taiwan',
             versionFeatures: 'Version Features: ',

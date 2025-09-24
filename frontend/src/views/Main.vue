@@ -7,6 +7,7 @@
     <section class="version-intro">
       <div class="container">
         <h2>{{ currentMessages.Main.versionIntro.title }}</h2>
+        <h3 class="version-slogan">{{ currentMessages.Main.versionIntro.slogan }}</h3>
         <div class="version-content">
           <div class="version-text">
             <p><strong>{{ currentMessages.Main.versionIntro.versionName }}</strong>{{
@@ -83,6 +84,14 @@ export default {
   font-size: 2.8rem;
   font-weight: 300;
   letter-spacing: -0.5px;
+}
+
+.version-slogan {
+  text-align: center;
+  color: #f9ac41;
+  margin-bottom: 20px;
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 
 .version-content {

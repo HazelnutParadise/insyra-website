@@ -75,6 +75,7 @@ export const zhTW = {
         },
         versionIntro: {
             title: '版本 0.2.x - Pier-2',
+            slogan: '藝塑數據之美',
             versionName: '版本名稱：',
             versionNameValue: 'Pier-2，取自台灣高雄的駁二藝術特區',
             versionFeatures: '版本特點：',
