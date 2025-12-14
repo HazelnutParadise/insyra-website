@@ -1,5 +1,13 @@
 export const zhTW = {
     siteTitle: '{year} 最時髦的資料分析工具 — Insyra: 次世代 Go 語言資料分析解決方案 | 太快、太美、太簡單',
+    pageTitle: {
+        Main: '邂逅 Insyra',
+        WhatIsInsyra: 'Insyra 是什麼',
+        WhyInsyra: '為什麼選擇 Insyra',
+        HowToUse: '如何使用',
+        Features: '功能',
+        Contact: '聯絡我們',
+    },
     navbar: {
         main: '邂逅 Insyra',
         whatIsInsyra: 'Insyra 是什麼',
@@ -692,10 +700,19 @@ plt.show()
             repositoryText: 'GitHub 儲存庫',
             supportText: '支援文件',
         },
-        mail: {
-            title: '聯絡信箱',
-            description: '若您有任何疑問或建議，歡迎使用榛果繽紛樂網站信箱聯繫我們：',
-            text: '榛果繽紛樂網站信箱',
+        discord: {
+            title: '加入我們的 Discord',
+            description: '若您有任何疑問或建議，歡迎加入以下 Discord 伺服器與我們互動：',
+            servers: [
+                {
+                    name: '榛果繽紛樂 Insyra 討論區',
+                    url: 'https://discord.gg/wP27cpfz',
+                },
+                {
+                    name: 'Side Project Taiwan 中的 Insyra 討論區',
+                    url: 'https://discord.com/channels/1205906503073140776/1280539658551558368',
+                },
+            ],
         },
     },
     WhyInsyra: {

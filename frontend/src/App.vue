@@ -52,11 +52,24 @@ export default {
     const applyYear = (str) => str ? str.replace('{year}', new Date().getFullYear()) : str;
     document.title = applyYear(currentMessages.value.siteTitle);
 
+    const updateTitle = (pageName) => {
+      const pageTitle = currentMessages.value.pageTitle?.[pageName] || '';
+      const siteTitle = applyYear(currentMessages.value.siteTitle);
+      document.title = pageTitle ? `${pageTitle} - ${siteTitle}` : siteTitle;
+    };
+
     const updateLanguage = (lang) => {
       if (messages[lang]) {
         value.value = lang;
         currentMessages.value = messages[lang]; // 更新當前語言的文本
-        document.title = applyYear(currentMessages.value.siteTitle);
+        // 根據當前頁面更新 title
+        const currentPageName = currentPage.value === Main ? 'Main' :
+          currentPage.value === WhatIsInsyra ? 'WhatIsInsyra' :
+            currentPage.value === Features ? 'Features' :
+              currentPage.value === HowToUse ? 'HowToUse' :
+                currentPage.value === WhyInsyra ? 'WhyInsyra' :
+                  currentPage.value === Contact ? 'Contact' : 'Main';
+        updateTitle(currentPageName);
       } else {
         console.error(`Language ${lang} not found in messages.`);
       }
@@ -92,6 +105,7 @@ export default {
           currentPage.value = Main; // 預設為主頁
           window.history.replaceState(null, '', window.location.pathname); // 去掉 #
       }
+      updateTitle(page || 'Main');
     };
 
     const handleHashChange = () => {
@@ -102,7 +116,8 @@ export default {
 
     onMounted(() => {
       // 設置初始標題（帶入年份）
-      document.title = applyYear(messages[currentLanguage].siteTitle);
+      const initialPage = window.location.hash.replace('#', '') || 'Main';
+      updateTitle(initialPage);
 
       handleHashChange(); // 初始化時根據 hash 切換組件
       window.addEventListener('hashchange', handleHashChange); // 監聽 hash 變化

@@ -1,5 +1,13 @@
 export const eng = {
     siteTitle: 'The Most fashionable Data Analysis Tools in {year} — Insyra: The Next-Gen Data Analysis Solution for Golang | Fast, Lovely, Easy to Use',
+    pageTitle: {
+        Main: 'Meet Insyra',
+        WhatIsInsyra: 'What is Insyra',
+        WhyInsyra: 'Why Insyra',
+        HowToUse: 'How to Use',
+        Features: 'Features',
+        Contact: 'Contact',
+    },
     navbar: {
         main: 'Meet Insyra',
         whatIsInsyra: 'What is Insyra',
@@ -688,10 +696,19 @@ plt.show()
             repositoryText: 'GitHub Repository',
             supportText: 'Support Document',
         },
-        mail: {
-            title: 'Contact Email',
-            description: 'If you have any questions or suggestions, please contact us using Hazelnut Paradise Website Email:',
-            text: 'Hazelnut Paradise Website Email',
+        discord: {
+            title: 'Join Our Discord',
+            description: 'If you have any questions or suggestions, feel free to join our Discord servers and interact with us:',
+            servers: [
+                {
+                    name: 'Hazelnut Paradise Insyra Discussion',
+                    url: 'https://discord.gg/wP27cpfz',
+                },
+                {
+                    name: 'Insyra Discussion in Side Project Taiwan',
+                    url: 'https://discord.com/channels/1205906503073140776/1280539658551558368',
+                },
+            ],
         },
     },
     WhyInsyra: {
