@@ -1,5 +1,5 @@
 export const eng = {
-    siteTitle: 'Insyra: The Next-Gen Data Analysis Solution for Golang | Fast, Lovely, Easy to Use',
+    siteTitle: '{year} The Trendiest Data Analysis Tools — Insyra: The Next-Gen Data Analysis Solution for Golang | Fast, Lovely, Easy to Use',
     navbar: {
         main: 'Meet Insyra',
         whatIsInsyra: 'What is Insyra',

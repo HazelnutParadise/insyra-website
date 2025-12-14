@@ -8,7 +8,8 @@
     <footer class="footer">
       <p>© 2024 HazelnutParadise. All Rights Reserved.</p>
       <ul class="social-links">
-        <li><a href="https://github.com/HazelnutParadise" style="display: flex; align-items: baseline;gap: 5px"><i class="fa fa-github" style="font-size:16px;color:#fff"></i><span>GitHub</span></a></li>
+        <li><a href="https://github.com/HazelnutParadise" style="display: flex; align-items: baseline;gap: 5px"><i
+              class="fa fa-github" style="font-size:16px;color:#fff"></i><span>GitHub</span></a></li>
       </ul>
     </footer>
   </div>
@@ -39,7 +40,7 @@ export default {
   setup() {
     const initials = ['繁體中文', 'English']
     let currentLanguage = localStorage.getItem('language')
-    
+
     if (!currentLanguage) {
       const browserLang = navigator.language || navigator.userLanguage;
       currentLanguage = browserLang.toLowerCase().includes('zh') ? '繁體中文' : 'English';
@@ -48,12 +49,14 @@ export default {
     const value = ref(currentLanguage) // 預設選擇繁體中文
     const currentMessages = ref(messages[value.value]); // 當前語言的文本
     const currentPage = ref(Main); // 當前顯示的組件
-    document.title = currentMessages.siteTitle;
+    const applyYear = (str) => str ? str.replace('{year}', new Date().getFullYear()) : str;
+    document.title = applyYear(currentMessages.value.siteTitle);
 
     const updateLanguage = (lang) => {
       if (messages[lang]) {
         value.value = lang;
         currentMessages.value = messages[lang]; // 更新當前語言的文本
+        document.title = applyYear(currentMessages.value.siteTitle);
       } else {
         console.error(`Language ${lang} not found in messages.`);
       }
@@ -98,9 +101,9 @@ export default {
     };
 
     onMounted(() => {
-      // 設置初始標題
-      document.title = messages[currentLanguage].siteTitle;
-      
+      // 設置初始標題（帶入年份）
+      document.title = applyYear(messages[currentLanguage].siteTitle);
+
       handleHashChange(); // 初始化時根據 hash 切換組件
       window.addEventListener('hashchange', handleHashChange); // 監聽 hash 變化
     });
@@ -120,6 +123,7 @@ export default {
   background-color: #f4f4f4;
   /* padding-bottom: 200px; */
 }
+
 /* Footer */
 .footer {
   display: flex;
