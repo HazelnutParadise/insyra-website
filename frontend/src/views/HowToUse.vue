@@ -115,28 +115,6 @@
           </div>
         </div>
       </section>
-
-      <!-- Quick Links Section -->
-      <section class="neo-section quick-links-section" :class="{ 'section-visible': isVisible }">
-        <div class="section-header">
-          <div class="header-line"></div>
-          <h2>{{ currentMessages.HowToUse.quickLinks.title }}</h2>
-          <div class="header-line"></div>
-        </div>
-        <p class="quick-links-intro">{{ currentMessages.HowToUse.quickLinks.description }}</p>
-        <div class="quick-links-container">
-          <a target="_blank" rel="noopener noreferrer" :href="currentMessages.HowToUse.quickLinks.chat.link"
-            class="cyber-button">
-            💬 {{ currentMessages.HowToUse.quickLinks.chat.text }}
-            <span class="button-glow"></span>
-          </a>
-          <a target="_blank" rel="noopener noreferrer" :href="currentMessages.HowToUse.quickLinks.mcp.link"
-            class="cyber-button">
-            🔗 {{ currentMessages.HowToUse.quickLinks.mcp.text }}
-            <span class="button-glow"></span>
-          </a>
-        </div>
-      </section>
     </div>
   </div>
 </template>
@@ -479,7 +457,8 @@ h2 {
   font-size: 1rem;
 }
 
-.ide-description {
+.ide-description,
+.quick-links-intro {
   margin: 0 auto;
   max-width: 800px;
 }
@@ -523,13 +502,6 @@ h2 {
 .quick-links-section {
   text-align: center;
   transition: all 0.8s ease-out 0.8s;
-}
-
-.quick-links-intro {
-  font-size: 1.1rem;
-  color: #d4d4d4;
-  margin-bottom: 30px;
-  line-height: 1.6;
 }
 
 .quick-links-container {
