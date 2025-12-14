@@ -1,5 +1,5 @@
 export const eng = {
-    siteTitle: 'The Trendiest Data Analysis Tools in {year} — Insyra: The Next-Gen Data Analysis Solution for Golang | Fast, Lovely, Easy to Use',
+    siteTitle: 'The Most fashionable Data Analysis Tools in {year} — Insyra: The Next-Gen Data Analysis Solution for Golang | Fast, Lovely, Easy to Use',
     navbar: {
         main: 'Meet Insyra',
         whatIsInsyra: 'What is Insyra',
@@ -21,7 +21,7 @@ export const eng = {
                 main: 'Get Started',
                 secondary1: 'GoDoc',
                 secondary2: 'GitHub',
-                chat: 'Chat & Learn',
+                chat: 'Chat with AI',
                 mcp: 'MCP Server',
             },
         },
@@ -665,6 +665,18 @@ plt.show()
                 },
 
             ],
+        },
+        quickLinks: {
+            title: 'Start Data Analysis Now',
+            description: 'Ready to start using Insyra? Interact with AI through online chat or MCP server for instant help.',
+            chat: {
+                text: 'Chat with AI',
+                link: 'https://context7.com/hazelnutparadise/insyra?tab=chat',
+            },
+            mcp: {
+                text: 'MCP Server',
+                link: 'https://gitmcp.io/HazelnutParadise/insyra',
+            },
         },
     },
     Contact: {

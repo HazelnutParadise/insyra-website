@@ -21,7 +21,7 @@ export const zhTW = {
                 main: '開始使用',
                 secondary1: 'GoDoc',
                 secondary2: 'GitHub',
-                chat: '線上聊天學習',
+                chat: '與 AI 對談',
                 mcp: 'MCP 伺服器',
             },
             audioDescription: '聆聽 Insyra 產品介紹',
@@ -669,6 +669,18 @@ plt.show()
                 },
 
             ],
+        },
+        quickLinks: {
+            title: '立刻開始分析工作',
+            description: '想立即開始使用 Insyra？透過線上聊天或 MCP 伺服器與 AI 互動，取得即時協助。',
+            chat: {
+                text: '與 AI 對談',
+                link: 'https://context7.com/hazelnutparadise/insyra?tab=chat',
+            },
+            mcp: {
+                text: 'MCP 伺服器',
+                link: 'https://gitmcp.io/HazelnutParadise/insyra',
+            },
         },
     },
     Contact: {
