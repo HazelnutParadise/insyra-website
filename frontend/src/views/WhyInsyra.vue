@@ -12,47 +12,26 @@
         <div class="code-block">
           <div class="code-box">
             <h4>Pandas</h4>
-            <pre><code>
-data = pd.DataFrame({'col1': [1, 2, 3, 4, 5]})
-
-avg = data['col1'].mean()
-print(avg)
-            </code></pre>
+            <pre><code>{{ currentMessages.WhyInsyra.codeComparison.calculateAverage.pandas }}</code></pre>
           </div>
           <div class="code-box">
             <h4>Insyra</h4>
-            <pre><code>
-data := insyra.NewDataList(1, 2, 3, 4, 5)
-
-avg := data.Mean()
-fmt.Println(avg)
-            </code></pre>
+            <pre><code>{{ currentMessages.WhyInsyra.codeComparison.calculateAverage.insyra }}</code></pre>
           </div>
         </div>
       </div>
 
-      <!-- Comparison: Removing Strings -->
+      <!-- Comparison 2 -->
       <div class="code-example">
-        <h3>{{ currentMessages.WhyInsyra.codeComparison.removeStrings.title }}</h3>
+        <h3>{{ currentMessages.WhyInsyra.codeComparison.filterData.title }}</h3>
         <div class="code-block">
           <div class="code-box">
             <h4>Pandas</h4>
-            <pre><code>
-data = pd.DataFrame({'col1': [1, 'a', 3, 'b', 5]})
-
-data['col1'] = pd.to_numeric(data['col1'], errors='coerce')
-cleaned_data = data.dropna()
-print(cleaned_data)
-            </code></pre>
+            <pre><code>{{ currentMessages.WhyInsyra.codeComparison.filterData.pandas }}</code></pre>
           </div>
           <div class="code-box">
             <h4>Insyra</h4>
-            <pre><code>
-data := insyra.NewDataList(1, "a", 3, "b", 5)
-
-cleanedData := data.ClearStrings()
-cleanedData.Show()
-            </code></pre>
+            <pre><code>{{ currentMessages.WhyInsyra.codeComparison.filterData.insyra }}</code></pre>
           </div>
         </div>
       </div>

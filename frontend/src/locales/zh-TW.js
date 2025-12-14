@@ -717,14 +717,32 @@ plt.show()
     },
     WhyInsyra: {
         title: '為什麼選擇 Insyra？',
-        description: 'Insyra 不僅提供簡單易用的語法，更因為基於 Go 語言而具備節能效益。以下為 Insyra 和 Pandas 在相同操作上的代碼對比，讓您更直觀地了解它的優勢。',
+        description: 'Insyra 不僅提供簡單易用的語法，更因為基於 Go 語言而具備節能效益。以下為 Insyra 和 Pandas 在相同操作上的代碼對比，讓您更直觀地了解它的使用方式。',
         codeComparison: {
             title: 'Insyra vs Pandas 語法對比',
             calculateAverage: {
                 title: '計算平均值',
+                pandas: `data = pd.Series([1, 2, 3, 4, 5])
+
+avg = data.mean()
+print(avg)`,
+                insyra: `data := insyra.NewDataList(1, 2, 3, 4, 5)
+
+avg := data.Mean()
+fmt.Println(avg)`,
             },
-            removeStrings: {
-                title: '移除資料中的字串',
+            filterData: {
+                title: '篩選資料',
+                pandas: `data = pd.Series([10, 20, 30, 40, 50])
+
+filtered = data[data > 25]
+print(filtered)`,
+                insyra: `data := insyra.NewDataList(10, 20, 30, 40, 50)
+
+filtered := data.Filter(func(x any) bool {
+    return x.(int) > 25
+})
+filtered.Show()`,
             },
             dataDisplayComparison: {
                 title: '資料顯示與對齊',

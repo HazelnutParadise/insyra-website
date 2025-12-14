@@ -713,14 +713,32 @@ plt.show()
     },
     WhyInsyra: {
         title: 'Why Insyra?',
-        description: 'Insyra not only provides a simple syntax, but also has energy-saving advantages due to Golang. Below is a comparison of the code between Insyra and Pandas for the same operation, allowing you to more intuitively understand its advantages.',
+        description: 'Insyra not only provides a simple syntax, but also has energy-saving advantages due to Golang. Below is a comparison of the code between Insyra and Pandas for the same operation, allowing you to more intuitively understand its usage.',
         codeComparison: {
             title: 'Insyra vs Pandas Syntax Comparison',
             calculateAverage: {
                 title: 'Calculate Average',
+                pandas: `data = pd.Series([1, 2, 3, 4, 5])
+
+avg = data.mean()
+print(avg)`,
+                insyra: `data := insyra.NewDataList(1, 2, 3, 4, 5)
+
+avg := data.Mean()
+fmt.Println(avg)`,
             },
-            removeStrings: {
-                title: 'Remove Strings from Data',
+            filterData: {
+                title: 'Filter Data',
+                pandas: `data = pd.Series([10, 20, 30, 40, 50])
+
+filtered = data[data > 25]
+print(filtered)`,
+                insyra: `data := insyra.NewDataList(10, 20, 30, 40, 50)
+
+filtered := data.Filter(func(x any) bool {
+    return x.(int) > 25
+})
+filtered.Show()`,
             },
             dataDisplayComparison: {
                 title: 'Data Display and Alignment',
