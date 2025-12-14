@@ -58,6 +58,13 @@ cleanedData.Show()
       </div>
     </section>
 
+    <!-- Data Display Comparison Section -->
+    <section class="display-comparison-section">
+      <h2>{{ currentMessages.WhyInsyra.codeComparison.dataDisplayComparison.title }}</h2>
+      <div class="display-content" v-html="currentMessages.WhyInsyra.codeComparison.dataDisplayComparison.description">
+      </div>
+    </section>
+
     <!-- Go Language Efficiency Section with SDGs -->
     <section class="go-efficiency-section">
       <h2>{{ currentMessages.WhyInsyra.goEfficiency.title }}</h2>
@@ -107,10 +114,10 @@ p {
 /* Code Comparison Section */
 .code-comparison-section {
   background-color: #ffffff;
-  padding: 40px 30px;
+  padding: 30px 30px;
   border-radius: 12px;
   margin-bottom: 40px;
-  margin-top: 40px;
+  margin-top: 0px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   max-width: 1000px;
   margin-left: auto;
@@ -276,6 +283,73 @@ code {
   color: #1f7a70;
   border-bottom: 1px solid #2a9d8f;
   text-decoration: none;
+}
+
+/* Data Display Comparison Section */
+.display-comparison-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.display-comparison-section h2 {
+  font-size: 28px;
+  color: #1f3a70;
+  margin-bottom: 35px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.display-content {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.85;
+  color: #505050;
+}
+
+:deep(.display-content h3) {
+  font-size: 22px;
+  color: #2e5090;
+  margin-top: 30px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #d0e3f5;
+}
+
+:deep(.display-content p) {
+  margin-bottom: 18px;
+  font-size: 16px;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.85;
+  color: #555;
+}
+
+:deep(.display-content ul) {
+  margin-left: 0;
+  margin-bottom: 22px;
+  padding-left: 50px;
+}
+
+:deep(.display-content li) {
+  margin-bottom: 16px;
+  margin-left: 20px;
+  font-size: 16px;
+  list-style-type: disc;
+  color: #555;
+  line-height: 1.8;
+}
+
+:deep(.display-content strong) {
+  color: #1f3a70;
+  font-weight: 700;
 }
 
 /* Responsive Design */

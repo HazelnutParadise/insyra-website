@@ -722,6 +722,10 @@ plt.show()
             removeStrings: {
                 title: 'Remove Strings from Data',
             },
+            dataDisplayComparison: {
+                title: 'Data Display and Alignment',
+                description: '<h3>Pandas DataFrame: Ugly, Messy, Hard to Align</h3><p>Pandas DataFrame display is a visual nightmare. When you print a DataFrame, you face:</p><ul><li><strong>Ugly Formatting</strong>: Dull gray-and-white tables with zero aesthetic appeal</li><li><strong>Difficult Alignment</strong>: Fixed column widths that don\'t adapt to data, long characters get truncated or overflow</li><li><strong>Line-Breaking Issues</strong>: Long data rows destroy the entire table layout, making reading incredibly difficult</li><li><strong>No Color Distinction</strong>: All data has the same color, making it hard to quickly identify different data types</li></ul><h3>Insyra: Colorful, Auto-Aligned, Smart Line-Breaking</h3><p>In contrast, Insyra\'s data display is designed completely differently:</p><ul><li><strong>Colorful Presentation</strong>: Different data types (numbers, text, dates, etc.) are displayed in different colors, making it visually clear and easy to read</li><li><strong>Auto-Aligned</strong>: Regardless of data length, Insyra automatically calculates optimal column widths, perfectly aligning all data</li><li><strong>Smart Line-Breaking</strong>: Long text automatically wraps without ever breaking the table structure, maintaining a clean appearance</li><li><strong>Modern Aesthetics</strong>: Employs modern design language, making output results visually pleasing and professional</li></ul>',
+            },
         },
         goEfficiency: {
             title: 'Go Language Energy-Saving Advantages & Sustainable Development',
