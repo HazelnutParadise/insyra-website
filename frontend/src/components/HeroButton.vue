@@ -1,7 +1,8 @@
 <template>
   <div>
-    <v-btn :variant="settings.variant" :color="settings.color" :size="settings.size" :href="settings.href">
-      {{ currentMessages}}
+    <v-btn :variant="settings.variant" :color="settings.color" :size="settings.size" :href="settings.href"
+      :target="settings.target" :rel="settings.rel">
+      {{ currentMessages }}
     </v-btn>
   </div>
 </template>
@@ -10,7 +11,7 @@
 export default {
   props: {
     currentMessages: {
-      type: Object,
+      type: [Object, String],
       required: true,
     },
     settings: {

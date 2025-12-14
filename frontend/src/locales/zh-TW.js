@@ -21,6 +21,8 @@ export const zhTW = {
                 main: '開始使用',
                 secondary1: 'GoDoc',
                 secondary2: 'GitHub',
+                chat: '線上聊天學習',
+                mcp: 'MCP 伺服器',
             },
             audioDescription: '聆聽 Insyra 產品介紹',
         },

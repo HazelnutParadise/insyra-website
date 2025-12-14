@@ -3,7 +3,7 @@
     <h2>{{ currentMessages.Main.hero.slogan }}</h2>
     <h1>{{ currentMessages.Main.hero.title }}</h1>
     <p>{{ currentMessages.Main.hero.description }}</p>
-    
+
     <!-- 添加音訊播放器組件 -->
     <div class="audio-section">
       <audio controls controlslist="nodownload" class="audio-player">
@@ -24,6 +24,20 @@
         variant: 'tonal',
         color: '#1f449b',
         href: 'https://pkg.go.dev/github.com/HazelnutParadise/insyra',
+      }" />
+      <HeroButton :currentMessages="currentMessages.Main.hero.button.chat" :settings="{
+        variant: 'tonal',
+        color: '#2a9d8f',
+        href: 'https://context7.com/hazelnutparadise/insyra?tab=chat',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      }" />
+      <HeroButton :currentMessages="currentMessages.Main.hero.button.mcp" :settings="{
+        variant: 'tonal',
+        color: '#6f42c1',
+        href: 'https://gitmcp.io/HazelnutParadise/insyra',
+        target: '_blank',
+        rel: 'noopener noreferrer',
       }" />
       <HeroButton :currentMessages="currentMessages.Main.hero.button.secondary2" :settings="{
         variant: 'outlined',
@@ -57,8 +71,8 @@ export default {
   padding: 75px 20px;
   background-color: #f5f5f5;
   /* 添加斜線 */
-  background-image: 
-  /* linear-gradient(-12deg, #adc3e6 20%, transparent 20%, transparent 80%, transparent 80%, transparent), */
+  background-image:
+    /* linear-gradient(-12deg, #adc3e6 20%, transparent 20%, transparent 80%, transparent 80%, transparent), */
     linear-gradient(45deg, #f9ac41 25%, transparent 25%, transparent 75%, #f4f4f4 75%, transparent),
     linear-gradient(45deg, transparent 25%, transparent 25%, transparent 75%, #1f449b 75%, #1f449b);
 }
@@ -100,9 +114,9 @@ export default {
 
 @media (max-width: 768px) {
   .hero {
-    background-image: 
-    linear-gradient(45deg, #f9ac41 20%, transparent 20%, transparent 80%, #f4f4f4 80%, transparent),
-    linear-gradient(45deg, transparent 20%, transparent 20%, transparent 80%, #1f449b 80%, #1f449b);
+    background-image:
+      linear-gradient(45deg, #f9ac41 20%, transparent 20%, transparent 80%, #f4f4f4 80%, transparent),
+      linear-gradient(45deg, transparent 20%, transparent 20%, transparent 80%, #1f449b 80%, #1f449b);
   }
 }
 
