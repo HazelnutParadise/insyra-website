@@ -110,6 +110,9 @@ export default {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
+  /* allow buttons to wrap on smaller screens */
+  align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -117,6 +120,30 @@ export default {
     background-image:
       linear-gradient(45deg, #f9ac41 20%, transparent 20%, transparent 80%, #f4f4f4 80%, transparent),
       linear-gradient(45deg, transparent 20%, transparent 20%, transparent 80%, #1f449b 80%, #1f449b);
+  }
+
+  .hero-button-container {
+    gap: 12px;
+  }
+
+  /* reduce button size a bit on tablets */
+  .hero-button-container .v-btn {
+    font-size: 0.95rem;
+    padding: 8px 14px;
+  }
+}
+
+/* On small phones, stack the small buttons and make them full width */
+@media (max-width: 480px) {
+  .hero-button-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .hero-button-container .v-btn {
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
