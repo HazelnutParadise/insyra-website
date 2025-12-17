@@ -42,6 +42,20 @@
       <h2>{{ currentMessages.WhyInsyra.codeComparison.dataDisplayComparison.title }}</h2>
       <div class="display-content" v-html="currentMessages.WhyInsyra.codeComparison.dataDisplayComparison.description">
       </div>
+      <div class="display-images">
+        <div class="display-image">
+          <h3>Pandas</h3>
+          <img :src="pandasOutput" alt="Pandas output" />
+          <div class="display-desc"
+            v-html="currentMessages.WhyInsyra.codeComparison.dataDisplayComparison.pandasDescription"></div>
+        </div>
+        <div class="display-image">
+          <h3>Insyra</h3>
+          <img :src="insyraOutput" alt="Insyra output" />
+          <div class="display-desc"
+            v-html="currentMessages.WhyInsyra.codeComparison.dataDisplayComparison.insyraDescription"></div>
+        </div>
+      </div>
     </section>
 
     <!-- Go Language Efficiency Section with SDGs -->
@@ -54,6 +68,8 @@
 
 <script>
 import TitleSection from '../components/TitleSection.vue';
+import pandasOutput from '../assets/pandas_output.png';
+import insyraOutput from '../assets/insyra_output.png';
 
 export default {
   name: 'WhyInsyra',
@@ -62,6 +78,12 @@ export default {
   },
   props: {
     currentMessages: Object,
+  },
+  data() {
+    return {
+      pandasOutput,
+      insyraOutput,
+    };
   },
 };
 </script>
@@ -81,6 +103,13 @@ h1 {
   margin-bottom: 20px;
   font-weight: 700;
   letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: 24px;
+  color: #2e5090;
+  margin-bottom: 5px;
+  font-weight: 600;
 }
 
 p {
@@ -170,6 +199,21 @@ code {
   padding: 0;
   line-height: 1.5;
   color: #2c3e50;
+}
+
+.output-image {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.output-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e6eef4;
+  max-height: 220px;
 }
 
 /* Go Efficiency Section */
@@ -290,6 +334,57 @@ code {
   text-align: left;
   line-height: 1.85;
   color: #505050;
+}
+
+.display-images {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.display-image {
+  flex: 1;
+  min-width: 220px;
+  max-width: 420px;
+  text-align: center;
+}
+
+.display-image h4 {
+  font-size: 15px;
+  color: #1f3a70;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.display-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e6eef4;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.display-desc {
+  margin-top: 12px;
+  text-align: left;
+  color: #505050;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.display-desc h3 {
+  font-size: 16px;
+  color: #2e5090;
+  margin-bottom: 8px;
+}
+
+.display-desc p,
+.display-desc ul {
+  margin-bottom: 10px;
 }
 
 :deep(.display-content h3) {

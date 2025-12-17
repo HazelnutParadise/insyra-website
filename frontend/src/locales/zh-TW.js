@@ -746,7 +746,9 @@ filtered.Show()`,
             },
             dataDisplayComparison: {
                 title: '資料顯示與對齊',
-                description: '<h3>Pandas DataFrame：醜、亂、難對齊</h3><p>Pandas 的 DataFrame 顯示簡直是視覺噩夢。當你 print 一個 DataFrame 時，會面臨：</p><ul><li><strong>格式醜陋</strong>：單調的灰色、白色表格，毫無美感可言</li><li><strong>對齊困難</strong>：列寬度固定，數據無法自動適應，長字符被截斷或超出邊界</li><li><strong>換行問題</strong>：長數據行會破壞整個表格視覺，導致閱讀困難</li><li><strong>無色彩區分</strong>：所有數據顏色相同，難以快速識別不同資料型態</li></ul><h3>Insyra：彩色、自動對齊、智能換行</h3><p>相比之下，Insyra 的資料顯示設計完全不同：</p><ul><li><strong>彩色呈現</strong>：根據資料型態（數字、文字、日期等）使用不同顏色區分，視覺上清晰易讀</li><li><strong>自動對齊</strong>：無論資料長度如何，Insyra 會自動計算最佳列寬，讓所有數據完美對齊</li><li><strong>智能換行</strong>：長文本自動換行，從不破壞表格結構，始終保持整潔的視覺效果</li><li><strong>現代美感</strong>：採用現代設計語言，輸出結果賞心悅目</li></ul>',
+                description: '<p>下方展示 Pandas 與 Insyra 的輸出與說明。</p>',
+                pandasDescription: '<h3>Pandas DataFrame：醜、亂、難對齊</h3><p>Pandas 的 DataFrame 顯示簡直是視覺噩夢。當你 print 一個 DataFrame 時，會面臨：</p><ul><li><strong>格式醜陋</strong>：單調的灰色、白色表格，毫無美感可言</li><li><strong>對齊困難</strong>：列寬度固定，數據無法自動適應，長字符被截斷或超出邊界</li><li><strong>換行問題</strong>：長數據行會破壞整個表格視覺，導致閱讀困難</li><li><strong>無色彩區分</strong>：所有數據顏色相同，難以快速識別不同資料型態</li></ul>',
+                insyraDescription: '<h3>Insyra DataTable：彩色、自動對齊、智能換行</h3><p>相比之下，Insyra 的資料顯示設計完全不同：</p><ul><li><strong>彩色呈現</strong>：根據資料型態（數字、文字、日期等）使用不同顏色區分，視覺上清晰易讀</li><li><strong>自動對齊</strong>：無論資料長度如何，Insyra 會自動計算最佳列寬，讓所有數據完美對齊</li><li><strong>智能換行</strong>：長文本自動換行，從不破壞表格結構，始終保持整潔的視覺效果</li><li><strong>現代美感</strong>：採用現代設計語言，輸出結果賞心悅目</li></ul>',
             },
         },
         goEfficiency: {
