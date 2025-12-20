@@ -7,7 +7,7 @@
     <!-- 添加音訊播放器組件 -->
     <div class="audio-section">
       <audio controls controlslist="nodownload" class="audio-player">
-        <source src="https://src.hazelnut-paradise.com/Insyra_introduce.wav" type="audio/wav">
+        <source :src="currentMessages.Main.hero.audio.url" type="audio/wav">
         {{ currentMessages.Main.hero.audio.error }}
       </audio>
       <p class="audio-description">{{ currentMessages.Main.hero.audio.description }}</p>

@@ -22,8 +22,9 @@ export const zhTW = {
             title: '邂逅 Insyra',
             description: '強大的資料分析工具，為未來而生。',
             audio: {
+                url: "https://src.hazelnut-paradise.com/Insyra_introduce_TW.wav",
                 error: '您的瀏覽器不支援音訊播放器。',
-                description: '聆聽 Insyra 介紹（英語）',
+                description: '聆聽 Insyra 介紹',
             },
             button: {
                 main: '開始使用',

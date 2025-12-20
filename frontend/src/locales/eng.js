@@ -22,6 +22,7 @@ export const eng = {
             title: 'Meet Insyra',
             description: 'Powerful data analysis tools, built for the future.',
             audio: {
+                url: 'https://src.hazelnut-paradise.com/Insyra_introduce.wav',
                 error: 'Your browser does not support the audio player.',
                 description: 'Listen to Insyra introduction',
             },
