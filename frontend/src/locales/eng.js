@@ -74,6 +74,33 @@ export const eng = {
                 },
                 feature5: {
                     id: 5,
+                    title: 'Parquet Support',
+                    description: 'Insyra supports the <strong>Parquet</strong> file format for efficient processing of large-scale structured data. Read entire files or stream in batches, inspect metadata, filter with CCL expressions, and apply transformations directly on Parquet files.',
+                    learnMore: {
+                        href: '#Features',
+                        text: 'Learn about Parquet',
+                    },
+                },
+                feature6: {
+                    id: 6,
+                    title: 'CCL (Column Calculation Language)',
+                    description: 'Insyra features its proprietary <strong>CCL</strong> (Column Calculation Language) supporting Excel-like formulas, conditional logic, and data transformation. Easily manipulate DataTable and Parquet with <code>IF</code>, <code>SUM</code>, <code>NEW()</code> syntax.',
+                    learnMore: {
+                        href: '#Features',
+                        text: 'Learn about CCL',
+                    },
+                },
+                feature7: {
+                    id: 7,
+                    title: 'Marketing Application',
+                    description: 'Built-in <strong>mkt</strong> marketing analytics package, supporting RFM analysis and more, helping you gain insights and develop effective marketing strategies.',
+                    learnMore: {
+                        href: '#Features',
+                        text: 'Learn about <strong>mkt</strong> marketing package',
+                    },
+                },
+                feature8: {
+                    id: 8,
                     title: 'Dedicated IDE',
                     description: 'We provide a <strong>dedicated</strong> and <strong>easy-to-use IDE</strong> for Insyra, allowing you to start your data analysis work quickly without worrying about environment setup.',
                     learnMore: {

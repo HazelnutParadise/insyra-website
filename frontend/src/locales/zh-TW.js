@@ -75,6 +75,33 @@ export const zhTW = {
                 },
                 feature5: {
                     id: 5,
+                    title: 'Parquet 支援',
+                    description: 'Insyra 支援 <strong>Parquet</strong> 檔案格式，讓您能高效處理大型結構化資料。支援完整讀取、批次流式處理、元數據檢查、使用 CCL 表達式過濾，以及直接在 Parquet 檔案上應用轉換。',
+                    learnMore: {
+                        href: '#Features',
+                        text: '了解 Parquet',
+                    },
+                },
+                feature6: {
+                    id: 6,
+                    title: 'CCL（欄位運算語言）',
+                    description: 'Insyra 獨創的 <strong>CCL</strong>（Column Calculation Language）欄位運算語言，支援 Excel 風格公式、條件判斷與資料轉換。使用 <code>IF</code>、<code>SUM</code>、<code>NEW()</code> 等語法，輕鬆操作 DataTable 與 Parquet。',
+                    learnMore: {
+                        href: '#Features',
+                        text: '了解 CCL',
+                    },
+                },
+                feature7: {
+                    id: 7,
+                    title: '行銷應用',
+                    description: '內建 <strong>mkt</strong> 行銷分析套件，支援 RFM 分析等多種行銷數據洞察，協助您制定精準行銷策略。',
+                    learnMore: {
+                        href: '#Features',
+                        text: '了解 <strong>mkt</strong> 行銷套件包',
+                    },
+                },
+                feature8: {
+                    id: 8,
                     title: '專用 IDE',
                     description: '我們為 Insyra 提供 <strong>專屬</strong> 的 <strong>簡易 IDE</strong>，讓您不用煩惱環境設定，迅速開始您的資料分析工作。',
                     learnMore: {
