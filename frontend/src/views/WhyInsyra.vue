@@ -35,6 +35,21 @@
           </div>
         </div>
       </div>
+
+      <!-- Comparison 3: CCL Example -->
+      <div class="code-example">
+        <h3>{{ currentMessages.WhyInsyra.codeComparison.cclExample.title }}</h3>
+        <div class="code-block">
+          <div class="code-box">
+            <h4>Pandas</h4>
+            <pre><code>{{ currentMessages.WhyInsyra.codeComparison.cclExample.pandas }}</code></pre>
+          </div>
+          <div class="code-box">
+            <h4>Insyra (CCL)</h4>
+            <pre><code>{{ currentMessages.WhyInsyra.codeComparison.cclExample.insyra }}</code></pre>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Data Display Comparison Section -->
