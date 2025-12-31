@@ -11,31 +11,13 @@ export const HowToUse = {
     },
     ideSection: {
         title: 'Dedicated IDE: Idensyra',
-        description: 'Idensyra is built with Wails and provides a Wails-based desktop UI. It currently only provides a single UI.',
+        description: 'Idensyra is built with Wails and comes with a built-in Go runtime and pre-installed Insyra, allowing you to focus on data analysis tasks.',
         downloadButton: {
             text: 'Download Idensyra',
         },
         repo: {
             text: 'View Idensyra Source Code',
             link: 'https://github.com/HazelnutParadise/idensyra',
-        },
-        guiMode: {
-            title: 'GUI Mode',
-            description: 'Based on Wails desktop framework',
-            features: [
-                'Real-time execution',
-                'Code and execution result storage',
-                'Switch to WebUI mode (code automatically loaded)',
-            ],
-        },
-        webMode: {
-            title: 'WebUI Mode',
-            description: 'WebUI is currently not available; the project focuses on the Wails desktop UI.',
-            features: [
-                'Syntax highlighting',
-                'Auto complete',
-                'Switch to GUI mode (code automatically loaded)',
-            ],
         },
         features: [
             {

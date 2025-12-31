@@ -11,31 +11,13 @@ export const HowToUse = {
     },
     ideSection: {
         title: '專屬 IDE：Idensyra',
-        description: 'Idensyra 基於 Wails 建構，提供 Wails 桌面介面，目前僅提供單一介面。',
+        description: 'Idensyra 基於 Wails 建構，內建 Go 執行環境並預裝 Insyra，讓您專注於資料分析工作。',
         downloadButton: {
             text: '下載 Idensyra',
         },
         repo: {
             text: '查看 Idensyra 原始碼',
             link: 'https://github.com/HazelnutParadise/idensyra',
-        },
-        guiMode: {
-            title: 'GUI 模式',
-            description: '基於 Wails 的桌面介面',
-            features: [
-                '即時運行功能',
-                '程式碼及執行結果儲存',
-                '切換至 WebUI 模式 (程式碼自動帶入)',
-            ],
-        },
-        webMode: {
-            title: 'WebUI 模式',
-            description: '目前不提供 WebUI，專注於 Wails 桌面介面',
-            features: [
-                '語法凸顯（Syntax Highlighting）',
-                '自動補全（Auto Complete）',
-                '切換至 GUI 模式 (程式碼自動帶入)',
-            ],
         },
         features: [
             {
