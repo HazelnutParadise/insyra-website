@@ -7,7 +7,7 @@ export const Features = {
         docsButton: {
             docs: {
                 title: 'GitHub 上的說明文件',
-                link: 'https://github.com/HazelnutParadise/insyra/blob/main/README_TW.md',
+                link: 'https://hazelnutparadise.github.io/insyra/#/',
             },
             goDoc: {
                 title: 'GoDoc',
@@ -17,7 +17,7 @@ export const Features = {
     },
     coreStructures: {
         title: '核心資料結構',
-        description: 'Insyra 提供兩大核心資料結構，分別是 DataList 和 DataTable。',
+        description: 'Insyra 提供兩大核心資料結構，分別是 DataList 和 DataTable。強烈建議使用 isr 語法糖來獲得更簡潔的語法體驗。',
         dataList: {
             description: 'DataList 是 Insyra 中的基礎結構，用於處理單一維度資料，具備快速檢索、資料清理、資料型態轉換和簡單統計值計算的能力。',
             collapse: {
@@ -42,7 +42,7 @@ func main() {
             },
             doc: {
                 title: 'DataList 說明文件',
-                link: 'https://github.com/HazelnutParadise/insyra/blob/main/Docs/DataList.md',
+                link: 'https://hazelnutparadise.github.io/insyra/#/DataList',
             },
         },
         dataTable: {
@@ -73,7 +73,39 @@ func main() {
             },
             doc: {
                 title: 'DataTable 說明文件',
-                link: 'https://github.com/HazelnutParadise/insyra/blob/main/Docs/DataTable.md',
+                link: 'https://hazelnutparadise.github.io/insyra/#/DataTable',
+            },
+        },
+        ccl: {
+            title: 'Column Calculation Language (CCL)',
+            description: 'Insyra 提供強大的 Column Calculation Language (CCL) 功能，其使用方式就像 Excel 公式一樣直觀！使用 CCL，您可以輕鬆建立計算欄位、執行條件邏輯和聚合運算。',
+            collapse: {
+                title: '使用範例',
+                content:
+                    `package main
+
+import (
+    "github.com/HazelnutParadise/insyra/isr"
+)
+
+func main() {
+    // 建立 DataTable
+    dt := isr.DT.Of(isr.DLs{
+        isr.DL.Of(85, 92, 78, 95, 88).SetName("分數"),
+        isr.DL.Of(20, 22, 19, 23, 21).SetName("年齡"),
+    })
+
+    // 使用 CCL 新增計算欄位
+    dt.AddColUsingCCL("等級", "IF(A > 90, '優秀', IF(A > 80, '良好', '及格'))")
+    dt.AddColUsingCCL("總分加權", "A + B * 0.5")
+
+    dt.Show()
+}`,
+                copyButtonText: '複製',
+            },
+            doc: {
+                title: 'CCL 說明文件',
+                link: 'https://hazelnutparadise.github.io/insyra/#/CCL',
             },
         },
     },
@@ -88,7 +120,7 @@ func main() {
                         `提供 Insyra 的語法糖，為 Insyra 的核心資料結構 DataList 和 DataTable 提供更簡潔的語法。
                             <br/>
                             <strong>isr</strong> 是 <strong>Insyra</strong> 的縮寫。`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/isr.md">isr 套件包說明文件</a>',
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/isr">isr 套件包說明文件</a>',
                 },
             },
             {
@@ -97,7 +129,7 @@ func main() {
                 descriptions: {
                     first:
                         `提供資料獲取的功能，目前可取得 Google 地圖商家評論。`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/datafetch.md">datafetch 套件包說明文件</a>',
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch 套件包說明文件</a>',
                 },
                 collapses: {
                     first: {
@@ -134,7 +166,7 @@ func main() {
                         `提供各種統計函數，包括偏度、峰度和矩計算、主成份分析等。是 Go 語言統計函式庫的包裝，提供易用的 API。<br/>
 <br/>
 我們致力將它設計成和 <strong>R 語言</strong> 的計算結果一致。`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/stats.md">stats 套件包說明文件</a>',
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats 套件包說明文件</a>',
                 },
                 collapses: {
                     first: {
@@ -145,11 +177,12 @@ func main() {
 import (
     "fmt"
     "github.com/HazelnutParadise/insyra"
+    "github.com/HazelnutParadise/insyra/isr"
     "github.com/HazelnutParadise/insyra/stats"
 )
 
 func main() {
-    dl := insyra.NewDataList(1, 2, 3, 9, 5)
+    dl := isr.DL.Of(1, 2, 3, 9, 5)
     fmt.Println("偏度:", stats.Skewness(dl))
 }`,
                         codeBlock: true,
@@ -166,7 +199,7 @@ func main() {
                         `提供平行處理的函數，能夠將多個任務組成群組，在多個 CPU 核心上同時執行，輕鬆提升資料處理效率。<br/>
 <br/>
 parallel 套件包會自動處理平行協程之間的等待，並且回傳的結果會保持任務順序，您無需額外撰寫複雜程式碼。`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/parallel.md">parallel 套件包說明文件</a>',
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parallel">parallel 套件包說明文件</a>',
                 },
                 collapses: {
                     first: {
@@ -211,8 +244,8 @@ func main() {
                     first:
                         `整合 <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> 的資料視覺化套件包，提供多種圖表。撰寫簡單的設定就能為您的分析創建精美圖表。<br/>
 <br/>
-<img src="https://github.com/HazelnutParadise/insyra/blob/main/Docs/img/plot_bar_example.png?raw=true" style="width: 100%;" alt="plot 套件包範例圖表" />`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/plot.md">plot 套件包說明文件</a>',
+<img src="https://hazelnutparadise.github.io/insyra/img/plot/bar_example.png" style="width: 100%;" alt="plot 套件包範例圖表" />`,
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/plot">plot 套件包說明文件</a>',
                 },
                 collapses: {
                     first: {
@@ -222,31 +255,33 @@ func main() {
 
 import (
 	"github.com/HazelnutParadise/insyra"
+	"github.com/HazelnutParadise/insyra/isr"
 	"github.com/HazelnutParadise/insyra/plot"
 )
 
 func main() {
 	// 建立不同產品的 DataList 實例
-	dataListA := insyra.NewDataList(120, 200, 150).SetName("Product A")
-	dataListB := insyra.NewDataList(80, 160, 90).SetName("Product B")
+	dataListA := isr.DL.Of(120, 200, 150).SetName("產品 A")
+	dataListB := isr.DL.Of(80, 160, 90).SetName("產品 B")
 
 	config := plot.BarChartConfig{
-		Title:      "Sales Data",
-		Subtitle:   "Monthly Sales",
-		XAxis:      []string{"January", "February", "March"},
-		Data: []*insyra.DataList{dataListA, dataListB},
+		Title:      "銷售數據",
+		Subtitle:   "每月銷售",
+		XAxis:      []string{"一月", "二月", "三月"},
+		XAxisName:  "月份",
+		YAxisName:  "銷售額",
 		ShowLabels: true,
 		Colors:     []string{"#5470C6", "#91CC75"},
 	}
 
 	// 建立長條圖
-	barChart := plot.CreateBarChart(config)
+	barChart := plot.CreateBarChart(config, dataListA, dataListB)
 
 	// 將圖表儲存為 HTML 檔案
-	plot.SaveHTML(barChart, "sales_data_datalist.html")
+	plot.SaveHTML(barChart, "sales_data.html")
 
 	// 將圖表儲存為 PNG 檔案
-	plot.SavePNG(barChart, "sales_data_datalist.png")
+	plot.SavePNG(barChart, "sales_data.png")
 }`,
                         codeBlock: true,
                         codeLanguage: 'go',
@@ -261,8 +296,8 @@ func main() {
                     first:
                         `使用 <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> 的資料視覺化套件包，提供多種圖表。較為快速，但圖表樣式比較陽春。<strong>不支援非 ASCII 字元</strong>。<br/>
 <br/>
-<img src="https://github.com/HazelnutParadise/insyra/blob/main/Docs/img/gplot_bar_example.png?raw=true" style="width: 100%;" alt="gplot 套件包範例圖表" />`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/gplot.md">gplot 套件包說明文件</a>',
+<img src="https://hazelnutparadise.github.io/insyra/img/gplot_bar_example.png" style="width: 100%;" alt="gplot 套件包範例圖表" />`,
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/gplot">gplot 套件包說明文件</a>',
                 },
                 collapses: {
                     first: {
@@ -271,10 +306,11 @@ func main() {
                             `import (
 	"github.com/HazelnutParadise/insyra"
 	"github.com/HazelnutParadise/insyra/gplot"
+	"github.com/HazelnutParadise/insyra/isr"
 )
 
 func main() {
-	dl := insyra.NewDataList(1 ,2 ,3 ,4)
+	dl := isr.DL.Of(1 ,2 ,3 ,4)
 	config := gplot.BarChartConfig{
 		Title: "The title of the chart.",
 		XAxis: []string{"一", "二", "三", "四"},
@@ -297,7 +333,7 @@ func main() {
                 descriptions: {
                     first:
                         `提供行銷分析的功能，包括 RFM 分析等。幫助您深入了解顧客行為，制定有效的行銷策略。`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/mkt.md">mkt 套件包說明文件</a>',
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/mkt">mkt 套件包說明文件</a>',
                 },
             },
             {
@@ -306,7 +342,7 @@ func main() {
                 descriptions: {
                     first:
                         `提供線性規劃模型的生成功能，能夠輕鬆建立線性規劃模型，並且可以儲存成 <strong>.lp</strong> 檔案供求解軟體使用。`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lpgen.md">lpgen 套件包說明文件</a>',
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lpgen">lpgen 套件包說明文件</a>',
                 },
                 collapses: {
                     first: {
@@ -352,7 +388,7 @@ func main() {
                 descriptions: {
                     first:
                         `使用 <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a> 提供的線性規劃求解功能，能夠輕鬆求解線性規劃模型。<strong>此套件包會自動幫您安裝 GLPK</strong>，無需額外設定。`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/lp.md">lp 套件包說明文件</a>',
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lp">lp 套件包說明文件</a>',
                 },
                 collapses: {
                     first: {
@@ -401,7 +437,7 @@ func main() {
                 descriptions: {
                     first:
                         `提供 CSV 與 Excel 檔案相互轉換等功能。`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/csvxl.md">csvxl 套件包說明文件</a>',
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/csvxl">csvxl 套件包說明文件</a>',
                 },
                 collapses: {
                     first: {
@@ -445,7 +481,7 @@ func main() {
                 descriptions: {
                     first:
                         `無需手動安裝 Python 環境和相依性就能 <strong>在 Go 中執行 Python 程式碼</strong>，允許在 Go 和 Python 之間傳遞變數。`,
-                    end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/blob/main/Docs/py.md">py 套件包說明文件</a>',
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/py">py 套件包說明文件</a>',
                 },
                 collapses: {
                     first: {
@@ -455,13 +491,14 @@ func main() {
 
 import (
 	"github.com/HazelnutParadise/insyra"
+	"github.com/HazelnutParadise/insyra/isr"
 	"github.com/HazelnutParadise/insyra/py"
 )
 
 func main() {
 	// Create DataList
-	xData := insyra.NewDataList(45, 50, 55, 60, 65, 70, 75, 80, 85, 90)
-	yData := insyra.NewDataList(110, 120, 135, 145, 150, 160, 170, 180, 190, 200)
+	xData := isr.DL.Of(45, 50, 55, 60, 65, 70, 75, 80, 85, 90)
+	yData := isr.DL.Of(110, 120, 135, 145, 150, 160, 170, 180, 190, 200)
 
 	// Submit Code to Python
 	py.RunCodef(\`
@@ -484,6 +521,50 @@ plt.show()
                         copyButtonText: '複製',
                     },
                 }
+            },
+            {
+                title: 'parquet',
+                subTitle: 'Parquet 檔案支援',
+                descriptions: {
+                    first:
+                        `提供 Apache Parquet 檔案格式的讀寫支援，與 Insyra 的 DataTable 和 DataList 深度整合。支援串流讀取、欄位級讀取以及 CCL 篩選。`,
+                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parquet">parquet 套件包說明文件</a>',
+                },
+                collapses: {
+                    first: {
+                        title: '使用範例',
+                        content:
+                            `package main
+
+import (
+    "context"
+    "github.com/HazelnutParadise/insyra/parquet"
+)
+
+func main() {
+    ctx := context.Background()
+    
+    // 從 Parquet 檔案讀取 DataTable
+    dt, err := parquet.ReadFile(ctx, "data.parquet")
+    if err != nil {
+        panic(err)
+    }
+    
+    // 使用 CCL 篩選資料並讀取
+    filteredDt, err := parquet.FilterWithCCL(ctx, "sales.parquet", 
+        "(['amount'] > 1000) && (['status'] = 'Active')")
+    if err != nil {
+        panic(err)
+    }
+    
+    dt.Show()
+    filteredDt.Show()
+}`,
+                        codeBlock: true,
+                        codeLanguage: 'go',
+                        copyButtonText: '複製',
+                    },
+                },
             }
         ],
     },
