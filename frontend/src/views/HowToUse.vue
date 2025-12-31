@@ -78,31 +78,10 @@
         </div>
 
         <div class="mode-cards">
-          <div class="mode-card">
-            <h3>{{ currentMessages.HowToUse.ideSection.guiMode.title }}</h3>
-            <img src="https://github.com/HazelnutParadise/idensyra/blob/main/gui_example.png?raw=true" alt="GUI Mode"
-              class="mode-icon">
-            <div class="mode-content">
-              <div class="mode-icon">🖥️</div>
-              <p>{{ currentMessages.HowToUse.ideSection.guiMode.description }}</p>
-              <ul>
-                <li v-for="feature in currentMessages.HowToUse.ideSection.guiMode.features" :key="feature">{{ feature }}
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mode-card">
-            <h3>{{ currentMessages.HowToUse.ideSection.webMode.title }}</h3>
-            <img src="https://github.com/HazelnutParadise/idensyra/blob/main/webui_example.png?raw=true"
-              alt="WebUI Mode" class="mode-icon">
-            <div class="mode-content">
-              <div class="mode-icon">🌐</div>
-              <p>{{ currentMessages.HowToUse.ideSection.webMode.description }}</p>
-              <ul>
-                <li v-for="feature in currentMessages.HowToUse.ideSection.webMode.features" :key="feature">{{ feature }}
-                </li>
-              </ul>
+          <div class="mode-card photo-card">
+            <div class="photo-gallery">
+              <img src="https://github.com/HazelnutParadise/idensyra/blob/main/ui_example.png?raw=true"
+                alt="UI screenshot">
             </div>
           </div>
         </div>
@@ -408,6 +387,27 @@ h2 {
   transform: translateY(-2px);
   box-shadow: 0 0 20px rgba(255, 227, 176, 0.5);
   background: linear-gradient(45deg, #ff69b4, #a2d5ab);
+}
+
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+}
+
+.photo-card {
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  box-shadow: none;
 }
 
 .cyber-link {
