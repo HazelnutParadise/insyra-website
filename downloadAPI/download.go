@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -12,13 +13,11 @@ import (
 func DownloadIdensyra(c *gin.Context) {
 	var url string
 
-	// 創建忽略SSL驗證的client
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
 	client := &http.Client{Transport: tr}
 
-	// 查詢repo最新release
 	resp, err := client.Get("https://api.github.com/repos/HazelnutParadise/idensyra/releases/latest")
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
@@ -31,17 +30,36 @@ func DownloadIdensyra(c *gin.Context) {
 	}
 	defer resp.Body.Close()
 
-	// 讀取成json
-	var jsonMap map[string]interface{}
-	json.Unmarshal(respBody, &jsonMap)
+	var jsonMap map[string]any
+	if err := json.Unmarshal(respBody, &jsonMap); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
 
-	// 正確處理 assets 陣列
-	assets := jsonMap["assets"].([]interface{})
+	assets, ok := jsonMap["assets"].([]any)
+	if !ok {
+		c.JSON(http.StatusNotFound, gin.H{"error": "no assets found"})
+		return
+	}
 	for _, asset := range assets {
-		assetMap, ok := asset.(map[string]interface{})
-		if ok && assetMap["content_type"] == "application/zip" {
-			url = assetMap["browser_download_url"].(string)
+		assetMap, ok := asset.(map[string]any)
+		if !ok {
+			continue
 		}
+		contentType, _ := assetMap["content_type"].(string)
+		name, _ := assetMap["name"].(string)
+		downloadURL, _ := assetMap["browser_download_url"].(string)
+		if downloadURL == "" {
+			continue
+		}
+		if strings.Contains(contentType, "zip") || strings.HasSuffix(strings.ToLower(name), ".zip") {
+			url = downloadURL
+			break
+		}
+	}
+	if url == "" {
+		c.JSON(http.StatusNotFound, gin.H{"error": "no zip asset found"})
+		return
 	}
 
 	c.Redirect(http.StatusPermanentRedirect, url)
