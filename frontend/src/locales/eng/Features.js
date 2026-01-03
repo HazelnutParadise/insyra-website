@@ -1,29 +1,32 @@
 export const Features = {
-    title: 'Features',
-    description: 'Insyra provides a variety of powerful features to meet your data analysis needs.',
-    readDocs: {
-        title: 'Welcome to Visit Our Documentation',
-        description: 'Insyra is designed to be easy to use without needing to read the documentation. You can fully rely on the auto-completion feature of your editor to operate. However, if you want to learn more details, our documentation on GitHub provides detailed information and examples.<br/><br/>GoDoc is also available for those who prefer a more concise and Go-like documentation style.',
-        docsButton: {
-            docs: {
-                title: 'Documentation on GitHub',
-                link: 'https://hazelnutparadise.github.io/insyra/#/',
-            },
-            goDoc: {
-                title: 'GoDoc',
-                link: 'https://pkg.go.dev/github.com/HazelnutParadise/insyra',
-            },
-        },
+  title: "Features",
+  description:
+    "Insyra provides a variety of powerful features to meet your data analysis needs.",
+  readDocs: {
+    title: "Welcome to Visit Our Documentation",
+    description:
+      "Insyra is designed to be easy to use without needing to read the documentation. You can fully rely on the auto-completion feature of your editor to operate. However, if you want to learn more details, our documentation on GitHub provides detailed information and examples.<br/><br/>GoDoc is also available for those who prefer a more concise and Go-like documentation style.",
+    docsButton: {
+      docs: {
+        title: "Documentation on GitHub",
+        link: "https://hazelnutparadise.github.io/insyra/#/",
+      },
+      goDoc: {
+        title: "GoDoc",
+        link: "https://pkg.go.dev/github.com/HazelnutParadise/insyra",
+      },
     },
-    coreStructures: {
-        title: 'Core Structures',
-        description: 'Insyra provides two core data structures: DataList and DataTable. We strongly recommend using the isr syntax sugar for a more concise experience.',
-        dataList: {
-            description: 'DataList is the foundation of Insyra, used to process single-dimensional data. It has the ability to quickly retrieve data, clean data, convert data types, and calculate simple statistical values.',
-            collapse: {
-                title: 'DataList',
-                content:
-                    `package main
+  },
+  coreStructures: {
+    title: "Core Structures",
+    description:
+      "Insyra provides two core data structures: DataList and DataTable. We strongly recommend using the isr syntax sugar for a more concise experience.",
+    dataList: {
+      description:
+        "DataList is the foundation of Insyra, used to process single-dimensional data. It has the ability to quickly retrieve data, clean data, convert data types, and calculate simple statistical values.",
+      collapse: {
+        title: "DataList",
+        content: `package main
 
 // import Insyra
 import (
@@ -38,19 +41,19 @@ func main() {
     // Calculate the average value and print it out
     fmt.Println("Average:", dl.Mean())
 }`,
-                copyButtonText: 'Copy',
-            },
-            doc: {
-                title: 'DataList Documentation',
-                link: 'https://hazelnutparadise.github.io/insyra/#/DataList',
-            },
-        },
-        dataTable: {
-            description: 'DataTable is used to process multi-dimensional data. It can handle data from different sources and perform various operations, such as filtering, sorting, and calculating statistical values.',
-            collapse: {
-                title: 'DataTable',
-                content:
-                    `package main
+        copyButtonText: "Copy",
+      },
+      doc: {
+        title: "DataList Documentation",
+        link: "https://hazelnutparadise.github.io/insyra/#/DataList",
+      },
+    },
+    dataTable: {
+      description:
+        "DataTable is used to process multi-dimensional data. It can handle data from different sources and perform various operations, such as filtering, sorting, and calculating statistical values.",
+      collapse: {
+        title: "DataTable",
+        content: `package main
 
 // import Insyra
 import (
@@ -69,20 +72,20 @@ func main() {
 	// Display the DataTable
 	dt.Show()
 }`,
-                copyButtonText: 'Copy',
-            },
-            doc: {
-                title: 'DataTable Documentation',
-                link: 'https://hazelnutparadise.github.io/insyra/#/DataTable',
-            },
-        },
-        ccl: {
-            title: 'Column Calculation Language (CCL)',
-            description: 'Insyra provides a powerful Column Calculation Language (CCL) that works just like Excel formulas! With CCL, you can easily create calculated columns, perform conditional logic, and execute aggregation operations.',
-            collapse: {
-                title: 'CCL Example',
-                content:
-                    `package main
+        copyButtonText: "Copy",
+      },
+      doc: {
+        title: "DataTable Documentation",
+        link: "https://hazelnutparadise.github.io/insyra/#/DataTable",
+      },
+    },
+    ccl: {
+      title: "Column Calculation Language (CCL)",
+      description:
+        "Insyra provides a powerful Column Calculation Language (CCL) that works just like Excel formulas! With CCL, you can easily create calculated columns, perform conditional logic, and execute aggregation operations.",
+      collapse: {
+        title: "CCL Example",
+        content: `package main
 
 import (
     "github.com/HazelnutParadise/insyra/isr"
@@ -101,40 +104,38 @@ func main() {
 
     dt.Show()
 }`,
-                copyButtonText: 'Copy',
-            },
-            doc: {
-                title: 'CCL Documentation',
-                link: 'https://hazelnutparadise.github.io/insyra/#/CCL',
-            },
-        },
+        copyButtonText: "Copy",
+      },
+      doc: {
+        title: "CCL Documentation",
+        link: "https://hazelnutparadise.github.io/insyra/#/CCL",
+      },
     },
-    packagesSection: {
-        title: 'Sub Packages',
-        packages: [
-            {
-                title: 'isr',
-                subTitle: 'Syntax Sugar',
-                descriptions: {
-                    first:
-                        `The <strong>isr</strong> package provides syntax sugar for Insyra, allowing you to write code more concisely and intuitively. It simplifies the process of creating and manipulating DataList and DataTable objects, making your code cleaner and easier to read.
+  },
+  packagesSection: {
+    title: "Sub Packages",
+    packages: [
+      {
+        title: "isr",
+        subTitle: "Syntax Sugar",
+        descriptions: {
+          first: `The <strong>isr</strong> package provides syntax sugar for Insyra, allowing you to write code more concisely and intuitively. It simplifies the process of creating and manipulating DataList and DataTable objects, making your code cleaner and easier to read.
                             <br/>
                             <strong>isr</strong> is the abbreviation for <strong>Insyra</strong>.`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/isr">isr package documentation</a>',
-                },
-            },
-            {
-                title: 'datafetch',
-                subTitle: 'Data Fetching',
-                descriptions: {
-                    first:
-                        `Provides data retrieval function, currently Google Maps Store reviews can be obtained.`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch package documentation</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content: `package main
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/isr">isr package documentation</a>',
+        },
+      },
+      {
+        title: "datafetch",
+        subTitle: "Data Fetching",
+        descriptions: {
+          first: `Provides data retrieval function, currently Google Maps Store reviews can be obtained.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
 
 import (
 	"log"
@@ -152,27 +153,25 @@ func main() {
 	dt.Show()
 }
 `,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
-                    },
-                },
-            },
-            {
-                title: 'stats',
-                subTitle: 'Statistics',
-                descriptions: {
-                    first:
-                        `Provide various statistical functions, including skewness, kurtosis, and principal component analysis, etc.<br/>
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "stats",
+        subTitle: "Statistics",
+        descriptions: {
+          first: `Provide various statistical functions, including skewness, kurtosis, and principal component analysis, etc.<br/>
 <br/>
 We strive to design it to be consistent with the calculation results of <strong>R language</strong>.`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats package documentation</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content:
-                            `package main
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
 
 import (
     "fmt"
@@ -183,27 +182,25 @@ import (
 func main() {
     fmt.Println(stats.Skewness(isr.DL.Of(1, 2, 3, 9, 5)))
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
-                    },
-                },
-            },
-            {
-                title: 'parallel',
-                subTitle: 'Parallel Processing',
-                descriptions: {
-                    first:
-                        `Provide functions for parallel processing, allowing you to group multiple tasks and execute them simultaneously on multiple CPU cores, easily improving data processing efficiency.<br/>
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "parallel",
+        subTitle: "Parallel Processing",
+        descriptions: {
+          first: `Provide functions for parallel processing, allowing you to group multiple tasks and execute them simultaneously on multiple CPU cores, easily improving data processing efficiency.<br/>
 <br/>
 The parallel package will automatically handle the waiting between parallel coroutines and return the results in the order of the tasks, so you don't need to write additional complex code.`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parallel">parallel package documentation</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content:
-                            `package main
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parallel">parallel package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
 
 import (
 	"fmt"
@@ -229,27 +226,25 @@ func main() {
 	}
 }
 `,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
-                    },
-                }
-            },
-            {
-                title: 'plot',
-                subTitle: 'Data Visualization',
-                descriptions: {
-                    first:
-                        `Integrate the <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, providing various charts to easily create beautiful visualizations for your analysis.<br/>
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "plot",
+        subTitle: "Data Visualization",
+        descriptions: {
+          first: `Integrate the <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, providing various charts to easily create beautiful visualizations for your analysis.<br/>
 <br/>
 <img src="https://hazelnutparadise.github.io/insyra/img/plot/bar_example.png" style="width: 100%;" alt="plot package example chart" />`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/plot">plot package documentation</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content:
-                            `package main
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/plot">plot package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
 
 import (
 	"github.com/HazelnutParadise/insyra"
@@ -281,27 +276,25 @@ func main() {
 	// Save the chart as a PNG file
 	plot.SavePNG(barChart, "sales_data.png")
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
-                    },
-                }
-            },
-            {
-                title: 'gplot',
-                subTitle: 'Data Visualization',
-                descriptions: {
-                    first:
-                        `Use the <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> data visualization package, providing various charts. It is faster, but the chart style is more simple. <strong>Does not support non-ASCII characters</strong>.<br/>
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "gplot",
+        subTitle: "Data Visualization",
+        descriptions: {
+          first: `Use the <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> data visualization package, providing various charts. It is faster, but the chart style is more simple. <strong>Does not support non-ASCII characters</strong>.<br/>
 <br/>
 <img src="https://hazelnutparadise.github.io/insyra/img/gplot_bar_example.png" style="width: 100%;" alt="gplot package example chart" />`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/gplot">gplot package documentation</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content:
-                            `import (
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/gplot">gplot package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `import (
 	"github.com/HazelnutParadise/insyra"
 	"github.com/HazelnutParadise/insyra/gplot"
 	"github.com/HazelnutParadise/insyra/isr"
@@ -319,34 +312,31 @@ func main() {
 	chart := gplot.CreateBarChart(config)
 	gplot.SaveChart(chart, "example.png")
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
-                    },
-                },
-            },
-            {
-                title: 'mkt',
-                subTitle: 'Marketing Analysis',
-                descriptions: {
-                    first:
-                        `Provide marketing analysis functions, including RFM analysis, to help you gain insights into customer behavior and develop effective marketing strategies.`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/mkt">mkt package documentation</a>',
-                },
-            },
-            {
-                title: 'lpgen',
-                subTitle: 'Linear Programming Model Generation',
-                descriptions: {
-                    first:
-                        `Provide a function to generate linear programming models, allowing you to easily create linear programming models and save them as <strong>.lp</strong> files for use with solving software.`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lpgen">lpgen package documentation</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content:
-                            `package main
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "mkt",
+        subTitle: "Marketing Analysis",
+        descriptions: {
+          first: `Provide marketing analysis functions, including RFM analysis, to help you gain insights into customer behavior and develop effective marketing strategies.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/mkt">mkt package documentation</a>',
+        },
+      },
+      {
+        title: "lpgen",
+        subTitle: "Linear Programming Model Generation",
+        descriptions: {
+          first: `Provide a function to generate linear programming models, allowing you to easily create linear programming models and save them as <strong>.lp</strong> files for use with solving software.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lpgen">lpgen package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
 
 import (
 	"github.com/HazelnutParadise/insyra/lpgen"
@@ -374,25 +364,23 @@ func main() {
 	// Generate LP file
 	lpModel.GenerateLPFile("my_model.lp")
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
-                    },
-                },
-            },
-            {
-                title: 'lp',
-                subTitle: 'Linear Programming Model Solving',
-                descriptions: {
-                    first:
-                        `Provide functions to solve linear programming models, allowing you to easily solve linear programming models and obtain the optimal solution. Powered by <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a>. <strong>This package will automatically download and install GLPK when it is used.</strong>`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lp">lp package documentation</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content:
-                            `package main
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "lp",
+        subTitle: "Linear Programming Model Solving",
+        descriptions: {
+          first: `Provide functions to solve linear programming models, allowing you to easily solve linear programming models and obtain the optimal solution. Powered by <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a>. <strong>This package will automatically download and install GLPK when it is used.</strong>`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lp">lp package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
 
 import (
 	"github.com/HazelnutParadise/insyra/lp"
@@ -423,25 +411,23 @@ func main() {
     result.ToCSV("solution.csv", false, false)
     info.ToCSV("info.csv", true, true)
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
-                    },
-                },
-            },
-            {
-                title: 'csvxl',
-                subTitle: 'CSV and Excel Processing',
-                descriptions: {
-                    first:
-                        `Provide functions to convert between CSV and Excel files.`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/csvxl">csvxl package documentation</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content:
-                            `package main
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "csvxl",
+        subTitle: "CSV and Excel Processing",
+        descriptions: {
+          first: `Provide functions to convert between CSV and Excel files.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/csvxl">csvxl package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
 
 import (
     "github.com/HazelnutParadise/csvxl"
@@ -467,72 +453,79 @@ func main() {
     csvxl.ExcelToCsv(excelFile, outputDir, csvNames)
 }
 `,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
-                    }
-                }
-            },
-            {
-                title: 'py',
-                subTitle: 'Python Integration',
-                descriptions: {
-                    first:
-                        `Without manually installing the Python environment and dependencies, you can <strong>execute Python code within Go</strong>, allowing variables to be passed between Go and Python.`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/py">py package documentation</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content:
-                            `package main
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "py",
+        subTitle: "Python Integration",
+        descriptions: {
+          first: `Without manually installing the Python environment and dependencies, you can <strong>execute Python code within Go</strong>, allowing variables to be passed between Go and Python.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/py">py package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
 
 import (
-	"github.com/HazelnutParadise/insyra"
+	"fmt"
 	"github.com/HazelnutParadise/insyra/isr"
 	"github.com/HazelnutParadise/insyra/py"
 )
 
+type PlotResult struct {
+	Success bool   \`json:"success"\`
+	Message string \`json:"message"\`
+}
+
 func main() {
-	// Create DataList
-	xData := isr.DL.Of(45, 50, 55, 60, 65, 70, 75, 80, 85, 90)
-	yData := isr.DL.Of(110, 120, 135, 145, 150, 160, 170, 180, 190, 200)
+	// Create DataList (set a name so pandas.Series will have a name)
+	xData := isr.DL.Of(45, 50, 55, 60, 65, 70, 75, 80, 85, 90).SetName("X Values")
+	yData := isr.DL.Of(110, 120, 135, 145, 150, 160, 170, 180, 190, 200).SetName("Y Values")
 
 	// Submit Code to Python
-	py.RunCodef(\`
-x = np.array($v1)
-y = np.array($v2)
+	var result PlotResult
+	err := py.RunCodef(&result, \`
+x = $v1
+y = $v2
 
 sns.set(style="whitegrid")
-
 sns.scatterplot(x=x, y=y)
 
-plt.title("Scatter Plot from Go DataList")
-plt.xlabel("X Values")
-plt.ylabel("Y Values")
+plt.title($v3)
+plt.xlabel($v4)
+plt.ylabel($v5)
 
 plt.show()
-\`, xData.Data(), yData.Data())
+insyra.Return({"success": True, "message": "Plot created"})
+	\`, xData, yData, "Scatter Plot from Go DataList", "X Values", "Y Values")
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Println("Result:", result)
+	}
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
-                    },
-                }
-            },
-            {
-                title: 'parquet',
-                subTitle: 'Parquet File Support',
-                descriptions: {
-                    first:
-                        `Provides read and write support for Apache Parquet file format, deeply integrated with Insyra's DataTable and DataList. Supports streaming reads, column-level reads, and CCL filtering.`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parquet">parquet package documentation</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content:
-                            `package main
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "parquet",
+        subTitle: "Parquet File Support",
+        descriptions: {
+          first: `Provides read and write support for Apache Parquet file format, deeply integrated with Insyra's DataTable and DataList. Supports streaming reads, column-level reads, and CCL filtering.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parquet">parquet package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
 
 import (
     "context"
@@ -541,29 +534,29 @@ import (
 
 func main() {
     ctx := context.Background()
-    
+
     // Read DataTable from Parquet file
     dt, err := parquet.ReadFile(ctx, "data.parquet")
     if err != nil {
         panic(err)
     }
-    
+
     // Filter data using CCL while reading
-    filteredDt, err := parquet.FilterWithCCL(ctx, "sales.parquet", 
+    filteredDt, err := parquet.FilterWithCCL(ctx, "sales.parquet",
         "(['amount'] > 1000) && (['status'] = 'Active')")
     if err != nil {
         panic(err)
     }
-    
+
     dt.Show()
     filteredDt.Show()
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: 'Copy',
-                    },
-                },
-            }
-        ],
-    },
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+    ],
+  },
 };

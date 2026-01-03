@@ -1,29 +1,31 @@
 export const Features = {
-    title: '功能',
-    description: 'Insyra 提供多樣化的功能，滿足各種資料分析需求。',
-    readDocs: {
-        title: '邀請您閱讀我們的說明文件',
-        description: 'Insyra 設計為無需查看說明也能輕鬆學會如何使用，您可以完全依賴編輯器的自動完成功能來操作。但如果您想知道更多細節，我們位於 GitHub 的說明文件詳細記載了所有功能與使用方式。<br/><br/>若您更喜歡註解即文檔的 Go 語言風格，也可以查看 GoDoc。',
-        docsButton: {
-            docs: {
-                title: 'GitHub 上的說明文件',
-                link: 'https://hazelnutparadise.github.io/insyra/#/',
-            },
-            goDoc: {
-                title: 'GoDoc',
-                link: 'https://pkg.go.dev/github.com/HazelnutParadise/insyra',
-            },
-        },
+  title: "功能",
+  description: "Insyra 提供多樣化的功能，滿足各種資料分析需求。",
+  readDocs: {
+    title: "邀請您閱讀我們的說明文件",
+    description:
+      "Insyra 設計為無需查看說明也能輕鬆學會如何使用，您可以完全依賴編輯器的自動完成功能來操作。但如果您想知道更多細節，我們位於 GitHub 的說明文件詳細記載了所有功能與使用方式。<br/><br/>若您更喜歡註解即文檔的 Go 語言風格，也可以查看 GoDoc。",
+    docsButton: {
+      docs: {
+        title: "GitHub 上的說明文件",
+        link: "https://hazelnutparadise.github.io/insyra/#/",
+      },
+      goDoc: {
+        title: "GoDoc",
+        link: "https://pkg.go.dev/github.com/HazelnutParadise/insyra",
+      },
     },
-    coreStructures: {
-        title: '核心資料結構',
-        description: 'Insyra 提供兩大核心資料結構，分別是 DataList 和 DataTable。強烈建議使用 isr 語法糖來獲得更簡潔的語法體驗。',
-        dataList: {
-            description: 'DataList 是 Insyra 中的基礎結構，用於處理單一維度資料，具備快速檢索、資料清理、資料型態轉換和簡單統計值計算的能力。',
-            collapse: {
-                title: '使用範例',
-                content:
-                    `package main
+  },
+  coreStructures: {
+    title: "核心資料結構",
+    description:
+      "Insyra 提供兩大核心資料結構，分別是 DataList 和 DataTable。強烈建議使用 isr 語法糖來獲得更簡潔的語法體驗。",
+    dataList: {
+      description:
+        "DataList 是 Insyra 中的基礎結構，用於處理單一維度資料，具備快速檢索、資料清理、資料型態轉換和簡單統計值計算的能力。",
+      collapse: {
+        title: "使用範例",
+        content: `package main
 
 // 引入 Insyra
 import (
@@ -38,19 +40,19 @@ func main() {
     // 計算並印出平均值
     fmt.Println("平均值:", dl.Mean())
 }`,
-                copyButtonText: '複製',
-            },
-            doc: {
-                title: 'DataList 說明文件',
-                link: 'https://hazelnutparadise.github.io/insyra/#/DataList',
-            },
-        },
-        dataTable: {
-            description: 'DataTable 是一個類似表格的二維結構，具備多種資料操作、篩選、查詢和顯示方法。DataTable 基於 DataList 打造，提供一致的使用體驗。',
-            collapse: {
-                title: '使用範例',
-                content:
-                    `package main
+        copyButtonText: "複製",
+      },
+      doc: {
+        title: "DataList 說明文件",
+        link: "https://hazelnutparadise.github.io/insyra/#/DataList",
+      },
+    },
+    dataTable: {
+      description:
+        "DataTable 是一個類似表格的二維結構，具備多種資料操作、篩選、查詢和顯示方法。DataTable 基於 DataList 打造，提供一致的使用體驗。",
+      collapse: {
+        title: "使用範例",
+        content: `package main
 
 // 引入 Insyra
 import (
@@ -69,20 +71,20 @@ func main() {
 	// 印出 DataTable
 	dt.Show()
 }`,
-                copyButtonText: '複製',
-            },
-            doc: {
-                title: 'DataTable 說明文件',
-                link: 'https://hazelnutparadise.github.io/insyra/#/DataTable',
-            },
-        },
-        ccl: {
-            title: 'Column Calculation Language (CCL)',
-            description: 'Insyra 提供強大的 Column Calculation Language (CCL) 功能，其使用方式就像 Excel 公式一樣直觀！使用 CCL，您可以輕鬆建立計算欄位、執行條件邏輯和聚合運算。',
-            collapse: {
-                title: '使用範例',
-                content:
-                    `package main
+        copyButtonText: "複製",
+      },
+      doc: {
+        title: "DataTable 說明文件",
+        link: "https://hazelnutparadise.github.io/insyra/#/DataTable",
+      },
+    },
+    ccl: {
+      title: "Column Calculation Language (CCL)",
+      description:
+        "Insyra 提供強大的 Column Calculation Language (CCL) 功能，其使用方式就像 Excel 公式一樣直觀！使用 CCL，您可以輕鬆建立計算欄位、執行條件邏輯和聚合運算。",
+      collapse: {
+        title: "使用範例",
+        content: `package main
 
 import (
     "github.com/HazelnutParadise/insyra/isr"
@@ -101,40 +103,38 @@ func main() {
 
     dt.Show()
 }`,
-                copyButtonText: '複製',
-            },
-            doc: {
-                title: 'CCL 說明文件',
-                link: 'https://hazelnutparadise.github.io/insyra/#/CCL',
-            },
-        },
+        copyButtonText: "複製",
+      },
+      doc: {
+        title: "CCL 說明文件",
+        link: "https://hazelnutparadise.github.io/insyra/#/CCL",
+      },
     },
-    packagesSection: {
-        title: '子套件包',
-        packages: [
-            {
-                title: 'isr',
-                subTitle: '語法糖',
-                descriptions: {
-                    first:
-                        `提供 Insyra 的語法糖，為 Insyra 的核心資料結構 DataList 和 DataTable 提供更簡潔的語法。
+  },
+  packagesSection: {
+    title: "子套件包",
+    packages: [
+      {
+        title: "isr",
+        subTitle: "語法糖",
+        descriptions: {
+          first: `提供 Insyra 的語法糖，為 Insyra 的核心資料結構 DataList 和 DataTable 提供更簡潔的語法。
                             <br/>
                             <strong>isr</strong> 是 <strong>Insyra</strong> 的縮寫。`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/isr">isr 套件包說明文件</a>',
-                },
-            },
-            {
-                title: 'datafetch',
-                subTitle: '資料獲取',
-                descriptions: {
-                    first:
-                        `提供資料獲取的功能，目前可取得 Google 地圖商家評論。`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch 套件包說明文件</a>',
-                },
-                collapses: {
-                    first: {
-                        title: '使用範例',
-                        content: `package main
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/isr">isr 套件包說明文件</a>',
+        },
+      },
+      {
+        title: "datafetch",
+        subTitle: "資料獲取",
+        descriptions: {
+          first: `提供資料獲取的功能，目前可取得 Google 地圖商家評論。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
 
 import (
 	"log"
@@ -152,27 +152,25 @@ func main() {
 	dt.Show()
 }
 `,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: '複製',
-                    },
-                },
-            },
-            {
-                title: 'stats',
-                subTitle: '統計',
-                descriptions: {
-                    first:
-                        `提供各種統計函數，包括偏度、峰度和矩計算、主成份分析等。是 Go 語言統計函式庫的包裝，提供易用的 API。<br/>
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "stats",
+        subTitle: "統計",
+        descriptions: {
+          first: `提供各種統計函數，包括偏度、峰度和矩計算、主成份分析等。是 Go 語言統計函式庫的包裝，提供易用的 API。<br/>
 <br/>
 我們致力將它設計成和 <strong>R 語言</strong> 的計算結果一致。`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats 套件包說明文件</a>',
-                },
-                collapses: {
-                    first: {
-                        title: '使用範例',
-                        content:
-                            `package main
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
 
 import (
     "fmt"
@@ -185,27 +183,25 @@ func main() {
     dl := isr.DL.Of(1, 2, 3, 9, 5)
     fmt.Println("偏度:", stats.Skewness(dl))
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: '複製',
-                    },
-                },
-            },
-            {
-                title: 'parallel',
-                subTitle: '平行處理',
-                descriptions: {
-                    first:
-                        `提供平行處理的函數，能夠將多個任務組成群組，在多個 CPU 核心上同時執行，輕鬆提升資料處理效率。<br/>
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "parallel",
+        subTitle: "平行處理",
+        descriptions: {
+          first: `提供平行處理的函數，能夠將多個任務組成群組，在多個 CPU 核心上同時執行，輕鬆提升資料處理效率。<br/>
 <br/>
 parallel 套件包會自動處理平行協程之間的等待，並且回傳的結果會保持任務順序，您無需額外撰寫複雜程式碼。`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parallel">parallel 套件包說明文件</a>',
-                },
-                collapses: {
-                    first: {
-                        title: '使用範例',
-                        content:
-                            `package main
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parallel">parallel 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
 
 import (
 	"fmt"
@@ -231,27 +227,25 @@ func main() {
 	}
 }
 `,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: '複製',
-                    },
-                }
-            },
-            {
-                title: 'plot',
-                subTitle: '資料視覺化',
-                descriptions: {
-                    first:
-                        `整合 <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> 的資料視覺化套件包，提供多種圖表。撰寫簡單的設定就能為您的分析創建精美圖表。<br/>
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "plot",
+        subTitle: "資料視覺化",
+        descriptions: {
+          first: `整合 <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> 的資料視覺化套件包，提供多種圖表。撰寫簡單的設定就能為您的分析創建精美圖表。<br/>
 <br/>
 <img src="https://hazelnutparadise.github.io/insyra/img/plot/bar_example.png" style="width: 100%;" alt="plot 套件包範例圖表" />`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/plot">plot 套件包說明文件</a>',
-                },
-                collapses: {
-                    first: {
-                        title: '使用範例',
-                        content:
-                            `package main
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/plot">plot 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
 
 import (
 	"github.com/HazelnutParadise/insyra"
@@ -283,27 +277,25 @@ func main() {
 	// 將圖表儲存為 PNG 檔案
 	plot.SavePNG(barChart, "sales_data.png")
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: '複製',
-                    },
-                }
-            },
-            {
-                title: 'gplot',
-                subTitle: '資料視覺化',
-                descriptions: {
-                    first:
-                        `使用 <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> 的資料視覺化套件包，提供多種圖表。較為快速，但圖表樣式比較陽春。<strong>不支援非 ASCII 字元</strong>。<br/>
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "gplot",
+        subTitle: "資料視覺化",
+        descriptions: {
+          first: `使用 <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> 的資料視覺化套件包，提供多種圖表。較為快速，但圖表樣式比較陽春。<strong>不支援非 ASCII 字元</strong>。<br/>
 <br/>
 <img src="https://hazelnutparadise.github.io/insyra/img/gplot_bar_example.png" style="width: 100%;" alt="gplot 套件包範例圖表" />`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/gplot">gplot 套件包說明文件</a>',
-                },
-                collapses: {
-                    first: {
-                        title: '使用範例',
-                        content:
-                            `import (
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/gplot">gplot 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `import (
 	"github.com/HazelnutParadise/insyra"
 	"github.com/HazelnutParadise/insyra/gplot"
 	"github.com/HazelnutParadise/insyra/isr"
@@ -321,34 +313,31 @@ func main() {
 	chart := gplot.CreateBarChart(config)
 	gplot.SaveChart(chart, "example.png")
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: '複製',
-                    },
-                },
-            },
-            {
-                title: 'mkt',
-                subTitle: '行銷分析',
-                descriptions: {
-                    first:
-                        `提供行銷分析的功能，包括 RFM 分析等。幫助您深入了解顧客行為，制定有效的行銷策略。`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/mkt">mkt 套件包說明文件</a>',
-                },
-            },
-            {
-                title: 'lpgen',
-                subTitle: '線性規劃模型生成',
-                descriptions: {
-                    first:
-                        `提供線性規劃模型的生成功能，能夠輕鬆建立線性規劃模型，並且可以儲存成 <strong>.lp</strong> 檔案供求解軟體使用。`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lpgen">lpgen 套件包說明文件</a>',
-                },
-                collapses: {
-                    first: {
-                        title: '使用範例',
-                        content:
-                            `package main
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "mkt",
+        subTitle: "行銷分析",
+        descriptions: {
+          first: `提供行銷分析的功能，包括 RFM 分析等。幫助您深入了解顧客行為，制定有效的行銷策略。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/mkt">mkt 套件包說明文件</a>',
+        },
+      },
+      {
+        title: "lpgen",
+        subTitle: "線性規劃模型生成",
+        descriptions: {
+          first: `提供線性規劃模型的生成功能，能夠輕鬆建立線性規劃模型，並且可以儲存成 <strong>.lp</strong> 檔案供求解軟體使用。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lpgen">lpgen 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
 
 import (
 	"github.com/HazelnutParadise/insyra/lpgen"
@@ -376,25 +365,23 @@ func main() {
 	// 生成 LP 檔案
 	lpModel.GenerateLPFile("my_model.lp")
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: '複製',
-                    },
-                },
-            },
-            {
-                title: 'lp',
-                subTitle: '線性規劃求解',
-                descriptions: {
-                    first:
-                        `使用 <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a> 提供的線性規劃求解功能，能夠輕鬆求解線性規劃模型。<strong>此套件包會自動幫您安裝 GLPK</strong>，無需額外設定。`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lp">lp 套件包說明文件</a>',
-                },
-                collapses: {
-                    first: {
-                        title: 'Example',
-                        content:
-                            `package main
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "lp",
+        subTitle: "線性規劃求解",
+        descriptions: {
+          first: `使用 <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a> 提供的線性規劃求解功能，能夠輕鬆求解線性規劃模型。<strong>此套件包會自動幫您安裝 GLPK</strong>，無需額外設定。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lp">lp 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
 
 import (
 	"github.com/HazelnutParadise/insyra/lp"
@@ -425,25 +412,23 @@ func main() {
     result.ToCSV("solution.csv", false, false)
     info.ToCSV("info.csv", true, true)
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: '複製',
-                    },
-                }
-            },
-            {
-                title: 'csvxl',
-                subTitle: 'CSV 與 Excel 處理',
-                descriptions: {
-                    first:
-                        `提供 CSV 與 Excel 檔案相互轉換等功能。`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/csvxl">csvxl 套件包說明文件</a>',
-                },
-                collapses: {
-                    first: {
-                        title: '使用範例',
-                        content:
-                            `package main
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "csvxl",
+        subTitle: "CSV 與 Excel 處理",
+        descriptions: {
+          first: `提供 CSV 與 Excel 檔案相互轉換等功能。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/csvxl">csvxl 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
 
 import (
     "github.com/HazelnutParadise/csvxl"
@@ -469,72 +454,79 @@ func main() {
     csvxl.ExcelToCsv(excelFile, outputDir, csvNames)
 }
 `,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: '複製',
-                    },
-                },
-            },
-            {
-                title: 'py',
-                subTitle: '借助 Python 的功能',
-                descriptions: {
-                    first:
-                        `無需手動安裝 Python 環境和相依性就能 <strong>在 Go 中執行 Python 程式碼</strong>，允許在 Go 和 Python 之間傳遞變數。`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/py">py 套件包說明文件</a>',
-                },
-                collapses: {
-                    first: {
-                        title: '使用範例',
-                        content:
-                            `package main
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "py",
+        subTitle: "借助 Python 的功能",
+        descriptions: {
+          first: `無需手動安裝 Python 環境和相依性就能 <strong>在 Go 中執行 Python 程式碼</strong>，允許在 Go 和 Python 之間傳遞變數。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/py">py 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
 
 import (
-	"github.com/HazelnutParadise/insyra"
+	"fmt"
 	"github.com/HazelnutParadise/insyra/isr"
 	"github.com/HazelnutParadise/insyra/py"
 )
 
-func main() {
-	// Create DataList
-	xData := isr.DL.Of(45, 50, 55, 60, 65, 70, 75, 80, 85, 90)
-	yData := isr.DL.Of(110, 120, 135, 145, 150, 160, 170, 180, 190, 200)
+type PlotResult struct {
+	Success bool   \`json:"success"\`
+	Message string \`json:"message"\`
+}
 
-	// Submit Code to Python
-	py.RunCodef(\`
-x = np.array($v1)
-y = np.array($v2)
+func main() {
+	// 建立 DataList 並設定名稱（名稱會在轉成 pandas.Series 時保留）
+	xData := isr.DL.Of(45, 50, 55, 60, 65, 70, 75, 80, 85, 90).SetName("X Values")
+	yData := isr.DL.Of(110, 120, 135, 145, 150, 160, 170, 180, 190, 200).SetName("Y Values")
+
+	// 提交 Python 程式碼並取得回傳結果
+	var result PlotResult
+	err := py.RunCodef(&result, \`
+x = $v1
+y = $v2
 
 sns.set(style="whitegrid")
-
 sns.scatterplot(x=x, y=y)
 
-plt.title("Scatter Plot from Go DataList")
-plt.xlabel("X Values")
-plt.ylabel("Y Values")
+plt.title($v3)
+plt.xlabel($v4)
+plt.ylabel($v5)
 
 plt.show()
-\`, xData.Data(), yData.Data())
+insyra.Return({"success": True, "message": "Plot created"})
+	\`, xData, yData, "Scatter Plot from Go DataList", "X Values", "Y Values")
+	if err != nil {
+		fmt.Println("錯誤:", err)
+	} else {
+		fmt.Println("結果:", result)
+	}
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: '複製',
-                    },
-                }
-            },
-            {
-                title: 'parquet',
-                subTitle: 'Parquet 檔案支援',
-                descriptions: {
-                    first:
-                        `提供 Apache Parquet 檔案格式的讀寫支援，與 Insyra 的 DataTable 和 DataList 深度整合。支援串流讀取、欄位級讀取以及 CCL 篩選。`,
-                    end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parquet">parquet 套件包說明文件</a>',
-                },
-                collapses: {
-                    first: {
-                        title: '使用範例',
-                        content:
-                            `package main
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "parquet",
+        subTitle: "Parquet 檔案支援",
+        descriptions: {
+          first: `提供 Apache Parquet 檔案格式的讀寫支援，與 Insyra 的 DataTable 和 DataList 深度整合。支援串流讀取、欄位級讀取以及 CCL 篩選。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parquet">parquet 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
 
 import (
     "context"
@@ -543,29 +535,29 @@ import (
 
 func main() {
     ctx := context.Background()
-    
+
     // 從 Parquet 檔案讀取 DataTable
     dt, err := parquet.ReadFile(ctx, "data.parquet")
     if err != nil {
         panic(err)
     }
-    
+
     // 使用 CCL 篩選資料並讀取
-    filteredDt, err := parquet.FilterWithCCL(ctx, "sales.parquet", 
+    filteredDt, err := parquet.FilterWithCCL(ctx, "sales.parquet",
         "(['amount'] > 1000) && (['status'] = 'Active')")
     if err != nil {
         panic(err)
     }
-    
+
     dt.Show()
     filteredDt.Show()
 }`,
-                        codeBlock: true,
-                        codeLanguage: 'go',
-                        copyButtonText: '複製',
-                    },
-                },
-            }
-        ],
-    },
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+    ],
+  },
 };
