@@ -13,27 +13,41 @@
         </div>
         <ul class="nav-menu">
             <li>
-                <a href="#Main">{{ currentMessages.navbar.main }}</a>
-            </li>
-            <li>
-                <a href="#WhatIsInsyra">{{
-                    currentMessages.navbar.whatIsInsyra
+                <a href="#Main" @click.prevent="selectPage('Main')">{{
+                    currentMessages.navbar.main
                 }}</a>
             </li>
             <li>
-                <a href="#Features">{{ currentMessages.navbar.features }}</a>
+                <a
+                    href="#WhatIsInsyra"
+                    @click.prevent="selectPage('WhatIsInsyra')"
+                    >{{ currentMessages.navbar.whatIsInsyra }}</a
+                >
             </li>
             <li>
-                <a href="#HowToUse">{{ currentMessages.navbar.howToUse }}</a>
+                <a href="#Features" @click.prevent="selectPage('Features')">{{
+                    currentMessages.navbar.features
+                }}</a>
             </li>
             <li>
-                <a href="#Idensyra">{{ currentMessages.navbar.idensyra }}</a>
+                <a href="#HowToUse" @click.prevent="selectPage('HowToUse')">{{
+                    currentMessages.navbar.howToUse
+                }}</a>
             </li>
             <li>
-                <a href="#WhyInsyra">{{ currentMessages.navbar.whyInsyra }}</a>
+                <a href="#Idensyra" @click.prevent="selectPage('Idensyra')">{{
+                    currentMessages.navbar.idensyra
+                }}</a>
             </li>
             <li>
-                <a href="#Contact">{{ currentMessages.navbar.contact }}</a>
+                <a href="#WhyInsyra" @click.prevent="selectPage('WhyInsyra')">{{
+                    currentMessages.navbar.whyInsyra
+                }}</a>
+            </li>
+            <li>
+                <a href="#Contact" @click.prevent="selectPage('Contact')">{{
+                    currentMessages.navbar.contact
+                }}</a>
             </li>
         </ul>
         <LanguageSelector
@@ -53,9 +67,14 @@ import LanguageSelector from "./LanguageSelector.vue";
 import HamburgerMenu from "./HamburgerMenu.vue";
 
 export default {
+    emits: ["language-changed", "page-selected"],
     props: {
         currentMessages: {
             type: Object,
+            required: true,
+        },
+        currentLanguage: {
+            type: String,
             required: true,
         },
     },
@@ -67,6 +86,9 @@ export default {
         updateLanguage(lang) {
             this.$emit("language-changed", lang);
             localStorage.setItem("language", lang);
+        },
+        selectPage(page) {
+            this.$emit("page-selected", page);
         },
     },
 };

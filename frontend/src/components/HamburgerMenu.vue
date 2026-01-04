@@ -54,6 +54,7 @@
 <script>
 import LanguageSelector from "./LanguageSelector.vue";
 export default {
+    emits: ["language-changed", "page-selected"],
     components: {
         LanguageSelector,
     },
@@ -83,7 +84,7 @@ export default {
             this.toggleMenu();
         },
         selectPage(page) {
-            window.location.href = `#${page}`;
+            this.$emit("page-selected", page);
             this.toggleMenu();
         },
     },

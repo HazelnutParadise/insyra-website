@@ -4,6 +4,7 @@
         <Navbar
             @language-changed="updateLanguage"
             :currentMessages="currentMessages"
+            :current-language="currentLanguage"
             @page-selected="selectPage"
         />
         <component :is="currentPage" :currentMessages="currentMessages" />
@@ -33,7 +34,7 @@ import Navbar from "./components/NavBar.vue";
 import HazelnutParadiseNav from "./components/HazelnutParadiseNav.vue";
 import LanguageSelector from "./components/LanguageSelector.vue";
 import HamburgerMenu from "./components/HamburgerMenu.vue"; // 引入漢堡選單
-import { ref, onMounted } from "vue";
+import { ref, shallowRef, onMounted } from "vue";
 import { messages } from "./locales/lang"; // 引入語言資源
 import Main from "./views/Main.vue";
 import WhatIsInsyra from "./views/WhatIsInsyra.vue";
@@ -53,18 +54,18 @@ export default {
     },
     setup() {
         const initials = ["繁體中文", "English"];
-        let currentLanguage = localStorage.getItem("language");
+        let initialLanguage = localStorage.getItem("language");
 
-        if (!currentLanguage) {
+        if (!initialLanguage) {
             const browserLang = navigator.language || navigator.userLanguage;
-            currentLanguage = browserLang.toLowerCase().includes("zh")
+            initialLanguage = browserLang.toLowerCase().includes("zh")
                 ? "繁體中文"
                 : "English";
-            localStorage.setItem("language", currentLanguage);
+            localStorage.setItem("language", initialLanguage);
         }
-        const value = ref(currentLanguage); // 預設選擇繁體中文
-        const currentMessages = ref(messages[value.value]); // 當前語言的文本
-        const currentPage = ref(Main); // 當前顯示的組件
+        const currentLanguage = ref(initialLanguage); // 預設選擇繁體中文
+        const currentMessages = ref(messages[currentLanguage.value]); // 當前語言的文本
+        const currentPage = shallowRef(Main); // 當前顯示的組件 (use shallowRef to avoid making the component itself reactive)
         const applyYear = (str) =>
             str ? str.replace("{year}", new Date().getFullYear()) : str;
         document.title = applyYear(currentMessages.value.siteTitle);
@@ -79,7 +80,7 @@ export default {
 
         const updateLanguage = (lang) => {
             if (messages[lang]) {
-                value.value = lang;
+                currentLanguage.value = lang;
                 currentMessages.value = messages[lang]; // 更新當前語言的文本
                 // 根據當前頁面更新 title
                 const currentPageName =
@@ -166,6 +167,7 @@ export default {
 
         return {
             currentMessages,
+            currentLanguage,
             updateLanguage,
             currentPage,
             selectPage,
