@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "bun vite",
-    "build": "bun vite build",
+    "build:locales": "bun ../scripts/build_locales.js",
+    "build": "bun ../scripts/build_locales.js && bun vite build",
     "preview": "bun vite preview"
   },
   "dependencies": {
