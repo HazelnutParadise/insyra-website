@@ -1,12 +1,18 @@
 package main
 
 import (
+	"crypto/tls"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	client := &http.Client{
+		Transport: &http.Transport{
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		},
+	}
 	router := gin.Default()
 
 	// 設置靜態文件服務
@@ -18,7 +24,7 @@ func main() {
 	})
 
 	router.GET("/navbar", func(c *gin.Context) {
-		resp, err := http.Get("https://src.hazelnut-paradise.com/navbar.html")
+		resp, err := client.Get("https://src.hazelnut-paradise.com/navbar.html")
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
