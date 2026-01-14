@@ -56,6 +56,7 @@
         />
         <HamburgerMenu
             @language-changed="updateLanguage"
+            @page-selected="selectPage"
             :currentMessages="currentMessages"
             :current-language="currentLanguage"
         />
