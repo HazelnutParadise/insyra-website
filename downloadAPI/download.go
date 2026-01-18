@@ -3,6 +3,7 @@ package downloadAPI
 import (
 	"crypto/tls"
 	"encoding/json"
+	"html"
 	"io"
 	"net/http"
 	"regexp"
@@ -66,35 +67,79 @@ func DownloadIdensyra(c *gin.Context) {
 	if url == "" {
 		// fallback: try to parse release body for zip links or links labeled "Download" / "下載"
 		body, _ := jsonMap["body"].(string)
+		debug := c.Query("debug") == "true"
 		if body != "" {
-			// 1) direct .zip URLs anywhere in the body
-			reZip := regexp.MustCompile(`(?i)(https?://[^\s'"\)<>]+\.zip(?:\?[^\s'"\)<>]*)?)`)
-			if m := reZip.FindStringSubmatch(body); len(m) > 1 {
-				url = m[1]
-			}
+			// unescape HTML entities
+			body = html.UnescapeString(body)
 
-			// 2) markdown links whose text contains Download or 下載
-			if url == "" {
-				reMd := regexp.MustCompile(`(?i)\[[^\]]*(?:download|下載)[^\]]*\]\((https?://[^)]+)\)`)
-				if m := reMd.FindStringSubmatch(body); len(m) > 1 {
-					url = m[1]
+			// collect all candidate URLs from various patterns
+			var candidates []string
+
+			// markdown links: [Download]( https://... ) allowing optional spaces and angle brackets
+			reMdAll := regexp.MustCompile(`(?i)\[[^\]]*(?:download|下載)[^\]]*\]\(\s*<?\s*(https?://[^)\s>]+)\s*>?\s*\)`)
+			for _, m := range reMdAll.FindAllStringSubmatch(body, -1) {
+				if len(m) > 1 {
+					candidates = append(candidates, strings.TrimSpace(m[1]))
 				}
 			}
 
-			// 3) HTML anchors whose inner text contains Download or 下載
-			if url == "" {
-				reA := regexp.MustCompile(`(?i)<a[^>]+href=["']?([^"'>\s]+)["']?[^>]*>[^<]*(?:download|下載)[^<]*</a>`)
-				if m := reA.FindStringSubmatch(body); len(m) > 1 {
-					url = m[1]
+			// direct .zip URLs
+			reZipAll := regexp.MustCompile(`(?i)(https?://[^\s'"\)<>]+\.zip(?:\?[^\s'"\)<>]*)?)`)
+			for _, m := range reZipAll.FindAllStringSubmatch(body, -1) {
+				if len(m) > 1 {
+					candidates = append(candidates, strings.TrimSpace(m[1]))
 				}
 			}
 
-			// 4) fallback: any plain https URL that ends with .zip
-			if url == "" {
-				rePlainZip := regexp.MustCompile(`(?i)https?://[^\s'"\)<>]+\.zip(?:\?[^\s'"\)<>]*)?`)
-				if m := rePlainZip.FindString(body); m != "" {
-					url = m
+			// angle bracketed URLs: <https://...>
+			reAngle := regexp.MustCompile(`(?i)<(https?://[^\s>]+\.zip(?:\?[^\s>]+)?)>`)
+			for _, m := range reAngle.FindAllStringSubmatch(body, -1) {
+				if len(m) > 1 {
+					candidates = append(candidates, strings.TrimSpace(m[1]))
 				}
+			}
+
+			// HTML anchors with Download or 下載 text
+			reAAll := regexp.MustCompile(`(?i)<a[^>]+href=["']?([^"'>\s]+)["']?[^>]*>[^<]*(?:download|下載)[^<]*</a>`)
+			for _, m := range reAAll.FindAllStringSubmatch(body, -1) {
+				if len(m) > 1 {
+					candidates = append(candidates, strings.TrimSpace(m[1]))
+				}
+			}
+
+			// dedupe while preserving order
+			seen := map[string]bool{}
+			uniq := []string{}
+			for _, u := range candidates {
+				if u == "" {
+					continue
+				}
+				if !seen[u] {
+					seen[u] = true
+					uniq = append(uniq, u)
+				}
+			}
+
+			// prefer first candidate that looks like a zip
+			for _, u := range uniq {
+				if strings.Contains(strings.ToLower(u), ".zip") {
+					url = u
+					break
+				}
+			}
+			// if none ends with .zip, take the first candidate
+			if url == "" && len(uniq) > 0 {
+				url = uniq[0]
+			}
+
+			if debug {
+				// return candidates to help debug why match fails
+				snippet := body
+				if len(snippet) > 1000 {
+					snippet = snippet[:1000]
+				}
+				c.JSON(http.StatusOK, gin.H{"candidates": uniq, "selected": url, "body_snippet": snippet})
+				return
 			}
 		}
 		if url == "" {
