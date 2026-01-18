@@ -5,6 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+
+	"backend/downloadAPI"
 )
 
 func main() {
@@ -32,6 +34,9 @@ func main() {
 		defer resp.Body.Close()
 		c.DataFromReader(resp.StatusCode, resp.ContentLength, resp.Header.Get("Content-Type"), resp.Body, nil)
 	})
+
+	// download endpoint
+	router.GET("/download/idensyra", downloadAPI.DownloadIdensyra)
 
 	router.Run(":8080")
 }
