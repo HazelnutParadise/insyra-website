@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+	"regexp"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -58,8 +59,25 @@ func DownloadIdensyra(c *gin.Context) {
 		}
 	}
 	if url == "" {
-		c.JSON(http.StatusNotFound, gin.H{"error": "no zip asset found"})
-		return
+		// fallback: try to parse release body for a markdown or HTML link labeled "Download"
+		body, _ := jsonMap["body"].(string)
+		if body != "" {
+			// look for markdown link: [Download](https://...)
+			re := regexp.MustCompile(`(?i)\[Download\]\((https?://[^)]+)\)`)
+			if m := re.FindStringSubmatch(body); len(m) > 1 {
+				url = m[1]
+			} else {
+				// look for HTML anchor: <a ... href="...">Download</a>
+				re2 := regexp.MustCompile(`(?i)<a[^>]+href=["']?([^"'>\s]+)["']?[^>]*>\s*Download\s*</a>`)
+				if m2 := re2.FindStringSubmatch(body); len(m2) > 1 {
+					url = m2[1]
+				}
+			}
+		}
+		if url == "" {
+			c.JSON(http.StatusNotFound, gin.H{"error": "no zip asset found and no Download link in release notes"})
+			return
+		}
 	}
 
 	c.Redirect(http.StatusPermanentRedirect, url)
