@@ -36,7 +36,20 @@ func main() {
 	})
 
 	// download endpoint
-	router.GET("/download/idensyra", downloadAPI.DownloadIdensyra)
+	router.GET("/download/:file", func(c *gin.Context) {
+		// set HTTP headers to disable caching
+		c.Header("Cache-Control", "no-store, no-cache, must-revalidate")
+		c.Header("Pragma", "no-cache")
+		c.Header("Expires", "0")
+
+		file := c.Param("file")
+		switch file {
+		case "idensyra":
+			downloadAPI.DownloadIdensyra(c)
+		default:
+			c.JSON(http.StatusNotFound, gin.H{"error": "unknown file"})
+		}
+	})
 
 	router.Run(":8080")
 }
