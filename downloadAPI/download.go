@@ -59,23 +59,76 @@ func DownloadIdensyra(c *gin.Context) {
 		}
 	}
 	if url == "" {
-		// fallback: try to parse release body for a markdown or HTML link labeled "Download"
+		// fallback: try to parse release body for zip links or links labeled "Download" / "下載"
 		body, _ := jsonMap["body"].(string)
 		if body != "" {
-			// look for markdown link: [Download](https://...)
-			re := regexp.MustCompile(`(?i)\[Download\]\((https?://[^)]+)\)`)
-			if m := re.FindStringSubmatch(body); len(m) > 1 {
+			// 1) direct .zip URLs anywhere in the body
+			reZip := regexp.MustCompile(`(?i)(https?://[^\s'"\)<>]+\.zip(?:\?[^\s'"\)<>]*)?)`)
+			if m := reZip.FindStringSubmatch(body); len(m) > 1 {
 				url = m[1]
-			} else {
-				// look for HTML anchor: <a ... href="...">Download</a>
-				re2 := regexp.MustCompile(`(?i)<a[^>]+href=["']?([^"'>\s]+)["']?[^>]*>\s*Download\s*</a>`)
-				if m2 := re2.FindStringSubmatch(body); len(m2) > 1 {
-					url = m2[1]
+			}
+
+			// 2) markdown links whose text contains Download or 下載
+			if url == "" {
+				reMd := regexp.MustCompile(`(?i)\[[^\]]*(?:download|下載)[^\]]*\]\((https?://[^)]+)\)`)
+				if m := reMd.FindStringSubmatch(body); len(m) > 1 {
+					url = m[1]
+				}
+			}
+
+			// 3) HTML anchors whose inner text contains Download or 下載
+			if url == "" {
+				reA := regexp.MustCompile(`(?i)<a[^>]+href=["']?([^"'>\s]+)["']?[^>]*>[^<]*(?:download|下載)[^<]*</a>`)
+				if m := reA.FindStringSubmatch(body); len(m) > 1 {
+					url = m[1]
+				}
+			}
+
+			// 4) fallback: any plain https URL that ends with .zip
+			if url == "" {
+				rePlainZip := regexp.MustCompile(`(?i)https?://[^\s'"\)<>]+\.zip(?:\?[^\s'"\)<>]*)?`)
+				if m := rePlainZip.FindString(body); m != "" {
+					url = m
 				}
 			}
 		}
 		if url == "" {
 			c.JSON(http.StatusNotFound, gin.H{"error": "no zip asset found and no Download link in release notes"})
+			return
+		}
+	}
+
+	// validate the resolved URL is reachable and points to a zip file
+	req, _ := http.NewRequest("HEAD", url, nil)
+	resp2, err2 := client.Do(req)
+	if err2 != nil || resp2.StatusCode < 200 || resp2.StatusCode >= 400 {
+		// fallback: try GET the first byte (some servers disallow HEAD)
+		req2, _ := http.NewRequest("GET", url, nil)
+		req2.Header.Set("Range", "bytes=0-0")
+		resp3, err3 := client.Do(req2)
+		if err3 != nil || resp3.StatusCode < 200 || resp3.StatusCode >= 400 {
+			// accept if URL ends with .zip, otherwise error out
+			if !strings.HasSuffix(strings.ToLower(url), ".zip") {
+				c.JSON(http.StatusBadGateway, gin.H{"error": "resolved download URL not reachable"})
+				return
+			}
+		} else {
+			if resp3.Body != nil {
+				defer resp3.Body.Close()
+			}
+			ct := resp3.Header.Get("Content-Type")
+			if !strings.Contains(strings.ToLower(ct), "zip") && !strings.HasSuffix(strings.ToLower(url), ".zip") {
+				c.JSON(http.StatusBadGateway, gin.H{"error": "resolved download URL is not a zip file"})
+				return
+			}
+		}
+	} else {
+		if resp2.Body != nil {
+			defer resp2.Body.Close()
+		}
+		ct := resp2.Header.Get("Content-Type")
+		if !strings.Contains(strings.ToLower(ct), "zip") && !strings.HasSuffix(strings.ToLower(url), ".zip") {
+			c.JSON(http.StatusBadGateway, gin.H{"error": "resolved download URL is not a zip file"})
 			return
 		}
 	}
