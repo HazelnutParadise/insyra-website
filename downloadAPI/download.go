@@ -37,25 +37,30 @@ func DownloadIdensyra(c *gin.Context) {
 		return
 	}
 
-	assets, ok := jsonMap["assets"].([]any)
-	if !ok {
-		c.JSON(http.StatusNotFound, gin.H{"error": "no assets found"})
-		return
+	assetsAny, hasAssets := jsonMap["assets"]
+	var assets []any
+	if hasAssets {
+		if a, ok := assetsAny.([]any); ok {
+			assets = a
+		}
 	}
-	for _, asset := range assets {
-		assetMap, ok := asset.(map[string]any)
-		if !ok {
-			continue
-		}
-		contentType, _ := assetMap["content_type"].(string)
-		name, _ := assetMap["name"].(string)
-		downloadURL, _ := assetMap["browser_download_url"].(string)
-		if downloadURL == "" {
-			continue
-		}
-		if strings.Contains(contentType, "zip") || strings.HasSuffix(strings.ToLower(name), ".zip") {
-			url = downloadURL
-			break
+	// if there are assets, try to find a zip asset first
+	if len(assets) > 0 {
+		for _, asset := range assets {
+			assetMap, ok := asset.(map[string]any)
+			if !ok {
+				continue
+			}
+			contentType, _ := assetMap["content_type"].(string)
+			name, _ := assetMap["name"].(string)
+			downloadURL, _ := assetMap["browser_download_url"].(string)
+			if downloadURL == "" {
+				continue
+			}
+			if strings.Contains(contentType, "zip") || strings.HasSuffix(strings.ToLower(name), ".zip") {
+				url = downloadURL
+				break
+			}
 		}
 	}
 	if url == "" {
