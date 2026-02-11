@@ -129,7 +129,7 @@ func main() {
         title: "datafetch",
         subTitle: "Data Fetching",
         descriptions: {
-          first: `Provides data retrieval function, currently Google Maps Store reviews can be obtained.`,
+          first: `Provides data retrieval utilities including Google Maps Store reviews and Yahoo Finance market data.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch package documentation</a>',
         },
         collapses: {
@@ -138,19 +138,30 @@ func main() {
             content: `package main
 
 import (
-	"log"
+	"time"
 
 	"github.com/HazelnutParadise/insyra/datafetch"
 )
 
 func main() {
-	crawler := datafetch.GoogleMapsStores()
-	dt := crawler.GetReviews(crawler.Search("Din Tai Fung")[0].ID, 5).ToDataTable()
-	if dt == nil {
-		log.Fatalf("Error")
+	// 1. Initialize Yahoo Finance fetcher
+	yf, err := datafetch.YFinance(datafetch.YFinanceConfig{
+		Timeout: 10 * time.Second,
+	})
+	if err != nil {
+		panic(err)
 	}
 
-	dt.Show()
+	// 2. Fetch historical data as *insyra.DataTable
+	history, err := yf.Ticker("AAPL").History(datafetch.YFHistoryParams{
+		Period:   "1mo",
+		Interval: "1d",
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	history.Show()
 }
 `,
             codeBlock: true,
@@ -248,33 +259,25 @@ func main() {
 
 import (
 	"github.com/HazelnutParadise/insyra"
-	"github.com/HazelnutParadise/insyra/isr"
 	"github.com/HazelnutParadise/insyra/plot"
 )
 
 func main() {
-	// Create DataList objects for different products
-	dataListA := isr.DL.Of(120, 200, 150).SetName("Product A")
-	dataListB := isr.DL.Of(80, 160, 90).SetName("Product B")
+	// Create data
+	sales := insyra.NewDataList(100, 150, 120, 180).SetName("Sales")
 
+	// Create chart configuration
 	config := plot.BarChartConfig{
-		Title:      "Sales Data",
-		Subtitle:   "Monthly Sales",
-		XAxis:      []string{"January", "February", "March"},
-		XAxisName:  "Month",
-		YAxisName:  "Sales",
-		ShowLabels: true,
-		Colors:     []string{"#5470C6", "#91CC75"},
+		Title: "Monthly Sales",
+		XAxis: []string{"Jan", "Feb", "Mar", "Apr"},
 	}
 
-	// Create a bar chart
-	barChart := plot.CreateBarChart(config, dataListA, dataListB)
+	// Create and save chart
+	chart := plot.CreateBarChart(config, sales)
+	plot.SaveHTML(chart, "sales.html")
 
-	// Save the chart as an HTML file
-	plot.SaveHTML(barChart, "sales_data.html")
-
-	// Save the chart as a PNG file
-	plot.SavePNG(barChart, "sales_data.png")
+	// Or save as PNG (requires Chrome/Chromium)
+	plot.SavePNG(chart, "sales.png")
 }`,
             codeBlock: true,
             codeLanguage: "go",
@@ -294,23 +297,18 @@ func main() {
         collapses: {
           first: {
             title: "Example",
-            content: `import (
-	"github.com/HazelnutParadise/insyra"
-	"github.com/HazelnutParadise/insyra/gplot"
-	"github.com/HazelnutParadise/insyra/isr"
-)
+            content: `package main
+
+import "github.com/HazelnutParadise/insyra/gplot"
 
 func main() {
-	dl := isr.DL.Of(1 ,2 ,3 ,4)
 	config := gplot.BarChartConfig{
-		Title: "The title of the chart.",
-		XAxis: []string{"A", "B", "C", "D"},
-		Data: dl,
-		XAxisName: "categories",
-		YAxisName: "values",
+		Title: "Monthly Sales",
+		XAxis: []string{"Jan", "Feb", "Mar", "Apr"},
 	}
-	chart := gplot.CreateBarChart(config)
-	gplot.SaveChart(chart, "example.png")
+	data := []float64{100, 150, 120, 180}
+	plt := gplot.CreateBarChart(config, data)
+	gplot.SaveChart(plt, "sales.png")
 }`,
             codeBlock: true,
             codeLanguage: "go",
@@ -408,8 +406,8 @@ func main() {
     result, info := lp.SolveModel(model, 10)
 
     // Save the result and information to CSV files
-    result.ToCSV("solution.csv", false, false)
-    info.ToCSV("info.csv", true, true)
+    result.ToCSV("solution.csv", false, false, false)
+    info.ToCSV("info.csv", true, true, false)
 }`,
             codeBlock: true,
             codeLanguage: "go",
@@ -430,29 +428,60 @@ func main() {
             content: `package main
 
 import (
-    "github.com/HazelnutParadise/csvxl"
+    "log"
+    "github.com/HazelnutParadise/insyra/csvxl"
 )
 
 func main() {
-    csvFiles := []string{"file1.csv", "file2.csv", "file3.csv"}
-    sheetNames := []string{"Sheet1", "Sheet2", "Sheet3"} // Optional: If not provided, CSV filenames will be used as sheet names
-    output := "output.xlsx"
-    existingExcel := "existing.xlsx"
-
-    // Convert CSV files to an Excel file
-    csvxl.CsvToExcel(csvFiles, sheetNames, output, csvxl.UTF8)
-
-    // Append CSV files to an existing Excel file
-    csvxl.AppendCsvToExcel(csvFiles, sheetNames, existingExcel)
-
-    excelFile := "input.xlsx"
-    outputDir := "csv_output"
-    csvNames := []string{"custom1.csv", "custom2.csv"} // Optional: Specify names for the output CSV files
-
-    // Split the Excel file into multiple CSV files
-    csvxl.ExcelToCsv(excelFile, outputDir, csvNames)
+    csvFiles := []string{"file1.csv", "file2.csv"}
+    if err := csvxl.CsvToExcel(csvFiles, nil, "output.xlsx"); err != nil {
+        log.Fatal(err)
+    }
 }
 `,
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "pd",
+        subTitle: "Pandas-like DataFrame",
+        descriptions: {
+          first: `Pandas-like DataFrame helpers built on top of <a target="_blank" href="https://gpandas.apoplexi.com/docs/">gpandas</a>. It provides conversion helpers between Insyra DataTable/DataList and gpandas objects.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/pd">pd package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
+
+import (
+	"log"
+
+	"github.com/HazelnutParadise/insyra/isr"
+	"github.com/HazelnutParadise/insyra/pd"
+)
+
+func main() {
+	dt := isr.DT.Of(isr.DLs{
+		isr.DL.Of("Alice", "Bob").SetName("name"),
+		isr.DL.Of(30, 25).SetName("age"),
+	})
+
+	df, err := pd.FromDataTable(dt)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	back, err := df.ToDataTable()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	back.Show()
+}`,
             codeBlock: true,
             codeLanguage: "go",
             copyButtonText: "Copy",
@@ -536,14 +565,14 @@ func main() {
     ctx := context.Background()
 
     // Read DataTable from Parquet file
-    dt, err := parquet.ReadFile(ctx, "data.parquet")
+    dt, err := parquet.Read(ctx, "data.parquet", parquet.ReadOptions{})
     if err != nil {
         panic(err)
     }
 
     // Filter data using CCL while reading
-    filteredDt, err := parquet.FilterWithCCL(ctx, "sales.parquet",
-        "(['amount'] > 1000) && (['status'] = 'Active')")
+    filteredDt, err := parquet.FilterWithCCL(ctx, "products.parquet",
+        "(['price'] > 100) && (['in_stock'] == true)")
     if err != nil {
         panic(err)
     }

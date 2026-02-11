@@ -128,7 +128,7 @@ func main() {
         title: "datafetch",
         subTitle: "資料獲取",
         descriptions: {
-          first: `提供資料獲取的功能，目前可取得 Google 地圖商家評論。`,
+          first: `提供資料獲取功能，包含 Google 地圖商家評論與 Yahoo Finance 市場資料。`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch 套件包說明文件</a>',
         },
         collapses: {
@@ -137,19 +137,30 @@ func main() {
             content: `package main
 
 import (
-	"log"
+	"time"
 
 	"github.com/HazelnutParadise/insyra/datafetch"
 )
 
 func main() {
-	crawler := datafetch.GoogleMapsStores()
-	dt := crawler.GetReviews(crawler.Search("Din Tai Fung")[0].ID, 5).ToDataTable()
-	if dt == nil {
-		log.Fatalf("Error")
+	// 1. 初始化 Yahoo Finance 抓取器
+	yf, err := datafetch.YFinance(datafetch.YFinanceConfig{
+		Timeout: 10 * time.Second,
+	})
+	if err != nil {
+		panic(err)
 	}
 
-	dt.Show()
+	// 2. 以 DataTable 形式抓取歷史資料
+	history, err := yf.Ticker("AAPL").History(datafetch.YFHistoryParams{
+		Period:   "1mo",
+		Interval: "1d",
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	history.Show()
 }
 `,
             codeBlock: true,
@@ -174,7 +185,6 @@ func main() {
 
 import (
     "fmt"
-    "github.com/HazelnutParadise/insyra"
     "github.com/HazelnutParadise/insyra/isr"
     "github.com/HazelnutParadise/insyra/stats"
 )
@@ -249,33 +259,25 @@ func main() {
 
 import (
 	"github.com/HazelnutParadise/insyra"
-	"github.com/HazelnutParadise/insyra/isr"
 	"github.com/HazelnutParadise/insyra/plot"
 )
 
 func main() {
-	// 建立不同產品的 DataList 實例
-	dataListA := isr.DL.Of(120, 200, 150).SetName("產品 A")
-	dataListB := isr.DL.Of(80, 160, 90).SetName("產品 B")
+	// 建立資料
+	sales := insyra.NewDataList(100, 150, 120, 180).SetName("Sales")
 
+	// 建立圖表設定
 	config := plot.BarChartConfig{
-		Title:      "銷售數據",
-		Subtitle:   "每月銷售",
-		XAxis:      []string{"一月", "二月", "三月"},
-		XAxisName:  "月份",
-		YAxisName:  "銷售額",
-		ShowLabels: true,
-		Colors:     []string{"#5470C6", "#91CC75"},
+		Title: "Monthly Sales",
+		XAxis: []string{"Jan", "Feb", "Mar", "Apr"},
 	}
 
-	// 建立長條圖
-	barChart := plot.CreateBarChart(config, dataListA, dataListB)
+	// 建立並儲存圖表
+	chart := plot.CreateBarChart(config, sales)
+	plot.SaveHTML(chart, "sales.html")
 
-	// 將圖表儲存為 HTML 檔案
-	plot.SaveHTML(barChart, "sales_data.html")
-
-	// 將圖表儲存為 PNG 檔案
-	plot.SavePNG(barChart, "sales_data.png")
+	// 或儲存為 PNG（需有 Chrome/Chromium）
+	plot.SavePNG(chart, "sales.png")
 }`,
             codeBlock: true,
             codeLanguage: "go",
@@ -295,23 +297,18 @@ func main() {
         collapses: {
           first: {
             title: "使用範例",
-            content: `import (
-	"github.com/HazelnutParadise/insyra"
-	"github.com/HazelnutParadise/insyra/gplot"
-	"github.com/HazelnutParadise/insyra/isr"
-)
+            content: `package main
+
+import "github.com/HazelnutParadise/insyra/gplot"
 
 func main() {
-	dl := isr.DL.Of(1 ,2 ,3 ,4)
 	config := gplot.BarChartConfig{
-		Title: "The title of the chart.",
-		XAxis: []string{"一", "二", "三", "四"},
-		Data: dl,
-		XAxisName: "categories",
-		YAxisName: "values",
+		Title: "Monthly Sales",
+		XAxis: []string{"Jan", "Feb", "Mar", "Apr"},
 	}
-	chart := gplot.CreateBarChart(config)
-	gplot.SaveChart(chart, "example.png")
+	data := []float64{100, 150, 120, 180}
+	plt := gplot.CreateBarChart(config, data)
+	gplot.SaveChart(plt, "sales.png")
 }`,
             codeBlock: true,
             codeLanguage: "go",
@@ -380,7 +377,7 @@ func main() {
         },
         collapses: {
           first: {
-            title: "Example",
+            title: "使用範例",
             content: `package main
 
 import (
@@ -409,8 +406,8 @@ func main() {
     result, info := lp.SolveModel(model, 10)
 
     // Save the result and information to CSV files
-    result.ToCSV("solution.csv", false, false)
-    info.ToCSV("info.csv", true, true)
+    result.ToCSV("solution.csv", false, false, false)
+    info.ToCSV("info.csv", true, true, false)
 }`,
             codeBlock: true,
             codeLanguage: "go",
@@ -431,29 +428,60 @@ func main() {
             content: `package main
 
 import (
-    "github.com/HazelnutParadise/csvxl"
+    "log"
+    "github.com/HazelnutParadise/insyra/csvxl"
 )
 
 func main() {
-    csvFiles := []string{"file1.csv", "file2.csv", "file3.csv"}
-    sheetNames := []string{"Sheet1", "Sheet2", "Sheet3"} // 可選: 如果沒有提供，CSV 檔案名稱會被用作工作表名稱
-    output := "output.xlsx"
-    existingExcel := "existing.xlsx"
-
-    // 把 CSV 檔案轉換成 Excel 檔案
-    csvxl.CsvToExcel(csvFiles, sheetNames, output, csvxl.UTF8)
-
-    // 把 CSV 檔案附加到現有 Excel 檔案中
-    csvxl.AppendCsvToExcel(csvFiles, sheetNames, existingExcel)
-
-    excelFile := "input.xlsx"
-    outputDir := "csv_output"
-    csvNames := []string{"custom1.csv", "custom2.csv"} // 可選: 指定輸出 CSV 檔案的名稱
-
-    // 把 Excel 檔案分割成多個 CSV 檔案
-    csvxl.ExcelToCsv(excelFile, outputDir, csvNames)
+    csvFiles := []string{"file1.csv", "file2.csv"}
+    if err := csvxl.CsvToExcel(csvFiles, nil, "output.xlsx"); err != nil {
+        log.Fatal(err)
+    }
 }
 `,
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "pd",
+        subTitle: "Pandas 風格 DataFrame",
+        descriptions: {
+          first: `基於 <a target="_blank" href="https://gpandas.apoplexi.com/docs/">gpandas</a> 的 Pandas 風格 DataFrame 工具，可在 Insyra 的 DataTable/DataList 與 gpandas 物件之間快速轉換。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/pd">pd 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
+
+import (
+	"log"
+
+	"github.com/HazelnutParadise/insyra/isr"
+	"github.com/HazelnutParadise/insyra/pd"
+)
+
+func main() {
+	dt := isr.DT.Of(isr.DLs{
+		isr.DL.Of("Alice", "Bob").SetName("name"),
+		isr.DL.Of(30, 25).SetName("age"),
+	})
+
+	df, err := pd.FromDataTable(dt)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	back, err := df.ToDataTable()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	back.Show()
+}`,
             codeBlock: true,
             codeLanguage: "go",
             copyButtonText: "複製",
@@ -537,14 +565,14 @@ func main() {
     ctx := context.Background()
 
     // 從 Parquet 檔案讀取 DataTable
-    dt, err := parquet.ReadFile(ctx, "data.parquet")
+    dt, err := parquet.Read(ctx, "data.parquet", parquet.ReadOptions{})
     if err != nil {
         panic(err)
     }
 
     // 使用 CCL 篩選資料並讀取
-    filteredDt, err := parquet.FilterWithCCL(ctx, "sales.parquet",
-        "(['amount'] > 1000) && (['status'] = 'Active')")
+    filteredDt, err := parquet.FilterWithCCL(ctx, "products.parquet",
+        "(['price'] > 100) && (['in_stock'] == true)")
     if err != nil {
         panic(err)
     }
