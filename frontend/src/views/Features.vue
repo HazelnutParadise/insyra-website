@@ -72,23 +72,9 @@ import Tabs from '../components/Tabs.vue';
 export default {
   name: 'Features',
   data() {
-    const tabs = this.currentMessages.Features.packagesSection.packages;
-    tabs.forEach(tab => {
-      if (tab.collapses && typeof tab.collapses === 'object') {
-        Object.keys(tab.collapses).forEach(key => {
-          tab.collapses[key] = {
-            ...tab.collapses[key],
-            headerColor: '#1f449b',
-            contentColor: '#e6f0ff',
-            borderColor: '#1f449b',
-            alignment: 'left',
-          };
-        });
-      }
-    });
     return {
       isOpen: {},
-      tabs: tabs,
+      tabs: [],
     };
   },
   components: {
@@ -97,8 +83,37 @@ export default {
     Tabs,
   },
   methods: {
+    buildTabs(messages) {
+      const sourceTabs = messages?.Features?.packagesSection?.packages ?? [];
+      return sourceTabs.map(tab => {
+        const nextTab = { ...tab };
+        if (tab.collapses && typeof tab.collapses === 'object') {
+          const nextCollapses = {};
+          Object.keys(tab.collapses).forEach(key => {
+            nextCollapses[key] = {
+              ...tab.collapses[key],
+              headerColor: '#1f449b',
+              contentColor: '#e6f0ff',
+              borderColor: '#1f449b',
+              alignment: 'left',
+            };
+          });
+          nextTab.collapses = nextCollapses;
+        }
+        return nextTab;
+      });
+    },
     togglePanel(index) {
       this.$set(this.isOpen, index, !this.isOpen[index]);
+    },
+  },
+  watch: {
+    currentMessages: {
+      immediate: true,
+      deep: true,
+      handler(newMessages) {
+        this.tabs = this.buildTabs(newMessages);
+      },
     },
   },
   props: {
