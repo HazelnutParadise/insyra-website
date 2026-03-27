@@ -1,15 +1,23 @@
 export const Features = {
   title: "Features",
   description:
-    "Insyra provides a variety of powerful features to meet your data analysis needs.",
+    "Explore the current Insyra workflow: core data structures, CLI automation, AI-ready skills, guided tutorials, and the package ecosystem behind them.",
   readDocs: {
-    title: "Welcome to Visit Our Documentation",
+    title: "Start with the Right Entry Point",
     description:
-      "Insyra is designed to be easy to use without needing to read the documentation. You can fully rely on the auto-completion feature of your editor to operate. However, if you want to learn more details, our documentation on GitHub provides detailed information and examples.<br/><br/>GoDoc is also available for those who prefer a more concise and Go-like documentation style.",
+      "The current public release of Insyra is best explored through the official documentation hub. From there you can move into the CLI guide, guided tutorials, or concise Go package references depending on how you prefer to learn and work.",
     docsButton: {
       docs: {
-        title: "Documentation on GitHub",
-        link: "https://hazelnutparadise.github.io/insyra/#/",
+        title: "Official Docs",
+        link: "https://hazelnutparadise.github.io/insyra/",
+      },
+      cliGuide: {
+        title: "CLI Guide",
+        link: "https://hazelnutparadise.github.io/insyra/#/cli-dsl",
+      },
+      tutorials: {
+        title: "Tutorials",
+        link: "https://hazelnutparadise.github.io/insyra/#/tutorials/README",
       },
       goDoc: {
         title: "GoDoc",
@@ -20,10 +28,11 @@ export const Features = {
   coreStructures: {
     title: "Core Structures",
     description:
-      "Insyra provides two core data structures: DataList and DataTable. We strongly recommend using the isr syntax sugar for a more concise experience.",
+      "Insyra revolves around DataList, DataTable, and CCL. Together they cover quick previews, table manipulation, and Excel-like derived-column logic for everyday analysis in Go.",
     dataList: {
+      title: "DataList",
       description:
-        "DataList is the foundation of Insyra, used to process single-dimensional data. It has the ability to quickly retrieve data, clean data, convert data types, and calculate simple statistical values.",
+        "DataList is the series-style foundation of Insyra. Use it for one-dimensional data, quick summaries, cleaning, type conversion, ranking, and lightweight transformations.",
       collapse: {
         title: "DataList",
         content: `package main
@@ -49,8 +58,9 @@ func main() {
       },
     },
     dataTable: {
+      title: "DataTable",
       description:
-        "DataTable is used to process multi-dimensional data. It can handle data from different sources and perform various operations, such as filtering, sorting, and calculating statistical values.",
+        "DataTable is Insyra's tabular workhorse. Load, inspect, sort, filter, summarize, and export structured datasets while keeping a fluent workflow inside Go.",
       collapse: {
         title: "DataTable",
         content: `package main
@@ -82,7 +92,7 @@ func main() {
     ccl: {
       title: "Column Calculation Language (CCL)",
       description:
-        "Insyra provides a powerful Column Calculation Language (CCL) that works just like Excel formulas! With CCL, you can easily create calculated columns, perform conditional logic, and execute aggregation operations.",
+        "CCL gives Insyra an Excel-like column language for derived fields, conditional branches, row and column references, and reusable logic that also extends into Parquet workflows.",
       collapse: {
         title: "CCL Example",
         content: `package main
@@ -112,14 +122,39 @@ func main() {
       },
     },
   },
+  workflowHighlights: {
+    title: "Workflow Highlights",
+    description:
+      "Insyra is now more than a package reference. It includes command-line workflows, agent-facing skills, and tutorial tracks that help users move from quick experiments to repeatable production workflows.",
+    items: {
+      cli: {
+        title: "CLI + REPL + .isr + Go DSL",
+        description:
+          "Use one command system across shell automation, interactive REPL sessions, reusable .isr scripts, and the Go DSL API.",
+        link: "https://hazelnutparadise.github.io/insyra/#/cli-dsl",
+      },
+      skills: {
+        title: "AI / Agent Skills",
+        description:
+          "Dedicated skills help coding agents choose between API-driven Go usage and CLI-driven workflows without drifting away from the latest docs.",
+        link: "https://github.com/HazelnutParadise/insyra#ai--agent-skills",
+      },
+      tutorials: {
+        title: "Guided Tutorials",
+        description:
+          "Follow practical tracks for sales analysis, data quality, dashboards, Parquet pipelines, optimization, and hybrid Python plus parallel workflows.",
+        link: "https://hazelnutparadise.github.io/insyra/#/tutorials/README",
+      },
+    },
+  },
   packagesSection: {
-    title: "Sub Packages",
+    title: "Packages",
     packages: [
       {
         title: "isr",
         subTitle: "Syntax Sugar",
         descriptions: {
-          first: `The <strong>isr</strong> package provides syntax sugar for Insyra, allowing you to write code more concisely and intuitively. It simplifies the process of creating and manipulating DataList and DataTable objects, making your code cleaner and easier to read.
+          first: `The <strong>isr</strong> package is the recommended entrypoint for new Insyra projects. It adds concise, fluent syntax for creating and transforming DataList and DataTable workflows without losing access to the underlying package power.
                             <br/>
                             <strong>isr</strong> is the abbreviation for <strong>Insyra</strong>.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/isr">isr package documentation</a>',
@@ -174,9 +209,9 @@ func main() {
         title: "stats",
         subTitle: "Statistics",
         descriptions: {
-          first: `Provide various statistical functions, including skewness, kurtosis, and principal component analysis, etc.<br/>
+          first: `Provides practical statistical analysis helpers including skewness, kurtosis, hypothesis testing, regression, PCA, and more.<br/>
 <br/>
-We strive to design it to be consistent with the calculation results of <strong>R language</strong>.`,
+We strive to keep calculations aligned with <strong>R language</strong> expectations where appropriate.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats package documentation</a>',
         },
         collapses: {
@@ -203,9 +238,9 @@ func main() {
         title: "parallel",
         subTitle: "Parallel Processing",
         descriptions: {
-          first: `Provide functions for parallel processing, allowing you to group multiple tasks and execute them simultaneously on multiple CPU cores, easily improving data processing efficiency.<br/>
+          first: `Run groups of functions in parallel and collect ordered results with minimal coordination code, making CPU-bound or independent workloads easier to scale.<br/>
 <br/>
-The parallel package will automatically handle the waiting between parallel coroutines and return the results in the order of the tasks, so you don't need to write additional complex code.`,
+The <strong>parallel</strong> package handles waiting and result ordering for you, so the workflow stays compact and readable.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parallel">parallel package documentation</a>',
         },
         collapses: {
@@ -247,7 +282,7 @@ func main() {
         title: "plot",
         subTitle: "Data Visualization",
         descriptions: {
-          first: `Integrate the <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, providing various charts to easily create beautiful visualizations for your analysis.<br/>
+          first: `Wraps <a target="_blank" href="https://github.com/go-echarts/go-echarts">go-echarts</a> for interactive, browser-friendly visualizations when your analysis needs dashboards, rich chart styling, or HTML export.<br/>
 <br/>
 <img src="https://hazelnutparadise.github.io/insyra/img/plot/bar_example.png" style="width: 100%;" alt="plot package example chart" />`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/plot">plot package documentation</a>',
@@ -289,7 +324,7 @@ func main() {
         title: "gplot",
         subTitle: "Data Visualization",
         descriptions: {
-          first: `Use the <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> data visualization package, providing various charts. It is faster, but the chart style is more simple. <strong>Does not support non-ASCII characters</strong>.<br/>
+          first: `Build static charts with <a target="_blank" href="https://github.com/gonum/plot">gonum/plot</a> when you want faster local rendering, report-style output, and no Chrome dependency. <strong>Does not support non-ASCII characters</strong>.<br/>
 <br/>
 <img src="https://hazelnutparadise.github.io/insyra/img/gplot_bar_example.png" style="width: 100%;" alt="gplot package example chart" />`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/gplot">gplot package documentation</a>',
@@ -320,7 +355,7 @@ func main() {
         title: "mkt",
         subTitle: "Marketing Analysis",
         descriptions: {
-          first: `Provide marketing analysis functions, including RFM analysis, to help you gain insights into customer behavior and develop effective marketing strategies.`,
+          first: `Analyze customer behavior with marketing-focused helpers such as RFM analysis and Customer Activity Index style workflows for segmentation and prioritization.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/mkt">mkt package documentation</a>',
         },
       },
@@ -328,7 +363,7 @@ func main() {
         title: "lpgen",
         subTitle: "Linear Programming Model Generation",
         descriptions: {
-          first: `Provide a function to generate linear programming models, allowing you to easily create linear programming models and save them as <strong>.lp</strong> files for use with solving software.`,
+          first: `Generate linear programming models in a simpler, more readable way, then save them as <strong>.lp</strong> files for solver workflows or downstream optimization tooling.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lpgen">lpgen package documentation</a>',
         },
         collapses: {
@@ -372,7 +407,7 @@ func main() {
         title: "lp",
         subTitle: "Linear Programming Model Solving",
         descriptions: {
-          first: `Provide functions to solve linear programming models, allowing you to easily solve linear programming models and obtain the optimal solution. Powered by <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a>. <strong>This package will automatically download and install GLPK when it is used.</strong>`,
+          first: `Solve LP models directly from Insyra with <a target="_blank" href="https://www.gnu.org/software/glpk/">GLPK</a>-powered tooling. <strong>This package will automatically download and install GLPK when it is used.</strong>`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/lp">lp package documentation</a>',
         },
         collapses: {
@@ -419,7 +454,7 @@ func main() {
         title: "csvxl",
         subTitle: "CSV and Excel Processing",
         descriptions: {
-          first: `Provide functions to convert between CSV and Excel files.`,
+          first: `Read, write, and convert structured spreadsheet-friendly files, especially when you need quick CSV and Excel interchange.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/csvxl">csvxl package documentation</a>',
         },
         collapses: {
@@ -449,7 +484,7 @@ func main() {
         title: "pd",
         subTitle: "Pandas-like DataFrame",
         descriptions: {
-          first: `Pandas-like DataFrame helpers built on top of <a target="_blank" href="https://gpandas.apoplexi.com/docs/">gpandas</a>. It provides conversion helpers between Insyra DataTable/DataList and gpandas objects.`,
+          first: `Pandas-like DataFrame helpers built on top of <a target="_blank" href="https://gpandas.apoplexi.com/docs/">gpandas</a>. Convert between Insyra tables/lists and gpandas objects when you want a DataFrame-style interface in Go.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/pd">pd package documentation</a>',
         },
         collapses: {
@@ -492,7 +527,7 @@ func main() {
         title: "py",
         subTitle: "Python Integration",
         descriptions: {
-          first: `Without manually installing the Python environment and dependencies, you can <strong>execute Python code within Go</strong>, allowing variables to be passed between Go and Python.`,
+          first: `Execute Python from Go without manually wiring up the full Python environment, while still passing variables between Insyra and Python code.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/py">py package documentation</a>',
         },
         collapses: {
@@ -548,7 +583,7 @@ insyra.Return({"success": True, "message": "Plot created"})
         title: "parquet",
         subTitle: "Parquet File Support",
         descriptions: {
-          first: `Provides read and write support for Apache Parquet file format, deeply integrated with Insyra's DataTable and DataList. Supports streaming reads, column-level reads, and CCL filtering.`,
+          first: `Read and write Apache Parquet with deep integration into Insyra's DataTable and DataList workflows, including streaming reads, column selection, and CCL-based filtering.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/parquet">parquet package documentation</a>',
         },
         collapses: {
@@ -584,6 +619,14 @@ func main() {
             codeLanguage: "go",
             copyButtonText: "Copy",
           },
+        },
+      },
+      {
+        title: "engine",
+        subTitle: "Advanced Reusable Primitives",
+        descriptions: {
+          first: `The <strong>engine</strong> package exports selected internal Insyra implementations for developers who want reusable primitives such as atomic helpers, CCL tooling, and lower-level building blocks in other Go projects.`,
+          end: '<a target="_blank" href="https://github.com/HazelnutParadise/insyra/tree/main/engine">engine package documentation</a>',
         },
       },
     ],

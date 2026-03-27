@@ -2,7 +2,8 @@ export const Main = {
   hero: {
     slogan: "Fast, Lovely, Easy to Use",
     title: "Meet Insyra",
-    description: "Powerful data analysis tools, built for the future.",
+    description:
+      "A modern Go toolkit for data workflows, CLI automation, and agent-ready analytics.",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce.wav",
       error: "Your browser does not support the audio player.",
@@ -10,6 +11,7 @@ export const Main = {
     },
     button: {
       main: "Get Started",
+      docs: "Documentation",
       secondary1: "GoDoc",
       secondary2: "GitHub",
       chat: "Chat with AI",
@@ -20,98 +22,98 @@ export const Main = {
     features: {
       feature1: {
         id: 1,
-        title: "High-Performance Data Processing",
+        title: "DataList and DataTable at the Core",
         description:
-          "Thanks to the excellent performance of Golang, Insyra can quickly process large datasets, suitable for scenarios requiring extensive or parallel data calculations, such as <strong>big data analysis</strong>.",
+          "Insyra gives you two practical core structures for analysis in Go: <strong>DataList</strong> for series-style work and <strong>DataTable</strong> for tabular workflows, both designed for readable everyday data wrangling.",
         learnMore: {
-          href: "#WhyInsyra",
-          text: "Learn More",
+          href: "#Features",
+          text: "Explore the core structures",
         },
       },
       feature2: {
         id: 2,
-        title: "Intuitive and Simple API",
+        title: "Docs-First Onboarding",
         description:
-          "Insyra provides an <strong>intuitive</strong> and <strong>simple</strong> API interface, allowing you to easily use its powerful features. You can quickly get started and perform complex data operations without needing to understand the internal implementation.",
+          "The official docs now act as the fastest way to learn Insyra, with package references, practical examples, and a guided entry point for new users who want a clear path instead of scattered snippets.",
         learnMore: {
-          href: "#Features",
-          text: "Learn More",
+          href: "https://hazelnutparadise.github.io/insyra/",
+          text: "Open the documentation",
         },
       },
       feature3: {
         id: 3,
-        title: "Beautiful Data Visualization",
+        title: "CLI, REPL, and .isr Scripts",
         description:
-          'Insyra integrates the <a href="https://github.com/go-echarts/go-echarts">go-echarts</a> visualization library, offering various types of charts to easily create beautiful visualizations for your analysis.',
+          "Use the <strong>insyra</strong> CLI for one-shot automation, interactive REPL exploration, reusable <code>.isr</code> scripts, or the shared Go DSL when the same command language needs to run inside applications.",
         learnMore: {
-          href: "#Features",
-          text: "Learn More about <strong>plot</strong> and <strong>gplot</strong> packages",
+          href: "https://hazelnutparadise.github.io/insyra/#/cli-dsl",
+          text: "See the CLI workflow",
         },
       },
       feature4: {
         id: 4,
-        title: "Integration with Python",
+        title: "AI / Agent Skills",
         description:
-          "With Insyra’s py package, you can <strong>execute Python code within Go programs</strong>, leveraging Python’s powerful capabilities for data analysis.",
+          "Insyra now ships with dedicated <strong>agent skills</strong> for both API-centric Go usage and CLI-driven workflows, making it easier for coding agents to choose the right interface and stay aligned with current docs.",
         learnMore: {
-          href: "#Features",
-          text: "Learn More about <strong>py</strong> package",
+          href: "https://github.com/HazelnutParadise/insyra#ai--agent-skills",
+          text: "Review the skills overview",
         },
       },
       feature5: {
         id: 5,
-        title: "Parquet Support",
+        title: "Guided Tutorial Tracks",
         description:
-          "Insyra supports the <strong>Parquet</strong> file format for efficient processing of large-scale structured data. Read entire files or stream in batches, inspect metadata, filter with CCL expressions, and apply transformations directly on Parquet files.",
+          "Learn through scenario-based tutorials covering sales analysis, data quality, parquet streaming, A/B statistics, dashboards, optimization, and hybrid Python plus parallel workflows.",
         learnMore: {
-          href: "#Features",
-          text: "Learn about Parquet",
+          href: "https://hazelnutparadise.github.io/insyra/#/tutorials/README",
+          text: "Browse tutorials",
         },
       },
       feature6: {
         id: 6,
-        title: "CCL (Column Calculation Language)",
+        title: "CCL and Parquet Workflows",
         description:
-          "Insyra features its proprietary <strong>CCL</strong> (Column Calculation Language) supporting Excel-like formulas, conditional logic, and data transformation. Easily manipulate DataTable and Parquet with <code>IF</code>, <code>SUM</code>, <code>NEW()</code> syntax.",
+          "Use <strong>CCL</strong> for Excel-like derived columns and conditions, then apply the same logic directly to <strong>Parquet</strong> reads and transforms for larger analytical pipelines.",
         learnMore: {
           href: "#Features",
-          text: "Learn about CCL",
+          text: "Learn about CCL and Parquet",
         },
       },
       feature7: {
         id: 7,
-        title: "Marketing Application",
+        title: "Visualization and Python Integration",
         description:
-          "Built-in <strong>mkt</strong> marketing analytics package, supporting RFM analysis and more, helping you gain insights and develop effective marketing strategies.",
+          "Build interactive charts with <strong>plot</strong>, static reports with <strong>gplot</strong>, or bridge into Python with <strong>py</strong> when a workflow needs both Go performance and Python ecosystem reach.",
         learnMore: {
           href: "#Features",
-          text: "Learn about <strong>mkt</strong> marketing package",
+          text: "Review analytics packages",
         },
       },
       feature8: {
         id: 8,
         title: "Dedicated IDE",
         description:
-          "We provide a <strong>dedicated</strong> and <strong>easy-to-use IDE</strong> for Insyra, allowing you to start your data analysis work quickly without worrying about environment setup.",
+          "Pair Insyra with <strong>Idensyra</strong>, the dedicated lightweight IDE that comes preloaded for faster onboarding when you want a focused analysis environment with less setup.",
         learnMore: {
           href: "#Idensyra",
-          text: "Learn More about <strong>Idensyra</strong>",
+          text: "Learn more about <strong>Idensyra</strong>",
         },
       },
     },
   },
   versionIntro: {
-    title: "Version 0.2.x - Pier-2",
+    title: "Version v0.2.15 - Pier-2",
     slogan: "Crafting Your Art of Data",
     versionName: "Version Name: ",
     versionNameValue:
       'Pier-2, inspired by "Pier-2 Art Center" in Kaohsiung, Taiwan',
-    versionFeatures: "Version Features: ",
+    versionFeatures: "What v0.2.15 Brings: ",
     versionFeaturesValue:
-      "This medium release mainly supplements missing functions and methods, making Insyra more complete and production-ready.",
-    pierIntro: "About Pier-2 Art Center: ",
+      "A more complete Pier-2 release with docs-first onboarding, unified CLI / REPL / .isr workflows, dedicated AI / agent skills, and guided tutorial tracks for real analysis scenarios.",
+    pierIntro: "Why This Release Matters: ",
     pierIntroValue:
-      'Pier-2 Art Center (The Pier-2 Art Center) is an art district spanning Yancheng and Gushan districts in Kaohsiung City, Taiwan. With the philosophy of "avant-garde, experimental, innovative," it creates an international art platform. Originally an old warehouse complex of Kaohsiung Port, it has been redeveloped into a cultural and creative park, featuring multiple art galleries, theaters, and creative spaces, making it an important cultural landmark in Kaohsiung City.',
+      "The current public release reflects Insyra as a broader working environment, not only a Go package: you can learn from the documentation hub, automate through the CLI, prototype with tutorials, and hand workflows to AI agents with dedicated skill definitions.",
     imageAlt: "Pier-2 Art Center",
     imageSource:
       "Image Source: 東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E9%A7%81%E4%BA%8C%E8%97%9D%E8%A1%93%E7%89%B9%E5%8D%80/attractions_POI0000369625.html",

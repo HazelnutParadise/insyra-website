@@ -20,10 +20,19 @@
     }" />
     <br />
     <div class="hero-button-container">
+      <HeroButton :currentMessages="currentMessages.Main.hero.button.docs" :settings="{
+        variant: 'tonal',
+        color: '#f59e0b',
+        href: 'https://hazelnutparadise.github.io/insyra/',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      }" />
       <HeroButton :currentMessages="currentMessages.Main.hero.button.secondary1" :settings="{
         variant: 'tonal',
         color: '#1f449b',
         href: 'https://pkg.go.dev/github.com/HazelnutParadise/insyra',
+        target: '_blank',
+        rel: 'noopener noreferrer',
       }" />
       <HeroButton :currentMessages="currentMessages.Main.hero.button.chat" :settings="{
         variant: 'tonal',
@@ -43,6 +52,8 @@
         variant: 'outlined',
         color: '#1f449b',
         href: 'https://github.com/HazelnutParadise/insyra',
+        target: '_blank',
+        rel: 'noopener noreferrer',
       }" />
     </div>
   </section>

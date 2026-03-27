@@ -8,7 +8,13 @@
             </div>
 
             <div class="card-actions">
-                <a class="learn-more" :href="feature.learnMore.href" v-html="feature.learnMore.text"></a>
+                <a
+                    class="learn-more"
+                    :href="feature.learnMore.href"
+                    :target="isExternalLink ? '_blank' : null"
+                    :rel="isExternalLink ? 'noopener noreferrer' : null"
+                    v-html="feature.learnMore.text"
+                ></a>
             </div>
         </div>
     </div>
@@ -21,6 +27,11 @@ export default {
     feature: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    isExternalLink() {
+      return /^https?:\/\//.test(this.feature?.learnMore?.href ?? "");
     },
   },
 };
