@@ -26,6 +26,7 @@
         href: 'https://hazelnutparadise.github.io/insyra/',
         target: '_blank',
         rel: 'noopener noreferrer',
+        class: 'hero-docs-btn',
       }" />
       <HeroButton :currentMessages="currentMessages.Main.hero.button.secondary1" :settings="{
         variant: 'tonal',
@@ -124,6 +125,19 @@ export default {
   flex-wrap: wrap;
   /* allow buttons to wrap on smaller screens */
   align-items: center;
+}
+
+.hero-button-container :deep(.hero-docs-btn) {
+  background: rgba(255, 255, 255, 0.96) !important;
+  color: #c96b00 !important;
+  border: 2px solid #f2b24c !important;
+  box-shadow: 0 8px 22px rgba(201, 107, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.hero-button-container :deep(.hero-docs-btn:hover) {
+  background: #ffffff !important;
+  box-shadow: 0 12px 28px rgba(201, 107, 0, 0.28);
 }
 
 @media (max-width: 768px) {

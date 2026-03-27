@@ -1,7 +1,14 @@
 <template>
   <div>
-    <v-btn :variant="settings.variant" :color="settings.color" :size="settings.size" :href="settings.href"
-      :target="settings.target" :rel="settings.rel">
+    <v-btn
+      :variant="settings.variant"
+      :color="settings.color"
+      :size="settings.size"
+      :href="settings.href"
+      :target="settings.target"
+      :rel="settings.rel"
+      :class="settings.class"
+    >
       {{ currentMessages }}
     </v-btn>
   </div>
