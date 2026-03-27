@@ -2,7 +2,7 @@ export const Main = {
   hero: {
     slogan: "太快、太美、太簡單",
     title: "邂逅 Insyra",
-    description: "面向現代資料流程、CLI 自動化與 agent 協作的 Go 分析工具箱。",
+    description: "適用於現代資料流程、CLI 自動化與 agent 協作的 Go 分析工具箱。",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce_TW.wav",
       error: "您的瀏覽器不支援音訊播放器。",
@@ -109,7 +109,7 @@ export const Main = {
     versionNameValue: "Pier-2，取自台灣高雄的駁二藝術特區",
     versionFeatures: "v0.2.15 帶來了什麼：",
     versionFeaturesValue:
-      "這個公開版本把 Insyra 推進成更完整的工作環境，包含文件優先上手、統一的 CLI / REPL / .isr 流程、專用 AI / agent skills，以及面向真實分析場景的教學路線。",
+      "這個公開版本把 Insyra 推進成更完整的工作環境，包含文件優先上手、統一的 CLI / REPL / .isr 流程、專用 AI / agent skills，以及貼近真實分析場景的教學路線。",
     pierIntro: "這個版本的重要性：",
     pierIntroValue:
       "現在的 Insyra 不再只是單一 Go 套件，而是一整套工作體驗：你可以從文件入口快速學習、透過 CLI 自動化流程、跟著 tutorials 練習，並把任務交給具備專用 skill 的 AI agent。",
