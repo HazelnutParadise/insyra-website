@@ -91,7 +91,7 @@ func main() {
     ccl: {
       title: "Column Calculation Language (CCL)",
       description:
-        "CCL 讓 Insyra 擁有類似 Excel 的欄位公式語言，可處理衍生欄位、條件判斷、列欄參照與聚合邏輯，並延伸到 Parquet 工作流。",
+        "CCL 讓 Insyra 擁有類似 Excel 的欄位公式語言，可處理衍生欄位、條件判斷、列欄參照、聚合運算與大量數學函數，並可延伸到 Parquet 工作流。",
       collapse: {
         title: "使用範例",
         content: `package main
@@ -208,9 +208,9 @@ func main() {
         title: "stats",
         subTitle: "統計",
         descriptions: {
-          first: `提供實用的統計分析工具，包含偏度、峰度、假設檢定、回歸分析、PCA 等常見工作。<br/>
+          first: `提供實用的統計分析工具，包含偏度、峰度、假設檢定、回歸分析、PCA、<strong>集群分析</strong>與<strong>因素分析</strong>。<br/>
 <br/>
-我們也盡量讓結果在合理範圍內與 <strong>R 語言</strong> 的使用習慣保持一致。`,
+內部已重構為盡量使用 Gonum，並進一步對齊 <strong>R 語言</strong>的使用習慣。函式現在會明確回傳錯誤而不是只丟 warning，且在新版 Mutex + fast-goid AtomicActor 加持下，多個統計方法的執行速度提升了 <strong>5–24 倍</strong>。`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats 套件包說明文件</a>',
         },
         collapses: {
@@ -227,6 +227,47 @@ import (
 func main() {
     dl := isr.DL.Of(1, 2, 3, 9, 5)
     fmt.Println("偏度:", stats.Skewness(dl))
+}`,
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "finance",
+        subTitle: "高精度金融計算",
+        descriptions: {
+          first: `基於定點小數的高精度金融計算套件，涵蓋 <strong>TVM</strong>（PMT/PV/FV/NPER/RATE）、<strong>NPV/IRR/MIRR/XNPV/XIRR</strong>、折舊（SLN/DDB/SYD/VDB）、債券定價（PRICE/YIELD/DURATION/MDURATION/ACCRINT）、國庫券，以及完整攤還表。<br/>
+<br/>
+每次呼叫都可設定輸出精度，計算結果經常超越 Excel 在 float64 上的精度極限。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/finance">finance 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
+
+import (
+    "fmt"
+
+    "github.com/HazelnutParadise/insyra/finance"
+)
+
+func main() {
+    // 年利率 5%、30 年期、貸款 30 萬的月付金
+    pmt, err := finance.PMT(0.05/12, 30*12, 300000, 0, finance.PayEnd)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println("每月應付:", pmt)
+
+    // 在 8% 折現率下計算現金流的 NPV
+    npv, err := finance.NPV(0.08, []float64{-1000, 300, 420, 680})
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println("NPV:", npv)
 }`,
             codeBlock: true,
             codeLanguage: "go",

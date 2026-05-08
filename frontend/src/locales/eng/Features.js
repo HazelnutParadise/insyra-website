@@ -92,7 +92,7 @@ func main() {
     ccl: {
       title: "Column Calculation Language (CCL)",
       description:
-        "CCL gives Insyra an Excel-like column language for derived fields, conditional branches, row and column references, and reusable logic that also extends into Parquet workflows.",
+        "CCL gives Insyra an Excel-like column language for derived fields, conditional branches, row and column references, an expanded set of math functions, and reusable logic that also extends into Parquet workflows.",
       collapse: {
         title: "CCL Example",
         content: `package main
@@ -209,9 +209,9 @@ func main() {
         title: "stats",
         subTitle: "Statistics",
         descriptions: {
-          first: `Provides practical statistical analysis helpers including skewness, kurtosis, hypothesis testing, regression, PCA, and more.<br/>
+          first: `Provides practical statistical analysis helpers including skewness, kurtosis, hypothesis testing, regression, PCA, <strong>clustering</strong>, and <strong>factor analysis</strong>.<br/>
 <br/>
-We strive to keep calculations aligned with <strong>R language</strong> expectations where appropriate.`,
+Internally refactored to use Gonum wherever possible, with results aligned to the <strong>R language</strong> where appropriate. Functions now return errors explicitly instead of silently logging warnings, and the new Mutex + fast-goid AtomicActor delivers <strong>5–24x</strong> speedups across many statistical methods.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats package documentation</a>',
         },
         collapses: {
@@ -227,6 +227,47 @@ import (
 
 func main() {
     fmt.Println(stats.Skewness(isr.DL.Of(1, 2, 3, 9, 5)))
+}`,
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "finance",
+        subTitle: "High-Precision Finance",
+        descriptions: {
+          first: `High-precision financial calculations on top of fixed-point decimals. Covers <strong>TVM</strong> (PMT/PV/FV/NPER/RATE), <strong>NPV/IRR/MIRR/XNPV/XIRR</strong>, depreciation (SLN/DDB/SYD/VDB), bond pricing (PRICE/YIELD/DURATION/MDURATION/ACCRINT), Treasury bills, and full amortization schedules.<br/>
+<br/>
+Output precision is configurable per call and routinely produces results that go beyond Excel's float64 precision limit.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/finance">finance package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
+
+import (
+    "fmt"
+
+    "github.com/HazelnutParadise/insyra/finance"
+)
+
+func main() {
+    // 5% annual rate, 30 years, $300,000 loan -> monthly payment
+    pmt, err := finance.PMT(0.05/12, 30*12, 300000, 0, finance.PayEnd)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println("Monthly payment:", pmt)
+
+    // NPV of a small cash-flow stream at 8%
+    npv, err := finance.NPV(0.08, []float64{-1000, 300, 420, 680})
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println("NPV:", npv)
 }`,
             codeBlock: true,
             codeLanguage: "go",

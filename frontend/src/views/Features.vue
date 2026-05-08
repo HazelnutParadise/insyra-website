@@ -231,6 +231,18 @@ p {
   color: #2e3b55;
   font-size: 24px;
   margin-bottom: 10px;
+  line-height: 1.3;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+@media (max-width: 480px) {
+  .feature-box h3,
+  .workflow-card h3 {
+    font-size: 20px;
+  }
 }
 
 :deep(.collapse-content) {
@@ -328,7 +340,12 @@ p {
 @media (max-width: 768px) {
   .feature-section {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+  }
+
+  .feature-box {
+    max-width: 100%;
+    flex-basis: auto;
   }
 
   .read-docs-section {

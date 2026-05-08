@@ -100,19 +100,39 @@ export const Main = {
           text: "了解 <strong>Idensyra</strong>",
         },
       },
+      feature9: {
+        id: 9,
+        title: "內建統計與金融分析",
+        description:
+          "<strong>stats</strong> 套件全面重構，新增集群分析與因素分析，並改為明確回傳錯誤、加強對齊 R；<strong>finance</strong> 是全新加入的高精度金融計算套件，提供 TVM、NPV/IRR/XIRR、折舊、債券定價等基於定點小數的高精度運算。",
+        learnMore: {
+          href: "#Features",
+          text: "查看 stats 與 finance",
+        },
+      },
+      feature10: {
+        id: 10,
+        title: "原子核心提速最多 100 倍",
+        description:
+          "v0.2.17 以 <code>sync.Mutex</code> + <code>petermattis/goid</code> 重寫 <strong>AtomicDo</strong>，讓原子操作快約 100 倍、多個統計方法快 5–24 倍，您的程式碼完全不用改。",
+        learnMore: {
+          href: "https://github.com/HazelnutParadise/insyra/releases/tag/v0.2.17",
+          text: "閱讀 v0.2.17 發行說明",
+        },
+      },
     },
   },
   versionIntro: {
-    title: "版本 v0.2.15 - Pier-2",
+    title: "版本 v0.2.17 - Pier-2",
     slogan: "藝塑數據之美",
     versionName: "版本名稱：",
     versionNameValue: "Pier-2，取自台灣高雄的駁二藝術特區",
-    versionFeatures: "v0.2.15 帶來了什麼：",
+    versionFeatures: "v0.2.17 帶來了什麼：",
     versionFeaturesValue:
-      "這個公開版本把 Insyra 推進成更完整的工作環境，包含文件優先上手、統一的 CLI / REPL / .isr 流程、專用 AI / agent skills，以及貼近真實分析場景的教學路線。",
+      "更快、更強大的 Pier-2 釋出：基於 sync.Mutex + petermattis/goid 重寫的 AtomicActor 讓 AtomicDo 加速約 100 倍、多個統計方法加速 5–24 倍，全新加入的 finance 套件提供高精度金融計算，stats 內部重構並新增集群與因素分析、改為明確回傳錯誤，CCL 也擴充了多個 Excel 風格的數學函數。",
     pierIntro: "這個版本的重要性：",
     pierIntroValue:
-      "現在的 Insyra 不再只是單一 Go 套件，而是一整套工作體驗：你可以從文件入口快速學習、透過 CLI 自動化流程、跟著 tutorials 練習，並把任務交給具備專用 skill 的 AI agent。",
+      "現在的 Insyra 不再只是單一 Go 套件，而是一整套工作體驗：你可以從文件入口快速學習、透過 CLI 自動化流程、跟著 tutorials 練習，把任務交給具備專用 skill 的 AI agent，並且在更快的核心上跑高精度金融計算與更完整的統計工具箱。",
     imageAlt: "駁二藝術特區",
     imageSource:
       "圖片來源：東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E9%A7%81%E4%BA%8C%E8%97%9D%E8%A1%93%E7%89%B9%E5%8D%80/attractions_POI0000369625.html",

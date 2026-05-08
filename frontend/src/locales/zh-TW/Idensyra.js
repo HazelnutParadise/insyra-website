@@ -127,6 +127,7 @@ export const Idensyra = {
     "insyra",
     "insyra/isr",
     "insyra/stats",
+    "insyra/finance",
     "insyra/plot",
     "insyra/gplot",
     "insyra/datafetch",

@@ -9,7 +9,7 @@ RUN cd frontend && bun install && bun run build
 
 
 # 後端構建階段（Go）
-FROM golang:1.23-alpine AS backend-builder
+FROM golang:1.25-alpine AS backend-builder
 
 WORKDIR /app
 
