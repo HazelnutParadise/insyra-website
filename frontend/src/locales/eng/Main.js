@@ -3,7 +3,7 @@ export const Main = {
     slogan: "Fast, Lovely, Easy to Use",
     title: "Meet Insyra",
     description:
-      "A modern Go toolkit for data workflows, CLI automation, and agent-ready analytics.",
+      "A Go data analysis ecosystem built around Insyra: the analysis library, the Idensyra desktop IDE, and Syralit for building interactive data apps.",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce.wav",
       error: "Your browser does not support the audio player.",
@@ -112,28 +112,35 @@ export const Main = {
       },
       feature10: {
         id: 10,
-        title: "Up to 100x Faster Atomic Core",
+        title: "Closing the Last Mile for Real Analysis",
         description:
-          "v0.2.17 rewrites <strong>AtomicDo</strong> on top of <code>sync.Mutex</code> + <code>petermattis/goid</code>, making atomic operations ~100x faster and lifting many statistical methods by 5–24x without changing your code.",
+          "v0.2 fills in the everyday gaps: time series and window transforms, SQL with embedded databases, GroupBy / Pivot / aggregation, missing-value imputation, sampling and train/test splitting, categorical encoding, the Describe summary API, and feature scaling, all on a rewritten atomic core that makes many operations 5–100x faster.",
         learnMore: {
-          href: "https://github.com/HazelnutParadise/insyra/releases/tag/v0.2.17",
-          text: "Read the v0.2.17 release notes",
+          href: "https://github.com/HazelnutParadise/insyra/releases",
+          text: "Browse the release history",
         },
       },
     },
   },
   versionIntro: {
-    title: "Version v0.2.17 - Pier-2",
+    badge: "Current Version",
+    title: "v0.2 — Pier-2",
     slogan: "Crafting Your Art of Data",
     versionName: "Version Name: ",
     versionNameValue:
       'Pier-2, inspired by "Pier-2 Art Center" in Kaohsiung, Taiwan',
-    versionFeatures: "What v0.2.17 Brings: ",
+    versionFeatures: "What v0.2 Set Out to Do: ",
     versionFeaturesValue:
-      "A faster, more analytical Pier-2 release: a rewritten Mutex + fast-goid AtomicActor that makes AtomicDo ~100x faster and many statistical methods 5–24x faster, a brand new finance package for high-precision financial calculations, a refactored stats package with clustering, factor analysis, and explicit error returns, and an expanded CCL math function library.",
-    pierIntro: "Why This Release Matters: ",
+      "Round out the features Insyra was missing and make it genuinely usable for real-world data analysis. From the high-precision finance package and a refactored stats package with generalized linear models (GLM), to time series and window transforms, SQL with embedded databases, GroupBy / Pivot / aggregation, nonparametric tests, missing-value imputation, sampling and train/test splitting, categorical encoding, the Describe summary API, and feature scaling, plus an expanded CCL math library and a rewritten atomic core that is ~100x faster, Pier-2 turns Insyra into a toolkit that can face real data head-on.",
+    pierIntro: "Why This Release Line Matters: ",
     pierIntroValue:
-      "The current public release reflects Insyra as a broader working environment, not only a Go package: you can learn from the documentation hub, automate through the CLI, prototype with tutorials, hand workflows to AI agents with dedicated skill definitions, and now run high-precision finance and richer statistics on a noticeably faster core.",
+      "Insyra is no longer a single Go package but a complete working experience: you can learn from the documentation hub, automate through the CLI, practice with tutorials, hand workflows to AI agents with dedicated skill definitions, and run high-precision finance, machine-learning preprocessing, and richer statistics on a noticeably faster core.",
+    currentNote:
+      'v0.2.19 is the final release of the Pier-2 line — next up is v0.3 "Huashan."',
+    history: {
+      text: "View version history",
+      href: "#VersionHistory",
+    },
     imageAlt: "Pier-2 Art Center",
     imageSource:
       "Image Source: 東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E9%A7%81%E4%BA%8C%E8%97%9D%E8%A1%93%E7%89%B9%E5%8D%80/attractions_POI0000369625.html",

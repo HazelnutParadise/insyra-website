@@ -40,6 +40,11 @@
                 }}</a>
             </li>
             <li>
+                <a href="#Syralit" @click.prevent="selectPage('Syralit')">{{
+                    currentMessages.navbar.syralit
+                }}</a>
+            </li>
+            <li>
                 <a href="#WhyInsyra" @click.prevent="selectPage('WhyInsyra')">{{
                     currentMessages.navbar.whyInsyra
                 }}</a>

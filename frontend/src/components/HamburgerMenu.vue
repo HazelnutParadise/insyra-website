@@ -37,6 +37,11 @@
                     }}</a>
                 </li>
                 <li>
+                    <a @click="selectPage('Syralit')">{{
+                        currentMessages.navbar.syralit
+                    }}</a>
+                </li>
+                <li>
                     <a @click="selectPage('WhyInsyra')">{{
                         currentMessages.navbar.whyInsyra
                     }}</a>

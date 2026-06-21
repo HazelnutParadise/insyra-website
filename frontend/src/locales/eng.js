@@ -8,6 +8,8 @@ import { HowToUse } from "./eng/HowToUse";
 import { Idensyra } from "./eng/Idensyra";
 import { Contact } from "./eng/Contact";
 import { WhyInsyra } from "./eng/WhyInsyra";
+import { VersionHistory } from "./eng/VersionHistory";
+import { Syralit } from "./eng/Syralit";
 
 export const eng = {
   siteTitle,
@@ -20,4 +22,6 @@ export const eng = {
   Idensyra,
   Contact,
   WhyInsyra,
+  VersionHistory,
+  Syralit,
 };

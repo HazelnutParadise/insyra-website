@@ -112,27 +112,33 @@ export const Main = {
       },
       feature10: {
         id: 10,
-        title: "原子核心提速最多 100 倍",
+        title: "為真實資料分析補齊最後一哩",
         description:
-          "v0.2.17 以 <code>sync.Mutex</code> + <code>petermattis/goid</code> 重寫 <strong>AtomicDo</strong>，讓原子操作快約 100 倍、多個統計方法快 5–24 倍，您的程式碼完全不用改。",
+          "v0.2 把日常分析會用到的環節補滿：時序與視窗轉換、SQL 與內嵌資料庫、GroupBy／Pivot／聚合、缺失值補值、抽樣與訓練／測試切分、類別編碼、Describe 摘要與特徵縮放，並以重寫後的原子核心讓多項運算快上 5–100 倍。",
         learnMore: {
-          href: "https://github.com/HazelnutParadise/insyra/releases/tag/v0.2.17",
-          text: "閱讀 v0.2.17 發行說明",
+          href: "https://github.com/HazelnutParadise/insyra/releases",
+          text: "查看發行紀錄",
         },
       },
     },
   },
   versionIntro: {
-    title: "版本 v0.2.17 - Pier-2",
+    badge: "目前版本",
+    title: "v0.2 — Pier-2 駁二",
     slogan: "藝塑數據之美",
     versionName: "版本名稱：",
     versionNameValue: "Pier-2，取自台灣高雄的駁二藝術特區",
-    versionFeatures: "v0.2.17 帶來了什麼：",
+    versionFeatures: "v0.2 想做到什麼：",
     versionFeaturesValue:
-      "更快、更強大的 Pier-2 釋出：基於 sync.Mutex + petermattis/goid 重寫的 AtomicActor 讓 AtomicDo 加速約 100 倍、多個統計方法加速 5–24 倍，全新加入的 finance 套件提供高精度金融計算，stats 內部重構並新增集群與因素分析、改為明確回傳錯誤，CCL 也擴充了多個 Excel 風格的數學函數。",
-    pierIntro: "這個版本的重要性：",
+      "把 Insyra 缺漏的功能補齊，讓它真正能用於真實的資料分析工作。從高精度的 finance 套件、重構並加入廣義線性模型（GLM）的 stats，到時序與視窗轉換、SQL 與內嵌資料庫、GroupBy／Pivot／聚合、無母數檢定、缺失值補值、抽樣與訓練／測試切分、類別編碼、Describe 摘要 API、特徵縮放，再加上擴充的 CCL 數學函數庫，與重寫後快上約 100 倍的原子核心——Pier-2 讓 Insyra 真正能直面真實資料。",
+    pierIntro: "這個版本線的重要性：",
     pierIntroValue:
-      "現在的 Insyra 不再只是單一 Go 套件，而是一整套工作體驗：你可以從文件入口快速學習、透過 CLI 自動化流程、跟著 tutorials 練習，把任務交給具備專用 skill 的 AI agent，並且在更快的核心上跑高精度金融計算與更完整的統計工具箱。",
+      "Insyra 不再只是單一 Go 套件，而是一整套工作體驗：你可以從文件入口快速學習、透過 CLI 自動化流程、跟著 tutorials 練習，把任務交給具備專用 skill 的 AI agent，並在更快的核心上跑高精度金融計算、機器學習前處理與更完整的統計工具箱。",
+    currentNote: "v0.2.19 是 Pier-2 駁二的收官版，下一站是 v0.3「華山 Huashan」。",
+    history: {
+      text: "查看歷史版本",
+      href: "#VersionHistory",
+    },
     imageAlt: "駁二藝術特區",
     imageSource:
       "圖片來源：東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E9%A7%81%E4%BA%8C%E8%97%9D%E8%A1%93%E7%89%B9%E5%8D%80/attractions_POI0000369625.html",

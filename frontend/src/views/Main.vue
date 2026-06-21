@@ -16,12 +16,19 @@
               currentMessages.Main.versionIntro.versionFeaturesValue }}</p>
             <p><strong>{{ currentMessages.Main.versionIntro.pierIntro }}</strong>{{
               currentMessages.Main.versionIntro.pierIntroValue }}</p>
+            <p class="version-note">{{ currentMessages.Main.versionIntro.currentNote }}</p>
           </div>
           <div class="version-image">
             <img src="https://www.settour.com.tw/ss_img/poi/20220307/c2c94200-2858-4914-bc77-f45fbea3abc2.jpg"
               :alt="currentMessages.Main.versionIntro.imageAlt" />
             <p class="image-source">{{ currentMessages.Main.versionIntro.imageSource }}</p>
           </div>
+        </div>
+        <div class="version-history-link">
+          <a :href="currentMessages.Main.versionIntro.history.href">
+            {{ currentMessages.Main.versionIntro.history.text }}
+            <span aria-hidden="true">&rarr;</span>
+          </a>
         </div>
       </div>
     </section>
@@ -179,5 +186,56 @@ export default {
   .version-content {
     padding: 25px 20px;
   }
+}
+
+.version-badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 14px;
+  padding: 5px 16px;
+  background: #f9ac41;
+  color: #1a1a2e;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.version-note {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(102, 126, 234, 0.5);
+  color: #764ba2;
+  font-weight: 600;
+  font-size: 1.1rem !important;
+  line-height: 1.7;
+}
+
+.version-history-link {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.version-history-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: #f9ac41;
+  color: #1a1a2e !important;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.version-history-link a:hover {
+  background: #ffbe63;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
 }
 </style>

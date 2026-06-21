@@ -8,6 +8,8 @@ import { HowToUse } from "./zh-TW/HowToUse";
 import { Idensyra } from "./zh-TW/Idensyra";
 import { Contact } from "./zh-TW/Contact";
 import { WhyInsyra } from "./zh-TW/WhyInsyra";
+import { VersionHistory } from "./zh-TW/VersionHistory";
+import { Syralit } from "./zh-TW/Syralit";
 
 export const zhTW = {
   siteTitle,
@@ -20,4 +22,6 @@ export const zhTW = {
   Idensyra,
   Contact,
   WhyInsyra,
+  VersionHistory,
+  Syralit,
 };

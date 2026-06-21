@@ -59,7 +59,7 @@ func main() {
     dataTable: {
       title: "DataTable",
       description:
-        "DataTable 是 Insyra 的表格型主力結構，能在 Go 內完成載入、檢視、排序、篩選、摘要與匯出等完整分析流程。",
+        "DataTable 是 Insyra 的表格型主力結構，能在 Go 內完成載入、檢視、排序、篩選、摘要與匯出等完整分析流程，並支援 GroupBy／Pivot／聚合、時序與視窗轉換、SQL 與內嵌資料庫（SQLite／MySQL／PostgreSQL），以及缺失值補值、抽樣與訓練／測試切分、類別編碼與特徵縮放等機器學習前處理。",
       collapse: {
         title: "使用範例",
         content: `package main
@@ -208,7 +208,7 @@ func main() {
         title: "stats",
         subTitle: "統計",
         descriptions: {
-          first: `提供實用的統計分析工具，包含偏度、峰度、假設檢定、回歸分析、PCA、<strong>集群分析</strong>與<strong>因素分析</strong>。<br/>
+          first: `提供實用的統計分析工具，包含偏度、峰度、假設檢定、回歸分析、PCA、<strong>集群分析</strong>、<strong>因素分析</strong>、<strong>廣義線性模型（GLM，含 logistic／Poisson）</strong>與<strong>無母數檢定</strong>（Wilcoxon、Mann-Whitney U、Kruskal-Wallis、Friedman）。<br/>
 <br/>
 內部已重構為盡量使用 Gonum，並進一步對齊 <strong>R 語言</strong>的使用習慣。函式現在會明確回傳錯誤而不是只丟 warning，且在新版 Mutex + fast-goid AtomicActor 加持下，多個統計方法的執行速度提升了 <strong>5–24 倍</strong>。`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats 套件包說明文件</a>',
@@ -396,7 +396,7 @@ func main() {
         title: "mkt",
         subTitle: "行銷分析",
         descriptions: {
-          first: `提供行銷與顧客分析相關工具，例如 RFM 與 Customer Activity Index 類型工作流，幫助分群與優先排序。`,
+          first: `提供行銷與顧客分析相關工具，例如 RFM、Customer Activity Index 與購物籃分析（market basket），幫助分群、關聯探勘與優先排序。`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/mkt">mkt 套件包說明文件</a>',
         },
       },

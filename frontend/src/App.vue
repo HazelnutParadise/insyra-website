@@ -31,8 +31,10 @@ import WhatIsInsyra from "./views/WhatIsInsyra.vue";
 import Features from "./views/Features.vue";
 import HowToUse from "./views/HowToUse.vue";
 import Idensyra from "./views/Idensyra.vue";
+import Syralit from "./views/Syralit.vue";
 import WhyInsyra from "./views/WhyInsyra.vue";
 import Contact from "./views/Contact.vue";
+import VersionHistory from "./views/VersionHistory.vue";
 
 export default {
     name: "App",
@@ -88,7 +90,11 @@ export default {
                                             ? "WhyInsyra"
                                             : currentPage.value === Contact
                                                 ? "Contact"
-                                                : "Main";
+                                                : currentPage.value === Syralit
+                                                    ? "Syralit"
+                                                    : currentPage.value === VersionHistory
+                                                        ? "VersionHistory"
+                                                        : "Main";
                 updateTitle(currentPageName);
             } else {
                 console.error(`Language ${lang} not found in messages.`);
@@ -121,12 +127,20 @@ export default {
                     currentPage.value = Idensyra;
                     window.history.replaceState(null, "", `#${page}`); // 更新 URL
                     break;
+                case "Syralit":
+                    currentPage.value = Syralit;
+                    window.history.replaceState(null, "", `#${page}`); // 更新 URL
+                    break;
                 case "WhyInsyra":
                     currentPage.value = WhyInsyra;
                     window.history.replaceState(null, "", `#${page}`); // 更新 URL
                     break;
                 case "Contact":
                     currentPage.value = Contact;
+                    window.history.replaceState(null, "", `#${page}`); // 更新 URL
+                    break;
+                case "VersionHistory":
+                    currentPage.value = VersionHistory;
                     window.history.replaceState(null, "", `#${page}`); // 更新 URL
                     break;
                 default:

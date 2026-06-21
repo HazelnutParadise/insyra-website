@@ -4,6 +4,7 @@ export const navbar = {
   whyInsyra: "為什麼選擇 Insyra",
   howToUse: "如何使用",
   idensyra: "Idensyra",
+  syralit: "Syralit",
   features: "功能",
   contact: "聯絡我們",
 };

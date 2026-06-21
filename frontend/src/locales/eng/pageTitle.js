@@ -6,4 +6,6 @@ export const pageTitle = {
   Idensyra: "Idensyra",
   Features: "Features",
   Contact: "Contact",
+  VersionHistory: "Version History",
+  Syralit: "Syralit",
 };
