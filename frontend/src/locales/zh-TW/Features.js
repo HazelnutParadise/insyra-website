@@ -1,6 +1,6 @@
 export const Features = {
   title: "功能",
-  description: "從核心資料結構到 CLI、自動化、agent skills 與教學路線，這裡整理的是目前 Insyra 的完整工作流。",
+  description: "從核心資料結構到 CLI、自動化、agent skills 與教學路線，這裡整理的是目前 Insyra 函式庫的完整工作流。需要桌面 IDE 請看 Idensyra、需要把分析結果做成互動式應用請看 Syralit。",
   readDocs: {
     title: "從正確的入口開始",
     description:

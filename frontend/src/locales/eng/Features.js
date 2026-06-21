@@ -1,7 +1,7 @@
 export const Features = {
   title: "Features",
   description:
-    "Explore the current Insyra workflow: core data structures, CLI automation, AI-ready skills, guided tutorials, and the package ecosystem behind them.",
+    "Explore the current Insyra library workflow: core data structures, CLI automation, AI-ready skills, guided tutorials, and the package ecosystem behind them. For the desktop IDE see Idensyra; to turn analysis into interactive apps see Syralit.",
   readDocs: {
     title: "Start with the Right Entry Point",
     description:

@@ -18,6 +18,24 @@ export const Syralit = {
     ],
     note: "Requires Go 1.25+.",
   },
+  screenshotsTitle: "See It in Action",
+  screenshots: [
+    {
+      src: "https://raw.githubusercontent.com/HazelnutParadise/syralit/master/docs/images/showcase-dashboard.png",
+      alt: "Syralit dashboard showcase",
+      caption: "Dashboards: turn Go functions into interactive KPIs and charts.",
+    },
+    {
+      src: "https://raw.githubusercontent.com/HazelnutParadise/syralit/master/docs/images/data-explorer-analysis.png",
+      alt: "Syralit data explorer analysis view",
+      caption: "Data exploration: ship analysis workflows as interactive tools.",
+    },
+    {
+      src: "https://raw.githubusercontent.com/HazelnutParadise/syralit/master/docs/images/form-app-registration.png",
+      alt: "Syralit conference registration form",
+      caption: "Form apps: rich widgets and multi-page structure with built-in state and sessions.",
+    },
+  ],
   featuresTitle: "Key Features",
   keyFeatures: [
     {

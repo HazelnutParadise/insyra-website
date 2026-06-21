@@ -1,6 +1,6 @@
 export const AboutInsyra = {
         title: 'Insyra 是什麼',
-        description: 'Insyra 是 Go 語言的綜合型資料分析工具，無論是日常資料處理還是大規模資料分析，Insyra 都能讓你以更快的速度、更少的程式碼完成任務。',
+        description: 'Insyra 是 Go 語言的資料分析生態系，由 <strong>Insyra</strong> 分析函式庫、<strong>Idensyra</strong> 桌面 IDE，與 <strong>Syralit</strong> 互動式資料應用框架組成。無論是日常資料處理、大規模分析，或想把成果做成人人能用的應用，Insyra 生態系都能讓你以更快的速度、更少的程式碼完成任務。',
         whyCreate: {
             title: '為什麼創建 Insyra',
             description: 'Go 語言擁有高效能與極佳的平行處理能力，但其生態在資料分析領域，始終缺乏像 Pandas 這樣完整且成熟的分析庫。為了填補這個空缺，Insyra 於 2024 年的夏天誕生，為 Go 提供一個能夠媲美 Pandas 的強大資料分析解決方案，滿足從簡單資料處理到大型資料集的多樣需求。許多現有解決方案要嘛性能表現不佳，要嘛太複雜不易學習，使其在多樣化和複雜的資料環境中難以發揮現代硬體的優勢。Insyra 則誕生於對高性能、易用性和與現有工具無縫整合的需求。',
@@ -24,6 +24,6 @@ export const AboutInsyra = {
         },
         futureVision: {
             title: '未來展望',
-            description: '我們期望 Insyra 成為資料分析的標配。隨著 Insyra 的成長，我們的目標是讓使用者能在同一個生態系中一條龍完成所有的資料分析工作，無需在多個語言或是工具間來回切換。',
+            description: '我們期望 Insyra 成為資料分析的標配。Insyra 生態系已不只一個套件：<strong>Insyra</strong> 處理資料分析、<strong>Idensyra</strong> 提供開箱即用的桌面 IDE、<strong>Syralit</strong> 讓你用 Go 函式直接生出互動式資料應用。我們的目標是讓使用者能在同一個生態系中一條龍完成所有的資料分析工作，無需在多個語言或工具間來回切換。',
         },
     };

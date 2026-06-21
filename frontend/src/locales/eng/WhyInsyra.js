@@ -1,6 +1,6 @@
 export const WhyInsyra = {
     title: 'Why Insyra?',
-    description: 'Insyra not only provides a simple syntax, but also has energy-saving advantages due to Golang. Below is a comparison of the code between Insyra and Pandas for the same operation, allowing you to more intuitively understand its usage.',
+    description: 'Insyra not only provides a simple syntax, but also has energy-saving advantages due to Golang. Beyond the library itself, Insyra is a complete ecosystem of the <strong>Insyra</strong> analysis library, the <strong>Idensyra</strong> desktop IDE, and <strong>Syralit</strong> for interactive data apps. Below is a comparison of the code between Insyra and Pandas for the same operation, allowing you to more intuitively understand its usage.',
     codeComparison: {
         title: 'Insyra vs Pandas Syntax Comparison',
         calculateAverage: {

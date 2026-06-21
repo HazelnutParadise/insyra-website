@@ -2,7 +2,7 @@ export const Main = {
   hero: {
     slogan: "太快、太美、太簡單",
     title: "邂逅 Insyra",
-    description: "適用於現代資料流程、CLI 自動化與 agent 協作的 Go 分析工具箱。",
+    description: "以 Insyra 為核心的 Go 資料分析生態系：Insyra 分析函式庫、Idensyra 桌面 IDE、Syralit 互動式資料應用框架。",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce_TW.wav",
       error: "您的瀏覽器不支援音訊播放器。",

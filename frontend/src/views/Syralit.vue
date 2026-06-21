@@ -24,6 +24,15 @@
           <p class="sy-install-note">{{ sy.install.note }}</p>
         </div>
 
+        <!-- Screenshots -->
+        <h2 class="sy-section-title">{{ sy.screenshotsTitle }}</h2>
+        <div class="sy-gallery">
+          <figure class="sy-shot" v-for="(s, i) in sy.screenshots" :key="i">
+            <img :src="s.src" :alt="s.alt" loading="lazy" />
+            <figcaption>{{ s.caption }}</figcaption>
+          </figure>
+        </div>
+
         <!-- Key features -->
         <h2 class="sy-section-title">{{ sy.featuresTitle }}</h2>
         <div class="sy-features">
@@ -150,6 +159,7 @@ export default {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 32px 36px;
   margin-bottom: 56px;
+  text-align: left;
 }
 
 .sy-install h2 {
@@ -164,10 +174,12 @@ export default {
   border-radius: 10px;
   padding: 20px 22px;
   overflow-x: auto;
-  font-family: "Space Grotesk", ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95rem;
   line-height: 1.8;
   margin: 0 0 14px;
+  text-align: left;
+  white-space: pre;
 }
 
 .sy-install-note {
@@ -182,6 +194,41 @@ export default {
   font-size: 2rem;
   font-weight: 300;
   margin-bottom: 32px;
+}
+
+.sy-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  margin-bottom: 56px;
+}
+
+.sy-shot {
+  margin: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sy-shot:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(118, 75, 162, 0.18);
+}
+
+.sy-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sy-shot figcaption {
+  padding: 12px 18px 16px;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-align: center;
 }
 
 .sy-features {

@@ -17,6 +17,24 @@ export const Syralit = {
     ],
     note: "需要 Go 1.25 以上。",
   },
+  screenshotsTitle: "實際畫面",
+  screenshots: [
+    {
+      src: "https://raw.githubusercontent.com/HazelnutParadise/syralit/master/docs/images/showcase-dashboard.png",
+      alt: "Syralit 儀表板範例",
+      caption: "儀表板：用 Go 函式直接生出互動式 KPI 與圖表",
+    },
+    {
+      src: "https://raw.githubusercontent.com/HazelnutParadise/syralit/master/docs/images/data-explorer-analysis.png",
+      alt: "Syralit 資料探索分析畫面",
+      caption: "資料探索：把分析流程包裝成可互動的工具",
+    },
+    {
+      src: "https://raw.githubusercontent.com/HazelnutParadise/syralit/master/docs/images/form-app-registration.png",
+      alt: "Syralit 表單應用範例",
+      caption: "表單應用：豐富 widget 與多頁結構，內建狀態與 session",
+    },
+  ],
   featuresTitle: "主要功能",
   keyFeatures: [
     {

@@ -1,6 +1,6 @@
 export const WhyInsyra = {
     title: '為什麼選擇 Insyra？',
-    description: 'Insyra 不僅提供簡單易用的語法，更因為基於 Go 語言而具備節能效益。以下為 Insyra 和 Pandas 在相同操作上的代碼對比，讓您更直觀地了解它的使用方式。',
+    description: 'Insyra 不僅提供簡單易用的語法，更因為基於 Go 語言而具備節能效益。並且，Insyra 不只是一個函式庫，而是包含 <strong>Insyra</strong> 分析函式庫、<strong>Idensyra</strong> 桌面 IDE 與 <strong>Syralit</strong> 互動式資料應用框架的完整生態系。以下為 Insyra 和 Pandas 在相同操作上的代碼對比，讓您更直觀地了解它的使用方式。',
     codeComparison: {
         title: 'Insyra vs Pandas 語法對比',
         calculateAverage: {
