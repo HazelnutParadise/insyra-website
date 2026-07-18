@@ -112,9 +112,9 @@ export const Main = {
       },
       feature10: {
         id: 10,
-        title: "為真實資料分析補齊最後一哩",
+        title: "v0.3：從補齊走向開創",
         description:
-          "v0.2 把日常分析會用到的環節補滿：時序與視窗轉換、SQL 與內嵌資料庫、GroupBy／Pivot／聚合、缺失值補值、抽樣與訓練／測試切分、類別編碼、Describe 摘要與特徵縮放，並以重寫後的原子核心讓多項運算快上 5–100 倍。",
+          "v0.3 Huashan 推出全新 <strong>quant</strong> 量化金融套件、<strong>AtomicDoAll</strong> 多結構原子鎖定、CSV／JSON 欄位級型別推斷，以及可輸出到任意 io.Writer 的 Show／Summary 家族，並完成修正超過 80 個確認缺陷的全庫稽核——站在既有基礎上，開創新數界。",
         learnMore: {
           href: "https://github.com/HazelnutParadise/insyra/releases",
           text: "查看發行紀錄",
@@ -124,23 +124,23 @@ export const Main = {
   },
   versionIntro: {
     badge: "目前版本",
-    title: "v0.2 — Pier-2 駁二",
-    slogan: "藝塑數據之美",
+    title: "v0.3 — Huashan 華山",
+    slogan: "開創新數界",
     versionName: "版本名稱：",
-    versionNameValue: "Pier-2，取自台灣高雄的駁二藝術特區",
-    versionFeatures: "v0.2 想做到什麼：",
+    versionNameValue: "Huashan，取自台灣台北的華山1914文化創意產業園區",
+    versionFeatures: "v0.3 想做到什麼：",
     versionFeaturesValue:
-      "把 Insyra 缺漏的功能補齊，讓它真正能用於真實的資料分析工作。從高精度的 finance 套件、重構並加入廣義線性模型（GLM）的 stats，到時序與視窗轉換、SQL 與內嵌資料庫、GroupBy／Pivot／聚合、無母數檢定、缺失值補值、抽樣與訓練／測試切分、類別編碼、Describe 摘要 API、特徵縮放，再加上擴充的 CCL 數學函數庫，與重寫後快上約 100 倍的原子核心——Pier-2 讓 Insyra 真正能直面真實資料。",
+      "站在 Pier-2 補齊的基礎上，向新模組與新能力擴展。首發的 v0.3.0 推出量化金融套件 quant（投資組合指標、過擬合診斷、walk-forward 驗證），新增 AtomicDoAll 一次原子鎖定多個 DataList／DataTable，CSV 與 JSON 讀取改為欄位級型別推斷（整數欄以 int64 載入），DataList／DataTable 新增 ShowTo／ShowRangeTo／SummaryTo 可輸出到任意 io.Writer，分位數計算全面統一為 R Type 7，datafetch 加入 TWGeocoding 台灣逆地理編碼，並完成全庫稽核、修正超過 80 個確認缺陷。",
     pierIntro: "這個版本線的重要性：",
     pierIntroValue:
-      "Insyra 不再只是單一 Go 套件，而是一整套工作體驗：你可以從文件入口快速學習、透過 CLI 自動化流程、跟著 tutorials 練習，把任務交給具備專用 skill 的 AI agent，並在更快的核心上跑高精度金融計算、機器學習前處理與更完整的統計工具箱。",
-    currentNote: "v0.2.19 是 Pier-2 駁二的收官版，下一站是 v0.3「華山 Huashan」。",
+      "華山從舊酒廠轉型為創意場域，重點從來不是保存過去，而是站在既有基礎上創造下一階段。v0.3 是同樣的定位：Pier-2 把真實資料分析需要的環節補齊之後，Huashan 開始向外開創——新的專業套件、更嚴謹的統計底層、更可組合的輸出介面，讓 Insyra 從「能用於真實分析」走向「開拓新的分析場景」。",
+    currentNote: "v0.3.0 是 Huashan 華山的首發版——Create for the Next，開創新數界。",
     history: {
       text: "查看歷史版本",
       href: "#VersionHistory",
     },
-    imageAlt: "駁二藝術特區",
+    imageAlt: "華山1914文化創意產業園區",
     imageSource:
-      "圖片來源：東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E9%A7%81%E4%BA%8C%E8%97%9D%E8%A1%93%E7%89%B9%E5%8D%80/attractions_POI0000369625.html",
+      "圖片來源：東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E8%8F%AF%E5%B1%B11914%E6%96%87%E5%8C%96%E5%89%B5%E6%84%8F%E7%94%A2%E6%A5%AD%E5%9C%92%E5%8D%80/attractions_POI0000004769.html",
   },
 };

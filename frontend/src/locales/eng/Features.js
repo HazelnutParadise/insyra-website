@@ -164,7 +164,7 @@ func main() {
         title: "datafetch",
         subTitle: "Data Fetching",
         descriptions: {
-          first: `Provides data retrieval utilities including Google Maps Store reviews and Yahoo Finance market data.`,
+          first: `Provides data retrieval utilities including Google Maps Store reviews, Yahoo Finance market data, and <strong>TWGeocoding</strong> reverse geocoding for Taiwan (turning coordinates into county / township / village, with single-point and batch queries, built-in rate-limit handling, and optional caching).`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch package documentation</a>',
         },
         collapses: {
@@ -211,7 +211,7 @@ func main() {
         descriptions: {
           first: `Provides practical statistical analysis helpers including skewness, kurtosis, hypothesis testing, regression, PCA, <strong>clustering</strong>, and <strong>factor analysis</strong>.<br/>
 <br/>
-Internally refactored to use Gonum wherever possible, with results aligned to the <strong>R language</strong> where appropriate. Functions now return errors explicitly instead of silently logging warnings, and the new Mutex + fast-goid AtomicActor delivers <strong>5–24x</strong> speedups across many statistical methods.`,
+Internally refactored to use Gonum wherever possible, with results aligned to the <strong>R language</strong> where appropriate. Functions now return errors explicitly instead of silently logging warnings, and the new Mutex + fast-goid AtomicActor delivers <strong>5–24x</strong> speedups across many statistical methods. Since v0.3, quantile calculation is standardized on <strong>R Type 7</strong> across the library, and the normal-distribution helpers <strong>NormCDF / NormPPF</strong> are now public.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats package documentation</a>',
         },
         collapses: {
@@ -268,6 +268,52 @@ func main() {
         panic(err)
     }
     fmt.Println("NPV:", npv)
+}`,
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "Copy",
+          },
+        },
+      },
+      {
+        title: "quant",
+        subTitle: "Quantitative Finance",
+        descriptions: {
+          first: `New in v0.3, the quantitative-finance package for evaluating trading strategies and portfolios: performance metrics (<strong>Sharpe</strong>, max drawdown, annualized return), backtest-overfitting diagnostics (<strong>PSR / DSR / PBO</strong>, the Bailey & López de Prado framework), and <strong>walk-forward</strong> validation.<br/>
+<br/>
+Complementary to finance: where finance uses fixed-point decimals for high precision, <strong>quant</strong> follows industry convention and works in floating point for return and equity-curve analytics.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/quant">quant package documentation</a>',
+        },
+        collapses: {
+          first: {
+            title: "Example",
+            content: `package main
+
+import (
+    "fmt"
+
+    "github.com/HazelnutParadise/insyra/isr"
+    "github.com/HazelnutParadise/insyra/quant"
+)
+
+func main() {
+    // Daily return series
+    returns := isr.DL.Of(0.012, -0.004, 0.008, 0.015, -0.006)
+
+    // Annualized Sharpe (252 trading days per year)
+    sharpe, err := quant.SharpeRatio(returns, 0, 252)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println("Sharpe:", sharpe)
+
+    // Max drawdown of an equity curve
+    equity := isr.DL.Of(100.0, 103.0, 99.0, 108.0, 105.0)
+    mdd, err := quant.MaxDrawdown(equity)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println("Max drawdown:", mdd)
 }`,
             codeBlock: true,
             codeLanguage: "go",

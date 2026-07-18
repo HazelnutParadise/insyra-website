@@ -11,6 +11,22 @@ export const VersionHistory = {
   // and prepend it to this array.
   versions: [
     {
+      version: "v0.2",
+      codename: "Pier-2",
+      status: "Maturation stage",
+      period: "v0.2.0 – v0.2.19",
+      summary:
+        'Under the theme "Crafting Your Art of Data," Pier-2 rounded out the features Insyra was missing, made it genuinely usable for real-world data analysis, and grew Insyra from a single Go package into a complete working experience: a documentation hub, CLI automation, guided tutorials, and dedicated AI agent skills.',
+      highlightsTitle: "Key milestones",
+      highlights: [
+        "Introduced the high-precision finance package, and refactored stats with generalized linear models (GLM) and nonparametric tests.",
+        "Introduced CCL (Column Calculation Language) for building derived columns and conditional logic with Excel-style formulas, later expanded with a full math function library.",
+        "Filled in the everyday analysis gaps: time series and window transforms, SQL with embedded databases, GroupBy / Pivot / aggregation, missing-value imputation, sampling and train/test splitting, categorical encoding, the Describe summary API, and feature scaling.",
+        "Rewrote the atomic core, making many operations 5–100x faster.",
+        "Shaped the ecosystem: the documentation hub, CLI / REPL with .isr scripts, guided tutorial tracks, and dedicated skills for coding agents.",
+      ],
+    },
+    {
       version: "v0.1",
       codename: "",
       status: "Foundational stage",
@@ -28,8 +44,8 @@ export const VersionHistory = {
   ],
   current: {
     label: "Current version",
-    version: "v0.2 — Pier-2",
-    note: 'v0.2 "Pier-2" is still the latest release; see the home page for the full introduction. Once v0.3 "Huashan" ships, the Pier-2 introduction will move here in full.',
+    version: "v0.3 — Huashan",
+    note: 'v0.3 "Huashan" is the current release line, themed "Create for the Next." See the home page for the full introduction.',
     backText: "Back to the current version",
     backHref: "#",
   },

@@ -163,7 +163,7 @@ func main() {
         title: "datafetch",
         subTitle: "資料獲取",
         descriptions: {
-          first: `提供資料獲取功能，包含 Google 地圖商家評論與 Yahoo Finance 市場資料。`,
+          first: `提供資料獲取功能，包含 Google 地圖商家評論、Yahoo Finance 市場資料，以及台灣逆地理編碼 <strong>TWGeocoding</strong>（將經緯度轉成縣市／鄉鎮／村里，支援單點與批次查詢、內建速率限制處理與可選快取）。`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch 套件包說明文件</a>',
         },
         collapses: {
@@ -210,7 +210,7 @@ func main() {
         descriptions: {
           first: `提供實用的統計分析工具，包含偏度、峰度、假設檢定、回歸分析、PCA、<strong>集群分析</strong>、<strong>因素分析</strong>、<strong>廣義線性模型（GLM，含 logistic／Poisson）</strong>與<strong>無母數檢定</strong>（Wilcoxon、Mann-Whitney U、Kruskal-Wallis、Friedman）。<br/>
 <br/>
-內部已重構為盡量使用 Gonum，並進一步對齊 <strong>R 語言</strong>的使用習慣。函式現在會明確回傳錯誤而不是只丟 warning，且在新版 Mutex + fast-goid AtomicActor 加持下，多個統計方法的執行速度提升了 <strong>5–24 倍</strong>。`,
+內部已重構為盡量使用 Gonum，並進一步對齊 <strong>R 語言</strong>的使用習慣。函式現在會明確回傳錯誤而不是只丟 warning，且在新版 Mutex + fast-goid AtomicActor 加持下，多個統計方法的執行速度提升了 <strong>5–24 倍</strong>。v0.3 起分位數計算全面統一為 <strong>R Type 7</strong>，並公開常態分布函數 <strong>NormCDF／NormPPF</strong>。`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/stats">stats 套件包說明文件</a>',
         },
         collapses: {
@@ -268,6 +268,52 @@ func main() {
         panic(err)
     }
     fmt.Println("NPV:", npv)
+}`,
+            codeBlock: true,
+            codeLanguage: "go",
+            copyButtonText: "複製",
+          },
+        },
+      },
+      {
+        title: "quant",
+        subTitle: "量化金融分析",
+        descriptions: {
+          first: `v0.3 全新推出的量化金融套件，用於評估交易策略與投資組合：績效指標（<strong>Sharpe</strong>、最大回撤、年化報酬）、回測過擬合診斷（<strong>PSR／DSR／PBO</strong>，Bailey & López de Prado 框架）與 <strong>walk-forward</strong> 滾動驗證。<br/>
+<br/>
+與 finance 定位互補：finance 以定點小數追求高精度，<strong>quant</strong> 依業界慣例用浮點數處理報酬與資產曲線分析。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/quant">quant 套件包說明文件</a>',
+        },
+        collapses: {
+          first: {
+            title: "使用範例",
+            content: `package main
+
+import (
+    "fmt"
+
+    "github.com/HazelnutParadise/insyra/isr"
+    "github.com/HazelnutParadise/insyra/quant"
+)
+
+func main() {
+    // 每日報酬序列
+    returns := isr.DL.Of(0.012, -0.004, 0.008, 0.015, -0.006)
+
+    // 年化 Sharpe（一年 252 個交易日）
+    sharpe, err := quant.SharpeRatio(returns, 0, 252)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println("Sharpe:", sharpe)
+
+    // 資產曲線的最大回撤
+    equity := isr.DL.Of(100.0, 103.0, 99.0, 108.0, 105.0)
+    mdd, err := quant.MaxDrawdown(equity)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println("最大回撤:", mdd)
 }`,
             codeBlock: true,
             codeLanguage: "go",

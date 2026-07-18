@@ -112,9 +112,9 @@ export const Main = {
       },
       feature10: {
         id: 10,
-        title: "Closing the Last Mile for Real Analysis",
+        title: "v0.3: From Filling Gaps to Creating the Next",
         description:
-          "v0.2 fills in the everyday gaps: time series and window transforms, SQL with embedded databases, GroupBy / Pivot / aggregation, missing-value imputation, sampling and train/test splitting, categorical encoding, the Describe summary API, and feature scaling, all on a rewritten atomic core that makes many operations 5–100x faster.",
+          "v0.3 Huashan ships the new <strong>quant</strong> package for quantitative finance, <strong>AtomicDoAll</strong> for atomic multi-structure locking, column-level type inference for CSV/JSON, and a Show / Summary family that writes to any io.Writer, backed by a library-wide audit that fixed over 80 confirmed issues — building on the foundation to create for the next.",
         learnMore: {
           href: "https://github.com/HazelnutParadise/insyra/releases",
           text: "Browse the release history",
@@ -124,25 +124,25 @@ export const Main = {
   },
   versionIntro: {
     badge: "Current Version",
-    title: "v0.2 — Pier-2",
-    slogan: "Crafting Your Art of Data",
+    title: "v0.3 — Huashan",
+    slogan: "Create for the Next",
     versionName: "Version Name: ",
     versionNameValue:
-      'Pier-2, inspired by "Pier-2 Art Center" in Kaohsiung, Taiwan',
-    versionFeatures: "What v0.2 Set Out to Do: ",
+      'Huashan, inspired by "Huashan 1914 Creative Park" in Taipei, Taiwan',
+    versionFeatures: "What v0.3 Sets Out to Do: ",
     versionFeaturesValue:
-      "Round out the features Insyra was missing and make it genuinely usable for real-world data analysis. From the high-precision finance package and a refactored stats package with generalized linear models (GLM), to time series and window transforms, SQL with embedded databases, GroupBy / Pivot / aggregation, nonparametric tests, missing-value imputation, sampling and train/test splitting, categorical encoding, the Describe summary API, and feature scaling, plus an expanded CCL math library and a rewritten atomic core that is ~100x faster, Pier-2 turns Insyra into a toolkit that can face real data head-on.",
+      "Build outward from the foundation Pier-2 completed, expanding into new modules and new capabilities. The opening v0.3.0 release introduces the quant package for quantitative finance (portfolio metrics, overfitting diagnostics, walk-forward validation), adds AtomicDoAll for locking multiple DataLists and DataTables atomically in a single operation, brings column-level type inference to CSV and JSON reading (integer columns load as int64), adds ShowTo / ShowRangeTo / SummaryTo for writing output to any io.Writer, standardizes quantile calculation on R Type 7, ships the TWGeocoding reverse-geocoding fetcher for Taiwan, and completes a library-wide audit that fixed over 80 confirmed issues.",
     pierIntro: "Why This Release Line Matters: ",
     pierIntroValue:
-      "Insyra is no longer a single Go package but a complete working experience: you can learn from the documentation hub, automate through the CLI, practice with tutorials, hand workflows to AI agents with dedicated skill definitions, and run high-precision finance, machine-learning preprocessing, and richer statistics on a noticeably faster core.",
+      'Huashan turned the former Taipei Winery into a creative hub — its point was never preserving the past, but using that foundation to create what comes next. v0.3 takes the same stance: after Pier-2 filled in the pieces real-world analysis needs, Huashan starts creating outward — new specialized packages, a more rigorous statistical core, and more composable output interfaces — moving Insyra from "ready for real analysis" toward "opening new analytical ground."',
     currentNote:
-      'v0.2.19 is the final release of the Pier-2 line — next up is v0.3 "Huashan."',
+      "v0.3.0 is the opening release of the Huashan line — Create for the Next.",
     history: {
       text: "View version history",
       href: "#VersionHistory",
     },
-    imageAlt: "Pier-2 Art Center",
+    imageAlt: "Huashan 1914 Creative Park",
     imageSource:
-      "Image Source: 東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E9%A7%81%E4%BA%8C%E8%97%9D%E8%A1%93%E7%89%B9%E5%8D%80/attractions_POI0000369625.html",
+      "Image Source: 東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E8%8F%AF%E5%B1%B11914%E6%96%87%E5%8C%96%E5%89%B5%E6%84%8F%E7%94%A2%E6%A5%AD%E5%9C%92%E5%8D%80/attractions_POI0000004769.html",
   },
 };

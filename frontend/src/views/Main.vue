@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <Hero :currentMessages="currentMessages" />
 
-    <!-- Version 0.2.x Introduction Section -->
+    <!-- Version Introduction Section（只介紹當前 minor 版，見 CLAUDE.md） -->
     <section class="version-intro">
       <div class="container">
         <h2>{{ currentMessages.Main.versionIntro.title }}</h2>
@@ -19,7 +19,7 @@
             <p class="version-note">{{ currentMessages.Main.versionIntro.currentNote }}</p>
           </div>
           <div class="version-image">
-            <img src="https://www.settour.com.tw/ss_img/poi/20220307/c2c94200-2858-4914-bc77-f45fbea3abc2.jpg"
+            <img src="https://www.settour.com.tw/ss_img/poi/20210224/f316c7e0-1bcb-49e6-b140-eb9027bf489f.jpg"
               :alt="currentMessages.Main.versionIntro.imageAlt" />
             <p class="image-source">{{ currentMessages.Main.versionIntro.imageSource }}</p>
           </div>
