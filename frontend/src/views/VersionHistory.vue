@@ -35,6 +35,16 @@
               <span class="vh-period">{{ entry.period }}</span>
             </div>
           </div>
+          <!-- 版本主題景點（v0.1 無主題名，故為選填） -->
+          <div v-if="entry.place" class="vh-place">
+            <div class="vh-place-media">
+              <img v-if="entry.place.imageUrl" :src="entry.place.imageUrl" :alt="entry.place.imageAlt" />
+              <p v-if="entry.place.imageSource" class="vh-place-source">{{ entry.place.imageSource }}</p>
+            </div>
+            <p class="vh-place-intro">
+              <strong>{{ entry.place.label }}</strong>{{ entry.place.intro }}
+            </p>
+          </div>
           <p class="vh-summary">{{ entry.summary }}</p>
           <h3 class="vh-highlights-title">{{ entry.highlightsTitle }}</h3>
           <ul class="vh-highlights">
@@ -217,6 +227,45 @@ export default {
   font-size: 0.95rem;
 }
 
+.vh-place {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.vh-place-media {
+  flex: 0 0 38%;
+}
+
+.vh-place-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.vh-place-source {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  font-style: italic;
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.vh-place-intro {
+  flex: 1;
+  color: #2c3e50;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.vh-place-intro strong {
+  color: #667eea;
+  font-weight: 600;
+}
+
 .vh-summary {
   color: #2c3e50;
   font-size: 1.1rem;
@@ -268,6 +317,16 @@ export default {
   .vh-current,
   .vh-card {
     padding: 26px 22px;
+  }
+
+  .vh-place {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .vh-place-media {
+    flex: none;
+    width: 100%;
   }
 
   .vh-card-head h2 {

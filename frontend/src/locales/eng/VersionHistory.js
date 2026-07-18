@@ -15,6 +15,16 @@ export const VersionHistory = {
       codename: "Pier-2",
       status: "Maturation stage",
       period: "v0.2.0 – v0.2.19",
+      place: {
+        label: "About the Place: ",
+        intro:
+          "The Pier-2 Art Center sits by the harbor in Kaohsiung's Yancheng district, on port land shaped by the Japanese-era Takao harbor works and the Hamasen railway. Named after the No. 2 transshipment pier, the original Pier-2 warehouse was built in 1973, rediscovered in 2000 while scouting a National Day fireworks site, and reopened as an art district in 2002. Now spanning the Dayong, Penglai, and Dayi warehouse clusters, it is southern Taiwan's landmark venue for exhibitions, design, markets, and live music.",
+        imageUrl:
+          "https://www.settour.com.tw/ss_img/poi/20220307/c2c94200-2858-4914-bc77-f45fbea3abc2.jpg",
+        imageAlt: "Pier-2 Art Center",
+        imageSource:
+          "Image Source: 東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E9%A7%81%E4%BA%8C%E8%97%9D%E8%A1%93%E7%89%B9%E5%8D%80/attractions_POI0000369625.html",
+      },
       summary:
         'Under the theme "Crafting Your Art of Data," Pier-2 rounded out the features Insyra was missing, made it genuinely usable for real-world data analysis, and grew Insyra from a single Go package into a complete working experience: a documentation hub, CLI automation, guided tutorials, and dedicated AI agent skills.',
       highlightsTitle: "Key milestones",

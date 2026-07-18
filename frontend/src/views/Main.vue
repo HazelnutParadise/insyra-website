@@ -9,20 +9,26 @@
         <h2>{{ currentMessages.Main.versionIntro.title }}</h2>
         <h3 class="version-slogan">{{ currentMessages.Main.versionIntro.slogan }}</h3>
         <div class="version-content">
-          <div class="version-text">
-            <p><strong>{{ currentMessages.Main.versionIntro.versionName }}</strong>{{
-              currentMessages.Main.versionIntro.versionNameValue }}</p>
-            <p><strong>{{ currentMessages.Main.versionIntro.versionFeatures }}</strong>{{
-              currentMessages.Main.versionIntro.versionFeaturesValue }}</p>
-            <p><strong>{{ currentMessages.Main.versionIntro.pierIntro }}</strong>{{
-              currentMessages.Main.versionIntro.pierIntroValue }}</p>
-            <p class="version-note">{{ currentMessages.Main.versionIntro.currentNote }}</p>
+          <!-- 上排：短文字（版本名稱＋定位）配圖片，高度相當 -->
+          <div class="version-top">
+            <div class="version-text">
+              <p><strong>{{ currentMessages.Main.versionIntro.versionName }}</strong>{{
+                currentMessages.Main.versionIntro.versionNameValue }}</p>
+              <p><strong>{{ currentMessages.Main.versionIntro.placeIntro }}</strong>{{
+                currentMessages.Main.versionIntro.placeIntroValue }}</p>
+              <p><strong>{{ currentMessages.Main.versionIntro.pierIntro }}</strong>{{
+                currentMessages.Main.versionIntro.pierIntroValue }}</p>
+            </div>
+            <div class="version-image">
+              <img src="https://www.settour.com.tw/ss_img/poi/20210224/f316c7e0-1bcb-49e6-b140-eb9027bf489f.jpg"
+                :alt="currentMessages.Main.versionIntro.imageAlt" />
+              <p class="image-source">{{ currentMessages.Main.versionIntro.imageSource }}</p>
+            </div>
           </div>
-          <div class="version-image">
-            <img src="https://www.settour.com.tw/ss_img/poi/20210224/f316c7e0-1bcb-49e6-b140-eb9027bf489f.jpg"
-              :alt="currentMessages.Main.versionIntro.imageAlt" />
-            <p class="image-source">{{ currentMessages.Main.versionIntro.imageSource }}</p>
-          </div>
+          <!-- 下排：較長的功能段落與版本註記改為全寬 -->
+          <p class="version-features-text"><strong>{{ currentMessages.Main.versionIntro.versionFeatures }}</strong>{{
+            currentMessages.Main.versionIntro.versionFeaturesValue }}</p>
+          <p class="version-note">{{ currentMessages.Main.versionIntro.currentNote }}</p>
         </div>
         <div class="version-history-link">
           <a :href="currentMessages.Main.versionIntro.history.href">
@@ -102,9 +108,6 @@ export default {
 }
 
 .version-content {
-  display: flex;
-  gap: 50px;
-  align-items: center;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   /* border-radius: 20px; */
@@ -113,11 +116,18 @@ export default {
   position: relative;
 }
 
-.version-text {
-  flex: 1;
+.version-top {
+  display: flex;
+  gap: 50px;
+  align-items: center;
 }
 
-.version-text p {
+.version-text {
+  flex: 1.15;
+}
+
+.version-text p,
+.version-features-text {
   margin-bottom: 1rem;
   line-height: 1.7;
   color: #2c3e50;
@@ -125,7 +135,19 @@ export default {
   text-align: left;
 }
 
-.version-text strong {
+.version-text p:last-child {
+  margin-bottom: 0;
+}
+
+.version-features-text {
+  margin-top: 1.6rem;
+  margin-bottom: 0;
+  padding-top: 1.4rem;
+  border-top: 1px dashed rgba(102, 126, 234, 0.5);
+}
+
+.version-text strong,
+.version-features-text strong {
   color: #667eea;
   font-weight: 600;
   font-size: 1.3rem;
@@ -164,12 +186,16 @@ export default {
   }
 
   .version-content {
-    flex-direction: column;
     padding: 30px 25px;
+  }
+
+  .version-top {
+    flex-direction: column;
     gap: 30px;
   }
 
-  .version-text p {
+  .version-text p,
+  .version-features-text {
     font-size: 1rem;
   }
 

@@ -129,12 +129,15 @@ export const Main = {
     versionName: "Version Name: ",
     versionNameValue:
       'Huashan, inspired by "Huashan 1914 Creative Park" in Taipei, Taiwan',
+    placeIntro: "About the Place: ",
+    placeIntroValue:
+      "Huashan 1914 Creative Park sits in central Taipei. Founded in 1914 as a winery in the Japanese colonial era and later run as the Taipei Winery, the site fell idle after production moved out in 1987 and was reborn as an arts venue in 1999. Today the city-designated historic site gathers exhibitions, performances, markets, and design brands as a landmark of Taipei's creative scene.",
     versionFeatures: "What v0.3 Sets Out to Do: ",
     versionFeaturesValue:
       "Build outward from the foundation Pier-2 completed, expanding into new modules and new capabilities. The opening v0.3.0 release introduces the quant package for quantitative finance (portfolio metrics, overfitting diagnostics, walk-forward validation), adds AtomicDoAll for locking multiple DataLists and DataTables atomically in a single operation, brings column-level type inference to CSV and JSON reading (integer columns load as int64), adds ShowTo / ShowRangeTo / SummaryTo for writing output to any io.Writer, standardizes quantile calculation on R Type 7, ships the TWGeocoding reverse-geocoding fetcher for Taiwan, and completes a library-wide audit that fixed over 80 confirmed issues.",
     pierIntro: "Why This Release Line Matters: ",
     pierIntroValue:
-      'Huashan turned the former Taipei Winery into a creative hub — its point was never preserving the past, but using that foundation to create what comes next. v0.3 takes the same stance: after Pier-2 filled in the pieces real-world analysis needs, Huashan starts creating outward — new specialized packages, a more rigorous statistical core, and more composable output interfaces — moving Insyra from "ready for real analysis" toward "opening new analytical ground."',
+      'Huashan 1914 Creative Park rose from the former Taipei Winery — its point was never preserving the past, but using that foundation to create what comes next. v0.3 takes the same stance: after Pier-2 filled in the pieces real-world analysis needs, Huashan starts creating outward — new specialized packages, a more rigorous statistical core, and more composable output interfaces — moving Insyra from "ready for real analysis" toward "opening new analytical ground."',
     currentNote:
       "v0.3.0 is the opening release of the Huashan line — Create for the Next.",
     history: {

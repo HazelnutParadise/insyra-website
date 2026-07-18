@@ -14,6 +14,16 @@ export const VersionHistory = {
       codename: "Pier-2 駁二",
       status: "實用化階段",
       period: "v0.2.0 – v0.2.19",
+      place: {
+        label: "景點介紹：",
+        intro:
+          "駁二藝術特區位於高雄鹽埕港邊，這一帶是日治時期打狗築港工程與濱線（哈瑪星）鐵道發展出的百年港埠腹地。「駁二」指第二號接駁碼頭，駁二倉庫建於 1973 年，2000 年因勘查國慶煙火場地重新被發現，2002 年整建為藝術特區。如今橫跨大勇、蓬萊、大義三大倉庫群，是南台灣最具代表性的藝文場域，聚集展覽、設計、市集與音樂演出。",
+        imageUrl:
+          "https://www.settour.com.tw/ss_img/poi/20220307/c2c94200-2858-4914-bc77-f45fbea3abc2.jpg",
+        imageAlt: "駁二藝術特區",
+        imageSource:
+          "圖片來源：東南旅遊，https://www.settour.com.tw/travel_guide/%E5%8F%B0%E7%81%A3/%E9%A7%81%E4%BA%8C%E8%97%9D%E8%A1%93%E7%89%B9%E5%8D%80/attractions_POI0000369625.html",
+      },
       summary:
         "以「藝塑數據之美」為題，把 Insyra 缺漏的功能補齊，讓它真正能用於真實的資料分析工作，並從單一 Go 套件長成一整套工作體驗：文件入口、CLI 自動化、主題式教學，加上專用的 AI agent skills。",
       highlightsTitle: "重要里程碑",

@@ -43,7 +43,10 @@ Insyra（`github.com/HazelnutParadise/insyra`）官方網站的原始碼。
 1. 把首頁 `versionIntro`（上一版，例如 v0.2 Pier-2）整理成一個物件，**整塊移入**歷史
    版本頁的資料：`locales/zh-TW/VersionHistory.js` 與 `locales/eng/VersionHistory.js`
    的 `versions` 陣列（加到陣列最前面，最新的舊版在最上面）。兩語言都要做。
-2. 把首頁 `versionIntro` 換成新版（新的 `title`、版本名、目標、`currentNote`、`history` 連結）。
+   景點介紹與景點照也要一起搬：填入該版本物件的 `place` 欄位
+   （`label`／`intro`／`imageUrl`／`imageAlt`／`imageSource`，選填，v0.1 無主題名故沒有）。
+2. 把首頁 `versionIntro` 換成新版（新的 `title`、版本名、`placeIntro` 景點介紹、目標、
+   `currentNote`、`history` 連結，並更新 `Main.vue` 內寫死的景點圖片 `src`）。
 3. 歷史版本頁 `current` 區塊更新為新的當前版本。
 
 歷史版本頁元件為 `frontend/src/views/VersionHistory.vue`，入口是首頁版本介紹區下方的
