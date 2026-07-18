@@ -1,5 +1,6 @@
 # 前端構建階段（Bun）
-FROM oven/bun:latest AS frontend-builder
+# 釘住 minor 版避免 latest 漂移造成不可重現的 build（vite 6 需要較新的 bun）
+FROM oven/bun:1.3 AS frontend-builder
 
 WORKDIR /app
 
