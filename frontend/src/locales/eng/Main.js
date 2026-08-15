@@ -3,7 +3,7 @@ export const Main = {
     slogan: "Fast, Lovely, Easy to Use",
     title: "Meet Insyra",
     description:
-      "A Go data analysis ecosystem built around Insyra: the analysis library, the Idensyra desktop IDE, and Syralit for building interactive data apps.",
+      "A Go data analysis ecosystem spanning data loading, wrangling, statistics, visualization, machine learning, and deep learning, alongside the Idensyra desktop IDE and Syralit for interactive data apps.",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce.wav",
       error: "Your browser does not support the audio player.",
@@ -112,12 +112,12 @@ export const Main = {
       },
       feature10: {
         id: 10,
-        title: "v0.3: From Filling Gaps to Creating the Next",
+        title: "Machine Learning, Deep Learning, and GPU Acceleration in Go",
         description:
-          "v0.3 Huashan ships the new <strong>quant</strong> package for quantitative finance, <strong>AtomicDoAll</strong> for atomic multi-structure locking, column-level type inference for CSV/JSON, and a Show / Summary family that writes to any io.Writer, backed by a library-wide audit that fixed over 80 confirmed issues — building on the foundation to create for the next.",
+          "v0.3.1 adds <strong>ml</strong> and <strong>nn</strong>: the first covers regression, tree models, cross-validation, and ONNX export, while the second runs real ONNX models, trains neural networks, and reads and writes SafeTensors. Large matrix workloads use an available device and fall back to the same CPU result when one is unavailable.",
         learnMore: {
-          href: "https://github.com/HazelnutParadise/insyra/releases",
-          text: "Browse the release history",
+          href: "#Features",
+          text: "Explore ml, nn, and accel",
         },
       },
     },
@@ -134,12 +134,12 @@ export const Main = {
       "Huashan 1914 Creative Park sits in central Taipei. Founded in 1914 as a winery in the Japanese colonial era and later run as the Taipei Winery, the site fell idle after production moved out in 1987 and was reborn as an arts venue in 1999. Today the city-designated historic site gathers exhibitions, performances, markets, and design brands as a landmark of Taipei's creative scene.",
     versionFeatures: "What v0.3 Sets Out to Do: ",
     versionFeaturesValue:
-      "Build outward from the foundation Pier-2 completed, expanding into new modules and new capabilities. The opening v0.3.0 release introduces the quant package for quantitative finance (portfolio metrics, overfitting diagnostics, walk-forward validation), adds AtomicDoAll for locking multiple DataLists and DataTables atomically in a single operation, brings column-level type inference to CSV and JSON reading (integer columns load as int64), adds ShowTo / ShowRangeTo / SummaryTo for writing output to any io.Writer, standardizes quantile calculation on R Type 7, ships the TWGeocoding reverse-geocoding fetcher for Taiwan, and completes a library-wide audit that fixed over 80 confirmed issues.",
+      "Build outward from the foundation Pier-2 completed, expanding into new modules and new capabilities. v0.3.0 introduces the quant package for quantitative finance (portfolio metrics, overfitting diagnostics, walk-forward validation), adds AtomicDoAll for locking multiple DataLists and DataTables atomically in a single operation, brings column-level type inference to CSV and JSON reading (integer columns load as int64), adds ShowTo / ShowRangeTo / SummaryTo for writing output to any io.Writer, standardizes quantile calculation on R Type 7, ships the TWGeocoding reverse-geocoding fetcher for Taiwan, and completes a library-wide audit that fixed over 80 confirmed issues. v0.3.1 then adds the ml machine-learning package, nn deep learning, and the accel runtime, keeping model training, ONNX inference, and device acceleration in Go workflows.",
     pierIntro: "Why This Release Line Matters: ",
     pierIntroValue:
       'Huashan 1914 Creative Park rose from the former Taipei Winery — its point was never preserving the past, but using that foundation to create what comes next. v0.3 takes the same stance: after Pier-2 filled in the pieces real-world analysis needs, Huashan starts creating outward — new specialized packages, a more rigorous statistical core, and more composable output interfaces — moving Insyra from "ready for real analysis" toward "opening new analytical ground."',
     currentNote:
-      "v0.3.0 is the opening release of the Huashan line — Create for the Next.",
+      "v0.3.1 is the latest published release in the Huashan line, themed Create for the Next.",
     history: {
       text: "View version history",
       href: "#VersionHistory",

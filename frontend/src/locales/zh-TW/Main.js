@@ -2,7 +2,7 @@ export const Main = {
   hero: {
     slogan: "太快、太美、太簡單",
     title: "邂逅 Insyra",
-    description: "以 Insyra 為核心的 Go 資料分析生態系：Insyra 分析函式庫、Idensyra 桌面 IDE、Syralit 互動式資料應用框架。",
+    description: "以 Insyra 為核心的 Go 資料分析生態系，涵蓋資料讀取、整理、統計、視覺化、機器學習與深度學習，並整合 Idensyra 桌面 IDE 與 Syralit 互動式資料應用框架。",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce_TW.wav",
       error: "您的瀏覽器不支援音訊播放器。",
@@ -112,12 +112,12 @@ export const Main = {
       },
       feature10: {
         id: 10,
-        title: "v0.3：從補齊走向開創",
+        title: "在 Go 裡完成機器學習、深度學習與 GPU 加速",
         description:
-          "v0.3 Huashan 推出全新 <strong>quant</strong> 量化金融套件、<strong>AtomicDoAll</strong> 多結構原子鎖定、CSV／JSON 欄位級型別推斷，以及可輸出到任意 io.Writer 的 Show／Summary 家族，並完成修正超過 80 個確認缺陷的全庫稽核——站在既有基礎上，開創新數界。",
+          "v0.3.1 新增 <strong>ml</strong> 與 <strong>nn</strong>：前者提供回歸、樹模型、交叉驗證與 ONNX 匯出，後者能執行真實 ONNX 模型、訓練神經網路並讀寫 SafeTensors。大型矩陣運算可在可用裝置上加速，沒有裝置時仍回退到相同結果的 CPU 路徑。",
         learnMore: {
-          href: "https://github.com/HazelnutParadise/insyra/releases",
-          text: "查看發行紀錄",
+          href: "#Features",
+          text: "探索 ml、nn 與 accel",
         },
       },
     },
@@ -133,11 +133,11 @@ export const Main = {
       "華山1914文化創意產業園區位於台北市中心，前身是 1914 年日治時期創立的釀酒廠、後來的台北酒廠，1987 年酒廠遷出後一度閒置，1999 年起轉型為藝文展演空間。如今這片市定古蹟聚集展覽、演出、市集與文創品牌，是台北文創的代表據點。",
     versionFeatures: "v0.3 想做到什麼：",
     versionFeaturesValue:
-      "站在 Pier-2 補齊的基礎上，向新模組與新能力擴展。首發的 v0.3.0 推出量化金融套件 quant（投資組合指標、過擬合診斷、walk-forward 驗證），新增 AtomicDoAll 一次原子鎖定多個 DataList／DataTable，CSV 與 JSON 讀取改為欄位級型別推斷（整數欄以 int64 載入），DataList／DataTable 新增 ShowTo／ShowRangeTo／SummaryTo 可輸出到任意 io.Writer，分位數計算全面統一為 R Type 7，datafetch 加入 TWGeocoding 台灣逆地理編碼，並完成全庫稽核、修正超過 80 個確認缺陷。",
+      "站在 Pier-2 補齊的基礎上，向新模組與新能力擴展。v0.3.0 推出量化金融套件 quant（投資組合指標、過擬合診斷、walk-forward 驗證），新增 AtomicDoAll 一次原子鎖定多個 DataList／DataTable，CSV 與 JSON 讀取改為欄位級型別推斷（整數欄以 int64 載入），DataList／DataTable 新增 ShowTo／ShowRangeTo／SummaryTo 可輸出到任意 io.Writer，分位數計算全面統一為 R Type 7，datafetch 加入 TWGeocoding 台灣逆地理編碼，並完成全庫稽核、修正超過 80 個確認缺陷。v0.3.1 接著加入 ml 機器學習、nn 深度學習與 accel 加速執行環境，讓模型訓練、ONNX 推論與裝置加速都能留在 Go 的工作流程裡。",
     pierIntro: "這個版本線的重要性：",
     pierIntroValue:
       "華山文創園區從舊酒廠轉型為創意場域，重點從來不是保存過去，而是站在既有基礎上創造下一階段。v0.3 是同樣的定位：Pier-2 把真實資料分析需要的環節補齊之後，Huashan 開始向外開創——新的專業套件、更嚴謹的統計底層、更可組合的輸出介面，讓 Insyra 從「能用於真實分析」走向「開拓新的分析場景」。",
-    currentNote: "v0.3.0 是 Huashan 華山的首發版——Create for the Next，開創新數界。",
+    currentNote: "目前最新發布版本為 v0.3.1，延續 Huashan 華山「Create for the Next，開創新數界」的主題。",
     history: {
       text: "查看歷史版本",
       href: "#VersionHistory",

@@ -1,6 +1,6 @@
 export const Features = {
   title: "功能",
-  description: "從核心資料結構到 CLI、自動化、agent skills 與教學路線，這裡整理的是目前 Insyra 函式庫的完整工作流。需要桌面 IDE 請看 Idensyra、需要把分析結果做成互動式應用請看 Syralit。",
+  description: "從核心資料結構到 CLI、自動化、agent skills、機器學習、深度學習與教學路線，這裡整理的是目前 Insyra 函式庫的完整工作流。需要桌面 IDE 請看 Idensyra、需要把分析結果做成互動式應用請看 Syralit。",
   readDocs: {
     title: "從正確的入口開始",
     description:
@@ -319,6 +319,30 @@ func main() {
             codeLanguage: "go",
             copyButtonText: "複製",
           },
+        },
+      },
+      {
+        title: "ml",
+        subTitle: "機器學習",
+        descriptions: {
+          first: `<strong>ml</strong> 提供 scikit-learn 風格的建模工具，包含線性、ridge、lasso 與 logistic 回歸，決策樹、隨機森林、梯度提升、交叉驗證、網格搜尋與 pipeline。配適好的模型可匯出 ONNX，並能與 Insyra 的表格工作流串接。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/ml">ml 套件說明文件</a>',
+        },
+      },
+      {
+        title: "nn",
+        subTitle: "深度學習與 ONNX",
+        descriptions: {
+          first: `<strong>nn</strong> 是純 Go 的神經網路引擎，可載入並執行已支援的 ONNX 模型，也能透過自動微分與 Sequential API 訓練 MLP、卷積與注意力模型。權重可使用 SafeTensors 讀寫，訓練完成後可匯出 ONNX。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/nn">nn 套件說明文件</a>',
+        },
+      },
+      {
+        title: "accel",
+        subTitle: "GPU 加速執行環境",
+        descriptions: {
+          first: `<strong>accel</strong> 提供純 Go 的裝置探測與 GPU 加速執行環境。Insyra 會在工作負載適合且裝置可用時使用加速路徑，沒有裝置或加速執行失敗時則保留正確的 CPU 結果。`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/accel">accel 套件說明文件</a>',
         },
       },
       {

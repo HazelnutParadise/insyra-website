@@ -2,7 +2,7 @@
   <section class="hero">
     <h2>{{ currentMessages.Main.hero.slogan }}</h2>
     <h1>{{ currentMessages.Main.hero.title }}</h1>
-    <p>{{ currentMessages.Main.hero.description }}</p>
+    <p class="hero-description">{{ currentMessages.Main.hero.description }}</p>
 
     <!-- 添加音訊播放器組件 -->
     <div class="audio-section">
@@ -108,6 +108,12 @@ export default {
   font-size: 18px;
   margin-bottom: 30px;
   color: #1f449b;
+}
+
+.hero-description {
+  max-width: 920px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
 }
 
 .hero button {

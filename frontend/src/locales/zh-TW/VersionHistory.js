@@ -54,7 +54,7 @@ export const VersionHistory = {
   current: {
     label: "目前版本",
     version: "v0.3 — Huashan 華山",
-    note: "v0.3「Huashan 華山」是目前的最新版本，以「開創新數界」為題，完整介紹請見首頁。",
+    note: "v0.3.1 是 Huashan 華山版本線目前最新發布的版本，以「開創新數界」為題，完整介紹請見首頁。",
     backText: "回到目前版本",
     backHref: "#",
   },

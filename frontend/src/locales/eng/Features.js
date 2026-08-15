@@ -1,7 +1,7 @@
 export const Features = {
   title: "Features",
   description:
-    "Explore the current Insyra library workflow: core data structures, CLI automation, AI-ready skills, guided tutorials, and the package ecosystem behind them. For the desktop IDE see Idensyra; to turn analysis into interactive apps see Syralit.",
+    "Explore the current Insyra library workflow: core data structures, CLI automation, AI-ready skills, machine learning, deep learning, guided tutorials, and the package ecosystem behind them. For the desktop IDE see Idensyra; to turn analysis into interactive apps see Syralit.",
   readDocs: {
     title: "Start with the Right Entry Point",
     description:
@@ -319,6 +319,30 @@ func main() {
             codeLanguage: "go",
             copyButtonText: "Copy",
           },
+        },
+      },
+      {
+        title: "ml",
+        subTitle: "Machine Learning",
+        descriptions: {
+          first: `The <strong>ml</strong> package provides scikit-learn-style modeling with linear, ridge, lasso, and logistic regression; decision trees, random forests, gradient boosting, cross-validation, grid search, and pipelines. Fitted models export to ONNX and work with Insyra tables.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/ml">ml package documentation</a>',
+        },
+      },
+      {
+        title: "nn",
+        subTitle: "Deep Learning and ONNX",
+        descriptions: {
+          first: `The <strong>nn</strong> package is a pure-Go neural-network engine. It loads and runs supported ONNX models, and its autodiff tape and Sequential API train MLP, convolutional, and attention models. Weights read and write as SafeTensors, and trained models export to ONNX.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/nn">nn package documentation</a>',
+        },
+      },
+      {
+        title: "accel",
+        subTitle: "GPU Acceleration Runtime",
+        descriptions: {
+          first: `The <strong>accel</strong> package provides pure-Go device discovery and GPU execution. Insyra takes an accelerated path only when the workload suits an available device; missing hardware and execution failures preserve a correct CPU result.`,
+          end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/accel">accel package documentation</a>',
         },
       },
       {
