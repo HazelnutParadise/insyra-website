@@ -104,7 +104,7 @@ export const Main = {
         id: 9,
         title: "Statistics and Finance, Built In",
         description:
-          "The <strong>stats</strong> package now ships with clustering, factor analysis, and explicit error returns aligned with R; <strong>finance</strong> delivers high-precision TVM, NPV/IRR/XIRR, depreciation, and bond pricing on fixed-point decimals; and <strong>quant</strong> covers quantitative analysis — performance and risk metrics, VaR / CVaR, CAPM and multi-factor attribution, option pricing, and portfolio optimization.",
+          "The <strong>stats</strong> package now ships with clustering, factor analysis, and explicit error returns aligned with R, while the new <strong>finance</strong> package delivers high-precision TVM, NPV/IRR/XIRR, depreciation, and bond pricing on fixed-point decimals.",
         learnMore: {
           href: "#Features",
           text: "See stats and finance",
@@ -112,6 +112,16 @@ export const Main = {
       },
       feature10: {
         id: 10,
+        title: "Quantitative Finance and Portfolio Analysis",
+        description:
+          "<strong>quant</strong> is built for trading strategies and portfolios: performance metrics including Sharpe, Sortino, Calmar, information ratio, and drawdown series; VaR / CVaR tail risk; beta, CAPM, and multi-factor attribution; Black-Scholes option pricing with implied volatility; and mean-variance portfolio optimization with the efficient frontier. For backtests it adds PSR / DSR / PBO overfitting diagnostics and walk-forward validation.",
+        learnMore: {
+          href: "#Features",
+          text: "See quant",
+        },
+      },
+      feature11: {
+        id: 11,
         title: "Machine Learning, Deep Learning, and GPU Acceleration in Go",
         description:
           "v0.3.1 adds <strong>ml</strong> and <strong>nn</strong>: the first covers regression, tree models, cross-validation, and ONNX export, while the second runs real ONNX models, trains neural networks, and reads and writes SafeTensors. Large matrix workloads use an available device and fall back to the same CPU result when one is unavailable.",

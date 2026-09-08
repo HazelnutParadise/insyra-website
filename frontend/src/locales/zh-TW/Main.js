@@ -104,7 +104,7 @@ export const Main = {
         id: 9,
         title: "內建統計與金融分析",
         description:
-          "<strong>stats</strong> 套件全面重構，新增集群分析與因素分析，並改為明確回傳錯誤、加強對齊 R；<strong>finance</strong> 是高精度金融計算套件，提供 TVM、NPV/IRR/XIRR、折舊、債券定價等基於定點小數的運算；<strong>quant</strong> 則負責量化分析，涵蓋績效與風險指標、VaR／CVaR、CAPM 與多因子歸因、選擇權定價與投資組合最佳化。",
+          "<strong>stats</strong> 套件全面重構，新增集群分析與因素分析，並改為明確回傳錯誤、加強對齊 R；<strong>finance</strong> 是全新加入的高精度金融計算套件，提供 TVM、NPV/IRR/XIRR、折舊、債券定價等基於定點小數的高精度運算。",
         learnMore: {
           href: "#Features",
           text: "查看 stats 與 finance",
@@ -112,6 +112,16 @@ export const Main = {
       },
       feature10: {
         id: 10,
+        title: "量化金融與投資組合分析",
+        description:
+          "<strong>quant</strong> 專為交易策略與投資組合而生：Sharpe、Sortino、Calmar、資訊比率與回撤序列等績效指標，VaR／CVaR 尾端風險，Beta、CAPM 與多因子歸因，Black-Scholes 選擇權定價與隱含波動率，還有均異數投資組合最佳化與效率前緣。回測則有 PSR／DSR／PBO 過擬合診斷與 walk-forward 驗證。",
+        learnMore: {
+          href: "#Features",
+          text: "查看 quant",
+        },
+      },
+      feature11: {
+        id: 11,
         title: "在 Go 裡完成機器學習、深度學習與 GPU 加速",
         description:
           "v0.3.1 新增 <strong>ml</strong> 與 <strong>nn</strong>：前者提供回歸、樹模型、交叉驗證與 ONNX 匯出，後者能執行真實 ONNX 模型、訓練神經網路並讀寫 SafeTensors。大型矩陣運算可在可用裝置上加速，沒有裝置時仍回退到相同結果的 CPU 路徑。",
