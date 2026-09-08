@@ -104,7 +104,7 @@ export const Main = {
         id: 9,
         title: "內建統計與金融分析",
         description:
-          "<strong>stats</strong> 套件全面重構，新增集群分析與因素分析，並改為明確回傳錯誤、加強對齊 R；<strong>finance</strong> 是全新加入的高精度金融計算套件，提供 TVM、NPV/IRR/XIRR、折舊、債券定價等基於定點小數的高精度運算。",
+          "<strong>stats</strong> 套件全面重構，新增集群分析與因素分析，並改為明確回傳錯誤、加強對齊 R；<strong>finance</strong> 是高精度金融計算套件，提供 TVM、NPV/IRR/XIRR、折舊、債券定價等基於定點小數的運算；<strong>quant</strong> 則負責量化分析，涵蓋績效與風險指標、VaR／CVaR、CAPM 與多因子歸因、選擇權定價與投資組合最佳化。",
         learnMore: {
           href: "#Features",
           text: "查看 stats 與 finance",
@@ -133,11 +133,11 @@ export const Main = {
       "華山1914文化創意產業園區位於台北市中心，前身是 1914 年日治時期創立的釀酒廠、後來的台北酒廠，1987 年酒廠遷出後一度閒置，1999 年起轉型為藝文展演空間。如今這片市定古蹟聚集展覽、演出、市集與文創品牌，是台北文創的代表據點。",
     versionFeatures: "v0.3 想做到什麼：",
     versionFeaturesValue:
-      "站在 Pier-2 補齊的基礎上，向新模組與新能力擴展。v0.3.0 推出量化金融套件 quant（投資組合指標、過擬合診斷、walk-forward 驗證），新增 AtomicDoAll 一次原子鎖定多個 DataList／DataTable，CSV 與 JSON 讀取改為欄位級型別推斷（整數欄以 int64 載入），DataList／DataTable 新增 ShowTo／ShowRangeTo／SummaryTo 可輸出到任意 io.Writer，分位數計算全面統一為 R Type 7，datafetch 加入 TWGeocoding 台灣逆地理編碼，並完成全庫稽核、修正超過 80 個確認缺陷。v0.3.1 接著加入 ml 機器學習、nn 深度學習與 accel 加速執行環境，讓模型訓練、ONNX 推論與裝置加速都能留在 Go 的工作流程裡。",
+      "站在 Pier-2 補齊的基礎上，向新模組與新能力擴展。v0.3.0 推出量化金融套件 quant（投資組合指標、過擬合診斷、walk-forward 驗證），新增 AtomicDoAll 一次原子鎖定多個 DataList／DataTable，CSV 與 JSON 讀取改為欄位級型別推斷（整數欄以 int64 載入），DataList／DataTable 新增 ShowTo／ShowRangeTo／SummaryTo 可輸出到任意 io.Writer，分位數計算全面統一為 R Type 7，datafetch 加入 TWGeocoding 台灣逆地理編碼，並完成全庫稽核、修正超過 80 個確認缺陷。v0.3.1 接著加入 ml 機器學習、nn 深度學習與 accel 加速執行環境，讓模型訓練、ONNX 推論與裝置加速都能留在 Go 的工作流程裡。v0.3.2 把 quant 擴充成完整的量化分析套件（VaR／CVaR 尾端風險、Sortino／Calmar／資訊比率、Beta 與 CAPM、多因子歸因、Black-Scholes 選擇權定價與隱含波動率、均異數投資組合最佳化、block bootstrap 模擬），datafetch 加入 TWStock 台股資料，核心新增 EWM 指數加權與日曆重取樣，CLI 也補上 quant、fetch tw、ewm、resample 等指令。",
     pierIntro: "這個版本線的重要性：",
     pierIntroValue:
       "華山文創園區從舊酒廠轉型為創意場域，重點從來不是保存過去，而是站在既有基礎上創造下一階段。v0.3 是同樣的定位：Pier-2 把真實資料分析需要的環節補齊之後，Huashan 開始向外開創——新的專業套件、更嚴謹的統計底層、更可組合的輸出介面，讓 Insyra 從「能用於真實分析」走向「開拓新的分析場景」。",
-    currentNote: "目前最新發布版本為 v0.3.1，延續 Huashan 華山「Create for the Next，開創新數界」的主題。",
+    currentNote: "目前最新發布版本為 v0.3.2，延續 Huashan 華山「Create for the Next，開創新數界」的主題。",
     history: {
       text: "查看歷史版本",
       href: "#VersionHistory",

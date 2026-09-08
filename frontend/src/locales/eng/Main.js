@@ -104,7 +104,7 @@ export const Main = {
         id: 9,
         title: "Statistics and Finance, Built In",
         description:
-          "The <strong>stats</strong> package now ships with clustering, factor analysis, and explicit error returns aligned with R, while the new <strong>finance</strong> package delivers high-precision TVM, NPV/IRR/XIRR, depreciation, and bond pricing on fixed-point decimals.",
+          "The <strong>stats</strong> package now ships with clustering, factor analysis, and explicit error returns aligned with R; <strong>finance</strong> delivers high-precision TVM, NPV/IRR/XIRR, depreciation, and bond pricing on fixed-point decimals; and <strong>quant</strong> covers quantitative analysis — performance and risk metrics, VaR / CVaR, CAPM and multi-factor attribution, option pricing, and portfolio optimization.",
         learnMore: {
           href: "#Features",
           text: "See stats and finance",
@@ -134,12 +134,12 @@ export const Main = {
       "Huashan 1914 Creative Park sits in central Taipei. Founded in 1914 as a winery in the Japanese colonial era and later run as the Taipei Winery, the site fell idle after production moved out in 1987 and was reborn as an arts venue in 1999. Today the city-designated historic site gathers exhibitions, performances, markets, and design brands as a landmark of Taipei's creative scene.",
     versionFeatures: "What v0.3 Sets Out to Do: ",
     versionFeaturesValue:
-      "Build outward from the foundation Pier-2 completed, expanding into new modules and new capabilities. v0.3.0 introduces the quant package for quantitative finance (portfolio metrics, overfitting diagnostics, walk-forward validation), adds AtomicDoAll for locking multiple DataLists and DataTables atomically in a single operation, brings column-level type inference to CSV and JSON reading (integer columns load as int64), adds ShowTo / ShowRangeTo / SummaryTo for writing output to any io.Writer, standardizes quantile calculation on R Type 7, ships the TWGeocoding reverse-geocoding fetcher for Taiwan, and completes a library-wide audit that fixed over 80 confirmed issues. v0.3.1 then adds the ml machine-learning package, nn deep learning, and the accel runtime, keeping model training, ONNX inference, and device acceleration in Go workflows.",
+      "Build outward from the foundation Pier-2 completed, expanding into new modules and new capabilities. v0.3.0 introduces the quant package for quantitative finance (portfolio metrics, overfitting diagnostics, walk-forward validation), adds AtomicDoAll for locking multiple DataLists and DataTables atomically in a single operation, brings column-level type inference to CSV and JSON reading (integer columns load as int64), adds ShowTo / ShowRangeTo / SummaryTo for writing output to any io.Writer, standardizes quantile calculation on R Type 7, ships the TWGeocoding reverse-geocoding fetcher for Taiwan, and completes a library-wide audit that fixed over 80 confirmed issues. v0.3.1 then adds the ml machine-learning package, nn deep learning, and the accel runtime, keeping model training, ONNX inference, and device acceleration in Go workflows. v0.3.2 grows quant into a full quantitative toolkit (VaR / CVaR tail risk, Sortino / Calmar / information ratio, beta and CAPM, multi-factor attribution, Black-Scholes option pricing and implied volatility, mean-variance portfolio optimization, and block-bootstrap simulation), adds TWStock for Taiwan market data to datafetch, brings exponentially weighted statistics and calendar resampling to the core, and extends the CLI with quant, fetch tw, ewm, and resample.",
     pierIntro: "Why This Release Line Matters: ",
     pierIntroValue:
       'Huashan 1914 Creative Park rose from the former Taipei Winery — its point was never preserving the past, but using that foundation to create what comes next. v0.3 takes the same stance: after Pier-2 filled in the pieces real-world analysis needs, Huashan starts creating outward — new specialized packages, a more rigorous statistical core, and more composable output interfaces — moving Insyra from "ready for real analysis" toward "opening new analytical ground."',
     currentNote:
-      "v0.3.1 is the latest published release in the Huashan line, themed Create for the Next.",
+      "v0.3.2 is the latest published release in the Huashan line, themed Create for the Next.",
     history: {
       text: "View version history",
       href: "#VersionHistory",

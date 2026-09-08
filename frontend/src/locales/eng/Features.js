@@ -164,7 +164,9 @@ func main() {
         title: "datafetch",
         subTitle: "Data Fetching",
         descriptions: {
-          first: `Provides data retrieval utilities including Google Maps Store reviews, Yahoo Finance market data, and <strong>TWGeocoding</strong> reverse geocoding for Taiwan (turning coordinates into county / township / village, with single-point and batch queries, built-in rate-limit handling, and optional caching).`,
+          first: `Provides data retrieval utilities including Google Maps Store reviews, Yahoo Finance market data, and <strong>TWGeocoding</strong> reverse geocoding for Taiwan (turning coordinates into county / township / village, with single-point and batch queries, built-in rate-limit handling, and optional caching).<br/>
+<br/>
+v0.3.2 adds <strong>TWStock</strong> for the Taiwan market: daily prices, institutional trades, margin balances, and the full quote table across both TWSE and TPEx, plus ex-rights reference prices and back-adjusted prices (<strong>DailyPricesAdjusted</strong>) so a return series no longer shows a fake loss on ex-dividend days. Ranges spanning months page automatically, with request throttling and retries built in.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch package documentation</a>',
         },
         collapses: {
@@ -279,7 +281,7 @@ func main() {
         title: "quant",
         subTitle: "Quantitative Finance",
         descriptions: {
-          first: `New in v0.3, the quantitative-finance package for evaluating trading strategies and portfolios: performance metrics (<strong>Sharpe</strong>, max drawdown, annualized return), backtest-overfitting diagnostics (<strong>PSR / DSR / PBO</strong>, the Bailey & López de Prado framework), and <strong>walk-forward</strong> validation.<br/>
+          first: `New in v0.3, the quantitative-finance package for evaluating trading strategies and portfolios: performance metrics (<strong>Sharpe</strong>, Sortino, Calmar, information ratio, max drawdown and drawdown series, annualized return), tail risk (<strong>VaR / CVaR</strong>, historical and parametric), market exposure and attribution (<strong>beta / CAPM</strong>, multi-factor models), option pricing (<strong>Black-Scholes</strong> and implied volatility), mean-variance <strong>portfolio optimization</strong> with the efficient frontier, <strong>block-bootstrap</strong> scenario simulation, plus backtest-overfitting diagnostics (<strong>PSR / DSR / PBO</strong>, the Bailey &amp; López de Prado framework) and <strong>walk-forward</strong> validation.<br/>
 <br/>
 Complementary to finance: where finance uses fixed-point decimals for high precision, <strong>quant</strong> follows industry convention and works in floating point for return and equity-curve analytics.`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/quant">quant package documentation</a>',

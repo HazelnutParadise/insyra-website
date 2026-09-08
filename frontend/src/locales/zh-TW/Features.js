@@ -163,7 +163,9 @@ func main() {
         title: "datafetch",
         subTitle: "資料獲取",
         descriptions: {
-          first: `提供資料獲取功能，包含 Google 地圖商家評論、Yahoo Finance 市場資料，以及台灣逆地理編碼 <strong>TWGeocoding</strong>（將經緯度轉成縣市／鄉鎮／村里，支援單點與批次查詢、內建速率限制處理與可選快取）。`,
+          first: `提供資料獲取功能，包含 Google 地圖商家評論、Yahoo Finance 市場資料，以及台灣逆地理編碼 <strong>TWGeocoding</strong>（將經緯度轉成縣市／鄉鎮／村里，支援單點與批次查詢、內建速率限制處理與可選快取）。<br/>
+<br/>
+v0.3.2 新增台股資料來源 <strong>TWStock</strong>：涵蓋上市（TWSE）與上櫃（TPEx）的每日收盤行情、三大法人買賣超、融資融券餘額與全市場報價表，並提供除權息參考價與還原股價（<strong>DailyPricesAdjusted</strong>），讓報酬序列不會在除權息日出現假跌幅。跨月區間會自動分頁，內建請求節流與重試。`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/datafetch">datafetch 套件包說明文件</a>',
         },
         collapses: {
@@ -279,7 +281,7 @@ func main() {
         title: "quant",
         subTitle: "量化金融分析",
         descriptions: {
-          first: `v0.3 全新推出的量化金融套件，用於評估交易策略與投資組合：績效指標（<strong>Sharpe</strong>、最大回撤、年化報酬）、回測過擬合診斷（<strong>PSR／DSR／PBO</strong>，Bailey & López de Prado 框架）與 <strong>walk-forward</strong> 滾動驗證。<br/>
+          first: `v0.3 全新推出的量化金融套件，用於評估交易策略與投資組合：績效指標（<strong>Sharpe</strong>、Sortino、Calmar、資訊比率、最大回撤與回撤序列、年化報酬）、尾端風險（<strong>VaR／CVaR</strong>，歷史法與參數法）、市場曝險與歸因（<strong>Beta／CAPM</strong>、多因子模型）、選擇權定價（<strong>Black-Scholes</strong> 與隱含波動率）、均異數<strong>投資組合最佳化</strong>與效率前緣、<strong>block bootstrap</strong> 情境模擬，以及回測過擬合診斷（<strong>PSR／DSR／PBO</strong>，Bailey &amp; López de Prado 框架）與 <strong>walk-forward</strong> 滾動驗證。<br/>
 <br/>
 與 finance 定位互補：finance 以定點小數追求高精度，<strong>quant</strong> 依業界慣例用浮點數處理報酬與資產曲線分析。`,
           end: '<a target="_blank" href="https://hazelnutparadise.github.io/insyra/#/quant">quant 套件包說明文件</a>',
