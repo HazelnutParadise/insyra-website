@@ -58,9 +58,12 @@ prices.Show()`,
         description: "夏普值、最大回撤、風險值、選擇權定價、投資組合最佳化，加上技術分析指標。回測結果是不是過度擬合，也有檢定幫你把關。",
         tags: ["quant", "quant/ta", "finance"],
         learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/quant", text: "看量化分析能做什麼" },
-        code: `// 股價算出日報酬，再算年化夏普值
-returns := prices.GetColByName("Close").PctChange(1).ClearNils()
+        code: `closes := prices.GetColByName("Close")
+// 技術指標：14 日 RSI
+rsi, _ := ta.RSI(closes, 14)
 
+// 日報酬與年化夏普值
+returns := closes.PctChange(1).ClearNils()
 sharpe, _ := quant.SharpeRatio(returns, 0, 252)`,
       },
       {

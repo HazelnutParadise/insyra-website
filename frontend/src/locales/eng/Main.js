@@ -58,9 +58,12 @@ prices.Show()`,
         description: "Sharpe ratio, max drawdown, VaR, option pricing, portfolio optimization, and technical indicators. Tests also tell you whether a backtest is just overfitting.",
         tags: ["quant", "quant/ta", "finance"],
         learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/quant", text: "See what quant analysis covers" },
-        code: `// Turn prices into daily returns, then an annualized Sharpe ratio
-returns := prices.GetColByName("Close").PctChange(1).ClearNils()
+        code: `closes := prices.GetColByName("Close")
+// Technical indicator: 14-day RSI
+rsi, _ := ta.RSI(closes, 14)
 
+// Daily returns and annualized Sharpe ratio
+returns := closes.PctChange(1).ClearNils()
 sharpe, _ := quant.SharpeRatio(returns, 0, 252)`,
       },
       {
