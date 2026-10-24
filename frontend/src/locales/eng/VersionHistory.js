@@ -55,7 +55,7 @@ export const VersionHistory = {
   current: {
     label: "Current version",
     version: "v0.3 — Huashan",
-    note: 'v0.3.4 is the latest published release in the Huashan line, themed "Create for the Next." See the home page for the full introduction.',
+    note: 'v0.3.5 is the latest published release in the Huashan line, themed "Create for the Next." See the home page for the full introduction.',
     backText: "Back to the current version",
     backHref: "#",
   },

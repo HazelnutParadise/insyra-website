@@ -2,7 +2,7 @@ export const Main = {
   hero: {
     slogan: "太快、太美、太簡單",
     title: "邂逅 Insyra",
-    description: "以 Insyra 為核心的 Go 資料分析生態系，涵蓋資料讀取、整理、統計、視覺化、機器學習與深度學習，並整合 Idensyra 桌面 IDE 與 Syralit 互動式資料應用框架。",
+    description: "讀資料、訓練模型、抓股價、回測策略，都能在 Go 裡一次做完。另有 Idensyra 桌面 IDE 與 Syralit 互動式資料應用框架。",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce_TW.wav",
       error: "您的瀏覽器不支援音訊播放器。",
@@ -18,6 +18,85 @@ export const Main = {
     },
     audioDescription: "聆聽 Insyra 產品介紹",
   },
+  themeSection: {
+    heading: "Insyra 能幫你做什麼",
+    subheading: "想訓練模型、抓資料、做量化，或只是整理一份報表，都從這裡開始。",
+    items: [
+      {
+        id: 1,
+        color: "#2a9d8f",
+        eyebrow: "機器學習與深度學習",
+        title: "訓練模型，不必離開 Go。",
+        description: "預測客戶會不會流失、分類圖片、跑現成的 ONNX 模型。從整理資料到訓練、評估，全都留在同一個 Go 專案裡；有 GPU 就自動加速，沒有也照樣跑。",
+        tags: ["ml", "nn", "accel"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/ml", text: "看機器學習怎麼用" },
+        code: `// 用歷史資料訓練分類模型
+model, _ := ml.FitGradientBoostingClassifier(trainX, trainY)
+
+// 對新資料做預測
+pred, _ := model.Predict(testX)`,
+      },
+      {
+        id: 2,
+        color: "#1f449b",
+        eyebrow: "接上各種資料來源",
+        title: "股價、地址、網頁，一行就變成表格。",
+        description: "台股日線、期貨、月營收，座標對應到縣市鄉鎮，Google Maps 與網頁爬蟲，還有 Yahoo 財經和資料庫。抓下來的東西直接就是能分析的表格，不用再自己轉格式。",
+        tags: ["datafetch"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/datafetch", text: "看能接哪些資料" },
+        code: `stocks, _ := datafetch.TWStock(datafetch.TWStockConfig{})
+
+// 台積電的日線資料，拿到手就是 DataTable
+prices, _ := stocks.DailyPrices("2330", from, to, datafetch.TWMarketTWSE)
+prices.Show()`,
+      },
+      {
+        id: 3,
+        color: "#d73e3e",
+        eyebrow: "量化交易",
+        title: "在下單之前，先把策略算清楚。",
+        description: "夏普值、最大回撤、風險值、選擇權定價、投資組合最佳化，加上技術分析指標。回測結果是不是過度擬合，也有檢定幫你把關。",
+        tags: ["quant", "quant/ta", "finance"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/quant", text: "看量化分析能做什麼" },
+        code: `closes := prices.GetColByName("Close")
+
+// 技術指標：14 日 RSI
+rsi, _ := ta.RSI(closes, 14)
+
+// 日報酬與年化夏普值
+returns := closes.PctChange(1).ClearNils()
+sharpe, _ := quant.SharpeRatio(returns, 0, 252)`,
+      },
+      {
+        id: 4,
+        color: "#f59e0b",
+        eyebrow: "資料處理與統計",
+        title: "從一份亂亂的 CSV，到一張一看就懂的圖。",
+        description: "讀 CSV、JSON、Parquet，清理、分組、合併、算統計，再畫成互動圖表。習慣 Excel 公式也沒問題，CCL 讓你在 Go 裡照樣寫。",
+        tags: ["DataTable", "stats", "plot", "CCL"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/stats", text: "看資料處理怎麼做" },
+        code: `// 讀進 CSV，一眼看完各欄位的概況
+dt, _ := insyra.ReadCSV_File("sales.csv", false, true)
+dt.Summary()`,
+      },
+      {
+        id: 5,
+        color: "#6f42c1",
+        eyebrow: "與 Python 生態系合作",
+        title: "Go 的速度，加上 Python 的套件。",
+        description: "需要 pandas、scikit-learn 這些 Python 套件時，不必離開 Go 專案。Insyra 會幫你準備好 Python 環境，在 Go 裡執行 Python 程式並把結果拿回來。",
+        tags: ["py", "pandas", "scikit-learn"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/py", text: "看 Python 怎麼整合" },
+        code: `// 在 Go 裡呼叫 scikit-learn，結果直接拿回 Go
+var out struct{ R2 float64 \`json:"r2"\` }
+_ = py.RunCode(&out, \`
+from sklearn.metrics import r2_score
+insyra.Return({"r2": r2_score([1, 2, 3], [1.1, 1.9, 3.2])})
+\`)`,
+      },
+    ],
+  },
+  moreAbilities: { heading: "更多能力" },
   featureItemSection: {
     features: {
       feature1: {
@@ -142,12 +221,71 @@ export const Main = {
     placeIntroValue:
       "華山1914文化創意產業園區位於台北市中心，前身是 1914 年日治時期創立的釀酒廠、後來的台北酒廠，1987 年酒廠遷出後一度閒置，1999 年起轉型為藝文展演空間。如今這片市定古蹟聚集展覽、演出、市集與文創品牌，是台北文創的代表據點。",
     versionFeatures: "v0.3 想做到什麼：",
-    versionFeaturesValue:
-      "站在 Pier-2 補齊的基礎上，向新模組與新能力擴展。v0.3.0 推出量化金融套件 quant（投資組合指標、過擬合診斷、walk-forward 驗證），新增 AtomicDoAll 一次原子鎖定多個 DataList／DataTable，CSV 與 JSON 讀取改為欄位級型別推斷（整數欄以 int64 載入），DataList／DataTable 新增 ShowTo／ShowRangeTo／SummaryTo 可輸出到任意 io.Writer，分位數計算全面統一為 R Type 7，datafetch 加入 TWGeocoding 台灣逆地理編碼，並完成全庫稽核、修正超過 80 個確認缺陷。v0.3.1 接著加入 ml 機器學習、nn 深度學習與 accel 加速執行環境，讓模型訓練、ONNX 推論與裝置加速都能留在 Go 的工作流程裡。v0.3.2 把 quant 擴充成完整的量化分析套件（VaR／CVaR 尾端風險、Sortino／Calmar／資訊比率、Beta 與 CAPM、多因子歸因、Black-Scholes 選擇權定價與隱含波動率、均異數投資組合最佳化、block bootstrap 模擬），datafetch 加入 TWStock 台股資料，核心新增 EWM 指數加權與日曆重取樣，CLI 也補上 quant、fetch tw、ewm、resample 等指令。 v0.3.3 是一次穩固底層的修正版本：整數排序在大於 2^53 時不再失去精度，CSV 能解碼 UTF-16／32 與多種東亞與歐洲編碼，新增 insyra.Cell 讓單一值在建構子攤平切片時仍佔一格，DataTable.ToCSVWithOptions 可為公式開頭的儲存格加上防護，CCL 的錯誤訊息會指出階段與位置，CLI 擋下逃出環境目錄的名稱並遮罩資料庫密碼，Google Maps 爬蟲也恢復可用。v0.3.4 讓已擬合的 StandardScaler、MinMaxScaler、RobustScaler 與 MaxAbsScaler 可以存成 JSON 再讀回，錯誤改用 %w 包裝以便 errors.Is／errors.As 辨識原因，ReadJSON 對不合法 JSON 更嚴格（相容性變動），並換上更快的 JSON 函式庫，10 萬列的表輸出 JSON 從 66 ms 降到 45 ms、讀入從 129 ms 降到 90 ms。",
+    versionFeaturesValue: "站在 Pier-2 補齊的基礎上，向新模組與新能力擴展。",
+    versionReleases: [
+          {
+                "version": "v0.3.0",
+                "items": [
+                      "推出量化金融套件 quant：投資組合指標、過擬合診斷、walk-forward 驗證。",
+                      "新增 AtomicDoAll，一次原子鎖定多個 DataList／DataTable。",
+                      "CSV 與 JSON 讀取改為欄位級型別推斷（整數欄以 int64 載入）。",
+                      "DataList／DataTable 新增 ShowTo、ShowRangeTo、SummaryTo，可輸出到任意 io.Writer。",
+                      "分位數計算全面統一為 R Type 7。",
+                      "datafetch 加入 TWGeocoding 台灣逆地理編碼。",
+                      "完成全庫稽核，修正超過 80 個確認缺陷。"
+                ]
+          },
+          {
+                "version": "v0.3.1",
+                "items": [
+                      "加入 ml 機器學習、nn 深度學習與 accel 加速執行環境，讓模型訓練、ONNX 推論與裝置加速都能留在 Go 的工作流程裡。"
+                ]
+          },
+          {
+                "version": "v0.3.2",
+                "items": [
+                      "把 quant 擴充成完整的量化分析套件：VaR／CVaR 尾端風險、Sortino／Calmar／資訊比率、Beta 與 CAPM、多因子歸因、Black-Scholes 選擇權定價與隱含波動率、均異數投資組合最佳化、block bootstrap 模擬。",
+                      "datafetch 加入 TWStock 台股資料。",
+                      "核心新增 EWM 指數加權與日曆重取樣。",
+                      "CLI 補上 quant、fetch tw、ewm、resample 等指令。"
+                ]
+          },
+          {
+                "version": "v0.3.3",
+                "items": [
+                      "整數排序在大於 2^53 時不再失去精度。",
+                      "CSV 能解碼 UTF-16／32 與多種東亞與歐洲編碼。",
+                      "新增 insyra.Cell，讓單一值在建構子攤平切片時仍佔一格。",
+                      "DataTable.ToCSVWithOptions 可為公式開頭的儲存格加上防護。",
+                      "CCL 的錯誤訊息會指出階段與位置。",
+                      "CLI 擋下逃出環境目錄的名稱，並遮罩資料庫密碼。",
+                      "Google Maps 爬蟲恢復可用。"
+                ]
+          },
+          {
+                "version": "v0.3.4",
+                "items": [
+                      "已擬合的 StandardScaler、MinMaxScaler、RobustScaler 與 MaxAbsScaler 可以存成 JSON 再讀回。",
+                      "錯誤改用 %w 包裝，方便 errors.Is／errors.As 辨識原因。",
+                      "ReadJSON 對不合法 JSON 更嚴格（相容性變動）。",
+                      "換上更快的 JSON 函式庫：10 萬列的表輸出 JSON 從 66 ms 降到 45 ms，讀入從 129 ms 降到 90 ms。"
+                ]
+          },
+          {
+                "version": "v0.3.5",
+                "items": [
+                      "nn 的訓練步驟可以留在 GPU 上。",
+                      "新增技術分析指標套件 quant/ta。",
+                      "quant 與 stats 補上市場效率檢定：Fama-MacBeth、事件研究、資料窺探檢定、變異數比。",
+                      "datafetch 可讀台灣期貨、零股與月營收資料。",
+                      "數項相容性變動，包含最低需要 Go 1.26。"
+                ]
+          }
+    ],
     pierIntro: "這個版本線的重要性：",
     pierIntroValue:
       "華山文創園區從舊酒廠轉型為創意場域，重點從來不是保存過去，而是站在既有基礎上創造下一階段。v0.3 是同樣的定位：Pier-2 把真實資料分析需要的環節補齊之後，Huashan 開始向外開創——新的專業套件、更嚴謹的統計底層、更可組合的輸出介面，讓 Insyra 從「能用於真實分析」走向「開拓新的分析場景」。",
-    currentNote: "目前最新發布版本為 v0.3.4，延續 Huashan 華山「Create for the Next，開創新數界」的主題。",
+    currentNote: "目前最新發布版本為 v0.3.5，延續 Huashan 華山「Create for the Next，開創新數界」的主題。",
     history: {
       text: "查看歷史版本",
       href: "#VersionHistory",
