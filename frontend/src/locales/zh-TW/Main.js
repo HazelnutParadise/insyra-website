@@ -2,7 +2,7 @@ export const Main = {
   hero: {
     slogan: "太快、太美、太簡單",
     title: "邂逅 Insyra",
-    description: "以 Insyra 為核心的 Go 資料分析生態系，涵蓋資料讀取、整理、統計、視覺化、機器學習與深度學習，並整合 Idensyra 桌面 IDE 與 Syralit 互動式資料應用框架。",
+    description: "讀資料、訓練模型、抓股價、回測策略，都能在 Go 裡一次做完。另有 Idensyra 桌面 IDE 與 Syralit 互動式資料應用框架。",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce_TW.wav",
       error: "您的瀏覽器不支援音訊播放器。",
@@ -18,6 +18,81 @@ export const Main = {
     },
     audioDescription: "聆聽 Insyra 產品介紹",
   },
+  themeSection: {
+    heading: "Insyra 能幫你做什麼",
+    subheading: "想訓練模型、抓資料、做量化，或只是整理一份報表，都從這裡開始。",
+    items: [
+      {
+        id: 1,
+        color: "#2a9d8f",
+        eyebrow: "機器學習與深度學習",
+        title: "訓練模型，不必離開 Go。",
+        description: "預測客戶會不會流失、分類圖片、跑現成的 ONNX 模型。從整理資料到訓練、評估，全都留在同一個 Go 專案裡；有 GPU 就自動加速，沒有也照樣跑。",
+        tags: ["ml", "nn", "accel"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/ml", text: "看機器學習怎麼用" },
+        code: `// 用歷史資料訓練分類模型
+model, _ := ml.FitGradientBoostingClassifier(trainX, trainY)
+
+// 對新資料做預測
+pred, _ := model.Predict(testX)`,
+      },
+      {
+        id: 2,
+        color: "#1f449b",
+        eyebrow: "接上各種資料來源",
+        title: "股價、地址、網頁，一行就變成表格。",
+        description: "台股日線、期貨、月營收，座標對應到縣市鄉鎮，Google Maps 與網頁爬蟲，還有 Yahoo 財經和資料庫。抓下來的東西直接就是能分析的表格，不用再自己轉格式。",
+        tags: ["datafetch"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/datafetch", text: "看能接哪些資料" },
+        code: `stocks, _ := datafetch.TWStock(datafetch.TWStockConfig{})
+
+// 台積電的日線資料，拿到手就是 DataTable
+prices, _ := stocks.DailyPrices("2330", from, to, datafetch.TWMarketTWSE)
+prices.Show()`,
+      },
+      {
+        id: 3,
+        color: "#d73e3e",
+        eyebrow: "量化交易",
+        title: "在下單之前，先把策略算清楚。",
+        description: "夏普值、最大回撤、風險值、選擇權定價、投資組合最佳化，加上技術分析指標。回測結果是不是過度擬合，也有檢定幫你把關。",
+        tags: ["quant", "quant/ta", "finance"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/quant", text: "看量化分析能做什麼" },
+        code: `// 股價算出日報酬，再算年化夏普值
+returns := prices.GetColByName("Close").PctChange(1).ClearNils()
+
+sharpe, _ := quant.SharpeRatio(returns, 0, 252)`,
+      },
+      {
+        id: 4,
+        color: "#f59e0b",
+        eyebrow: "資料處理與統計",
+        title: "從一份亂亂的 CSV，到一張一看就懂的圖。",
+        description: "讀 CSV、JSON、Parquet，清理、分組、合併、算統計，再畫成互動圖表。習慣 Excel 公式也沒問題，CCL 讓你在 Go 裡照樣寫。",
+        tags: ["DataTable", "stats", "plot", "CCL"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/stats", text: "看資料處理怎麼做" },
+        code: `// 讀進 CSV，一眼看完各欄位的概況
+dt, _ := insyra.ReadCSV_File("sales.csv", false, true)
+dt.Summary()`,
+      },
+      {
+        id: 5,
+        color: "#6f42c1",
+        eyebrow: "與 Python 生態系合作",
+        title: "Go 的速度，加上 Python 的套件。",
+        description: "需要 pandas、scikit-learn 這些 Python 套件時，不必離開 Go 專案。Insyra 會幫你準備好 Python 環境，在 Go 裡執行 Python 程式並把結果拿回來。",
+        tags: ["py", "pandas", "scikit-learn"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/py", text: "看 Python 怎麼整合" },
+        code: `// 在 Go 裡呼叫 scikit-learn，結果直接拿回 Go
+var out struct{ R2 float64 \`json:"r2"\` }
+_ = py.RunCode(&out, \`
+from sklearn.metrics import r2_score
+insyra.Return({"r2": r2_score([1, 2, 3], [1.1, 1.9, 3.2])})
+\`)`,
+      },
+    ],
+  },
+  moreAbilities: { heading: "更多能力" },
   featureItemSection: {
     features: {
       feature1: {

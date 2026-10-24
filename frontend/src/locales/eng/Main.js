@@ -3,7 +3,7 @@ export const Main = {
     slogan: "Fast, Lovely, Easy to Use",
     title: "Meet Insyra",
     description:
-      "A Go data analysis ecosystem spanning data loading, wrangling, statistics, visualization, machine learning, and deep learning, alongside the Idensyra desktop IDE and Syralit for interactive data apps.",
+      "Load data, train models, fetch stock prices, and backtest strategies, all in Go. Plus the Idensyra desktop IDE and the Syralit framework for interactive data apps.",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce.wav",
       error: "Your browser does not support the audio player.",
@@ -18,6 +18,81 @@ export const Main = {
       mcp: "MCP Server",
     },
   },
+  themeSection: {
+    heading: "What can Insyra do for you?",
+    subheading: "Train a model, pull in data, test a trading idea, or just tidy up a report. Start here.",
+    items: [
+      {
+        id: 1,
+        color: "#2a9d8f",
+        eyebrow: "Machine learning & deep learning",
+        title: "Train models without leaving Go.",
+        description: "Predict churn, classify images, run ready-made ONNX models. Wrangling, training, and evaluation all live in one Go project, with GPU speed-ups when a GPU is there and the same results on CPU when it isn't.",
+        tags: ["ml", "nn", "accel"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/ml", text: "See how machine learning works" },
+        code: `// Train a classifier on historical data
+model, _ := ml.FitGradientBoostingClassifier(trainX, trainY)
+
+// Predict on new data
+pred, _ := model.Predict(testX)`,
+      },
+      {
+        id: 2,
+        color: "#1f449b",
+        eyebrow: "Many data sources, one place",
+        title: "Prices, addresses, web pages: one line and it's a table.",
+        description: "Taiwan stock prices, futures, monthly revenue, coordinates mapped to counties and towns, Google Maps and web crawlers, plus Yahoo Finance and databases. What you fetch is already an analysis-ready table.",
+        tags: ["datafetch"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/datafetch", text: "See what you can connect" },
+        code: `stocks, _ := datafetch.TWStock(datafetch.TWStockConfig{})
+
+// TSMC daily prices arrive as a DataTable
+prices, _ := stocks.DailyPrices("2330", from, to, datafetch.TWMarketTWSE)
+prices.Show()`,
+      },
+      {
+        id: 3,
+        color: "#d73e3e",
+        eyebrow: "Quant trading",
+        title: "Know your strategy's numbers before you place the order.",
+        description: "Sharpe ratio, max drawdown, VaR, option pricing, portfolio optimization, and technical indicators. Tests also tell you whether a backtest is just overfitting.",
+        tags: ["quant", "quant/ta", "finance"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/quant", text: "See what quant analysis covers" },
+        code: `// Turn prices into daily returns, then an annualized Sharpe ratio
+returns := prices.GetColByName("Close").PctChange(1).ClearNils()
+
+sharpe, _ := quant.SharpeRatio(returns, 0, 252)`,
+      },
+      {
+        id: 4,
+        color: "#f59e0b",
+        eyebrow: "Data wrangling & statistics",
+        title: "From a messy CSV to a chart that explains itself.",
+        description: "Read CSV, JSON, and Parquet; clean, group, merge, and compute statistics; then draw interactive charts. Prefer Excel-style formulas? CCL lets you write them in Go.",
+        tags: ["DataTable", "stats", "plot", "CCL"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/stats", text: "See how data wrangling works" },
+        code: `// Load a CSV and get an instant overview of every column
+dt, _ := insyra.ReadCSV_File("sales.csv", false, true)
+dt.Summary()`,
+      },
+      {
+        id: 5,
+        color: "#6f42c1",
+        eyebrow: "Works with the Python ecosystem",
+        title: "Go's speed, Python's packages.",
+        description: "Need pandas or scikit-learn? Stay in your Go project. Insyra prepares the Python environment, runs Python code from Go, and hands the result back.",
+        tags: ["py", "pandas", "scikit-learn"],
+        learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/py", text: "See how Python integration works" },
+        code: `// Call scikit-learn from Go and get the result back
+var out struct{ R2 float64 \`json:"r2"\` }
+_ = py.RunCode(&out, \`
+from sklearn.metrics import r2_score
+insyra.Return({"r2": r2_score([1, 2, 3], [1.1, 1.9, 3.2])})
+\`)`,
+      },
+    ],
+  },
+  moreAbilities: { heading: "More capabilities" },
   featureItemSection: {
     features: {
       feature1: {
