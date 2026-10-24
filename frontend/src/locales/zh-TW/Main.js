@@ -59,6 +59,7 @@ prices.Show()`,
         tags: ["quant", "quant/ta", "finance"],
         learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/quant", text: "看量化分析能做什麼" },
         code: `closes := prices.GetColByName("Close")
+
 // 技術指標：14 日 RSI
 rsi, _ := ta.RSI(closes, 14)
 

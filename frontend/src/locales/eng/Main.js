@@ -59,6 +59,7 @@ prices.Show()`,
         tags: ["quant", "quant/ta", "finance"],
         learnMore: { href: "https://hazelnutparadise.github.io/insyra/#/quant", text: "See what quant analysis covers" },
         code: `closes := prices.GetColByName("Close")
+
 // Technical indicator: 14-day RSI
 rsi, _ := ta.RSI(closes, 14)
 
