@@ -3,6 +3,9 @@
     <!-- Hero Section -->
     <Hero :currentMessages="currentMessages" />
 
+    <!-- 主題區：用「想做的事」介紹 Insyra -->
+    <ThemeSection :themeSection="currentMessages.Main.themeSection" />
+
     <!-- Version Introduction Section（只介紹當前 minor 版，見 CLAUDE.md） -->
     <section class="version-intro">
       <div class="container">
@@ -48,24 +51,44 @@
       </div>
     </section>
 
-    <!-- Features Section -->
-    <FeatureItemSection :featureItemSection="currentMessages.Main.featureItemSection" />
+    <!-- 更多能力：原功能卡縮成連結標籤 -->
+    <section class="more-abilities">
+      <div class="container">
+        <h2>{{ currentMessages.Main.moreAbilities.heading }}</h2>
+        <ul>
+          <li v-for="feature in abilities" :key="feature.id">
+            <a :href="feature.learnMore.href" :target="isExternal(feature.learnMore.href) ? '_blank' : null"
+              :rel="isExternal(feature.learnMore.href) ? 'noopener noreferrer' : null">{{ feature.title }}</a>
+          </li>
+        </ul>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import Hero from '../components/Hero.vue'
-import FeatureItemSection from '../components/FeatureItemSection.vue'
+import ThemeSection from '../components/ThemeSection.vue'
 
 export default {
   components: {
     Hero,
-    FeatureItemSection,
+    ThemeSection,
   },
   props: {
     currentMessages: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    abilities() {
+      return Object.values(this.currentMessages.Main.featureItemSection.features).sort((a, b) => a.id - b.id);
+    },
+  },
+  methods: {
+    isExternal(href) {
+      return /^https?:\/\//.test(href);
     },
   },
 };
@@ -298,5 +321,49 @@ export default {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
   text-decoration: none;
+}
+
+.more-abilities {
+  padding: 56px 0 64px;
+  background: #d73e3e;
+}
+
+.more-abilities .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.more-abilities h2 {
+  margin-bottom: 24px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.8rem;
+}
+
+.more-abilities ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.more-abilities a {
+  display: block;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  color: #a82a2a;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.more-abilities a:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
 }
 </style>
