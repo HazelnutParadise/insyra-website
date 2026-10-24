@@ -26,8 +26,17 @@
             </div>
           </div>
           <!-- 下排：較長的功能段落與版本註記改為全寬 -->
-          <p class="version-features-text"><strong>{{ currentMessages.Main.versionIntro.versionFeatures }}</strong>{{
-            currentMessages.Main.versionIntro.versionFeaturesValue }}</p>
+          <div class="version-features-text">
+            <p><strong>{{ currentMessages.Main.versionIntro.versionFeatures }}</strong>{{
+              currentMessages.Main.versionIntro.versionFeaturesValue }}</p>
+            <div v-for="release in currentMessages.Main.versionIntro.versionReleases" :key="release.version"
+              class="version-release">
+              <h4>{{ release.version }}</h4>
+              <ul>
+                <li v-for="item in release.items" :key="item">{{ item }}</li>
+              </ul>
+            </div>
+          </div>
           <p class="version-note">{{ currentMessages.Main.versionIntro.currentNote }}</p>
         </div>
         <div class="version-history-link">
@@ -151,6 +160,32 @@ export default {
   color: #667eea;
   font-weight: 600;
   font-size: 1.3rem;
+}
+
+.version-features-text > p {
+  margin-bottom: 1rem;
+}
+
+.version-release {
+  margin-bottom: 1rem;
+}
+
+.version-release h4 {
+  margin: 0 0 0.35rem;
+  color: #667eea;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.version-release ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.version-release li {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 0.25rem;
 }
 
 .version-image {
