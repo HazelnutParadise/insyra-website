@@ -55,7 +55,7 @@ export default {
   }
   .title-section p {
     max-width: 300px;
-    text-align: start;
+    text-align: center;
   }
 }
 </style>
