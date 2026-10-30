@@ -82,11 +82,11 @@ export default {
   text-align: center;
   font-size: 2.4rem;
   color: #1f449b;
-  transform: translateY(-50%);
+  transform: translateY(-30%);
 }
 
 .theme-subheading {
-  margin: -8px auto 48px;
+  margin: 8px auto 48px;
   text-align: center;
   font-size: 1.2rem;
   color: #4a5568;
