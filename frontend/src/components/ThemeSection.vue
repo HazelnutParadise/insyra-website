@@ -38,7 +38,27 @@ export default {
 
 <style scoped>
 .theme-section {
+  position: relative;
   background: #ffffff;
+}
+
+.theme-section::before,
+.theme-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 5px dashed #d73e3e;
+  pointer-events: none;
+}
+
+.theme-section::before {
+  left: 14px;
+}
+
+.theme-section::after {
+  right: 14px;
 }
 
 .theme-container {
