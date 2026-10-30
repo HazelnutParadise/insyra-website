@@ -39,6 +39,7 @@ export default {
 <style scoped>
 .theme-section {
   position: relative;
+  z-index: 1;
   background: #ffffff;
 }
 
@@ -50,8 +51,6 @@ export default {
   bottom: 0;
   width: 0;
   border-left: 5px dashed #d73e3e;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 72px);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 72px);
   pointer-events: none;
 }
 
@@ -70,14 +69,24 @@ export default {
 }
 
 .theme-heading {
-  padding-top: 64px;
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 12px 40px;
+  background: #ffffff;
+  border: 5px dashed #d73e3e;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-size: 2.4rem;
   color: #1f449b;
+  transform: translateY(-50%);
 }
 
 .theme-subheading {
-  margin: 12px auto 48px;
+  margin: -8px auto 48px;
   text-align: center;
   font-size: 1.2rem;
   color: #4a5568;
@@ -186,7 +195,8 @@ export default {
   }
 
   .theme-heading {
-    font-size: 1.9rem;
+    padding: 10px 24px;
+    font-size: 1.5rem;
   }
 
   .theme-title {
