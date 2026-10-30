@@ -170,6 +170,10 @@ export default {
 
 @media (max-width: 800px) {
 
+  .theme-container {
+    padding: 0 40px;
+  }
+
   .theme-body,
   .theme-body-reverse {
     flex-direction: column;
