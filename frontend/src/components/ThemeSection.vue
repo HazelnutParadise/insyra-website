@@ -50,6 +50,8 @@ export default {
   bottom: 0;
   width: 0;
   border-left: 5px dashed #d73e3e;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 72px);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 72px);
   pointer-events: none;
 }
 
