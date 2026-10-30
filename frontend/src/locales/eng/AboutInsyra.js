@@ -1,6 +1,6 @@
 export const AboutInsyra = {
         title: 'What is Insyra',
-        description: 'Insyra is the Go data analysis ecosystem, built around the <strong>Insyra</strong> analysis library, the <strong>Idensyra</strong> desktop IDE, and <strong>Syralit</strong> for building interactive data apps. From routine data processing and large-scale analysis to turning results into apps anyone can use, the Insyra ecosystem lets you do it all with greater speed and fewer lines of code.',
+        description: 'The Go data analysis ecosystem. Analyze, build, share.',
         whyCreate: {
             title: 'Why We Created Insyra',
             description: 'Golang has excellent performance and parallel processing capabilities, but its ecosystem in the field of data analysis has always lacked a complete and mature analysis library like Pandas. Insyra was born in the summer of 2024 to fill this gap, providing a powerful data analysis solution for Go that rivals Pandas, meeting the diverse needs from simple data processing to large-scale data sets. Insyra was born out of the need for high performance, ease of use, and seamless integration with existing tools. Many existing solutions either perform poorly or are too complex to learn, making them difficult to use in diverse and complex data environments.',

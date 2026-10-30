@@ -2,7 +2,7 @@ export const Main = {
   hero: {
     slogan: "太快、太美、太簡單",
     title: "邂逅 Insyra",
-    description: "讀資料、訓練模型、抓股價、回測策略，都能在 Go 裡一次做完。另有 Idensyra 桌面 IDE 與 Syralit 互動式資料應用框架。",
+    description: "讀資料、訓練模型、抓股價、回測策略，一個 Go 全包。",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce_TW.wav",
       error: "您的瀏覽器不支援音訊播放器。",

@@ -4,7 +4,7 @@ export const Syralit = {
   subtitle:
     "A Go-native, Streamlit-inspired framework for data apps, dashboards, and AI tools",
   description:
-    "Write Go functions, get a live web app — no JavaScript, no HTML templates, no frontend build step. Syralit lets you build interactive data applications in plain Go, with first-class support for Insyra's DataTable and DataList.",
+    "Write a Go function. Get a live web app. No JavaScript, no frontend build.",
   heroArrowLabel: "Live App",
   repo: {
     text: "View Syralit Source",

@@ -3,7 +3,7 @@ export const Syralit = {
   title: "用 Go 寫互動式資料應用",
   subtitle: "受 Streamlit 啟發的 Go 原生框架，資料應用、儀表板與 AI 工具一次到位",
   description:
-    "寫 Go 函式，就得到一個即時的 web app — 不寫 JavaScript、不寫 HTML 模板、不需要前端 build 步驟。Syralit 讓你用熟悉的 Go 直接打造互動式資料應用，並對 Insyra 的 DataTable 與 DataList 提供 first-class 支援。",
+    "寫一個 Go 函式，就得到一個即時的 web app。不寫 JavaScript，不用前端 build。",
   heroArrowLabel: "Live App",
   repo: {
     text: "查看 Syralit 原始碼",

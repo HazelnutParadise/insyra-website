@@ -19,7 +19,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 320px;
+  min-height: 320px;
   text-align: center;
   padding: 60px 20px;
   background-color: #f5f5f5;
@@ -45,7 +45,7 @@ export default {
 
 @media (max-width: 768px) {
   .title-section {
-    height: 400px;
+    min-height: 400px;
     background-image: 
     linear-gradient(45deg, #fcc366 10%, transparent 10%, transparent 90%, transparent 90%, transparent),
     linear-gradient(45deg, transparent 10%, transparent 10%, transparent 90%, #a3c4f3 90%, #a3c4f3);
@@ -55,7 +55,7 @@ export default {
   }
   .title-section p {
     max-width: 300px;
-    text-align: start;
+    text-align: center;
   }
 }
 </style>

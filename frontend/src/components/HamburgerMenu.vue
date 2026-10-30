@@ -32,13 +32,13 @@
                     }}</a>
                 </li>
                 <li>
-                    <a @click="selectPage('Idensyra')">{{
-                        currentMessages.navbar.idensyra
+                    <a class="menu-featured" @click="selectPage('Syralit')">{{
+                        currentMessages.navbar.syralit
                     }}</a>
                 </li>
                 <li>
-                    <a @click="selectPage('Syralit')">{{
-                        currentMessages.navbar.syralit
+                    <a class="menu-muted" @click="selectPage('Idensyra')">{{
+                        currentMessages.navbar.idensyra
                     }}</a>
                 </li>
                 <li>
@@ -99,6 +99,15 @@ export default {
 <style scoped>
 a {
     cursor: pointer;
+}
+
+a.menu-featured {
+    color: #d97706;
+    font-weight: 700;
+}
+
+a.menu-muted {
+    opacity: 0.65;
 }
 
 .hamburger-menu {

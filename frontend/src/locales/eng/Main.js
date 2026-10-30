@@ -3,7 +3,7 @@ export const Main = {
     slogan: "Fast, Lovely, Easy to Use",
     title: "Meet Insyra",
     description:
-      "Load data, train models, fetch stock prices, and backtest strategies, all in Go. Plus the Idensyra desktop IDE and the Syralit framework for interactive data apps.",
+      "Load data, train models, fetch prices, backtest strategies. All in Go.",
     audio: {
       url: "https://src.hazelnut-paradise.com/Insyra_introduce.wav",
       error: "Your browser does not support the audio player.",
