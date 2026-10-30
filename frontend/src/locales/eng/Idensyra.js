@@ -5,7 +5,7 @@ export const Idensyra = {
 
   // Short marketing-oriented description (landing page tone)
   description:
-    "Built with Wails v2, Idensyra is a lightweight yet formidable Go data analysis IDE. It features a built-in Yaegi runtime and the same editor as Visual Studio Code, with pre-installed Insyra. It is compatible with Jupyter Notebook's .ipynb files and offers the advanced .igonb interactive notebook, supporting Go and Python to each play to their strengths within a single workflow. Enjoy a pleasant data analysis experience without complex environment setup.",
+    "Built-in Yaegi runtime and a VS Code editor. Opens your .ipynb files.",
 
   // Primary CTAs
   downloadButton: { text: "Download Idensyra" },

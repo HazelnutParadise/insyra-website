@@ -2,7 +2,7 @@ export const Idensyra = {
   title: "輕巧而強大的資料分析IDE",
   subtitle: "開箱即用的桌面 IDE，內建 Insyra 與 Go 執行環境",
   description:
-    "Idensyra 基於 Wails v2 構建，是一款輕量卻不可小覷的 Go 資料分析 IDE。內建 Yaegi 即時執行環境與 Visual Studio Code 同款編輯器，並預裝 Insyra。同時相容 Jupyter Notebook 的 .ipynb 檔案，並提供更先進的互動式筆記本（igonb），支援 Go 與 Python 在同一個工作流程中各自發揮所長。讓您無需設定複雜環境即可享受愉快的資料分析體驗。",
+    "內建 Yaegi 即時執行與 VS Code 同款編輯器，也能開啟 .ipynb。",
   downloadButton: {
     text: "下載 Idensyra",
   },
