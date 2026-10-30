@@ -54,11 +54,11 @@ export default {
 }
 
 .theme-section::before {
-  left: 14px;
+  left: clamp(14px, calc((100vw - 1100px) / 2 - 36px), 64px);
 }
 
 .theme-section::after {
-  right: 14px;
+  right: clamp(14px, calc((100vw - 1100px) / 2 - 36px), 64px);
 }
 
 .theme-container {
@@ -168,11 +168,13 @@ export default {
   text-align: left;
 }
 
-@media (max-width: 800px) {
-
+@media (max-width: 1180px) {
   .theme-container {
     padding: 0 40px;
   }
+}
+
+@media (max-width: 800px) {
 
   .theme-body,
   .theme-body-reverse {
