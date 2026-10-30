@@ -38,7 +38,28 @@ export default {
 
 <style scoped>
 .theme-section {
+  position: relative;
+  z-index: 1;
   background: #ffffff;
+}
+
+.theme-section::before,
+.theme-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 5px dashed #d73e3e;
+  pointer-events: none;
+}
+
+.theme-section::before {
+  left: clamp(14px, calc((100vw - 1100px) / 2 - 36px), 64px);
+}
+
+.theme-section::after {
+  right: clamp(14px, calc((100vw - 1100px) / 2 - 36px), 64px);
 }
 
 .theme-container {
@@ -48,14 +69,24 @@ export default {
 }
 
 .theme-heading {
-  padding-top: 64px;
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 12px 40px;
+  background: #ffffff;
+  border: 5px solid transparent;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
   text-align: center;
   font-size: 2.4rem;
   color: #1f449b;
+  transform: translateY(-30%);
 }
 
 .theme-subheading {
-  margin: 12px auto 48px;
+  margin: 8px auto 48px;
   text-align: center;
   font-size: 1.2rem;
   color: #4a5568;
@@ -148,6 +179,12 @@ export default {
   text-align: left;
 }
 
+@media (max-width: 1180px) {
+  .theme-container {
+    padding: 0 40px;
+  }
+}
+
 @media (max-width: 800px) {
 
   .theme-body,
@@ -158,7 +195,8 @@ export default {
   }
 
   .theme-heading {
-    font-size: 1.9rem;
+    padding: 10px 24px;
+    font-size: 1.5rem;
   }
 
   .theme-title {
