@@ -35,13 +35,13 @@
                 }}</a>
             </li>
             <li>
-                <a href="#Idensyra" @click.prevent="selectPage('Idensyra')">{{
-                    currentMessages.navbar.idensyra
+                <a class="nav-featured" href="#Syralit" @click.prevent="selectPage('Syralit')">{{
+                    currentMessages.navbar.syralit
                 }}</a>
             </li>
             <li>
-                <a href="#Syralit" @click.prevent="selectPage('Syralit')">{{
-                    currentMessages.navbar.syralit
+                <a class="nav-muted" href="#Idensyra" @click.prevent="selectPage('Idensyra')">{{
+                    currentMessages.navbar.idensyra
                 }}</a>
             </li>
             <li>
@@ -154,6 +154,15 @@ a {
 
 .nav-menu li a:hover {
     text-decoration: underline;
+}
+
+.nav-menu li a.nav-featured {
+    color: #f9ac41;
+    font-weight: 700;
+}
+
+.nav-menu li a.nav-muted {
+    opacity: 0.65;
 }
 
 @media (max-width: 1280px) {
