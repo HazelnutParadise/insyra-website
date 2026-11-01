@@ -17,6 +17,7 @@
       color: 'var(--insyra-red)',
       size: 'large',
       href: '#HowToUse',
+      class: 'hero-main-btn',
     }" />
     <br />
     <div class="hero-button-container">
@@ -131,6 +132,12 @@ export default {
   flex-wrap: wrap;
   /* allow buttons to wrap on smaller screens */
   align-items: center;
+}
+
+/* Vuetify picks a filled button's text colour only from a colour it can parse,
+   and it cannot parse var(--…), so the filled button states its own. */
+:deep(.hero-main-btn) {
+  color: var(--white) !important;
 }
 
 .hero-button-container :deep(.hero-docs-btn) {

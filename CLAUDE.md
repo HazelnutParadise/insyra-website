@@ -61,5 +61,6 @@ Insyra（`github.com/HazelnutParadise/insyra`）官方網站的原始碼。
 ## 顏色
 
 - 所有顏色都定義在 `frontend/src/theme.css` 的 CSS 變數裡，元件、樣式和文案資料只寫 `var(--…)`，不直接寫色號、`rgb()` 或 `white`／`black` 這類顏色名稱。
+- Vuetify 元件的 `color` 傳 `var(--…)` 時，Vuetify 不會自動算文字顏色，實心按鈕要自己指定文字顏色。
 - 需要透明度時用對應的 `-rgb` 變數：`rgba(var(--insyra-orange-rgb), 0.4)`。
 - 開頭的 9 個 `--insyra-*` 是品牌配色，跟 Insyra 函式庫圖表配色（`../insyra/internal/palette/palette.go`）同一組、同一順序，改其中一邊時另一邊要一起改。`--insyra-cream` 是品牌底色，只當頁面或卡片的背景，不是圖表系列色，所以不在函式庫的配色裡。
