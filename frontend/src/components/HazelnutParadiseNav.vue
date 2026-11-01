@@ -14,7 +14,7 @@ onMounted(async () => {
 <style scoped>
 #navbar-placeholder {
     padding: 10px 40px;
-    background-color: #000;
+    background-color: var(--black);
     margin-bottom: 0px;
     padding-bottom: 0px;
 }

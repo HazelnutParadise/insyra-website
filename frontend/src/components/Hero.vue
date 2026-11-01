@@ -14,7 +14,7 @@
     </div>
 
     <HeroButton :currentMessages="currentMessages.Main.hero.button.main" :settings="{
-      color: '#d73e3e',
+      color: 'var(--insyra-red)',
       size: 'large',
       href: '#HowToUse',
     }" />
@@ -22,7 +22,7 @@
     <div class="hero-button-container">
       <HeroButton :currentMessages="currentMessages.Main.hero.button.docs" :settings="{
         variant: 'tonal',
-        color: '#f59e0b',
+        color: 'var(--insyra-orange)',
         href: 'https://hazelnutparadise.github.io/insyra/',
         target: '_blank',
         rel: 'noopener noreferrer',
@@ -30,28 +30,28 @@
       }" />
       <HeroButton :currentMessages="currentMessages.Main.hero.button.secondary1" :settings="{
         variant: 'tonal',
-        color: '#1f449b',
+        color: 'var(--insyra-blue)',
         href: 'https://pkg.go.dev/github.com/HazelnutParadise/insyra',
         target: '_blank',
         rel: 'noopener noreferrer',
       }" />
       <HeroButton :currentMessages="currentMessages.Main.hero.button.chat" :settings="{
         variant: 'tonal',
-        color: '#2a9d8f',
+        color: 'var(--insyra-teal)',
         href: 'https://context7.com/hazelnutparadise/insyra?tab=chat',
         target: '_blank',
         rel: 'noopener noreferrer',
       }" />
       <HeroButton :currentMessages="currentMessages.Main.hero.button.mcp" :settings="{
         variant: 'tonal',
-        color: '#6f42c1',
+        color: 'var(--insyra-purple)',
         href: 'https://gitmcp.io/HazelnutParadise/insyra',
         target: '_blank',
         rel: 'noopener noreferrer',
       }" />
       <HeroButton :currentMessages="currentMessages.Main.hero.button.secondary2" :settings="{
         variant: 'outlined',
-        color: '#1f449b',
+        color: 'var(--insyra-blue)',
         href: 'https://github.com/HazelnutParadise/insyra',
         target: '_blank',
         rel: 'noopener noreferrer',
@@ -81,12 +81,12 @@ export default {
 .hero {
   text-align: center;
   padding: 75px 20px;
-  background-color: #f5f5f5;
+  background-color: var(--gray-96b);
   /* 添加斜線 */
   background-image:
-    /* linear-gradient(-12deg, #adc3e6 20%, transparent 20%, transparent 80%, transparent 80%, transparent), */
-    linear-gradient(45deg, #f9ac41 25%, transparent 25%, transparent 75%, #f4f4f4 75%, transparent),
-    linear-gradient(45deg, transparent 25%, transparent 25%, transparent 75%, #1f449b 75%, #1f449b);
+    /* linear-gradient(-12deg, var(--blue-79) 20%, transparent 20%, transparent 80%, transparent 80%, transparent), */
+    linear-gradient(45deg, var(--insyra-orange) 25%, transparent 25%, transparent 75%, var(--gray-96) 75%, transparent),
+    linear-gradient(45deg, transparent 25%, transparent 25%, transparent 75%, var(--insyra-blue) 75%, var(--insyra-blue));
 }
 
 
@@ -94,20 +94,20 @@ export default {
 .hero h1 {
   font-size: 48px;
   margin-bottom: 20px;
-  color: #1f449b;
+  color: var(--insyra-blue);
 }
 
 .hero h2 {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 5px;
-  color: #1f449b;
+  color: var(--insyra-blue);
 }
 
 .hero p {
   font-size: 18px;
   margin-bottom: 30px;
-  color: #1f449b;
+  color: var(--insyra-blue);
 }
 
 .hero-description {
@@ -118,8 +118,8 @@ export default {
 
 .hero button {
   padding: 10px 20px;
-  background-color: #d73e3e;
-  color: #ffffff;
+  background-color: var(--insyra-red);
+  color: var(--white);
   border: none;
   cursor: pointer;
 }
@@ -134,23 +134,23 @@ export default {
 }
 
 .hero-button-container :deep(.hero-docs-btn) {
-  background: rgba(255, 255, 255, 0.96) !important;
-  color: #c96b00 !important;
-  border: 2px solid #f2b24c !important;
-  box-shadow: 0 8px 22px rgba(201, 107, 0, 0.2);
+  background: rgba(var(--white-rgb), 0.96) !important;
+  color: var(--orange-39) !important;
+  border: 2px solid var(--orange-62) !important;
+  box-shadow: 0 8px 22px rgba(var(--orange-39-rgb), 0.2);
   backdrop-filter: blur(4px);
 }
 
 .hero-button-container :deep(.hero-docs-btn:hover) {
-  background: #ffffff !important;
-  box-shadow: 0 12px 28px rgba(201, 107, 0, 0.28);
+  background: var(--white) !important;
+  box-shadow: 0 12px 28px rgba(var(--orange-39-rgb), 0.28);
 }
 
 @media (max-width: 768px) {
   .hero {
     background-image:
-      linear-gradient(45deg, #f9ac41 20%, transparent 20%, transparent 80%, #f4f4f4 80%, transparent),
-      linear-gradient(45deg, transparent 20%, transparent 20%, transparent 80%, #1f449b 80%, #1f449b);
+      linear-gradient(45deg, var(--insyra-orange) 20%, transparent 20%, transparent 80%, var(--gray-96) 80%, transparent),
+      linear-gradient(45deg, transparent 20%, transparent 20%, transparent 80%, var(--insyra-blue) 80%, var(--insyra-blue));
   }
 
   .hero-button-container {
@@ -183,9 +183,9 @@ export default {
   margin: 20px auto;
   max-width: 500px;
   padding: 10px !important;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(var(--white-rgb), 0.9);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(var(--black-rgb), 0.1);
 }
 
 .audio-player {
@@ -193,12 +193,12 @@ export default {
 }
 
 .audio-player::-webkit-media-controls-panel {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .audio-description {
   font-size: 14px;
-  color: #4a4a4a;
+  color: var(--gray-29);
   padding: 0 !important;
   margin: 0 !important;
   margin-bottom: 10px !important;

@@ -43,7 +43,7 @@ export default {
 }
 
 .feature-item-section-container {
-    background-color: #d73e3e;
+    background-color: var(--insyra-red);
 }
 
 h2 {

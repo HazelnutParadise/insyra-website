@@ -118,7 +118,7 @@ a {
     align-items: center;
     padding: 20px 40px;
     padding-bottom: 10px;
-    background-color: #1f449b;
+    background-color: var(--insyra-blue);
     z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999;
 }
 
@@ -131,7 +131,7 @@ a {
     margin: 0;
     width: auto;
     height: 40px;
-    background-color: #ffffff;
+    background-color: var(--white);
     padding: 0px 15px;
     border-radius: 5px;
     margin: 0;
@@ -148,7 +148,7 @@ a {
 }
 
 .nav-menu li a {
-    color: #ffffff;
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -157,7 +157,7 @@ a {
 }
 
 .nav-menu li a.nav-featured {
-    color: #f9ac41;
+    color: var(--insyra-orange);
     font-weight: 700;
 }
 

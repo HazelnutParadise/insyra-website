@@ -98,7 +98,7 @@ export default {
 .version-intro {
   padding: 80px 0;
   padding-top: 20px;
-  background: linear-gradient(135deg, #764ba2 0%, #1f449b 100%);
+  background: linear-gradient(135deg, var(--insyra-purple) 0%, var(--insyra-blue) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -110,7 +110,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(var(--white-rgb), 0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(var(--white-rgb), 0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(var(--white-rgb), 0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(var(--white-rgb), 0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
   opacity: 0.3;
 }
 
@@ -124,7 +124,7 @@ export default {
 
 .version-intro h2 {
   text-align: center;
-  color: #ffffff;
+  color: var(--white);
   margin-bottom: 3px;
   font-size: 2.8rem;
   font-weight: 300;
@@ -133,18 +133,18 @@ export default {
 
 .version-slogan {
   text-align: center;
-  color: #f9ac41;
+  color: var(--insyra-orange);
   margin-bottom: 20px;
   font-size: 1.7rem;
   font-weight: 600;
 }
 
 .version-content {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(var(--white-rgb), 0.95);
   backdrop-filter: blur(10px);
   /* border-radius: 20px; */
   padding: 40px;
-  border: 5px dashed #f9ac41;
+  border: 5px dashed var(--insyra-orange);
   position: relative;
 }
 
@@ -162,7 +162,7 @@ export default {
 .version-features-text {
   margin-bottom: 1rem;
   line-height: 1.7;
-  color: #2c3e50;
+  color: var(--blue-24);
   font-size: 1.2rem;
   text-align: left;
 }
@@ -175,12 +175,12 @@ export default {
   margin-top: 1.6rem;
   margin-bottom: 0;
   padding-top: 1.4rem;
-  border-top: 1px dashed rgba(102, 126, 234, 0.5);
+  border-top: 1px dashed rgba(var(--blue-66-rgb), 0.5);
 }
 
 .version-text strong,
 .version-features-text strong {
-  color: #667eea;
+  color: var(--blue-66);
   font-weight: 600;
   font-size: 1.3rem;
 }
@@ -195,7 +195,7 @@ export default {
 
 .version-release h4 {
   margin: 0 0 0.35rem;
-  color: #667eea;
+  color: var(--blue-66);
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -220,14 +220,14 @@ export default {
   max-width: 100%;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 35px rgba(var(--black-rgb), 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-source {
   margin-top: 10px;
   font-size: 0.85rem;
-  color: #7f8c8d;
+  color: var(--gray-53);
   text-align: center;
   font-style: italic;
   word-break: break-all;
@@ -277,8 +277,8 @@ export default {
   width: fit-content;
   margin: 0 auto 14px;
   padding: 5px 16px;
-  background: #f9ac41;
-  color: #1a1a2e;
+  background: var(--insyra-orange);
+  color: var(--gray-14);
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 700;
@@ -289,8 +289,8 @@ export default {
 .version-note {
   margin-top: 1.2rem;
   padding-top: 1rem;
-  border-top: 1px dashed rgba(102, 126, 234, 0.5);
-  color: #764ba2;
+  border-top: 1px dashed rgba(var(--blue-66-rgb), 0.5);
+  color: var(--insyra-purple);
   font-weight: 600;
   font-size: 1.1rem !important;
   line-height: 1.7;
@@ -306,26 +306,26 @@ export default {
   align-items: center;
   gap: 10px;
   padding: 12px 28px;
-  background: #f9ac41;
-  color: #1a1a2e !important;
+  background: var(--insyra-orange);
+  color: var(--gray-14) !important;
   font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;
   border-radius: 999px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 18px rgba(var(--black-rgb), 0.18);
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .version-history-link a:hover {
-  background: #ffbe63;
+  background: var(--orange-69a);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 24px rgba(var(--black-rgb), 0.25);
   text-decoration: none;
 }
 
 .more-abilities {
   padding: 56px 0 64px;
-  background: #d73e3e;
+  background: var(--insyra-red);
 }
 
 .more-abilities .container {
@@ -337,7 +337,7 @@ export default {
 .more-abilities h2 {
   margin-bottom: 24px;
   text-align: center;
-  color: #ffffff;
+  color: var(--white);
   font-size: 1.8rem;
 }
 
@@ -354,16 +354,16 @@ export default {
 .more-abilities a {
   display: block;
   padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(var(--white-rgb), 0.95);
   border-radius: 999px;
-  color: #a82a2a;
+  color: var(--red-41);
   font-size: 0.95rem;
   text-decoration: none;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .more-abilities a:hover {
-  background: #ffffff;
+  background: var(--white);
   transform: translateY(-2px);
 }
 </style>

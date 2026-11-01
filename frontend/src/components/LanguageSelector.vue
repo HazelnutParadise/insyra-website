@@ -77,7 +77,7 @@ export default {
 .select-icon {
     position: absolute;
     left: 10px;
-    color: #606266;
+    color: var(--gray-39);
     z-index: 1;
 }
 
@@ -86,15 +86,15 @@ export default {
     padding: 8px;
     padding-left: 35px;
     font-size: 16px;
-    border: 1px solid #dcdfe6;
+    border: 1px solid var(--gray-88a);
     border-radius: 4px;
-    background-color: white;
+    background-color: var(--white);
     cursor: pointer;
 }
 
 .language-select:focus {
     outline: none;
-    border-color: #409eff;
+    border-color: var(--blue-63);
 }
 
 .language-select option {

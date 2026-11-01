@@ -40,7 +40,7 @@ export default {
 .theme-section {
   position: relative;
   z-index: 1;
-  background: #ffffff;
+  background: var(--white);
 }
 
 .theme-section::before,
@@ -50,7 +50,7 @@ export default {
   top: 0;
   bottom: 0;
   width: 0;
-  border-left: 5px dashed #d73e3e;
+  border-left: 5px dashed var(--insyra-red);
   pointer-events: none;
 }
 
@@ -75,13 +75,13 @@ export default {
   max-width: 100%;
   margin: 0 auto;
   padding: 12px 40px;
-  background: #ffffff;
+  background: var(--white);
   border: 5px solid transparent;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 8px 20px rgba(var(--black-rgb), 0.18);
   text-align: center;
   font-size: 2.4rem;
-  color: #1f449b;
+  color: var(--insyra-blue);
   transform: translateY(-30%);
 }
 
@@ -89,7 +89,7 @@ export default {
   margin: 8px auto 48px;
   text-align: center;
   font-size: 1.2rem;
-  color: #4a5568;
+  color: var(--blue-35);
 }
 
 .theme-row {
@@ -97,7 +97,7 @@ export default {
 }
 
 .theme-row-tinted {
-  background: #f4f6fb;
+  background: var(--gray-97b);
 }
 
 .theme-body {
@@ -126,14 +126,14 @@ export default {
   margin: 8px 0 14px;
   font-size: 2rem;
   line-height: 1.3;
-  color: #1a1a2e;
+  color: var(--gray-14);
 }
 
 .theme-description {
   margin-bottom: 18px;
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #2c3e50;
+  color: var(--blue-24);
 }
 
 .theme-tags {
@@ -169,10 +169,10 @@ export default {
   padding: 22px 24px;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-  background: #1e2235;
+  background: var(--blue-16);
   border-top: 4px solid;
   border-radius: 6px;
-  color: #e6e9f5;
+  color: var(--gray-93a);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.9rem;
   line-height: 1.7;

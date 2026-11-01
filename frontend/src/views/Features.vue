@@ -38,9 +38,9 @@
           <Collapse
             :title="structure.collapse.title"
             :content="structure.collapse.content"
-            headerColor="#1f449b"
-            contentColor="#e6f0ff"
-            borderColor="#1f449b"
+            headerColor="var(--insyra-blue)"
+            contentColor="var(--blue-95)"
+            borderColor="var(--insyra-blue)"
             alignment="left"
             :codeBlock="true"
             :copyButtonText="structure.collapse.copyButtonText"
@@ -136,9 +136,9 @@ export default {
           Object.keys(tab.collapses).forEach((key) => {
             nextCollapses[key] = {
               ...tab.collapses[key],
-              headerColor: '#1f449b',
-              contentColor: '#e6f0ff',
-              borderColor: '#1f449b',
+              headerColor: 'var(--insyra-blue)',
+              contentColor: 'var(--blue-95)',
+              borderColor: 'var(--insyra-blue)',
               alignment: 'left',
             };
           });
@@ -169,27 +169,27 @@ export default {
 .features-page {
   margin: 0 auto;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #f9f9f9, #e6f0ff);
+  background: linear-gradient(135deg, var(--gray-98), var(--blue-95));
 }
 
 h1 {
   font-size: 36px;
   text-align: center;
   margin-bottom: 20px;
-  color: #2e3b55;
+  color: var(--blue-26);
 }
 
 h2 {
   text-align: center;
   font-size: 32px;
-  color: #2e3b55;
+  color: var(--blue-26);
   margin-bottom: 20px;
 }
 
 p {
   text-align: start;
   margin: 0 auto 30px;
-  color: #4a4a4a;
+  color: var(--gray-29);
   font-size: 18px;
 }
 
@@ -216,8 +216,8 @@ p {
 .feature-box {
   flex: 1 1 320px;
   max-width: 360px;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
+  background-color: var(--white);
+  border: 1px solid var(--gray-87);
   border-radius: 12px;
   padding: 25px;
   overflow: hidden;
@@ -228,7 +228,7 @@ p {
 
 .feature-box h3,
 .workflow-card h3 {
-  color: #2e3b55;
+  color: var(--blue-26);
   font-size: 24px;
   margin-bottom: 10px;
   line-height: 1.3;
@@ -246,7 +246,7 @@ p {
 }
 
 :deep(.collapse-content) {
-  color: black;
+  color: var(--black);
 }
 
 :deep(.collapse-content pre) {
@@ -254,17 +254,17 @@ p {
 }
 
 .read-docs-section {
-  background-color: #fff4e6;
+  background-color: var(--orange-95);
   border-radius: 12px;
   padding: 30px;
   margin: 30px auto;
   max-width: 960px;
-  border: 1px solid #fcc366;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--orange-69);
+  box-shadow: 0 4px 6px rgba(var(--black-rgb), 0.1);
 }
 
 .read-docs-section h2 {
-  color: #2e3b55;
+  color: var(--blue-26);
   font-size: 28px;
   margin-bottom: 15px;
 }
@@ -286,8 +286,8 @@ p {
   justify-content: center;
   padding: 10px 20px;
   min-width: 180px;
-  background-color: #f9ac41;
-  color: #ffffff;
+  background-color: var(--insyra-orange);
+  color: var(--white);
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
@@ -297,7 +297,7 @@ p {
 }
 
 .docs-button:hover {
-  background-color: #fcc366;
+  background-color: var(--orange-69);
   transform: translateY(-1px);
 }
 
@@ -313,20 +313,20 @@ p {
   display: block;
   padding: 24px;
   border-radius: 16px;
-  border: 1px solid #c9d7f2;
-  background: linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
+  border: 1px solid var(--blue-87);
+  background: linear-gradient(180deg, var(--white) 0%, var(--gray-97c) 100%);
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(31, 68, 155, 0.08);
+  box-shadow: 0 8px 24px rgba(var(--insyra-blue-rgb), 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .workflow-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(31, 68, 155, 0.14);
+  box-shadow: 0 14px 30px rgba(var(--insyra-blue-rgb), 0.14);
 }
 
 .workflow-card h3 {
-  color: #1f449b;
+  color: var(--insyra-blue);
 }
 
 .workflow-card p {

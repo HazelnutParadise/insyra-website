@@ -108,13 +108,13 @@ export default {
   margin: 0 auto;
   padding: 40px 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #f9fafb 100%);
+  background: linear-gradient(135deg, var(--gray-97) 0%, var(--gray-98a) 100%);
   text-align: center;
 }
 
 h1 {
   font-size: 32px;
-  color: #1f3a70;
+  color: var(--blue-28);
   margin-bottom: 20px;
   font-weight: 700;
   letter-spacing: -0.5px;
@@ -122,13 +122,13 @@ h1 {
 
 h3 {
   font-size: 24px;
-  color: #2e5090;
+  color: var(--blue-37);
   margin-bottom: 5px;
   font-weight: 600;
 }
 
 p {
-  color: #555;
+  color: var(--gray-33);
   font-size: 16px;
   margin-bottom: 20px;
   line-height: 1.6;
@@ -136,12 +136,12 @@ p {
 
 /* Code Comparison Section */
 .code-comparison-section {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 30px 30px;
   border-radius: 12px;
   margin-bottom: 40px;
   margin-top: 0px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(var(--black-rgb), 0.08);
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -149,7 +149,7 @@ p {
 
 .code-comparison-section h2 {
   font-size: 28px;
-  color: #1f3a70;
+  color: var(--blue-28);
   margin-bottom: 30px;
   font-weight: 700;
   text-align: center;
@@ -162,7 +162,7 @@ p {
 
 .code-example h3 {
   font-size: 22px;
-  color: #2e5090;
+  color: var(--blue-37);
   margin-bottom: 20px;
   font-weight: 600;
   text-align: center;
@@ -177,11 +177,11 @@ p {
 }
 
 .code-box {
-  background: #f8f9fb;
+  background: var(--gray-98b);
   padding: 20px;
   border-radius: 8px;
-  border-left: 4px solid #2a9d8f;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--insyra-teal);
+  box-shadow: 0 1px 4px rgba(var(--black-rgb), 0.05);
   flex: 1;
   min-width: 300px;
   margin-bottom: 0;
@@ -190,7 +190,7 @@ p {
 
 .code-box h4 {
   font-size: 16px;
-  color: #1f3a70;
+  color: var(--blue-28);
   margin-bottom: 12px;
   font-weight: 600;
 }
@@ -198,11 +198,11 @@ p {
 pre {
   text-align: left;
   font-size: 13px;
-  color: #4a4a4a;
+  color: var(--gray-29);
   overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
-  background: #f0f2f5;
+  background: var(--gray-95);
   padding: 12px;
   border-radius: 4px;
   line-height: 1.5;
@@ -213,7 +213,7 @@ code {
   display: block;
   padding: 0;
   line-height: 1.5;
-  color: #2c3e50;
+  color: var(--blue-24);
 }
 
 .output-image {
@@ -226,17 +226,17 @@ code {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e6eef4;
+  box-shadow: 0 2px 8px rgba(var(--black-rgb), 0.08);
+  border: 1px solid var(--gray-93);
   max-height: 220px;
 }
 
 /* Go Efficiency Section */
 .go-efficiency-section {
-  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  background: linear-gradient(135deg, var(--white) 0%, var(--gray-97) 100%);
   padding: 50px 40px;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(var(--black-rgb), 0.08);
   margin-top: 40px;
   max-width: 1000px;
   margin-left: auto;
@@ -245,7 +245,7 @@ code {
 
 .go-efficiency-section h2 {
   font-size: 28px;
-  color: #1f3a70;
+  color: var(--blue-28);
   margin-bottom: 35px;
   font-weight: 700;
   text-align: center;
@@ -256,17 +256,17 @@ code {
   margin: 0 auto;
   text-align: left;
   line-height: 1.85;
-  color: #505050;
+  color: var(--gray-31);
 }
 
 :deep(.efficiency-content h3) {
   font-size: 22px;
-  color: #2e5090;
+  color: var(--blue-37);
   margin-top: 30px;
   margin-bottom: 18px;
   font-weight: 700;
   padding-bottom: 10px;
-  border-bottom: 2px solid #d0e3f5;
+  border-bottom: 2px solid var(--blue-89);
 }
 
 :deep(.efficiency-content p) {
@@ -275,13 +275,13 @@ code {
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.85;
-  color: #555;
+  color: var(--gray-33);
 }
 
 :deep(.efficiency-content p:first-child) {
   font-size: 17px;
   font-weight: 500;
-  color: #333;
+  color: var(--gray-20);
 }
 
 :deep(.efficiency-content ul) {
@@ -295,40 +295,40 @@ code {
   margin-left: 20px;
   font-size: 16px;
   list-style-type: disc;
-  color: #555;
+  color: var(--gray-33);
   line-height: 1.8;
 }
 
 :deep(.efficiency-content li strong) {
-  color: #1f3a70;
+  color: var(--blue-28);
   font-weight: 700;
 }
 
 :deep(.efficiency-content strong) {
-  color: #2e5090;
+  color: var(--blue-37);
   font-weight: 700;
 }
 
 :deep(.efficiency-content a) {
-  color: #2a9d8f;
+  color: var(--insyra-teal);
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(42, 157, 143, 0.3);
+  border-bottom: 1px solid rgba(var(--insyra-teal-rgb), 0.3);
 }
 
 :deep(.efficiency-content a:hover) {
-  color: #1f7a70;
-  border-bottom: 1px solid #2a9d8f;
+  color: var(--teal-30);
+  border-bottom: 1px solid var(--insyra-teal);
   text-decoration: none;
 }
 
 /* Data Display Comparison Section */
 .display-comparison-section {
-  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  background: linear-gradient(135deg, var(--white) 0%, var(--gray-97) 100%);
   padding: 50px 40px;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(var(--black-rgb), 0.08);
   margin-top: 40px;
   max-width: 1000px;
   margin-left: auto;
@@ -337,7 +337,7 @@ code {
 
 .display-comparison-section h2 {
   font-size: 28px;
-  color: #1f3a70;
+  color: var(--blue-28);
   margin-bottom: 35px;
   font-weight: 700;
   text-align: center;
@@ -348,7 +348,7 @@ code {
   margin: 0 auto;
   text-align: left;
   line-height: 1.85;
-  color: #505050;
+  color: var(--gray-31);
 }
 
 .display-images {
@@ -368,7 +368,7 @@ code {
 
 .display-image h4 {
   font-size: 15px;
-  color: #1f3a70;
+  color: var(--blue-28);
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -377,8 +377,8 @@ code {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e6eef4;
+  box-shadow: 0 2px 10px rgba(var(--black-rgb), 0.08);
+  border: 1px solid var(--gray-93);
   max-height: 300px;
   object-fit: contain;
 }
@@ -386,14 +386,14 @@ code {
 .display-desc {
   margin-top: 12px;
   text-align: left;
-  color: #505050;
+  color: var(--gray-31);
   line-height: 1.6;
   font-size: 15px;
 }
 
 .display-desc h3 {
   font-size: 16px;
-  color: #2e5090;
+  color: var(--blue-37);
   margin-bottom: 8px;
 }
 
@@ -404,12 +404,12 @@ code {
 
 :deep(.display-content h3) {
   font-size: 22px;
-  color: #2e5090;
+  color: var(--blue-37);
   margin-top: 30px;
   margin-bottom: 18px;
   font-weight: 700;
   padding-bottom: 10px;
-  border-bottom: 2px solid #d0e3f5;
+  border-bottom: 2px solid var(--blue-89);
 }
 
 :deep(.display-content p) {
@@ -418,7 +418,7 @@ code {
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.85;
-  color: #555;
+  color: var(--gray-33);
 }
 
 :deep(.display-content ul) {
@@ -432,12 +432,12 @@ code {
   margin-left: 20px;
   font-size: 16px;
   list-style-type: disc;
-  color: #555;
+  color: var(--gray-33);
   line-height: 1.8;
 }
 
 :deep(.display-content strong) {
-  color: #1f3a70;
+  color: var(--blue-28);
   font-weight: 700;
 }
 

@@ -54,7 +54,7 @@ export default {
     border: 5px solid transparent;
     box-sizing: border-box;
     border-radius: 20px; /* 更大的圓角 */
-    background-color: #ffffff; /* 背景顏色 */
+    background-color: var(--white); /* 背景顏色 */
     overflow: hidden; 
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@ export default {
 }
 
 .card:hover {
-    border: 5px solid #ff4081; /* 添加邊框 */
+    border: 5px solid var(--pink-63); /* 添加邊框 */
 }
 
 .card-content {
@@ -73,12 +73,12 @@ export default {
 .title {
     font-size: 1.8em; /* 更大的字體 */
     font-weight: bold;
-    color: #ff4081; /* 鮮豔的顏色 */
+    color: var(--pink-63); /* 鮮豔的顏色 */
     text-transform: uppercase; /* 大寫字母 */
 }
 
 .description {
-    color: #333; /* 深色文字 */
+    color: var(--gray-20); /* 深色文字 */
     font-size: 1.2em;
     line-height: 1.5;
     text-align: left;
@@ -94,8 +94,8 @@ export default {
 .learn-more {
     display: inline-block;
     text-decoration: none;
-    background-color: #ff4081;
-    color: white;
+    background-color: var(--pink-63);
+    color: var(--white);
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -107,23 +107,23 @@ export default {
 }
 
 .learn-more:hover {
-    background-color: #e91e63;
+    background-color: var(--pink-52);
     transform: scale(1.05);
 }
 
 .card-expanded {
     position: absolute;
     width: 100%;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 20px; /* 更大的圓角 */
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(var(--black-rgb), 0.1);
 }
 
 .origin-title {
     font-size: 1.5em; /* 更大的字體 */
     font-weight: bold;
-    color: #ff4081; /* 鮮豔的顏色 */
+    color: var(--pink-63); /* 鮮豔的顏色 */
 }
 
 .fade-enter-active, .fade-leave-active {
