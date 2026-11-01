@@ -223,7 +223,7 @@ export default {
 }
 
 .vh-period {
-  color: var(--gray-53);
+  color: var(--insyra-gray);
   font-size: 0.95rem;
 }
 
@@ -248,7 +248,7 @@ export default {
 .vh-place-source {
   margin-top: 8px;
   font-size: 0.8rem;
-  color: var(--gray-53);
+  color: var(--insyra-gray);
   font-style: italic;
   word-break: break-all;
   line-height: 1.5;

@@ -227,7 +227,7 @@ export default {
 .image-source {
   margin-top: 10px;
   font-size: 0.85rem;
-  color: var(--gray-53);
+  color: var(--insyra-gray);
   text-align: center;
   font-style: italic;
   word-break: break-all;

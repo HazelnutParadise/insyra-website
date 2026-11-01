@@ -1,7 +1,7 @@
 /* Every colour the site uses, in one place. Components refer to these
    variables and never write a colour value themselves. */
 :root {
-  /* Insyra palette: the same eight colours, in the same order, as the
+  /* Insyra palette: the same nine colours, in the same order, as the
      chart palette of the insyra library (internal/palette). The brand blue
      #1F449B and orange #F9AC41 are tuned for legibility. */
   --insyra-blue: #2550b0;
@@ -20,6 +20,8 @@
   --insyra-green-rgb: 76, 175, 80;
   --insyra-bright-blue: #2196f3;
   --insyra-bright-blue-rgb: 33, 150, 243;
+  --insyra-gray: #7f8c8d;
+  --insyra-gray-rgb: 127, 140, 141;
 
   /* Other colours, named by hue family and HSL lightness in percent: gray-96 is a near-white gray, blue-25 a dark blue. */
   --amber-59: #febc2e;
@@ -63,7 +65,6 @@
   --gray-33: #555555;
   --gray-39: #606266;
   --gray-45: #6c6480;
-  --gray-53: #7f8c8d;
   --gray-82: #d2d2d2;
   --gray-87: #dddddd;
   --gray-88: #e0e0e0;
