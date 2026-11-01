@@ -124,7 +124,7 @@ h2 {
 
 .philosophy-grid .card {
   width: 33%;
-  background-color: var(--orange-95);
+  background-color: var(--insyra-cream);
   border: 1px solid var(--orange-81);
   margin-bottom: 10px;
 }

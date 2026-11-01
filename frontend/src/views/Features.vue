@@ -254,7 +254,7 @@ p {
 }
 
 .read-docs-section {
-  background-color: var(--orange-95);
+  background-color: var(--insyra-cream);
   border-radius: 12px;
   padding: 30px;
   margin: 30px auto;

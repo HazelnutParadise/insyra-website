@@ -23,6 +23,10 @@
   --insyra-gray: #7f8c8d;
   --insyra-gray-rgb: 127, 140, 141;
 
+  /* Brand background colour: for pages and cards, too pale to be a chart series, so it is not in the library's palette. */
+  --insyra-cream: #fff4e6;
+  --insyra-cream-rgb: 255, 244, 230;
+
   /* Other colours, named by hue family and HSL lightness in percent: gray-96 is a near-white gray, blue-25 a dark blue. */
   --amber-59: #febc2e;
   --amber-59a: #ffbd2e;
@@ -114,7 +118,6 @@
   --orange-81: #ffd99e;
   --orange-85: #ffe3b0;
   --orange-85-rgb: 255, 227, 176;
-  --orange-95: #fff4e6;
   --pink-52: #e91e63;
   --pink-63: #ff4081;
   --pink-74: #ff79c6;
