@@ -12,7 +12,7 @@
                 <li>
                     <a href="https://github.com/HazelnutParadise"
                         style="display: flex; align-items: baseline; gap: 5px"><i class="fa fa-github"
-                            style="font-size: 16px; color: #fff"></i><span>GitHub</span></a>
+                            style="font-size: 16px; color: var(--white)"></i><span>GitHub</span></a>
                 </li>
             </ul>
         </footer>
@@ -182,7 +182,7 @@ export default {
 
 <style scoped>
 .main-content {
-    background-color: #f4f4f4;
+    background-color: var(--gray-96);
     /* padding-bottom: 200px; */
 }
 
@@ -194,8 +194,8 @@ export default {
     padding: 0px 60px;
     padding-bottom: 30px;
     margin-top: 0px;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .social-links {
@@ -206,7 +206,7 @@ export default {
 }
 
 .social-links li a {
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
 }
 

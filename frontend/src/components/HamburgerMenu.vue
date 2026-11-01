@@ -102,7 +102,7 @@ a {
 }
 
 a.menu-featured {
-    color: #d97706;
+    color: var(--orange-44);
     font-weight: 700;
 }
 
@@ -126,7 +126,7 @@ a.menu-muted {
 .bar {
     height: 4px;
     width: 100%;
-    background-color: #d2d2d2;
+    background-color: var(--gray-82);
     transition: all 0.3s ease;
 }
 
@@ -146,8 +146,8 @@ a.menu-muted {
     position: absolute;
     top: 70px; /* 根據需要調整 */
     right: 0;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(var(--black-rgb), 0.2);
     display: block; /* 確保菜單顯示 */
     z-index: 2;
 }

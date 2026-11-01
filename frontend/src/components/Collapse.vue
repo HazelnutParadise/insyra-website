@@ -136,7 +136,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: var(--white);
 }
 
 .collapse-content {
@@ -168,7 +168,7 @@ export default {
 .collapse-content code {
   font-family: monospace;
   font-size: 14px;
-  color: black;
+  color: var(--black);
 }
 
 .toggle-icon {
@@ -198,8 +198,8 @@ export default {
 
 .copy-button {
   padding: 5px 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  background-color: var(--gray-94);
+  border: 1px solid var(--gray-87);
   border-radius: 3px;
   cursor: pointer;
   display: flex;
@@ -207,12 +207,12 @@ export default {
 }
 
 .copy-button:hover {
-  background-color: #e0e0e0;
+  background-color: var(--gray-88);
 }
 
 .checkmark {
   margin-right: 5px;
-  color: #1f449b;
+  color: var(--insyra-blue);
   font-weight: bolder;
 }
 

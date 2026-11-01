@@ -84,7 +84,7 @@ export default {
 .tab-content-description {
   text-align: start;
   margin: 0 auto 30px;
-  color: #4a4a4a;
+  color: var(--gray-29);
   font-size: 18px;
 }
 
@@ -98,7 +98,7 @@ export default {
 .tabs-section h2 {
   text-align: center;
   font-size: 28px;
-  color: #4a4a4a;
+  color: var(--gray-29);
   margin-bottom: 20px;
 }
 
@@ -108,8 +108,8 @@ export default {
   min-height: 500px;
   margin: 0 auto;
   border-radius: 10px;
-  border: 1px solid #ddd;
-  background-color: #f7f7f7;
+  border: 1px solid var(--gray-87);
+  background-color: var(--gray-97a);
 }
 
 .tabs {
@@ -118,7 +118,7 @@ export default {
   flex-direction: column;
   flex-wrap: wrap;
   padding: 15px 0;
-  background: #e6e6e6;
+  background: var(--gray-90);
   border-radius: 10px 0 0 10px;
   min-width: 180px;
 }
@@ -128,7 +128,7 @@ export default {
   border: none;
   border-radius: 0px;
   background: none;
-  color: #2e3b55;
+  color: var(--blue-26);
   text-align: left;
   cursor: pointer;
   font-size: 16px;
@@ -142,14 +142,14 @@ export default {
 }
 
 .tabs button.active {
-  background-color: #1f449b;
-  color: white;
+  background-color: var(--insyra-blue);
+  color: var(--white);
 }
 
 .tabs button:hover {
   border-radius: 0px;
-  background-color: #a3c4f3;
-  color: #2e3b55;
+  background-color: var(--blue-80);
+  color: var(--blue-26);
 }
 
 /* Tab Content 樣式 */
@@ -159,12 +159,12 @@ export default {
   max-width: 100%;
   overflow-x: auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 0 10px 10px 0;
 }
 
 .tab-content h3 {
-  color: #2e3b55;
+  color: var(--blue-26);
   font-size: 26px;
   margin-top: 10px;
 }
@@ -176,8 +176,8 @@ export default {
 .panel button {
   padding: 8px 15px;
   border: none;
-  background: #1f449b;
-  color: white;
+  background: var(--insyra-blue);
+  color: var(--white);
   cursor: pointer;
   font-size: 14px;
   border-radius: 5px;

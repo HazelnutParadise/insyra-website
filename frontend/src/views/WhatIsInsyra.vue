@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
 .about-insyra {
-  background-color: #fbb3b0;
+  background-color: var(--red-84);
   padding-bottom: 60px;
 }
 
@@ -61,9 +61,9 @@ export default {
 
 /* Card Style */
 .card {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(var(--black-rgb), 0.1);
   padding: 30px;
   margin-bottom: 40px;
   transition: transform 0.3s ease;
@@ -73,7 +73,7 @@ export default {
   box-shadow: none;
 }
 .philosophy-grid .card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(var(--black-rgb), 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -84,7 +84,7 @@ export default {
 /* Section Titles */
 h2 {
   font-size: 28px;
-  color: #2e3b55;
+  color: var(--blue-26);
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -94,7 +94,7 @@ h2 {
 .philosophy-section p,
 .vision-section p {
   font-size: 18px;
-  color: #4a4a4a;
+  color: var(--gray-29);
   line-height: 1.8;
   text-align: justify;
 }
@@ -112,20 +112,20 @@ h2 {
 
 .philosophy-grid h3 {
   font-size: 20px;
-  color: #d73e3e;
+  color: var(--insyra-red);
   margin-bottom: 10px;
 }
 
 .philosophy-grid p {
   font-size: 18px;
-  color: #4a4a4a;
+  color: var(--gray-29);
   text-align: start;
 }
 
 .philosophy-grid .card {
   width: 33%;
-  background-color: #fff4e6;
-  border: 1px solid #ffd99e;
+  background-color: var(--insyra-cream);
+  border: 1px solid var(--orange-81);
   margin-bottom: 10px;
 }
 
@@ -133,7 +133,7 @@ h2 {
 .vision-section p {
   font-size: 18px;
   text-align: center;
-  color: #4a4a4a;
+  color: var(--gray-29);
 }
 
 /* Responsive Design */

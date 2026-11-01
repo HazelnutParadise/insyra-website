@@ -45,14 +45,14 @@ export default {
   margin: 0 auto;
   min-height: 100vh;
   padding-bottom: 20px;
-  background: #d73e3e;
+  background: var(--insyra-red);
   text-align: center;
 }
 
 p {
   max-width: 800px;
   margin: 0 auto;
-  color: #4a4a4a;
+  color: var(--gray-29);
   font-size: 18px;
   margin-bottom: 15px;
 }
@@ -60,10 +60,10 @@ p {
 /* Section Styles */
 .contribution-section,
 .discord-section {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 20px;
   margin-top: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(var(--black-rgb), 0.1);
 }
 
 .discord-servers {
@@ -78,8 +78,8 @@ p {
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
-  background: linear-gradient(135deg, #5865F2 0%, #4752C4 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--blue-65) 0%, var(--blue-52) 100%);
+  color: var(--white);
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -88,18 +88,18 @@ p {
 
 .discord-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(88, 101, 242, 0.4);
-  color: #ffffff;
+  box-shadow: 0 6px 15px rgba(var(--blue-65-rgb), 0.4);
+  color: var(--white);
 }
 
 h2 {
   font-size: 24px;
-  color: #2e3b55;
+  color: var(--blue-26);
   margin-bottom: 10px;
 }
 
 a {
-  color: #2e3b55;
+  color: var(--blue-26);
   font-weight: 600;
 }
 </style>

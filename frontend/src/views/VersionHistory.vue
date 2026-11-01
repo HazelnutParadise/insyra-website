@@ -75,13 +75,13 @@ export default {
 
 <style scoped>
 .version-history-page {
-  background-color: #f4f4f4;
+  background-color: var(--gray-96);
 }
 
 .vh-hero {
   padding: 70px 0 50px;
-  background: linear-gradient(135deg, #764ba2 0%, #1f449b 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--insyra-purple) 0%, var(--insyra-blue) 100%);
+  color: var(--white);
   text-align: center;
 }
 
@@ -108,8 +108,8 @@ export default {
 .vh-naming {
   font-size: 1rem;
   line-height: 1.7;
-  color: #e8e3f2;
-  border-left: 3px solid #f9ac41;
+  color: var(--gray-92);
+  border-left: 3px solid var(--insyra-orange);
   padding: 4px 18px;
   max-width: 760px;
   margin: 0 auto;
@@ -117,7 +117,7 @@ export default {
 }
 
 .vh-naming strong {
-  color: #f9ac41;
+  color: var(--insyra-orange);
 }
 
 .vh-body {
@@ -125,8 +125,8 @@ export default {
 }
 
 .vh-current {
-  background: #ffffff;
-  border: 5px dashed #f9ac41;
+  background: var(--white);
+  border: 5px dashed var(--insyra-orange);
   padding: 32px 36px;
   margin-bottom: 40px;
   text-align: left;
@@ -136,8 +136,8 @@ export default {
   display: inline-block;
   padding: 4px 14px;
   border-radius: 999px;
-  background: #f9ac41;
-  color: #ffffff;
+  background: var(--insyra-orange);
+  color: var(--white);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -146,13 +146,13 @@ export default {
 }
 
 .vh-current h2 {
-  color: #764ba2;
+  color: var(--insyra-purple);
   font-size: 2rem;
   margin-bottom: 12px;
 }
 
 .vh-current p {
-  color: #2c3e50;
+  color: var(--blue-24);
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 18px;
@@ -162,20 +162,20 @@ export default {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #667eea;
+  color: var(--blue-66);
   font-weight: 600;
   font-size: 1.05rem;
   text-decoration: none;
 }
 
 .vh-back:hover {
-  color: #764ba2;
+  color: var(--insyra-purple);
 }
 
 .vh-card {
-  background: #ffffff;
+  background: var(--white);
   border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(var(--black-rgb), 0.08);
   padding: 32px 36px;
   margin-bottom: 28px;
   text-align: left;
@@ -187,13 +187,13 @@ export default {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--gray-93b);
   padding-bottom: 16px;
   margin-bottom: 18px;
 }
 
 .vh-card-head h2 {
-  color: #2c3e50;
+  color: var(--blue-24);
   font-size: 1.8rem;
   display: flex;
   align-items: baseline;
@@ -202,7 +202,7 @@ export default {
 
 .vh-codename {
   font-size: 1.1rem;
-  color: #f9ac41;
+  color: var(--insyra-orange);
   font-weight: 600;
 }
 
@@ -214,8 +214,8 @@ export default {
 }
 
 .vh-status {
-  background: rgba(118, 75, 162, 0.1);
-  color: #764ba2;
+  background: rgba(var(--insyra-purple-rgb), 0.1);
+  color: var(--insyra-purple);
   font-weight: 600;
   font-size: 0.9rem;
   padding: 4px 12px;
@@ -223,7 +223,7 @@ export default {
 }
 
 .vh-period {
-  color: #7f8c8d;
+  color: var(--insyra-gray);
   font-size: 0.95rem;
 }
 
@@ -242,13 +242,13 @@ export default {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px rgba(var(--black-rgb), 0.12);
 }
 
 .vh-place-source {
   margin-top: 8px;
   font-size: 0.8rem;
-  color: #7f8c8d;
+  color: var(--insyra-gray);
   font-style: italic;
   word-break: break-all;
   line-height: 1.5;
@@ -256,25 +256,25 @@ export default {
 
 .vh-place-intro {
   flex: 1;
-  color: #2c3e50;
+  color: var(--blue-24);
   font-size: 1.05rem;
   line-height: 1.75;
 }
 
 .vh-place-intro strong {
-  color: #667eea;
+  color: var(--blue-66);
   font-weight: 600;
 }
 
 .vh-summary {
-  color: #2c3e50;
+  color: var(--blue-24);
   font-size: 1.1rem;
   line-height: 1.75;
   margin-bottom: 20px;
 }
 
 .vh-highlights-title {
-  color: #667eea;
+  color: var(--blue-66);
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 12px;
@@ -290,7 +290,7 @@ export default {
   position: relative;
   padding-left: 26px;
   margin-bottom: 12px;
-  color: #2c3e50;
+  color: var(--blue-24);
   line-height: 1.7;
 }
 
@@ -302,7 +302,7 @@ export default {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #f9ac41;
+  background: var(--insyra-orange);
 }
 
 @media (max-width: 768px) {

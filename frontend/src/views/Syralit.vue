@@ -172,7 +172,7 @@ export default {
 
 <style scoped>
 .syralit-page {
-  background-color: #f5f4f8;
+  background-color: var(--gray-96a);
 }
 
 .sy-container {
@@ -187,8 +187,8 @@ export default {
 .sy-hero {
   position: relative;
   padding: 90px 0 100px;
-  background: linear-gradient(135deg, #1f1640 0%, #764ba2 55%, #1f449b 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--indigo-17) 0%, var(--insyra-purple) 55%, var(--insyra-blue) 100%);
+  color: var(--white);
   overflow: hidden;
 }
 
@@ -196,8 +196,8 @@ export default {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 20%, rgba(249, 172, 65, 0.18), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(168, 230, 207, 0.12), transparent 45%);
+    radial-gradient(circle at 20% 20%, rgba(var(--insyra-orange-rgb), 0.18), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(var(--green-78-rgb), 0.12), transparent 45%);
   pointer-events: none;
 }
 
@@ -215,10 +215,10 @@ export default {
 .sy-badge {
   display: inline-block;
   padding: 5px 14px;
-  border: 1px solid rgba(249, 172, 65, 0.7);
-  background: rgba(249, 172, 65, 0.12);
+  border: 1px solid rgba(var(--insyra-orange-rgb), 0.7);
+  background: rgba(var(--insyra-orange-rgb), 0.12);
   border-radius: 999px;
-  color: #f9ac41;
+  color: var(--insyra-orange);
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 1.4px;
@@ -235,7 +235,7 @@ export default {
 }
 
 .sy-subtitle {
-  color: #f9ac41;
+  color: var(--insyra-orange);
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.55;
@@ -245,7 +245,7 @@ export default {
 .sy-description {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: #e6e0f5;
+  color: var(--indigo-92);
   margin: 0 0 28px;
 }
 
@@ -268,25 +268,25 @@ export default {
 }
 
 .sy-btn.primary {
-  background: #f9ac41;
-  color: #1a1a2e !important;
-  box-shadow: 0 8px 24px rgba(249, 172, 65, 0.35);
+  background: var(--insyra-orange);
+  color: var(--gray-14) !important;
+  box-shadow: 0 8px 24px rgba(var(--insyra-orange-rgb), 0.35);
 }
 
 .sy-btn.primary:hover {
-  background: #ffbe63;
+  background: var(--orange-69a);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(249, 172, 65, 0.45);
+  box-shadow: 0 12px 28px rgba(var(--insyra-orange-rgb), 0.45);
 }
 
 .sy-btn.ghost {
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  color: #ffffff !important;
+  border: 1px solid rgba(var(--white-rgb), 0.55);
+  color: var(--white) !important;
 }
 
 .sy-btn.ghost:hover {
-  border-color: #f9ac41;
-  background: rgba(249, 172, 65, 0.08);
+  border-color: var(--insyra-orange);
+  background: rgba(var(--insyra-orange-rgb), 0.08);
 }
 
 .sy-btn-arrow {
@@ -311,12 +311,12 @@ export default {
   align-items: center;
   gap: 6px;
   padding: 10px 14px;
-  background: #2a2540;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--indigo-20);
+  border-bottom: 1px solid rgba(var(--white-rgb), 0.06);
 }
 
 .sy-window-chrome.dark {
-  background: #14101f;
+  background: var(--gray-9);
 }
 
 .sy-dot {
@@ -326,31 +326,31 @@ export default {
   display: inline-block;
 }
 
-.dot-r { background: #ff5f57; }
-.dot-y { background: #febc2e; }
-.dot-g { background: #28c840; }
+.dot-r { background: var(--red-67); }
+.dot-y { background: var(--amber-59); }
+.dot-g { background: var(--green-47); }
 
 .sy-window-title {
   margin-left: 10px;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(var(--white-rgb), 0.55);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   letter-spacing: 0.3px;
 }
 
 .sy-code-card,
 .sy-app-card {
-  background: #1c1730;
+  background: var(--indigo-14);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 22px 60px rgba(var(--black-rgb), 0.45);
+  border: 1px solid rgba(var(--white-rgb), 0.06);
 }
 
 .sy-hero-code {
   margin: 0;
   padding: 18px 20px;
-  color: #d8d4f0;
+  color: var(--indigo-89);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.78rem;
   line-height: 1.65;
@@ -358,7 +358,7 @@ export default {
   white-space: pre;
   overflow-x: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(249, 172, 65, 0.45) transparent;
+  scrollbar-color: rgba(var(--insyra-orange-rgb), 0.45) transparent;
 }
 
 .sy-hero-code::-webkit-scrollbar {
@@ -370,19 +370,19 @@ export default {
 }
 
 .sy-hero-code::-webkit-scrollbar-thumb {
-  background: rgba(249, 172, 65, 0.4);
+  background: rgba(var(--insyra-orange-rgb), 0.4);
   border-radius: 999px;
 }
 
 .sy-hero-code::-webkit-scrollbar-thumb:hover {
-  background: rgba(249, 172, 65, 0.65);
+  background: rgba(var(--insyra-orange-rgb), 0.65);
 }
 
-.tk-c { color: #7c739f; font-style: italic; }
-.tk-k { color: #ff79c6; }
-.tk-s { color: #a8e6cf; }
-.tk-f { color: #f9ac41; }
-.tk-t { color: #79d3ff; }
+.tk-c { color: var(--indigo-54); font-style: italic; }
+.tk-k { color: var(--pink-74); }
+.tk-s { color: var(--green-78); }
+.tk-f { color: var(--insyra-orange); }
+.tk-t { color: var(--blue-74); }
 
 .sy-app-card img {
   display: block;
@@ -395,14 +395,14 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  color: #f9ac41;
+  color: var(--insyra-orange);
 }
 
 .sy-arrow-line {
   display: block;
   width: 28px;
   height: 2px;
-  background: #f9ac41;
+  background: var(--insyra-orange);
 }
 
 .sy-arrow-tip {
@@ -415,7 +415,7 @@ export default {
   letter-spacing: 1.2px;
   text-transform: uppercase;
   margin-top: 4px;
-  color: rgba(249, 172, 65, 0.9);
+  color: rgba(var(--insyra-orange-rgb), 0.9);
   text-align: center;
 }
 
@@ -426,7 +426,7 @@ export default {
 
 .sy-section-title {
   text-align: center;
-  color: #2c3e50;
+  color: var(--blue-24);
   font-size: 2.1rem;
   font-weight: 300;
   letter-spacing: -0.4px;
@@ -434,12 +434,12 @@ export default {
 }
 
 .sy-section-title.light {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .sy-section-lede {
   text-align: center;
-  color: #6c6480;
+  color: var(--gray-45);
   font-size: 1.05rem;
   line-height: 1.7;
   max-width: 720px;
@@ -447,28 +447,28 @@ export default {
 }
 
 .sy-section-lede.light {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(var(--white-rgb), 0.78);
 }
 
 /* ===== QUICK START ===== */
 .sy-quickstart-section {
-  background: #f5f4f8;
+  background: var(--gray-96a);
 }
 
 .sy-terminal {
   max-width: 760px;
   margin: 0 auto 16px;
-  background: #14101f;
+  background: var(--gray-9);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 40px rgba(var(--black-rgb), 0.18);
+  border: 1px solid rgba(var(--black-rgb), 0.08);
 }
 
 .sy-terminal-body {
   margin: 0;
   padding: 22px 24px;
-  color: #d8e6cf;
+  color: var(--green-86);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.95rem;
   line-height: 1.85;
@@ -476,7 +476,7 @@ export default {
   white-space: pre;
   overflow-x: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(249, 172, 65, 0.45) transparent;
+  scrollbar-color: rgba(var(--insyra-orange-rgb), 0.45) transparent;
 }
 
 .sy-terminal-body::-webkit-scrollbar {
@@ -488,23 +488,23 @@ export default {
 }
 
 .sy-terminal-body::-webkit-scrollbar-thumb {
-  background: rgba(249, 172, 65, 0.4);
+  background: rgba(var(--insyra-orange-rgb), 0.4);
   border-radius: 999px;
 }
 
 .sy-terminal-body::-webkit-scrollbar-thumb:hover {
-  background: rgba(249, 172, 65, 0.65);
+  background: rgba(var(--insyra-orange-rgb), 0.65);
 }
 
 .sy-prompt {
-  color: #f9ac41;
+  color: var(--insyra-orange);
   margin-right: 10px;
   user-select: none;
 }
 
 .sy-install-note {
   text-align: center;
-  color: #6c6480;
+  color: var(--gray-45);
   font-size: 0.92rem;
   font-style: italic;
   margin: 0;
@@ -512,7 +512,7 @@ export default {
 
 /* ===== SCREENSHOTS ===== */
 .sy-shots-section {
-  background: #ffffff;
+  background: var(--white);
 }
 
 .sy-shots-grid {
@@ -530,37 +530,37 @@ export default {
 }
 
 .sy-shot-frame {
-  background: #1c1730;
+  background: var(--indigo-14);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 14px 36px rgba(31, 22, 64, 0.18);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 14px 36px rgba(var(--indigo-17-rgb), 0.18);
+  border: 1px solid rgba(var(--black-rgb), 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sy-shot:hover .sy-shot-frame {
   transform: translateY(-4px);
-  box-shadow: 0 22px 48px rgba(118, 75, 162, 0.25);
+  box-shadow: 0 22px 48px rgba(var(--insyra-purple-rgb), 0.25);
 }
 
 .sy-shot-frame img {
   display: block;
   width: 100%;
   height: auto;
-  background: #f5f4f8;
+  background: var(--gray-96a);
 }
 
 .sy-shot figcaption {
   padding: 14px 6px 0;
   text-align: center;
-  color: #2c3e50;
+  color: var(--blue-24);
   font-size: 0.98rem;
   line-height: 1.6;
 }
 
 /* ===== KEY FEATURES ===== */
 .sy-features-section {
-  background: #f5f4f8;
+  background: var(--gray-96a);
 }
 
 .sy-features {
@@ -570,18 +570,18 @@ export default {
 }
 
 .sy-feature {
-  background: #ffffff;
+  background: var(--white);
   border-radius: 14px;
   padding: 28px 26px;
-  box-shadow: 0 6px 20px rgba(31, 22, 64, 0.06);
+  box-shadow: 0 6px 20px rgba(var(--indigo-17-rgb), 0.06);
   border-top: 3px solid transparent;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .sy-feature:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 36px rgba(118, 75, 162, 0.14);
-  border-top-color: #f9ac41;
+  box-shadow: 0 18px 36px rgba(var(--insyra-purple-rgb), 0.14);
+  border-top-color: var(--insyra-orange);
 }
 
 .sy-feature-icon {
@@ -590,14 +590,14 @@ export default {
 }
 
 .sy-feature h3 {
-  color: #764ba2;
+  color: var(--insyra-purple);
   font-size: 1.18rem;
   margin: 0 0 10px;
   font-weight: 600;
 }
 
 .sy-feature p {
-  color: #4a4458;
+  color: var(--gray-31a);
   line-height: 1.7;
   font-size: 0.98rem;
   margin: 0;
@@ -605,7 +605,7 @@ export default {
 
 /* ===== ECOSYSTEM FLOW ===== */
 .sy-eco-section {
-  background: linear-gradient(135deg, #1f449b 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--insyra-blue) 0%, var(--insyra-purple) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -627,8 +627,8 @@ export default {
   height: 2px;
   background: repeating-linear-gradient(
     to right,
-    rgba(249, 172, 65, 0.55) 0,
-    rgba(249, 172, 65, 0.55) 6px,
+    rgba(var(--insyra-orange-rgb), 0.55) 0,
+    rgba(var(--insyra-orange-rgb), 0.55) 6px,
     transparent 6px,
     transparent 12px
   );
@@ -638,8 +638,8 @@ export default {
 .sy-eco-node {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(var(--white-rgb), 0.06);
+  border: 1px solid rgba(var(--white-rgb), 0.14);
   border-radius: 14px;
   padding: 28px 24px;
   text-align: center;
@@ -647,9 +647,9 @@ export default {
 }
 
 .sy-eco-node.active {
-  background: rgba(249, 172, 65, 0.14);
-  border-color: #f9ac41;
-  box-shadow: 0 14px 36px rgba(249, 172, 65, 0.2);
+  background: rgba(var(--insyra-orange-rgb), 0.14);
+  border-color: var(--insyra-orange);
+  box-shadow: 0 14px 36px rgba(var(--insyra-orange-rgb), 0.2);
 }
 
 .sy-eco-step {
@@ -658,22 +658,22 @@ export default {
   height: 40px;
   line-height: 40px;
   border-radius: 50%;
-  background: #f9ac41;
-  color: #1a1a2e;
+  background: var(--insyra-orange);
+  color: var(--gray-14);
   font-weight: 700;
   font-size: 0.95rem;
   margin-bottom: 14px;
 }
 
 .sy-eco-name {
-  color: #ffffff;
+  color: var(--white);
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
 .sy-eco-role {
-  color: #f9ac41;
+  color: var(--insyra-orange);
   font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.6px;
@@ -682,7 +682,7 @@ export default {
 }
 
 .sy-eco-action {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(var(--white-rgb), 0.82);
   font-size: 0.98rem;
   line-height: 1.65;
 }

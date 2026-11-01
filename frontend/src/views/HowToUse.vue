@@ -191,9 +191,9 @@ pre {
 /* 更新背景色和基礎文字顏色 */
 .how-to-use-page {
     min-height: 100vh;
-    background: #1a1a2e;
+    background: var(--gray-14);
     /* 更新背景色 */
-    color: #ffffff;
+    color: var(--white);
     /* 更新基礎文字顏色 */
     font-family: "Space Grotesk", sans-serif;
     position: relative;
@@ -216,8 +216,8 @@ pre {
     bottom: 0;
     background: linear-gradient(
         45deg,
-        rgba(26, 26, 46, 0.97) 0%,
-        rgba(40, 40, 80, 0.95) 100%
+        rgba(var(--gray-14-rgb), 0.97) 0%,
+        rgba(var(--indigo-24-rgb), 0.95) 100%
     );
     /* 調整漸層色 */
     z-index: 0;
@@ -235,7 +235,7 @@ pre {
 .cyber-title {
     font-size: 3.5rem;
     text-align: center;
-    color: #f9ac41;
+    color: var(--insyra-orange);
     margin-bottom: 1.5rem;
     opacity: 0;
     transform: translateY(-20px);
@@ -250,9 +250,9 @@ pre {
 .cyber-subtitle {
     font-size: 1.2rem;
     text-align: center;
-    color: #ff69b4;
+    color: var(--insyra-pink);
     /* 粉紅色副標題 */
-    text-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
+    text-shadow: 0 0 5px rgba(var(--insyra-pink-rgb), 0.3);
     margin-bottom: 30px;
     opacity: 0;
     transform: translateY(20px);
@@ -265,13 +265,13 @@ pre {
 }
 
 .neo-section {
-    background: rgba(20, 20, 40, 0.8);
-    border: 1px solid rgba(255, 227, 176, 0.2);
+    background: rgba(var(--gray-12-rgb), 0.8);
+    border: 1px solid rgba(var(--orange-85-rgb), 0.2);
     border-radius: 15px;
     padding: 30px;
     margin-bottom: 30px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(255, 227, 176, 0.1);
+    box-shadow: 0 8px 32px rgba(var(--orange-85-rgb), 0.1);
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.8s ease-out 0.6s;
@@ -290,7 +290,7 @@ pre {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(90deg, #a2d5ab, transparent, #ff69b4);
+    background: linear-gradient(90deg, var(--green-74), transparent, var(--insyra-pink));
     border-radius: 16px;
     z-index: -1;
     animation: borderRotate 4s linear infinite;
@@ -306,11 +306,11 @@ pre {
 .header-line {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, #a2d5ab, #ff69b4, #a2d5ab);
+    background: linear-gradient(90deg, var(--green-74), var(--insyra-pink), var(--green-74));
 }
 
 h2 {
-    color: #fbe3b0;
+    color: var(--amber-84);
     margin: 0 20px;
     font-size: 2rem;
 }
@@ -336,11 +336,11 @@ h2 {
 }
 
 .terminal-window {
-    background: rgba(15, 15, 35, 0.95);
+    background: rgba(var(--gray-10-rgb), 0.95);
     border-radius: 10px;
     padding: 20px;
     margin: 20px 0;
-    border: 1px solid rgba(255, 227, 176, 0.2);
+    border: 1px solid rgba(var(--orange-85-rgb), 0.2);
 }
 
 .terminal-header {
@@ -356,15 +356,15 @@ h2 {
 }
 
 .terminal-button:nth-child(1) {
-    background: #ff5f56;
+    background: var(--red-67a);
 }
 
 .terminal-button:nth-child(2) {
-    background: #ffbd2e;
+    background: var(--amber-59a);
 }
 
 .terminal-button:nth-child(3) {
-    background: #27c93f;
+    background: var(--green-47a);
 }
 
 .mode-cards {
@@ -378,12 +378,12 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: rgba(25, 25, 45, 0.8);
-    border: 1px solid rgba(255, 227, 176, 0.2);
+    background: rgba(var(--gray-14a-rgb), 0.8);
+    border: 1px solid rgba(var(--orange-85-rgb), 0.2);
     border-radius: 15px;
     padding: 20px 20px;
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 227, 176, 0.1);
+    box-shadow: 0 4px 15px rgba(var(--orange-85-rgb), 0.1);
 }
 
 .mode-card img {
@@ -402,9 +402,9 @@ h2 {
 }
 
 .mode-card h3 {
-    color: #ff69b4;
+    color: var(--insyra-pink);
     font-size: 1.5rem;
-    text-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
+    text-shadow: 0 0 5px rgba(var(--insyra-pink-rgb), 0.3);
     margin-bottom: 15px;
 }
 
@@ -430,15 +430,15 @@ h2 {
 
 .mode-card div ul li:before {
     content: "→ ";
-    color: #fbe3b0;
+    color: var(--amber-84);
 }
 
 .cyber-button {
     margin-top: 40px;
     display: inline-block;
     padding: 15px 30px;
-    background: linear-gradient(45deg, #a2d5ab, #ff69b4);
-    color: #1a1a2e;
+    background: linear-gradient(45deg, var(--green-74), var(--insyra-pink));
+    color: var(--gray-14);
     border-radius: 8px;
     font-weight: bold;
     text-decoration: none;
@@ -449,8 +449,8 @@ h2 {
 
 .cyber-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(255, 227, 176, 0.5);
-    background: linear-gradient(45deg, #ff69b4, #a2d5ab);
+    box-shadow: 0 0 20px rgba(var(--orange-85-rgb), 0.5);
+    background: linear-gradient(45deg, var(--insyra-pink), var(--green-74));
 }
 
 .photo-gallery {
@@ -475,12 +475,12 @@ h2 {
 }
 
 .cyber-link {
-    color: #fbe3b0;
+    color: var(--amber-84);
     text-decoration: underline;
 }
 
 .cyber-link:hover {
-    color: #ff69b4;
+    color: var(--insyra-pink);
 }
 
 .features-grid {
@@ -491,19 +491,19 @@ h2 {
 }
 
 .feature-card {
-    background: rgba(25, 25, 45, 0.8);
-    border: 1px solid rgba(255, 105, 180, 0.2);
+    background: rgba(var(--gray-14a-rgb), 0.8);
+    border: 1px solid rgba(var(--insyra-pink-rgb), 0.2);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.1);
+    box-shadow: 0 4px 15px rgba(var(--insyra-pink-rgb), 0.1);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    border-color: #ff69b4;
-    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.2);
+    border-color: var(--insyra-pink);
+    box-shadow: 0 6px 20px rgba(var(--insyra-pink-rgb), 0.2);
 }
 
 .feature-icon {
@@ -512,7 +512,7 @@ h2 {
 }
 
 .feature-card h4 {
-    color: #fbe3b0;
+    color: var(--amber-84);
     margin: 10px 0;
     font-size: 1.2rem;
 }
@@ -546,7 +546,7 @@ h2 {
     position: absolute;
     width: 150px;
     height: 150px;
-    background: linear-gradient(90deg, transparent, #a2d5ab, #ff69b4);
+    background: linear-gradient(90deg, transparent, var(--green-74), var(--insyra-pink));
     animation: borderGlow 8s linear infinite;
     filter: blur(5px);
 }
@@ -558,7 +558,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, #ff69b4, #a2d5ab);
+    background: linear-gradient(90deg, transparent, var(--insyra-pink), var(--green-74));
     filter: blur(5px);
 }
 
