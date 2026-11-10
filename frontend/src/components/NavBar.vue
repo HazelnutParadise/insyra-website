@@ -54,6 +54,11 @@
                     currentMessages.navbar.contact
                 }}</a>
             </li>
+            <li>
+                <a href="https://insyra.me/">{{
+                    currentMessages.navbar.insyraWithMe
+                }}</a>
+            </li>
         </ul>
         <LanguageSelector
             @language-changed="updateLanguage"
