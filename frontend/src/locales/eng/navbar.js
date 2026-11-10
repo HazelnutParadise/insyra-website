@@ -7,4 +7,5 @@ export const navbar = {
   syralit: "Syralit",
   features: "Features",
   contact: "Contact",
+  insyraWithMe: "Insyra With Me",
 };
