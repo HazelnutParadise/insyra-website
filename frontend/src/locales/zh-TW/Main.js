@@ -3,10 +3,10 @@ export const Main = {
     slogan: "太快、太美、太簡單",
     title: "邂逅 Insyra",
     description: "讀資料、訓練模型、抓股價、回測策略，一個 Go 全包。",
-    audio: {
-      url: "https://src.hazelnut-paradise.com/Insyra_introduce_TW.wav",
-      error: "您的瀏覽器不支援音訊播放器。",
-      description: "聆聽 Insyra 介紹",
+    video: {
+      url: "https://src.hazelnut-paradise.com/insyra-intro-v4-1080p60.mp4?content-type=video/mp4",
+      error: "您的瀏覽器不支援影片播放。",
+      description: "觀看 Insyra 介紹影片",
     },
     button: {
       main: "開始使用",

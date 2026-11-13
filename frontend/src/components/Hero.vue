@@ -4,13 +4,13 @@
     <h1>{{ currentMessages.Main.hero.title }}</h1>
     <p class="hero-description">{{ currentMessages.Main.hero.description }}</p>
 
-    <!-- 添加音訊播放器組件 -->
-    <div class="audio-section">
-      <audio controls controlslist="nodownload" class="audio-player">
-        <source :src="currentMessages.Main.hero.audio.url" type="audio/wav">
-        {{ currentMessages.Main.hero.audio.error }}
-      </audio>
-      <p class="audio-description">{{ currentMessages.Main.hero.audio.description }}</p>
+    <!-- 介紹影片 -->
+    <div class="video-section">
+      <video controls playsinline preload="metadata" controlslist="nodownload" class="video-player">
+        <source :src="currentMessages.Main.hero.video.url" type="video/mp4">
+        {{ currentMessages.Main.hero.video.error }}
+      </video>
+      <p class="video-description">{{ currentMessages.Main.hero.video.description }}</p>
     </div>
 
     <HeroButton :currentMessages="currentMessages.Main.hero.button.main" :settings="{
@@ -185,34 +185,34 @@ export default {
   }
 }
 
-/* 添加音訊播放器樣式 */
-.audio-section {
+/* 介紹影片樣式 */
+.video-section {
   margin: 20px auto;
-  max-width: 500px;
+  max-width: 720px;
   padding: 10px !important;
   background: rgba(var(--white-rgb), 0.9);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(var(--black-rgb), 0.1);
+  box-sizing: border-box;
 }
 
-.audio-player {
+.video-player {
+  display: block;
   width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--black);
+  border-radius: 4px;
 }
 
-.audio-player::-webkit-media-controls-panel {
-  background-color: var(--white);
-}
-
-.audio-description {
+.video-description {
   font-size: 14px;
   color: var(--gray-29);
   padding: 0 !important;
-  margin: 0 !important;
-  margin-bottom: 10px !important;
+  margin: 8px 0 !important;
 }
 
 @media (max-width: 768px) {
-  .audio-section {
+  .video-section {
     width: 100%;
     border-radius: 0;
     margin: 15px auto;
