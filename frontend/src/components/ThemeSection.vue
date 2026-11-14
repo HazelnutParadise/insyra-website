@@ -52,6 +52,9 @@ export default {
   width: 0;
   border-left: 5px dashed var(--insyra-red);
   pointer-events: none;
+  /* Fade the top of the dashed lines in so they don't start abruptly under the hero. */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, var(--black) 160px);
+  mask-image: linear-gradient(to bottom, transparent, var(--black) 160px);
 }
 
 .theme-section::before {
@@ -71,18 +74,25 @@ export default {
 .theme-heading {
   position: relative;
   z-index: 2;
-  width: fit-content;
   max-width: 100%;
   margin: 0 auto;
-  padding: 12px 40px;
-  background: var(--white);
-  border: 5px solid transparent;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(var(--black-rgb), 0.18);
+  padding: 64px 0 18px;
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
   color: var(--insyra-blue);
-  transform: translateY(-30%);
+}
+
+/* Short red accent under the heading, echoing the dashed side lines. */
+.theme-heading::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 16px auto 0;
+  border-radius: 2px;
+  background: var(--insyra-red);
 }
 
 .theme-subheading {
@@ -195,8 +205,8 @@ export default {
   }
 
   .theme-heading {
-    padding: 10px 24px;
-    font-size: 1.5rem;
+    padding-top: 48px;
+    font-size: 1.7rem;
   }
 
   .theme-title {
