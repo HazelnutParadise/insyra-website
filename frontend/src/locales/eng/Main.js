@@ -4,10 +4,10 @@ export const Main = {
     title: "Meet Insyra",
     description:
       "Load data, train models, fetch prices, backtest strategies. All in Go.",
-    audio: {
-      url: "https://src.hazelnut-paradise.com/Insyra_introduce.wav",
-      error: "Your browser does not support the audio player.",
-      description: "Listen to Insyra introduction",
+    video: {
+      url: "https://src.hazelnut-paradise.com/insyra-intro-v4-1080p60.mp4?content-type=video/mp4",
+      error: "Your browser does not support video playback.",
+      description: "Watch the Insyra introduction video",
     },
     button: {
       main: "Get Started",
